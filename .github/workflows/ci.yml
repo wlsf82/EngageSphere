@@ -1,0 +1,17 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  frontend-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install frontend modules
+      run: npm run install:frontend
+    - name: Run frontend unit tests 🧪
+      run: npm run test:frontend:unit
