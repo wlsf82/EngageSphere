@@ -19,3 +19,9 @@ The tests should cover both the API and Graphical User Interface (GUI).
 - Shows the contact info of a specific customer
 - Shows "No contact info available" for a customer without contact info
 - Goes back to the customer's list when clicking the "Back to the list" button
+- Sorts by Name in ascending order by default
+- Sorts by Name in descending order
+- Sorts by # of employees in ascending
+- Sorts by # of employees in descending order
+- Sorts by Size in ascending
+- Sorts by Size in descending order

@@ -10,6 +10,9 @@ const CustomerApp = () => {
   const [customer, setCustomer] = useState(null)
   const [error, setError] = useState(null)
 
+  const [sortCriteria, setSortCriteria] = useState('name')
+  const [sortOrder, setSortOrder] = useState('asc') // 'asc' for ascending, 'desc' for descending
+
   const nameInputRef = useRef(null)
 
   function getCustomer(customer) {
@@ -47,6 +50,30 @@ const CustomerApp = () => {
     }
   }
 
+  function sortCustomers(criteria) {
+    if (sortCriteria === criteria) {
+      // If the same criteria is clicked again, reverse the order
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
+    } else {
+      // If a new criteria is clicked, set the new criteria and default to ascending order
+      setSortCriteria(criteria)
+      setSortOrder('asc')
+    }
+  }
+
+  function mapSizeToNumber(size) {
+    switch (size.toLowerCase()) {
+      case 'small':
+        return 1
+      case 'medium':
+        return 2
+      case 'big':
+        return 3
+      default:
+        return 0 // Default to 0 for unknown sizes
+    }
+  }
+
   return (
     <div>
       {
@@ -69,21 +96,37 @@ const CustomerApp = () => {
           <div>
             <p>Click on each of them to view their contact details.</p>
             <table border='1'>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th># of employees</th>
-                  <th>Size</th>
-                </tr>
+            <thead>
+            <tr>
+              <th onClick={() => sortCustomers('name')} className={sortCriteria === 'name' ? 'active' : ''}>
+                Name {sortCriteria === 'name' && sortOrder === 'asc' ? <span>&uarr;</span> : sortCriteria === 'name' && sortOrder === 'desc' ? <span>&darr;</span> : null}
+              </th>
+              <th onClick={() => sortCustomers('employees')} className={sortCriteria === 'employees' ? 'active' : ''}>
+                # of employees {sortCriteria === 'employees' ? <span>{sortOrder === 'asc' ? '\u2191' : '\u2193'}</span> : null}
+              </th>
+              <th onClick={() => sortCustomers('size')} className={sortCriteria === 'size' ? 'active' : ''}>
+                Size {sortCriteria === 'size' ? <span>{sortOrder === 'asc' ? '\u2191' : '\u2193'}</span> : null}
+              </th>
+              </tr>
               </thead>
               <tbody>
-                { customers.map(customer => 
-                  <tr key={ customer.id }>
-                    <td><a href='#' onClick={ () => getCustomer(customer) }>{ customer.name }</a></td>
-                    <td>{ customer.employees }</td>
-                    <td>{ customer.size }</td>
-                  </tr>  
-                )}
+              { [...customers].sort((a, b) => {
+                  const order = sortOrder === 'asc' ? 1 : -1
+                  if (sortCriteria) {
+                    const aValue = sortCriteria === 'size' ? mapSizeToNumber(a[sortCriteria]) : a[sortCriteria]
+                    const bValue = sortCriteria === 'size' ? mapSizeToNumber(b[sortCriteria]) : b[sortCriteria]
+
+                    return sortCriteria === 'name'
+                      ? order * a[sortCriteria].localeCompare(b[sortCriteria])
+                      : order * (aValue - bValue)
+                  }
+                }).map(customer => (
+                  <tr key={customer.id}>
+                    <td><a href='#' onClick={() => getCustomer(customer)}>{customer.name}</a></td>
+                    <td>{customer.employees}</td>
+                    <td>{customer.size}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

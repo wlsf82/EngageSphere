@@ -50,6 +50,14 @@ thead {
   color: #094067;
 }
 
+th.active {
+  border: 3px solid #2b6a99; /* Border the active column */
+}
+
+th span {
+  margin-left: 5px; /* Add some spacing between the column name and the arrow */
+}
+
 a {
   color: #094067;
 }

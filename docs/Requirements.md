@@ -24,6 +24,12 @@ This screen presents the list of all registered customers. For each customer, th
 - **# of Employees**
 - **Size**: if **# of Employees** is less than or equal 100, size is **Small**; if greater than 100 and less than or equal 1000, **Medium**; otherwise, **Big**
 
+Each heading in the table is sortable. You can sort them in ascending or descending order.
+
+By default, it's sorted by Name in ascending order.
+
+When a column is being sorted by, it shows a blue border and an up or down arrow, depending on whether sort by is ascending or descending.
+
 When the user clicks on a customer name, the **Contacts Detail Screen** is shown.
 
 ### Contacts Detail Screen
