@@ -13,6 +13,8 @@ The tests should cover both the API and Graphical User Interface (GUI).
 ## GUI
 
 - Shows an error message when submitting the form without providing the name
+- Shows an error message when submitting the form with name as an empty space (or spaces)
+- Shows an error message when submitting the form with name as a number (e.g., 1)
 - Typing a name and submitting the form directs the user to the customer's list
 - Typing a name and submitting the form shows a greeting and a table with the headers "Name", "Number of employees", and "Size"
 - Shows the right customer's size based on the number of employees
