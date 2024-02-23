@@ -20,12 +20,12 @@ const CustomerApp = () => {
   }
 
   async function getCustomers() {
-    if(!nameInputRef.current.value){
-      setError(true)
+    if (!/[a-zA-Z]/.test(nameInputRef.current.value)) {
+      setError(true);
       setTimeout(() => {
-        setError(false)
-      }, 3000)
-      return nameInputRef.current.focus()
+        setError(false);
+      }, 3000);
+      return nameInputRef.current.focus();
     }
 
     try {
@@ -82,7 +82,7 @@ const CustomerApp = () => {
       { !name &&
         <div className="form-container">
           <div className={`error ${error ? 'visible' : ''}`}>
-            <span>Name is required!</span>
+            <span>A valid name is required!</span>
           </div>
           <p>Please provide your name:</p>
           <div className="input-container">

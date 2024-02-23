@@ -14,7 +14,7 @@ The Welcome Screen presents the user to a form where he/she can be identified. T
 - A **text field** where the user will input his/her name; and
 - A **Submit** button;
 
-When the user fills in his/her name and click the button, the **Customer List Screen** is presented. If the user clicks the button leaving the text field blank, an error message is presented for three seconds with the text **Name is required!**
+When the user fills in his/her name and click the button, the **Customer List Screen** is presented. If the user clicks the button leaving the text field blank, entering emtpy spaces, or only numbers, an error message is presented for three seconds with the text **A valid name is required!**
 
 ### Customer List Screen
 
