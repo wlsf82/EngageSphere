@@ -21,8 +21,8 @@ When the user fills in his/her name and click the button, the **Customer List Sc
 This screen presents the list of all registered customers. For each customer, the following info is shown:
 
 - **Name**
-- **# of Employees**
-- **Size**: if **# of Employees** is less than or equal 100, size is **Small**; if greater than 100 and less than or equal 1000, **Medium**; otherwise, **Big**
+- **Number of Employees**
+- **Size**: if **Number of Employees** is less than or equal 100, size is **Small**; if greater than 100 and less than or equal 1000, **Medium**; otherwise, **Big**
 
 Each heading in the table is sortable. You can sort them in ascending or descending order.
 
@@ -34,7 +34,7 @@ When the user clicks on a customer name, the **Contacts Detail Screen** is shown
 
 ### Contacts Detail Screen
 
-This screen shows the customers detailed info (Name, # of Employees, and Size) and also the name and e-mail of the person in the company to be contacted.
+This screen shows the customers detailed info (Name, Number of Employees, and Size) and also the name and e-mail of the person in the company to be contacted.
 
 When a customer doesn't have contact info, the message **No contact info available** should be presented.
 
@@ -78,4 +78,4 @@ The app backend offers 1 endpoint:
 **Notes:**
 
 - the **contactInfo** object is not returned when the customer doesn't have contact information in our database; and
-- customer **size** is: **Small**, when **# of employees** is <= 100; **Medium** when it is <= 1000; **Big** otherwise.
+- customer **size** is: **Small**, when **Number of employees** is <= 100; **Medium** when it is <= 1000; **Big** otherwise.

@@ -14,14 +14,14 @@ The tests should cover both the API and Graphical User Interface (GUI).
 
 - Shows an error message when submitting the form without providing the name
 - Typing a name and submitting the form directs the user to the customer's list
-- Typing a name and submitting the form shows a greeting and a table with the headers "Name", "# of employees", and "Size"
+- Typing a name and submitting the form shows a greeting and a table with the headers "Name", "Number of employees", and "Size"
 - Shows the right customer's size based on the number of employees
 - Shows the contact info of a specific customer
 - Shows "No contact info available" for a customer without contact info
 - Goes back to the customer's list when clicking the "Back to the list" button
 - Sorts by Name in ascending order by default
 - Sorts by Name in descending order
-- Sorts by # of employees in ascending
-- Sorts by # of employees in descending order
+- Sorts by Number of employees in ascending
+- Sorts by Number of employees in descending order
 - Sorts by Size in ascending
 - Sorts by Size in descending order

@@ -75,25 +75,39 @@ const CustomerApp = () => {
   }
 
   return (
-    <div>
-      {
-        error &&
-        <div className='error'>
-          <span>Name is required!</span>
-        </div>
-      }
+    <div className="container">
+      <div className="header-container">
+        <h1>EngageSphere</h1>
+      </div>
       { !name &&
-        <div>
+        <div className="form-container">
+          <div className={`error ${error ? 'visible' : ''}`}>
+            <span>Name is required!</span>
+          </div>
           <p>Please provide your name:</p>
-          <input autoFocus type='text' id='name' data-testid='name' ref={ nameInputRef } />
-          <input type='button' value='Submit' data-testid='submit-btn' onClick={ getCustomers }/>
+          <div className="input-container">
+            <input
+              autoFocus
+              type="text"
+              id="name"
+              data-testid="name"
+              ref={nameInputRef}
+            />
+            <input
+              type="button"
+              value="Submit"
+              data-testid="submit-btn"
+              onClick={getCustomers}
+            />
+          </div>
         </div>
       }
       { name && 
-        <div>
-          <p>Hi <b>{ name }</b>. It is now <b>{ timestamp }</b> and here is our customer list.</p>
+        <div className="table-container">
+          <p>Hi <b>{ name }</b>. It is now <b>{ timestamp }</b>.</p>
           { !customer &&
           <div>
+            <p>Below is our customer list.</p>
             <p>Click on each of them to view their contact details.</p>
             <table border='1'>
             <thead>
@@ -102,7 +116,7 @@ const CustomerApp = () => {
                 Name {sortCriteria === 'name' && sortOrder === 'asc' ? <span>&uarr;</span> : sortCriteria === 'name' && sortOrder === 'desc' ? <span>&darr;</span> : null}
               </th>
               <th onClick={() => sortCustomers('employees')} className={sortCriteria === 'employees' ? 'active' : ''}>
-                # of employees {sortCriteria === 'employees' ? <span>{sortOrder === 'asc' ? '\u2191' : '\u2193'}</span> : null}
+                Number of employees {sortCriteria === 'employees' ? <span>{sortOrder === 'asc' ? '\u2191' : '\u2193'}</span> : null}
               </th>
               <th onClick={() => sortCustomers('size')} className={sortCriteria === 'size' ? 'active' : ''}>
                 Size {sortCriteria === 'size' ? <span>{sortOrder === 'asc' ? '\u2191' : '\u2193'}</span> : null}
@@ -132,11 +146,10 @@ const CustomerApp = () => {
           </div>
           }
           { customer &&
-            <div>
-              <hr></hr>
+            <div className='customer-details'>
               <p><b><em>Customer Details</em></b></p>
               <p><b>Name:</b> { customer.name }</p>
-              <p><b># of Employees:</b> { customer.employees }</p>
+              <p><b>Number of Employees:</b> { customer.employees }</p>
               <p><b>Size:</b> { customer.size }</p>
               { customer.contactInfo ?
                 <p><b>Contact:</b> {customer.contactInfo.name} ({ customer.contactInfo.email })</p> :
@@ -153,7 +166,6 @@ const CustomerApp = () => {
 
 const App = () => (
   <div>
-    <h1>EngageSphere</h1>
     <CustomerApp/>
   </div>
 )
