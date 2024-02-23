@@ -21,7 +21,7 @@ The tests should cover both the API and Graphical User Interface (GUI).
 - Goes back to the customer's list when clicking the "Back to the list" button
 - Sorts by Name in ascending order by default
 - Sorts by Name in descending order
-- Sorts by Number of employees in ascending
+- Sorts by Number of employees in ascending order
 - Sorts by Number of employees in descending order
-- Sorts by Size in ascending
+- Sorts by Size in ascending order
 - Sorts by Size in descending order
