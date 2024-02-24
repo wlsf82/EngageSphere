@@ -30,9 +30,9 @@ h1 {
 }
 
 .customer-details {
-  max-width: 25%; /* Ensures the container is not too wide on larger screens */
-  width: 100%; /* Ensures the container width is responsive */
-  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  max-width: 25%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .table-container,
@@ -47,8 +47,8 @@ h1 {
 
 .button-container {
   display: flex;
-  justify-content: center; /* Centers the button horizontally */
-  margin-top: 20px; /* Adds some space above the button */
+  justify-content: center;
+  margin-top: 20px;
 }
 
 input[type="text"] {
@@ -75,7 +75,7 @@ input[type="button"],
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  margin: 10px 0; /* Adjusted for spacing */
+  margin: 10px 0;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -90,7 +90,7 @@ table {
   table-layout: fixed;
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; /* Rounded corners for the table */
+  border-radius: 8px;
 }
 
 th, td {
@@ -116,7 +116,7 @@ tr:hover {
   align-items: center;
   margin-top: 20px;
   padding: 10px 0;
-  border-radius: 8px; /* Rounded corners for pagination */
+  border-radius: 8px;
 }
 
 .pagination button {
@@ -126,7 +126,7 @@ tr:hover {
   padding: 5px 8px;
   margin: 0 5px;
   font-size: 0.9rem;
-  border-radius: 5px; /* Rounded corners for pagination buttons */
+  border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -164,17 +164,16 @@ tr:hover {
   }
 
   .customer-details {
-    padding: 15px; /* Slightly reduce padding on smaller screens */
-    max-width: 90%; /* Allows the container to fill the screen width */
+    padding: 15px;
+    max-width: 90%;
   }
 
   .button-container button {
-    padding: 8px 16px; /* Adjust padding for a better fit on mobile */
+    padding: 8px 16px;
   }
 
-  /* Adjust font sizes for readability on smaller screens */
   .customer-details p, .customer-details h2 {
-    font-size: 14px; /* Adjust based on your preference */
+    font-size: 14px;
   }
 
   input[type="text"] {
