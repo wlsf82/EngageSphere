@@ -17,7 +17,8 @@ When sending a POST request to the `/customers` endpoint:
 - Shows the default greeting (i.e., Hi there! ...)
 - Shows a customized greeting (e.g., Hi Joe! ...)
 - Shows a list of customers when there's data in the database
-- Shows the image of an empty box and the text "No customers available." when there are not customers in the database
+- Shows the image of an empty box and the text "No customers available." when there are no customers in the database
+- Disables the text input field when there are no customers in the database
 - Disables the text input field when in the customer details page
 - Shows the contact info of a specific customer
 - Shows "No contact info available" for a customer without contact info
