@@ -28,7 +28,7 @@ When changing the sorting column, it defaulcts to the descending order.
 
 There's also pagination, where the default number of customers per page is ten.
 
-When the user clicks on a customer name, the **Contact details Screen** is shown.
+When the user clicks on a customer name, the **Contact details screen** is shown.
 
 ### Contact details screen
 
