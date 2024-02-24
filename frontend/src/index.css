@@ -138,6 +138,10 @@ tr:hover {
   cursor: not-allowed;
 }
 
+.no-customers-available-text {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   th, td {
     padding: 10px;

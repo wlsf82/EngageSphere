@@ -102,38 +102,54 @@ const CustomerApp = () => {
         </div>
       ) : (
         <div data-testid="table" className="table-container">
-          <p>Hi <b>{name ? name : 'there'}</b>! It is now <b>{timestamp}</b>.</p>
-          <div>
-            <p>Below is our customer list.</p>
-            <p>Click on each of them to view their contact details.</p>
-            <table border="1">
-              <thead>
-                <tr>
-                  <th>Company name</th>
-                  <th onClick={() => sortCustomers('employees')}>
-                    Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
-                  </th>
-                  <th onClick={() => sortCustomers('size')}>
-                    Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {sortedCustomers.map((customer) => (
-                  <tr key={customer.id} onClick={() => setCustomer(customer)}>
-                    <td>{customer.name}</td>
-                    <td>{customer.employees}</td>
-                    <td>{customer.size}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <div data-testid="pagination" className="pagination">
-              <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>Prev</button>
-              <span>Page {currentPage} of {paginationInfo.totalPages}</span>
-              <button onClick={() => setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))} disabled={currentPage === paginationInfo.totalPages}>Next</button>
-            </div>
-          </div>
+          {customers.length ? (
+            <>
+              <p>Hi <b>{name ? name : 'there'}</b>! It is now <b>{timestamp}</b>.</p>
+              <div>
+                <p>Below is our customer list.</p>
+                <p>Click on each of them to view their contact details.</p>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>Company name</th>
+                      <th onClick={() => sortCustomers('employees')}>
+                        Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
+                      </th>
+                      <th onClick={() => sortCustomers('size')}>
+                        Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sortedCustomers.map((customer) => (
+                      <tr key={customer.id} onClick={() => setCustomer(customer)}>
+                        <td>{customer.name}</td>
+                        <td>{customer.employees}</td>
+                        <td>{customer.size}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div data-testid="pagination" className="pagination">
+                  <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>Prev</button>
+                  <span>Page {currentPage} of {paginationInfo.totalPages}</span>
+                  <button onClick={() => setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))} disabled={currentPage === paginationInfo.totalPages}>Next</button>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-inbox">
+                  <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+                  <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                </svg>
+              </div>
+              <div class="no-customers-available-text">
+                <span>No customers available.</span>
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>
