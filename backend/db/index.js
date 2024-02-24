@@ -20,7 +20,7 @@ module.exports = {
     return {
       id: initialId++,
       name: faker.company.name(),
-      employees: Math.floor(Math.random() * 10000) + 1,
+      employees: Math.floor(Math.random() * 5000) + 1,
       contactInfo: randomlyGenContactInfo(),
     }
   })
