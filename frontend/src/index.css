@@ -30,7 +30,7 @@ h1 {
 }
 
 .customer-details {
-  max-width: 22%; /* Ensures the container is not too wide on larger screens */
+  max-width: 25%; /* Ensures the container is not too wide on larger screens */
   width: 100%; /* Ensures the container width is responsive */
   box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }

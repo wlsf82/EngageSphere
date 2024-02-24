@@ -89,13 +89,13 @@ const CustomerApp = () => {
       {customer ? (
         <div className="customer-details">
           <h2>Customer Details</h2>
-          <p><strong>Name:</strong> {customer.name}</p>
-          <p><strong>Number of Employees:</strong> {customer.employees}</p>
+          <p><strong>Company name:</strong> {customer.name}</p>
+          <p><strong>Number of employees:</strong> {customer.employees}</p>
           <p><strong>Size:</strong> {customer.size}</p>
           {customer.contactInfo ? (
             <>
-              <p><strong>Contact Name:</strong> {customer.contactInfo.name}</p>
-              <p><strong>Contact Email:</strong> {customer.contactInfo.email}</p>
+              <p><strong>Contact name:</strong> {customer.contactInfo.name}</p>
+              <p><strong>Contact email:</strong> {customer.contactInfo.email}</p>
             </>
           ) : (
             <p>No contact info available</p>
@@ -113,7 +113,7 @@ const CustomerApp = () => {
             <table border="1">
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Company name</th>
                   <th onClick={() => sortCustomers('employees')}>
                     Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
                   </th>
