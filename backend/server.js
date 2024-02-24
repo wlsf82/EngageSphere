@@ -27,7 +27,6 @@ app.post('/customers', (req, res) => {
   })
 
   const response = {
-    timestamp: (new Date()).toDateString(),
     customers: paginatedCustomers,
     pageInfo: {
       currentPage: page,
