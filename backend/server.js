@@ -18,15 +18,25 @@ const getSize = (customer) =>
 
 
 app.post('/', (req, res) => {
-  const { name } = req.body
+  const { page = 1, limit = 10 } = req.body // Defaulting page to 1 and limit to 10 if not provided
+  const startIndex = (page - 1) * limit
+  const endIndex = page * limit
+
+  const paginatedCustomers = database.customers.slice(startIndex, endIndex).map(customer => {
+    customer.size = getSize(customer)
+    return customer
+  })
+
   const response = {
-    name, 
     timestamp: (new Date()).toDateString(),
-    customers: database.customers.map(customer => {
-      customer.size = getSize(customer)
-      return customer
-    })
+    customers: paginatedCustomers,
+    pageInfo: {
+      currentPage: page,
+      totalPages: Math.ceil(database.customers.length / limit),
+      totalCustomers: database.customers.length,
+    }
   }
+
   res.set('Access-Control-Allow-Origin', '*')
   return res.json(response)
 })
