@@ -4,7 +4,10 @@
   "description": "Express backend",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "start:empty": "ENGAGESPHERE_NUMBER_OF_CUSTOMERS=0 node server.js",
+    "start:with:ten:customers": "ENGAGESPHERE_NUMBER_OF_CUSTOMERS=10 node server.js",
+    "start:with:twenty:customers": "ENGAGESPHERE_NUMBER_OF_CUSTOMERS=20 node server.js"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",

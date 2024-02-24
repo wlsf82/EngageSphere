@@ -12,7 +12,7 @@ const randomlyGenContactInfo = () => {
   return null
 }
 
-const numberOfCustomers = Math.floor(Math.random() * 150) + 1
+const numberOfCustomers = process.env.ENGAGESPHERE_NUMBER_OF_CUSTOMERS || 50
 let initialId = 1
 
 module.exports = {
