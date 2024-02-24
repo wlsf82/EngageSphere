@@ -1,172 +1,152 @@
-import { useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
-const serverPort = 3001 
+const serverPort = 3001
 const serverURL = `http://localhost:${serverPort}/`
 
 const CustomerApp = () => {
-  const [name, setName] = useState(null)
+  const [name, setName] = useState('')
   const [timestamp, setTimestamp] = useState(null)
-  const [customers, setCustomers] = useState(null)
+  const [customers, setCustomers] = useState([])
   const [customer, setCustomer] = useState(null)
-  const [error, setError] = useState(null)
+  const [paginationInfo, setPaginationInfo] = useState({ currentPage: 1, totalPages: 1 })
 
-  const [sortCriteria, setSortCriteria] = useState('name')
-  const [sortOrder, setSortOrder] = useState('asc') // 'asc' for ascending, 'desc' for descending
+  const [sortCriteria, setSortCriteria] = useState('size')
+  const [sortOrder, setSortOrder] = useState('desc')
+  const [currentPage, setCurrentPage] = useState(1)
 
   const nameInputRef = useRef(null)
 
-  function getCustomer(customer) {
+  useEffect(() => {
+    getCustomers(currentPage)
+  }, [currentPage])
+
+  const selectCustomer = (customer) => {
     setCustomer(customer)
   }
 
-  async function getCustomers() {
-    if (!/[a-zA-Z]/.test(nameInputRef.current.value)) {
-      setError(true);
-      setTimeout(() => {
-        setError(false);
-      }, 3000);
-      return nameInputRef.current.focus();
-    }
-
+  async function getCustomers(page) {
     try {
-      setError(false)
-
       const response = await fetch(serverURL, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name: nameInputRef.current.value })
+        body: JSON.stringify({ page, limit: 10 })
       })
       const jsonResponse = await response.json()
-      const { name, timestamp, customers } = jsonResponse
+      const { timestamp, customers, pageInfo } = jsonResponse
 
-      setName(name)
       setTimestamp(timestamp)
       setCustomers(customers)
+      setPaginationInfo({ currentPage: pageInfo.currentPage, totalPages: pageInfo.totalPages })
     } catch (error) {
       console.error(error)
     }
   }
 
-  function sortCustomers(criteria) {
+  const sortCustomers = (criteria) => {
     if (sortCriteria === criteria) {
-      // If the same criteria is clicked again, reverse the order
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
     } else {
-      // If a new criteria is clicked, set the new criteria and default to ascending order
-      setSortCriteria(criteria)
-      setSortOrder('asc')
+      setSortOrder('desc')
     }
+    setSortCriteria(criteria)
   }
 
-  function mapSizeToNumber(size) {
-    switch (size.toLowerCase()) {
-      case 'small':
-        return 1
-      case 'medium':
-        return 2
-      case 'big':
-        return 3
-      default:
-        return 0 // Default to 0 for unknown sizes
+  const sortedCustomers = [...customers].sort((a, b) => {
+    const order = sortOrder === 'asc' ? 1 : -1
+    if (sortCriteria === 'size') {
+      const mapSizeToNumber = (size) => {
+        switch (size.toLowerCase()) {
+          case 'small': return 1
+          case 'medium': return 2
+          case 'big': return 3
+          default: return 0
+        }
+      }
+      return order * (mapSizeToNumber(a[sortCriteria]) - mapSizeToNumber(b[sortCriteria]))
     }
-  }
+    return order * (a[sortCriteria] - b[sortCriteria])
+  })
 
   return (
     <div className="container">
       <div className="header-container">
         <h1>EngageSphere</h1>
       </div>
-      { !name &&
-        <div className="form-container">
-          <div className={`error ${error ? 'visible' : ''}`}>
-            <span>A valid name is required!</span>
-          </div>
-          <p>Please provide your name:</p>
-          <div className="input-container">
-            <input
-              autoFocus
-              type="text"
-              id="name"
-              data-testid="name"
-              ref={nameInputRef}
-            />
-            <input
-              type="button"
-              value="Submit"
-              data-testid="submit-btn"
-              onClick={getCustomers}
-            />
+      <div className="input-container">
+        <input
+          autoFocus
+          type="text"
+          id="name"
+          data-testid="name"
+          ref={nameInputRef}
+          placeholder="Enter your name"
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      {customer ? (
+        <div className="customer-details">
+          <h2>Customer Details</h2>
+          <p><strong>Name:</strong> {customer.name}</p>
+          <p><strong>Number of Employees:</strong> {customer.employees}</p>
+          <p><strong>Size:</strong> {customer.size}</p>
+          {customer.contactInfo ? (
+            <>
+              <p><strong>Contact Name:</strong> {customer.contactInfo.name}</p>
+              <p><strong>Contact Email:</strong> {customer.contactInfo.email}</p>
+            </>
+          ) : (
+            <p>No contact info available</p>
+          )}
+          <div className="button-container">
+            <button onClick={() => setCustomer(null)}>Back to List</button>
           </div>
         </div>
-      }
-      { name && 
-        <div className="table-container">
-          <p>Hi <b>{ name }</b>. It is now <b>{ timestamp }</b>.</p>
-          { !customer &&
+      ) : (
+        <div data-testid="table" className="table-container">
+          <p>Hi <b>{name ? name : 'there'}</b>. It is now <b>{timestamp}</b>.</p>
           <div>
             <p>Below is our customer list.</p>
             <p>Click on each of them to view their contact details.</p>
-            <table border='1'>
-            <thead>
-            <tr>
-              <th onClick={() => sortCustomers('name')} className={sortCriteria === 'name' ? 'active' : ''}>
-                Name {sortCriteria === 'name' && sortOrder === 'asc' ? <span>&uarr;</span> : sortCriteria === 'name' && sortOrder === 'desc' ? <span>&darr;</span> : null}
-              </th>
-              <th onClick={() => sortCustomers('employees')} className={sortCriteria === 'employees' ? 'active' : ''}>
-                Number of employees {sortCriteria === 'employees' ? <span>{sortOrder === 'asc' ? '\u2191' : '\u2193'}</span> : null}
-              </th>
-              <th onClick={() => sortCustomers('size')} className={sortCriteria === 'size' ? 'active' : ''}>
-                Size {sortCriteria === 'size' ? <span>{sortOrder === 'asc' ? '\u2191' : '\u2193'}</span> : null}
-              </th>
-              </tr>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th onClick={() => sortCustomers('employees')}>
+                    Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
+                  </th>
+                  <th onClick={() => sortCustomers('size')}>
+                    Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
+                  </th>
+                </tr>
               </thead>
               <tbody>
-              { [...customers].sort((a, b) => {
-                  const order = sortOrder === 'asc' ? 1 : -1
-                  if (sortCriteria) {
-                    const aValue = sortCriteria === 'size' ? mapSizeToNumber(a[sortCriteria]) : a[sortCriteria]
-                    const bValue = sortCriteria === 'size' ? mapSizeToNumber(b[sortCriteria]) : b[sortCriteria]
-
-                    return sortCriteria === 'name'
-                      ? order * a[sortCriteria].localeCompare(b[sortCriteria])
-                      : order * (aValue - bValue)
-                  }
-                }).map(customer => (
-                  <tr key={customer.id}>
-                    <td><a href='#' onClick={() => getCustomer(customer)}>{customer.name}</a></td>
+                {sortedCustomers.map((customer) => (
+                  <tr key={customer.id} onClick={() => selectCustomer(customer)}>
+                    <td>{customer.name}</td>
                     <td>{customer.employees}</td>
                     <td>{customer.size}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-          </div>
-          }
-          { customer &&
-            <div className='customer-details'>
-              <p><b><em>Customer Details</em></b></p>
-              <p><b>Name:</b> { customer.name }</p>
-              <p><b>Number of Employees:</b> { customer.employees }</p>
-              <p><b>Size:</b> { customer.size }</p>
-              { customer.contactInfo ?
-                <p><b>Contact:</b> {customer.contactInfo.name} ({ customer.contactInfo.email })</p> :
-                <p>No contact info available</p>
-              }
-              <input type='button' value='Back to the list' onClick={ () => setCustomer(null) }/>
+            <div data-testid="pagination" className="pagination">
+              <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>Prev</button>
+              <span>Page {currentPage} of {paginationInfo.totalPages}</span>
+              <button onClick={() => setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))} disabled={currentPage === paginationInfo.totalPages}>Next</button>
             </div>
-          }
+          </div>
         </div>
-      }
+      )}
     </div>
   )
 }
 
 const App = () => (
   <div>
-    <CustomerApp/>
+    <CustomerApp />
   </div>
 )
 
