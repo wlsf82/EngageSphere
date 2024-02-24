@@ -1,20 +1,18 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
 const serverPort = 3001
 const serverURL = `http://localhost:${serverPort}`
 
 const CustomerApp = () => {
   const [name, setName] = useState('')
-  const [timestamp, setTimestamp] = useState(null)
   const [customers, setCustomers] = useState([])
   const [customer, setCustomer] = useState(null)
+
   const [paginationInfo, setPaginationInfo] = useState({ currentPage: 1, totalPages: 1 })
+  const [currentPage, setCurrentPage] = useState(1)
 
   const [sortCriteria, setSortCriteria] = useState('size')
   const [sortOrder, setSortOrder] = useState('desc')
-  const [currentPage, setCurrentPage] = useState(1)
-
-  const nameInputRef = useRef(null)
 
   useEffect(() => {
     getCustomers(currentPage)
@@ -31,9 +29,8 @@ const CustomerApp = () => {
         body: JSON.stringify({ page, limit: 10 })
       })
       const jsonResponse = await response.json()
-      const { timestamp, customers, pageInfo } = jsonResponse
+      const { customers, pageInfo } = jsonResponse
 
-      setTimestamp(timestamp)
       setCustomers(customers)
       setPaginationInfo({ currentPage: pageInfo.currentPage, totalPages: pageInfo.totalPages })
     } catch (error) {
@@ -77,7 +74,6 @@ const CustomerApp = () => {
           type="text"
           id="name"
           data-testid="name"
-          ref={nameInputRef}
           placeholder="Enter your name"
           onChange={(e) => setName(e.target.value)}
         />
