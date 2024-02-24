@@ -62,6 +62,10 @@ input[type="text"] {
   font-size: 1rem;
 }
 
+input[type="text"]:disabled {
+  background-color: #ccc;
+}
+
 input[type="button"],
 .customer-details button {
   background-color: #3da9fc;

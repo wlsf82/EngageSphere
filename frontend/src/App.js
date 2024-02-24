@@ -80,6 +80,7 @@ const CustomerApp = () => {
           data-testid="name"
           placeholder="Enter your name"
           onChange={(e) => setName(e.target.value)}
+          disabled={customer ? true : false}
         />
       </div>
       {customer ? (
