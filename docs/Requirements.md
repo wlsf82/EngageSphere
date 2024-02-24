@@ -4,78 +4,76 @@ The **EngageSphere** web application is aimed at our salespeople so they can acc
 
 ## User-Interface
 
-Its front-end is composed by the following screens.
+As soon as the user access the application, it can type his/her name, which will show in the greeting (e.g., Hi Joe! It is now Sat Feb 24 2024.)
 
-### Welcome Screen
+If no name is typed, a default greeting is shown instead (e.g., Hi there! ...)
 
-The Welcome Screen presents the user to a form where he/she can be identified. The form consists of:
+### Customers list screen
 
-- **Instructions** text: "Please provide your name:";
-- A **text field** where the user will input his/her name; and
-- A **Submit** button;
+This screen presents the list of all registered customers in the database. For each customer, the following info is displayed:
 
-When the user fills in his/her name and click the button, the **Customer List Screen** is presented. If the user clicks the button leaving the text field blank, entering emtpy spaces, or only numbers, an error message is presented for three seconds with the text **A valid name is required!**
+- **Company name**
+- **Number of employees**
+- **Size**: if **Number of employees** is less than or equal 100, size is **Small**; if greater than 100 and less than or equal 1000, **Medium**; otherwise, **Big**
 
-### Customer List Screen
+The headings for **Number of employees** and **Size** are sortable. You can sort them in ascending or descending order.
 
-This screen presents the list of all registered customers. For each customer, the following info is shown:
+By default, it's sorted by **Size** in descending order.
 
-- **Name**
-- **Number of Employees**
-- **Size**: if **Number of Employees** is less than or equal 100, size is **Small**; if greater than 100 and less than or equal 1000, **Medium**; otherwise, **Big**
+When a column is being sorted by, it shows an up (&uarr;) or down arrow (&darr;), depending on whether sort by is ascending or descending.
 
-Each heading in the table is sortable. You can sort them in ascending or descending order.
+When changing the sorting column, it defaulcts to the descending order.
 
-By default, it's sorted by Name in ascending order.
+There's also pagination, where the default number of customers per page is ten.
 
-When a column is being sorted by, it shows a blue border and an up or down arrow, depending on whether sort by is ascending or descending.
+When the user clicks on a customer name, the **Contacts detail Screen** is shown.
 
-When the user clicks on a customer name, the **Contacts Detail Screen** is shown.
+### Contacts detail screen
 
-### Contacts Detail Screen
+This screen shows the customers detailed info (**Company name**, **Number of employees**, and **Size**), besides the **Contact name** and **Contact e-mail** of the person to be contacted.
 
-This screen shows the customers detailed info (Name, Number of Employees, and Size) and also the name and e-mail of the person in the company to be contacted.
+When a customer doesn't have contact info, a paragraph is shown with the following text: **No contact info available**.
 
-When a customer doesn't have contact info, the message **No contact info available** should be presented.
-
-A **Back to the list** button is also presented. When it is clicked, the user is taken back to **Customer List Screen**.
+A **Back to the list** button is also presented, and when clicked, the user is taken back to **Customers list screen**.
 
 ## API
 
-The app backend offers 1 endpoint:
+The app backend offers one endpoint:
 
-### POST /
+### POST /customers
 
-**Request Body**
-
-```
-{"name":"<name of the user>"}
-```
-
-**Response Body**
+#### Request Body
 
 ```json
 {
-    "name":"<name of the user>",
-    "timestamp":"<timestamp of the request>",
-    "customers":[
+    "page": "<current page>",
+    "limit": "<number of customers to be shown per page>"
+}
+```
+
+#### Response Body
+
+```json
+{
+    "customers": [
         {
-            "id":<customer's id>,
-            "name":"<customer's name>",
-            "employees":<customer's number of employees>,
-            "contactInfo":
-            {
-                "name":"<contact person's name>",
-                "email":"<contact person's email>"
-            },
-            "size":"<company size>"
+            "id": 1,
+            "name": "Thompson, Zboncak and Mueller",
+            "employees": 1125,
+            "contactInfo": null,
+            "size": "Big"
         },
         ...
-    ]
+    ],
+    "pageInfo": {
+        "currentPage": 1,
+        "totalPages": 20,
+        "totalCustomers": 199
+    }
 }
 ```
 
 **Notes:**
 
-- the **contactInfo** object is not returned when the customer doesn't have contact information in our database; and
-- customer **size** is: **Small**, when **Number of employees** is <= 100; **Medium** when it is <= 1000; **Big** otherwise.
+- The **contactInfo** object is not returned when the customer doesn't have contact information in the database; and
+- Customer **size** is: **Small**, when **Number of employees** is less than or equal to 100; **Medium** when it is greater than 100 and less than or equal to 1000; **Big** otherwise.
