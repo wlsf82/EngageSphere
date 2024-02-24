@@ -26,9 +26,11 @@ When changing the sorting column, it defaulcts to the descending order.
 
 There's also pagination, where the default number of customers per page is ten.
 
-When the user clicks on a customer name, the **Contacts detail Screen** is shown.
+When the user clicks on a customer name, the **Contact details Screen** is shown.
 
-### Contacts detail screen
+### Contact details screen
+
+When in the Contact details screen, the text input field gets disabled.
 
 This screen shows the customers detailed info (**Company name**, **Number of employees**, and **Size**), besides the **Contact name** and **Contact e-mail** of the person to be contacted.
 
