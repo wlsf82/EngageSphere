@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 
 const serverPort = 3001
-const serverURL = `http://localhost:${serverPort}/`
+const serverURL = `http://localhost:${serverPort}`
 
 const CustomerApp = () => {
   const [name, setName] = useState('')
@@ -26,7 +26,7 @@ const CustomerApp = () => {
 
   async function getCustomers(page) {
     try {
-      const response = await fetch(serverURL, {
+      const response = await fetch(`${serverURL}/customers`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
