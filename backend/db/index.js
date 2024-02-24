@@ -12,10 +12,11 @@ const randomlyGenContactInfo = () => {
   return null
 }
 
+const numberOfCustomers = Math.floor(Math.random() * 150) + 1
 let initialId = 1
 
 module.exports = {
-  customers: times(101, () => {
+  customers: times(numberOfCustomers, () => {
     return {
       id: initialId++,
       name: faker.company.name(),
