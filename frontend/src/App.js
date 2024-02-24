@@ -20,10 +20,6 @@ const CustomerApp = () => {
     getCustomers(currentPage)
   }, [currentPage])
 
-  const selectCustomer = (customer) => {
-    setCustomer(customer)
-  }
-
   async function getCustomers(page) {
     try {
       const response = await fetch(`${serverURL}/customers`, {
@@ -124,7 +120,7 @@ const CustomerApp = () => {
               </thead>
               <tbody>
                 {sortedCustomers.map((customer) => (
-                  <tr key={customer.id} onClick={() => selectCustomer(customer)}>
+                  <tr key={customer.id} onClick={() => setCustomer(customer)}>
                     <td>{customer.name}</td>
                     <td>{customer.employees}</td>
                     <td>{customer.size}</td>
