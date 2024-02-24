@@ -22,7 +22,7 @@ When sending a POST request to the `/customers` endpoint:
 - Disables the text input field when in the customer details page
 - Shows the contact info of a specific customer
 - Shows "No contact info available" for a customer without contact info
-- Goes back to the customers list when clicking the "Back to the list" button
+- Goes back to the customers list when clicking the "Back" button
 - Sorts by Number of employees in ascending order
 - Sorts by Number of employees in descending order
 - Sorts by Size in ascending order

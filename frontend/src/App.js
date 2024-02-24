@@ -98,7 +98,7 @@ const CustomerApp = () => {
             <p>No contact info available</p>
           )}
           <div className="button-container">
-            <button onClick={() => setCustomer(null)}>Back to List</button>
+            <button onClick={() => setCustomer(null)}>Back</button>
           </div>
         </div>
       ) : (

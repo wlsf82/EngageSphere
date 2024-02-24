@@ -38,7 +38,7 @@ This screen shows the customers detailed info (**Company name**, **Number of emp
 
 When a customer doesn't have contact info, a paragraph is shown with the following text: **No contact info available**.
 
-A **Back to the list** button is also presented, and when clicked, the user is taken back to **Customers list screen**.
+A **Back** button is also presented, and when clicked, the user is taken back to **Customers list screen**.
 
 ## API
 
