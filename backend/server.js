@@ -17,7 +17,7 @@ const getSize = (customer) =>
   customer.employees <= 100 ? 'Small' : customer.employees <= 1000 ? 'Medium' : 'Big'
 
 
-app.post('/', (req, res) => {
+app.post('/customers', (req, res) => {
   const { page = 1, limit = 10 } = req.body // Defaulting page to 1 and limit to 10 if not provided
   const startIndex = (page - 1) * limit
   const endIndex = page * limit
