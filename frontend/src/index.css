@@ -134,7 +134,7 @@ tr:hover {
   cursor: pointer;
   border: 1px solid #3da9fc;
   padding: 5px 8px;
-  margin: 0 5px;
+  margin: 0 12px;
   font-size: 0.9rem;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
