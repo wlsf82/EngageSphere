@@ -4,7 +4,7 @@ The **EngageSphere** web application is aimed at our salespeople so they can acc
 
 ## User-Interface
 
-As soon as the user access the application, it can type his/her name, which will show in the greeting (e.g., Hi Joe! It is now Sat Feb 24 2024.)
+As soon as the user access the application, it can type his/her name, which will show in the greeting (i.e., Hi Joe! It is now Sat Feb 24 2024.)
 
 If no name is typed, a default greeting is shown instead (e.g., Hi there! ...)
 
