@@ -30,4 +30,4 @@ When sending a POST request to the `/customers` endpoint:
 - Disables the Prev pagination button when in the first page
 - Disables the Next pagination button when in the last page
 - Disables both the Prev and Next pagination buttons when there's only one page
-- Shows "Pages 1 of n" (where 'n' is the number of pages)
+- Shows "Page 1 of n" (where 'n' is the number of pages)
