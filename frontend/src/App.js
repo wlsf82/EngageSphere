@@ -14,6 +14,8 @@ const CustomerApp = () => {
   const [sortCriteria, setSortCriteria] = useState('size')
   const [sortOrder, setSortOrder] = useState('desc')
 
+  const [initialFetchDone, setInitialFetchDone] = useState(false)
+
   useEffect(() => {
     getCustomers(currentPage)
   }, [currentPage])
@@ -35,6 +37,8 @@ const CustomerApp = () => {
       setPaginationInfo({ currentPage: pageInfo.currentPage, totalPages: pageInfo.totalPages })
     } catch (error) {
       console.error(error)
+    } finally {
+      setInitialFetchDone(true)
     }
   }
 
@@ -98,7 +102,19 @@ const CustomerApp = () => {
         </div>
       ) : (
         <div data-testid="table" className="table-container">
-          {customers.length ? (
+          {initialFetchDone && !customers.length ? (
+            <>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-inbox">
+                  <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+                  <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                </svg>
+              </div>
+              <div className="no-customers-available-text">
+                <span>No customers available.</span>
+              </div>
+            </>
+          ) : customers.length > 0 ? (
             <>
               <p>Hi <b>{name ? name : 'there'}</b>! It is now <b>{(new Date()).toDateString()}</b>.</p>
               <div>
@@ -133,19 +149,7 @@ const CustomerApp = () => {
                 </div>
               </div>
             </>
-          ) : (
-            <>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-inbox">
-                  <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-                  <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
-                </svg>
-              </div>
-              <div className="no-customers-available-text">
-                <span>No customers available.</span>
-              </div>
-            </>
-          )}
+          ) : null}
         </div>
       )}
     </div>
