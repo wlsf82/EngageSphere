@@ -115,7 +115,7 @@ const CustomerApp = () => {
                 <span>No customers available.</span>
               </div>
             </>
-          ) : customers.length > 0 ? (
+          ) : customers.length ? (
             <>
               <p>Hi <b>{name ? name : 'there'}</b>! It is now <b>{(new Date()).toDateString()}</b>.</p>
               <div>
