@@ -98,7 +98,7 @@ const CustomerApp = () => {
     <div className="container">
       <div className="header-container">
         <h1>EngageSphere</h1>
-        <div class="theme-toggle-container">
+        <div className="theme-toggle-container">
           <button id="theme-toggle-button" onClick={toggleTheme} aria-labelledby="theme-toggle-label" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
             {theme === 'light' ? '☽' : '☀'}
           </button>
