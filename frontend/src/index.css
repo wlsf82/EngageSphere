@@ -152,6 +152,23 @@ tr:hover {
   cursor: not-allowed;
 }
 
+.pagination select {
+  padding: 5px 8px;
+  margin-left: 12px;
+  border: 1px solid #3da9fc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #094067;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination select:hover {
+  background-color: #3da9fc;
+  color: #ffffff;
+}
+
 .no-customers-available-text {
   text-align: center;
 }
@@ -197,5 +214,11 @@ tr:hover {
 
   .pagination {
     margin-top: 15px;
+  }
+
+  .pagination select {
+    margin-left: 8px;
+    padding: 4px 6px;
+    font-size: 0.8rem;
   }
 }

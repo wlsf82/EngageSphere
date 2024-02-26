@@ -8,7 +8,11 @@ const CustomerApp = () => {
   const [customers, setCustomers] = useState([])
   const [customer, setCustomer] = useState(null)
 
-  const [paginationInfo, setPaginationInfo] = useState({ currentPage: 1, totalPages: 1 })
+  const [paginationInfo, setPaginationInfo] = useState({
+    currentPage: 1,
+    totalPages: 1,
+    limit: 10,
+  })
   const [currentPage, setCurrentPage] = useState(1)
 
   const [sortCriteria, setSortCriteria] = useState('size')
@@ -17,10 +21,10 @@ const CustomerApp = () => {
   const [initialFetchDone, setInitialFetchDone] = useState(false)
 
   useEffect(() => {
-    getCustomers(currentPage)
-  }, [currentPage])
+    getCustomers(currentPage, paginationInfo.limit)
+  }, [currentPage, paginationInfo.limit])
 
-  async function getCustomers(page) {
+  async function getCustomers(page, limit) {
     try {
       const response = await fetch(`${serverURL}/customers`, {
         method: 'POST',
@@ -28,13 +32,13 @@ const CustomerApp = () => {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ page, limit: 10 })
+        body: JSON.stringify({ page, limit })
       })
       const jsonResponse = await response.json()
       const { customers, pageInfo } = jsonResponse
 
       setCustomers(customers)
-      setPaginationInfo({ currentPage: pageInfo.currentPage, totalPages: pageInfo.totalPages })
+      setPaginationInfo(prevState => ({ ...prevState, currentPage: pageInfo.currentPage, totalPages: pageInfo.totalPages }))
     } catch (error) {
       console.error(error)
     } finally {
@@ -66,6 +70,12 @@ const CustomerApp = () => {
     }
     return order * (a[sortCriteria] - b[sortCriteria])
   })
+
+  const handleLimitChange = (e) => {
+    const newLimit = parseInt(e.target.value, 10)
+    setPaginationInfo(prevState => ({ ...prevState, limit: newLimit }))
+    setCurrentPage(1)
+  }
 
   return (
     <div className="container">
@@ -147,6 +157,12 @@ const CustomerApp = () => {
                   <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>Prev</button>
                   <span>Page {currentPage} of {paginationInfo.totalPages}</span>
                   <button onClick={() => setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))} disabled={currentPage === paginationInfo.totalPages}>Next</button>
+                  <select onChange={handleLimitChange} value={paginationInfo.limit} aria-label="Pagination limit">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                  </select>
                 </div>
               </div>
             </>
