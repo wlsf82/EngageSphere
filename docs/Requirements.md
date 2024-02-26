@@ -69,6 +69,16 @@ The app backend offers one endpoint:
             "contactInfo": null,
             "size": "Big"
         },
+        {
+            "id": 2,
+            "name": "Americas Inc.",
+            "employees": 100,
+            "contactInfo": {
+                "name": "John Smith",
+                "email": "jsmith@americasinc.com"
+            },
+            "size": "Small"
+        },
         ...
     ],
     "pageInfo": {
