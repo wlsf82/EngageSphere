@@ -26,7 +26,9 @@ When a column is being sorted by, it shows an up (&uarr;) or down arrow (&darr;)
 
 When changing the sorting column, it defaulcts to the descending order.
 
-There's also pagination, where the default number of customers per page is ten.
+There's also pagination, where the default number of customers per page is ten, and it's possible to set a different limit, where the options are 5, 10, 20, or 50.
+
+When changing the pagination limit (e.g., from 10 to 5), it resets to the page 1 to avoid a page out of bounds error. The idea is as follows. Let's say there are 10 pages, the pagination limit is set to 10, page 2 is being displayed, and the user sets the new pagination limit to 5. In such case, it resets to the page 1, and now, there are 20 pages.
 
 When the user clicks on a customer name, the **Contact details screen** is shown.
 
