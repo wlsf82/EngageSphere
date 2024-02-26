@@ -42,6 +42,10 @@ When a customer doesn't have contact info, a paragraph is shown with the followi
 
 A **Back** button is also presented, and when clicked, the user is taken back to **Customers list screen**.
 
+### Footer
+
+At the bottom of the page, there's a footer with the text "Copyright 2024 - Talking About Testing", and links to TAT's Udemy, Blog, and YouTube.
+
 ## API
 
 The app backend offers one endpoint:

@@ -34,3 +34,4 @@ When sending a POST request to the `/customers` endpoint:
 - Leaves both the Prev and Next pagination buttons enabled when in a middle page (e.g., Page 2 of 3)
 - Shows "Page 1 of n" (where 'n' is the number of pages)
 - Configures a new pagination limit (e.g., from 10 to 50)
+- Shows the footer and its links
