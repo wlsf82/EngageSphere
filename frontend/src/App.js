@@ -10,11 +10,11 @@ const CustomerApp = () => {
   const [customers, setCustomers] = useState([])
   const [customer, setCustomer] = useState(null)
 
-  const [paginationInfo, setPaginationInfo] = useState({
+  const [paginationInfo, setPaginationInfo] = useState(() => ({
     currentPage: 1,
     totalPages: 1,
-    limit: 10,
-  })
+    limit: parseInt(localStorage.getItem('paginationLimit'), 10) || 10,
+  }))
   const [currentPage, setCurrentPage] = useState(1)
 
   const [sortCriteria, setSortCriteria] = useState('size')
@@ -22,15 +22,20 @@ const CustomerApp = () => {
 
   const [initialFetchDone, setInitialFetchDone] = useState(false)
 
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
 
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
   }
 
   useEffect(() => {
+    localStorage.setItem('theme', theme)
     document.body.setAttribute('data-theme', theme)
   }, [theme])
+
+  useEffect(() => {
+    localStorage.setItem('paginationLimit', paginationInfo.limit.toString())
+  }, [paginationInfo.limit])
 
   useEffect(() => {
     getCustomers(currentPage, paginationInfo.limit)
