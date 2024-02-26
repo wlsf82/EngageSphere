@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import Footer from './components/Footer'
+
 const serverPort = 3001
 const serverURL = `http://localhost:${serverPort}`
 
@@ -176,6 +178,7 @@ const CustomerApp = () => {
 const App = () => (
   <div>
     <CustomerApp />
+    <Footer />
   </div>
 )
 

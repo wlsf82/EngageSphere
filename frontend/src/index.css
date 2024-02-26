@@ -14,6 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .header-container,
@@ -171,6 +172,29 @@ tr:hover {
 
 .no-customers-available-text {
   text-align: center;
+}
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 40px 0;
+  background-color: #2b6a99;
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer p {
+  margin-bottom: 30px;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
