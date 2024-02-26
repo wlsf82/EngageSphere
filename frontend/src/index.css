@@ -18,6 +18,7 @@
   --link-text-color: #ffffff;
   --link-hover-text-decoration: underline;
   --input-disabled-bg-color: #ccc;
+  --input-disabled-text-color: #444444;
   --button-hover-bg-color: #3072b3;
   --pagination-button-hover-bg-color: #3da9fc;
   --pagination-button-hover-text-color: #ffffff;
@@ -46,6 +47,7 @@
   --link-text-color: #ffffff;
   --link-hover-text-decoration: underline;
   --input-disabled-bg-color: #555555;
+  --input-disabled-text-color: #666666;
   --button-hover-bg-color: #ffffff;
   --button-hover-text-color: #101010;
   --pagination-button-hover-bg-color: #101010;
@@ -132,6 +134,7 @@ input[type="text"] {
 
 input[type="text"]:disabled {
   background-color: var(--input-disabled-bg-color);
+  color: var(--input-disabled-text-color);
 }
 
 input[type="button"],
