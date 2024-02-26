@@ -22,6 +22,16 @@ const CustomerApp = () => {
 
   const [initialFetchDone, setInitialFetchDone] = useState(false)
 
+  const [theme, setTheme] = useState('light')
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
+  }
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme)
+  }, [theme])
+
   useEffect(() => {
     getCustomers(currentPage, paginationInfo.limit)
   }, [currentPage, paginationInfo.limit])
@@ -83,6 +93,11 @@ const CustomerApp = () => {
     <div className="container">
       <div className="header-container">
         <h1>EngageSphere</h1>
+        <div class="theme-toggle-container">
+          <button id="theme-toggle-button" onClick={toggleTheme} aria-labelledby="theme-toggle-label" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+            {theme === 'light' ? '☽' : '☀'}
+          </button>
+        </div>
       </div>
       <div className="input-container">
         <input
