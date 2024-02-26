@@ -2,7 +2,7 @@
 
 The **EngageSphere** web application is aimed at our salespeople so they can access our customer's contact information.
 
-## User-Interface
+## Graphical User Interface
 
 As soon as the user access the application, it can type his/her name, which will show in the greeting (e.g., Hi Joe! It is now Sat Feb 24 2024.)
 
@@ -48,7 +48,7 @@ The app backend offers one endpoint:
 
 ### POST /customers
 
-#### Request Body
+#### Request body
 
 ```json
 {
@@ -57,7 +57,7 @@ The app backend offers one endpoint:
 }
 ```
 
-#### Response Body
+#### Response body
 
 ```json
 {
