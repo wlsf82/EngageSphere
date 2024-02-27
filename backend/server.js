@@ -18,6 +18,16 @@ const getSize = (customer) =>
 
 app.post('/customers', (req, res) => {
   const { page = 1, limit = 10, size = '' } = req.body
+  const validSizes = ['Small', 'Medium', 'Big', '']
+
+  if (page < 1 || limit < 1) {
+    return res.status(400).json({error: 'Invalid page or limit. Both must be positive numbers.'})
+  }
+
+  if (!validSizes.includes(size)) {
+    return res.status(400).json({ error: 'Unsupported size value. Supported values are Small, Medium, Big.' })
+  }
+
   const startIndex = (page - 1) * limit
   const endIndex = page * limit
 
