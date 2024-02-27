@@ -24,8 +24,15 @@ const CustomerApp = () => {
 
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
 
+  const [sizeFilter, setSizeFilter] = useState('')
+
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
+  }
+
+  const handleFilterChange = (e) => {
+    setSizeFilter(e.target.value)
+    setCurrentPage(1)
   }
 
   useEffect(() => {
@@ -38,10 +45,10 @@ const CustomerApp = () => {
   }, [paginationInfo.limit])
 
   useEffect(() => {
-    getCustomers(currentPage, paginationInfo.limit)
-  }, [currentPage, paginationInfo.limit])
+    getCustomers(currentPage, paginationInfo.limit, sizeFilter)
+  }, [currentPage, paginationInfo.limit, sizeFilter])
 
-  async function getCustomers(page, limit) {
+  async function getCustomers(page, limit, sizeFilter) {
     try {
       const response = await fetch(`${serverURL}/customers`, {
         method: 'POST',
@@ -49,7 +56,7 @@ const CustomerApp = () => {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ page, limit })
+        body: JSON.stringify({ page, limit, size: sizeFilter })
       })
       const jsonResponse = await response.json()
       const { customers, pageInfo } = jsonResponse
@@ -115,6 +122,19 @@ const CustomerApp = () => {
           disabled={customer || !customers.length ? true : false}
         />
       </div>
+      {!customer ? (
+        <div className="filter-container">
+        <label htmlFor="sizeFilter">Filter by Size:</label>
+        <select id="sizeFilter" value={sizeFilter} onChange={handleFilterChange}>
+          <option value="">All</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Big">Big</option>
+        </select>
+      </div>
+      ) : (
+        null
+      )}
       {customer ? (
         <div className="customer-details">
           <h2>Customer Details</h2>

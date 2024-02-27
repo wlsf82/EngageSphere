@@ -17,11 +17,17 @@ const getSize = (customer) =>
   customer.employees <= 100 ? 'Small' : customer.employees <= 1000 ? 'Medium' : 'Big'
 
 app.post('/customers', (req, res) => {
-  const { page = 1, limit = 10 } = req.body
+  const { page = 1, limit = 10, size = '' } = req.body
   const startIndex = (page - 1) * limit
   const endIndex = page * limit
 
-  const paginatedCustomers = database.customers.slice(startIndex, endIndex).map(customer => {
+  let filteredCustomers = database.customers
+
+  if (size) {
+    filteredCustomers = filteredCustomers.filter(customer => getSize(customer) === size)
+  }
+
+  const paginatedCustomers = filteredCustomers.slice(startIndex, endIndex).map(customer => {
     customer.size = getSize(customer)
     return customer
   })
@@ -30,8 +36,8 @@ app.post('/customers', (req, res) => {
     customers: paginatedCustomers,
     pageInfo: {
       currentPage: page,
-      totalPages: Math.ceil(database.customers.length / limit),
-      totalCustomers: database.customers.length,
+      totalPages: Math.ceil(filteredCustomers.length / limit),
+      totalCustomers: filteredCustomers.length,
     }
   }
 
