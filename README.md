@@ -28,11 +28,23 @@ After cloning this project, to install the dev dependencies, run `npm install` (
 
 ## Tests
 
+So far, this project has frontend unit tests and API tests
+
+### Frontend unit tests
+
 Run `npm run test:frontend:unit` to run the frontend unit tests.
+
+### API tests
+
+Run `npm run test:api` to run the backend tests.
+
+> To use the above script, both the backend and frontend servers should be up and running.
+
+Or, run `npm run test:api:with:servers` to automatically start the servers, run the tests, and shut down the servers.
 
 ### Test cases
 
-Read the following [doc](./docs/TestCases.md) to get a list of test cases that are pending to be automated.
+Read the following [doc](./docs/TestCases.md) to get a list of test cases.
 
 ___
 
