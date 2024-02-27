@@ -15,3 +15,23 @@ jobs:
       run: npm run install:frontend
     - name: Run frontend unit tests 🧪
       run: npm run test:frontend:unit
+  api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Backend modules
+        uses: cypress-io/github-action@v6
+        with:
+          install-command: npm run install:backend
+          runTests: false
+      - name: Install Frontend modules
+        uses: cypress-io/github-action@v6
+        with:
+          install-command: npm run install:frontend
+          runTests: false
+      - name: Run API tests 🧪
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm run start:frontend, npm run start:server
+          command: npm run test:api
