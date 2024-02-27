@@ -6,4 +6,5 @@ it('renders the welcome screen', () => {
   render(<App />)
   expect(screen.getByText('EngageSphere')).toBeInTheDocument()
   expect(screen.getByTestId('name')).toBeInTheDocument()
+  expect(screen.getByTestId('filter')).toBeInTheDocument()
 })
