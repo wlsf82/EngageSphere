@@ -8,9 +8,12 @@ The tests should cover both the API and Graphical User Interface (GUI.)
 
 When sending a POST request to the `/customers` endpoint:
 
-- Returns a 200 status code
-- Returns the `customers` and `pageInfo` properties
-- Returns the right customer's size based on the number of employees
+- Successfully retrieves customers (e.g., checks for the 200 status code)
+- Paginates the customer list correctly
+- Filters customers by size correctly
+- Returns the correct structure of the response (i.e., `customers` and `pageInfo` properties)
+- Handles invalid requests gracefully (e.g., negative page and limit)
+- Handles invalid requests gracefully (e.g., unsupported size)
 
 ## GUI
 
