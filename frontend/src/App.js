@@ -124,7 +124,7 @@ const CustomerApp = () => {
       </div>
       {!customer ? (
         <div className="filter-container">
-          <label htmlFor="sizeFilter">Filter by Size:</label>
+          <label htmlFor="sizeFilter">Filter by size:</label>
           <select data-testid="filter" id="sizeFilter" value={sizeFilter} onChange={handleFilterChange}>
             <option value="">All</option>
             <option value="Small">Small</option>
