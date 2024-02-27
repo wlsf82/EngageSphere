@@ -115,6 +115,13 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.feather-inbox {
+  width: 50vw;
+  height: auto;
+  max-width: 400px;
+  max-height: 400px;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -348,5 +355,9 @@ tr:hover {
     margin-left: 8px;
     padding: 4px 6px;
     font-size: 0.8rem;
+  }
+
+  .feather-inbox {
+    width: 80vw;
   }
 }
