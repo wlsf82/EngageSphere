@@ -124,14 +124,14 @@ const CustomerApp = () => {
       </div>
       {!customer ? (
         <div className="filter-container">
-        <label htmlFor="sizeFilter">Filter by Size:</label>
-        <select id="sizeFilter" value={sizeFilter} onChange={handleFilterChange}>
-          <option value="">All</option>
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Big">Big</option>
-        </select>
-      </div>
+          <label htmlFor="sizeFilter">Filter by Size:</label>
+          <select data-testid="filter" id="sizeFilter" value={sizeFilter} onChange={handleFilterChange}>
+            <option value="">All</option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Big">Big</option>
+          </select>
+        </div>
       ) : (
         null
       )}
