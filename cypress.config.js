@@ -2,7 +2,7 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   env: {
-    API_URL: 'http://localhost:3001/',
+    API_URL: 'http://localhost:3001',
   },
   e2e: {
     setupNodeEvents(on, config) {},
