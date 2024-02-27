@@ -180,18 +180,26 @@ th, td {
   white-space: nowrap;
 }
 
+th, td:nth-child(1) {
+  text-align: center;
+}
+
 th {
   background-color: var(--table-header-bg-color);
   color: #ffffff;
 }
 
-th:nth-child(2),
-th:nth-child(3) {
+th:nth-child(3),
+th:nth-child(4) {
   cursor: pointer;
 }
 
 tbody tr {
   cursor: pointer;
+}
+
+table th:nth-child(1) {
+  width: 18px;
 }
 
 tr:hover {

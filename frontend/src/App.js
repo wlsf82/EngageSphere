@@ -176,6 +176,7 @@ const CustomerApp = () => {
                 <table border="1">
                   <thead>
                     <tr>
+                      <th>ID</th>
                       <th>Company name</th>
                       <th onClick={() => sortCustomers('employees')}>
                         Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
@@ -188,6 +189,7 @@ const CustomerApp = () => {
                   <tbody>
                     {sortedCustomers.map((customer) => (
                       <tr key={customer.id} onClick={() => setCustomer(customer)}>
+                        <td>{customer.id}</td>
                         <td>{customer.name}</td>
                         <td>{customer.employees}</td>
                         <td>{customer.size}</td>
