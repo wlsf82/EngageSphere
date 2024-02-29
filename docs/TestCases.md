@@ -12,7 +12,8 @@ When sending a POST request to the `/customers` endpoint:
 - Paginates the customer list correctly
 - Filters customers by size correctly
 - Returns the correct structure of the response (i.e., `customers` and `pageInfo` properties)
-- Handles invalid requests gracefully (e.g., negative page and limit)
+- Handles invalid requests gracefully (e.g., negative page )
+- Handles invalid requests gracefully (e.g., negative limit)
 - Handles invalid requests gracefully (e.g., unsupported size)
 
 ## GUI
