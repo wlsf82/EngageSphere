@@ -9,6 +9,7 @@ describe('EngageSphere Customers API', () => {
   })
 
   it('paginates the customer list correctly', () => {
+    // @TODO: Fix for the case there's only one page
     cy.request('POST', CUSTOMERS_API_URL, { page: 2, limit: 5 })
       .then(({ body }) => {
         expect(body.customers).to.have.length(5)
