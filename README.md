@@ -24,7 +24,7 @@ Read the following [doc](./docs/TestEnvironment.md) to install and start the bac
 
 ## Installation of `devDependencies`
 
-After cloning this project, to install the dev dependencies, run `npm install` (or `npm i` for short.)
+After cloning this project, to install the dev dependencies, open a terminal and run `npm install` (or `npm i`, for short.)
 
 ## Tests
 
@@ -39,8 +39,10 @@ Run `npm run test:frontend:unit` to run the frontend unit tests.
 Run `npm run test:api` to run the backend tests.
 
 > To use the above script, both the backend and frontend servers should be up and running.
+>
+> **Note:** Although these are backend tests, the frontend server needs to be running due to the `baseUrl` definition at the `cypress.config.js` file.
 
-Or, run `npm run test:api:with:servers` to automatically start the servers, run the tests, and shut down the servers.
+Or, run `npm run test:api:with:servers` to automatically start the servers, run the tests, and shut them down.
 
 ### Test cases
 
