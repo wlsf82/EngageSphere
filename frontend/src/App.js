@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import CustomerDetails from './components/CustomerDetails'
 import EmptySate from './components/EmptyState'
 import Footer from './components/Footer'
+import Header from './components/Header'
 import Pagination from './components/Pagination'
 import SizeFilter from './components/SizeFilter'
 
@@ -114,14 +115,7 @@ const CustomerApp = () => {
 
   return (
     <div className="container">
-      <div className="header-container">
-        <h1>EngageSphere</h1>
-        <div className="theme-toggle-container">
-          <button id="theme-toggle-button" onClick={toggleTheme} aria-labelledby="theme-toggle-label" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-            {theme === 'light' ? '☽' : '☀'}
-          </button>
-        </div>
-      </div>
+      <Header theme={theme} onClick={toggleTheme} />
       <div className="input-container">
         <input
           autoFocus
