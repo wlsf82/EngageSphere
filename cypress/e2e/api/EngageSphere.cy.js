@@ -36,11 +36,23 @@ describe('EngageSphere Customers API', () => {
       })
   })
 
-  it('handles invalid requests gracefully (e.g., negative page and limit)', () => {
+  it('handles invalid requests gracefully (e.g., negative page)', () => {
     cy.request({
       method: 'POST',
       url: CUSTOMERS_API_URL,
       body: { page: -1, limit: 10 },
+      failOnStatusCode: false, // Prevent Cypress from failing the test on non-2xx responses
+    }).then(({ status, body }) => {
+      expect(status).to.eq(400)
+      expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+    })
+  })
+  
+  it('handles invalid requests gracefully (e.g., negative limit)', () => {
+    cy.request({
+      method: 'POST',
+      url: CUSTOMERS_API_URL,
+      body: { page: 1, limit: -1 },
       failOnStatusCode: false, // Prevent Cypress from failing the test on non-2xx responses
     }).then(({ status, body }) => {
       expect(status).to.eq(400)
