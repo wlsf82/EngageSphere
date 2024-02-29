@@ -1,6 +1,6 @@
 # Test cases
 
-Below is a list of test cases that should be covered by automated scripts for the **EngageSphere** application.
+Below is a list of test cases that could be covered by automated scripts for the **EngageSphere** application.
 
 The tests should cover both the API and Graphical User Interface (GUI.)
 
@@ -20,13 +20,12 @@ When sending a POST request to the `/customers` endpoint:
 
 - Shows the default greeting (i.e., Hi there! ...)
 - Shows a customized greeting (e.g., Hi Joe! ...)
+- Changes the theme to dark mode ensuring its persisted in the local storage
+- Changes the theme to light mode ensuring its persisted in the local storage
 - Shows a list of customers when there's data in the database
 - Shows the image of an empty box and the text "No customers available." when there are no customers in the database
 - Disables the text input field when there are no customers in the database
 - Disables the text input field when in the customer details page
-- Shows the contact info of a specific customer
-- Shows "No contact info available" for a customer without contact info
-- Goes back to the customers list when clicking the "Back" button
 - Sorts by Number of employees in ascending order
 - Sorts by Number of employees in descending order
 - Sorts by Size in ascending order
@@ -37,5 +36,9 @@ When sending a POST request to the `/customers` endpoint:
 - Disables both the Prev and Next pagination buttons when there's only one page
 - Leaves both the Prev and Next pagination buttons enabled when in a middle page (e.g., Page 2 of 3)
 - Shows "Page 1 of n" (where 'n' is the number of pages)
-- Configures a new pagination limit (e.g., from 10 to 50)
+- Configures a new pagination limit (e.g., from 10 to 50) ensuring its persisted in the local storage
+- Filters by each size ('All', 'Small', 'Medium', and 'Big')
+- Shows the contact info of a specific customer
+- Shows "No contact info available" for a customer without contact information
+- Goes back to the customers list when clicking the "Back" button
 - Shows the footer and its links
