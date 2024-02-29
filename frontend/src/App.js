@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import CustomerDetails from './components/CustomerDetails'
 import EmptySate from './components/EmptyState'
+import Input from './components/Input'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Pagination from './components/Pagination'
@@ -100,6 +101,8 @@ const CustomerApp = () => {
     return order * (a[sortCriteria] - b[sortCriteria])
   })
 
+  const handleInputChange = (e) => setName(e.target.value)
+
   const handleCustomerDetailsBackButtonClick = () => setCustomer(null)
 
   const handleLimitChange = (e) => {
@@ -116,17 +119,11 @@ const CustomerApp = () => {
   return (
     <div className="container">
       <Header theme={theme} onClick={toggleTheme} />
-      <div className="input-container">
-        <input
-          autoFocus
-          type="text"
-          id="name"
-          data-testid="name"
-          placeholder="Enter your name"
-          onChange={(e) => setName(e.target.value)}
-          disabled={customer || !customers.length ? true : false}
-        />
-      </div>
+      <Input
+        customer={customer}
+        customers={customers}
+        onChange={handleInputChange}
+      />
       {!customer ? (
         <SizeFilter sizeFilter={sizeFilter} onChange={handleFilterChange} />
       ) : (
