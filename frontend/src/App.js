@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import Footer from './components/Footer'
+import Pagination from './components/Pagination'
 
 const serverPort = 3001
 const serverURL = `http://localhost:${serverPort}`
@@ -101,6 +102,11 @@ const CustomerApp = () => {
     setCurrentPage(1)
   }
 
+  const handlePaginationPrevClick = () =>
+    setCurrentPage(prev => Math.max(prev - 1, 1))
+  const handlePaginationNextClick = () =>
+    setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))
+
   return (
     <div className="container">
       <div className="header-container">
@@ -197,17 +203,13 @@ const CustomerApp = () => {
                     ))}
                   </tbody>
                 </table>
-                <div data-testid="pagination" className="pagination">
-                  <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>Prev</button>
-                  <span>Page {currentPage} of {paginationInfo.totalPages}</span>
-                  <button onClick={() => setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))} disabled={currentPage === paginationInfo.totalPages}>Next</button>
-                  <select onChange={handleLimitChange} value={paginationInfo.limit} aria-label="Pagination limit">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                  </select>
-                </div>
+                <Pagination
+                  currentPage={currentPage}
+                  paginationInfo={paginationInfo}
+                  onClickPrev={handlePaginationPrevClick}
+                  onClickNext={handlePaginationNextClick}
+                  onChange={handleLimitChange}
+                 />
               </div>
             </>
           ) : null}
