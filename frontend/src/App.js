@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Pagination from './components/Pagination'
 import SizeFilter from './components/SizeFilter'
+import Table from './components/Table'
 
 const serverPort = 3001
 const serverURL = `http://localhost:${serverPort}`
@@ -31,15 +32,6 @@ const CustomerApp = () => {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
 
   const [sizeFilter, setSizeFilter] = useState('')
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
-  }
-
-  const handleFilterChange = (e) => {
-    setSizeFilter(e.target.value)
-    setCurrentPage(1)
-  }
 
   useEffect(() => {
     localStorage.setItem('theme', theme)
@@ -101,8 +93,11 @@ const CustomerApp = () => {
     return order * (a[sortCriteria] - b[sortCriteria])
   })
 
+  const sortHandler = (header) => sortCustomers(header)
+
   const handleInputChange = (e) => setName(e.target.value)
 
+  const customerClickHandler = (customer) => setCustomer(customer)
   const handleCustomerDetailsBackButtonClick = () => setCustomer(null)
 
   const handleLimitChange = (e) => {
@@ -115,6 +110,15 @@ const CustomerApp = () => {
     setCurrentPage(prev => Math.max(prev - 1, 1))
   const handlePaginationNextClick = () =>
     setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
+  }
+
+  const handleFilterChange = (e) => {
+    setSizeFilter(e.target.value)
+    setCurrentPage(1)
+  }
 
   return (
     <div className="container">
@@ -144,30 +148,14 @@ const CustomerApp = () => {
               <div>
                 <p>Below is our customer list.</p>
                 <p>Click on each of them to view their contact details.</p>
-                <table border="1">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Company name</th>
-                      <th onClick={() => sortCustomers('employees')}>
-                        Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
-                      </th>
-                      <th onClick={() => sortCustomers('size')}>
-                        Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {sortedCustomers.map((customer) => (
-                      <tr key={customer.id} onClick={() => setCustomer(customer)}>
-                        <td>{customer.id}</td>
-                        <td>{customer.name}</td>
-                        <td>{customer.employees}</td>
-                        <td>{customer.size}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                <Table
+                  customers={sortedCustomers}
+                  customerClickHandler={customerClickHandler}
+                  sortCriteria={sortCriteria}
+                  sortOrder={sortOrder}
+                  sortNumberOfEmployessHandler={() => sortHandler('employees')}
+                  sortSizeHandler={() => sortHandler('size')}
+                />
                 <Pagination
                   currentPage={currentPage}
                   paginationInfo={paginationInfo}
