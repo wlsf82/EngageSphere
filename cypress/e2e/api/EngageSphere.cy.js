@@ -41,7 +41,7 @@ describe('EngageSphere Customers API', () => {
       method: 'POST',
       url: CUSTOMERS_API_URL,
       body: { page: -1, limit: 10 },
-      failOnStatusCode: false, // Prevent Cypress from failing the test on non-2xx responses
+      failOnStatusCode: false,
     }).then(({ status, body }) => {
       expect(status).to.eq(400)
       expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
@@ -53,7 +53,7 @@ describe('EngageSphere Customers API', () => {
       method: 'POST',
       url: CUSTOMERS_API_URL,
       body: { page: 1, limit: -1 },
-      failOnStatusCode: false, // Prevent Cypress from failing the test on non-2xx responses
+      failOnStatusCode: false,
     }).then(({ status, body }) => {
       expect(status).to.eq(400)
       expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
@@ -67,9 +67,9 @@ describe('EngageSphere Customers API', () => {
       body: {
         page: 1,
         limit: 10,
-        size: 'UnsupportedSize', // Deliberately using an unsupported size value
+        size: 'UnsupportedSize',
       },
-      failOnStatusCode: false, // Prevent Cypress from failing the test on non-2xx responses
+      failOnStatusCode: false,
     }).then(({ status, body }) => {
       expect(status).to.eq(400)
       expect(body.error).to.include('Unsupported size value')
