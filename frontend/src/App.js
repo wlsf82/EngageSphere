@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import CustomerDetails from './components/CustomerDetails'
 import EmptySate from './components/EmptyState'
 import Footer from './components/Footer'
 import Pagination from './components/Pagination'
@@ -97,6 +98,8 @@ const CustomerApp = () => {
     return order * (a[sortCriteria] - b[sortCriteria])
   })
 
+  const handleCustomerDetailsBackButtonClick = () => setCustomer(null)
+
   const handleLimitChange = (e) => {
     const newLimit = parseInt(e.target.value, 10)
     setPaginationInfo(prevState => ({ ...prevState, limit: newLimit }))
@@ -143,23 +146,10 @@ const CustomerApp = () => {
         null
       )}
       {customer ? (
-        <div className="customer-details">
-          <h2>Customer Details</h2>
-          <p><strong>Company name:</strong> {customer.name}</p>
-          <p><strong>Number of employees:</strong> {customer.employees}</p>
-          <p><strong>Size:</strong> {customer.size}</p>
-          {customer.contactInfo ? (
-            <>
-              <p><strong>Contact name:</strong> {customer.contactInfo.name}</p>
-              <p><strong>Contact email:</strong> {customer.contactInfo.email}</p>
-            </>
-          ) : (
-            <p>No contact info available</p>
-          )}
-          <div className="button-container">
-            <button onClick={() => setCustomer(null)}>Back</button>
-          </div>
-        </div>
+        <CustomerDetails
+          customer={customer}
+          onClick={handleCustomerDetailsBackButtonClick}
+        />
       ) : (
         <div data-testid="table" className="table-container">
           {initialFetchDone && !customers.length ? (
