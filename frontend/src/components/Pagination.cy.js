@@ -95,4 +95,26 @@ describe('<Pagination />', () => {
     
     cy.get('select').should('have.value', 50)
   })
+
+  it('renders the prev and next buttons disabled when there is only one page', () => {
+    const props = {
+      currentPage: 1,
+      paginationInfo: {
+        totalPages: 1,
+        limit: 5
+      },
+      ...defaultProps,
+    }
+
+    cy.mount(<Pagination {...props} />)
+
+    cy.contains('button', 'Prev')
+      .should('be.disabled')
+      .and('be.visible')
+    cy.contains('button', 'Next')
+      .should('be.disabled')
+      .and('be.visible')
+    cy.contains('span', 'Page 1 of 1')
+      .should('be.visible')
+  })
 })
