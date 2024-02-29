@@ -10,7 +10,7 @@ The only pre-requisite to run this app is to have npm and Node.js installed in y
 
 After cloning the repo ...
 
-### 1) Starting the backend
+### 1 Starting the backend
 
 Open a terminal, go to the root of this repo and:
 
@@ -26,7 +26,7 @@ The server will be listening on port 3001. If you need to change this, go to `/b
 const port = 3001;
 ```
 
-### 2) Starting the frontend
+### 2 Starting the frontend
 
 Open a new terminal, go to the root of this repo and:
 
