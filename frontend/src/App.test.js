@@ -7,4 +7,5 @@ it('renders the welcome screen', () => {
   expect(screen.getByText('EngageSphere')).toBeInTheDocument()
   expect(screen.getByTestId('name')).toBeInTheDocument()
   expect(screen.getByTestId('filter')).toBeInTheDocument()
+  expect(screen.getByTestId('footer')).toBeInTheDocument()
 })
