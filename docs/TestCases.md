@@ -16,7 +16,7 @@ When sending a POST request to the `/customers` endpoint:
 - Handles invalid requests gracefully (e.g., negative limit)
 - Handles invalid requests gracefully (e.g., unsupported size)
 
-## GUI
+## GUI/Component
 
 - Shows the default greeting (i.e., Hi there! ...)
 - Shows a customized greeting (e.g., Hi Joe! ...)
