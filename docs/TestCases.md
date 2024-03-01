@@ -30,7 +30,7 @@ When sending a POST request to the `/customers` endpoint:
 - Sorts by Number of employees in descending order
 - Sorts by Size in ascending order
 - Sorts by Size in descending order by default
-- Shorts in descending order by default when changing the sorting column
+- Sorts in descending order by default when changing the sorting column
 - Disables the Prev pagination button when in the first page
 - Disables the Next pagination button when in the last page
 - Disables both the Prev and Next pagination buttons when there's only one page
