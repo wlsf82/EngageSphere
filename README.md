@@ -28,11 +28,23 @@ After cloning this project, to install the dev dependencies, open a terminal and
 
 ## Tests
 
-So far, this project has frontend unit tests and API tests
+This project has frontend unit and component tests, GUI tests, and backend API tests.
 
 ### Frontend unit tests
 
 Run `npm run test:frontend:unit` to run the frontend unit tests.
+
+### Frontend component tests
+
+Run `npm run test:frontend:component` to run the frontend component tests.
+
+### GUI tests
+
+Run `npm run test:frontend:gui` to run the GUI tests.
+
+> To use the above script, the frontend server should be up and running.
+
+Or, run `test:frontend:gui:with:server` to automatically start the server, run the tests, and shut it down.
 
 ### API tests
 
