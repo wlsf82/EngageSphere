@@ -1,4 +1,4 @@
-describe('EngageSphere Customers API', () => {
+describe('EngageSphere API', () => {
   const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`
 
   it('successfully retrieves customers', () => {
