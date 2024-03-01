@@ -1,0 +1,53 @@
+{
+  "customers": [
+      {
+          "id": 1,
+          "name": "Jacobs, Bechtelar and Von",
+          "employees": 2174,
+          "contactInfo": null,
+          "size": "Big"
+      },
+      {
+          "id": 2,
+          "name": "Kilback - Kerluke",
+          "employees": 226,
+          "contactInfo": {
+              "name": "Daija",
+              "email": "Daija_Gislason93@gmail.com"
+          },
+          "size": "Medium"
+      },
+      {
+          "id": 3,
+          "name": "Parisian - Berge",
+          "employees": 47,
+          "contactInfo": {
+              "name": "Alysson",
+              "email": "Alysson.Lang@hotmail.com"
+          },
+          "size": "Small"
+      },
+      {
+          "id": 4,
+          "name": "Wilderman, Marks and Funk",
+          "employees": 24,
+          "contactInfo": {
+              "name": "Brando",
+              "email": "Brando_Kozey48@gmail.com"
+          },
+          "size": "Small"
+      },
+      {
+          "id": 5,
+          "name": "Runolfsson, Satterfield and Huel",
+          "employees": 1015,
+          "contactInfo": null,
+          "size": "Big"
+      }
+  ],
+  "pageInfo": {
+      "currentPage": 1,
+      "totalPages": 4,
+      "totalCustomers": 20
+  }
+}
