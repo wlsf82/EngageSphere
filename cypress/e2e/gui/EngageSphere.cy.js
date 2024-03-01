@@ -94,4 +94,24 @@ describe('EngageSphere Frontend', {
         .should('contain', '2174')
     })
   })
+
+  context('Theme', () => {
+    it('changes to the dark mode then back to light mode', () => {
+      cy.get('#theme-toggle-button').click()
+
+      cy.getAllLocalStorage()
+        .then((result) => {
+          const theme = result[Cypress.config('baseUrl')].theme
+          expect(theme).to.equal('dark')
+        })
+
+      cy.get('#theme-toggle-button').click()
+
+      cy.getAllLocalStorage()
+        .then((result) => {
+          const theme = result[Cypress.config('baseUrl')].theme
+          expect(theme).to.equal('light')
+        })
+    })
+  })
 })
