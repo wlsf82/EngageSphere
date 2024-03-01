@@ -20,12 +20,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Frontend modules
+      - name: Install frontend modules
         uses: cypress-io/github-action@v6
         with:
           install-command: npm run install:frontend
           runTests: false
-      - name: Run Component tests 🧪
+      - name: Run frontend component tests 🧪
         uses: cypress-io/github-action@v6
         with:
           command: npm run test:frontend:component
@@ -34,12 +34,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install Frontend modules
+      - name: Install frontend modules
         uses: cypress-io/github-action@v5
         with:
           install-command: npm run install:frontend
           runTests: false
-      - name: Run Frontend UI tests 🧪
+      - name: Run frontend GUI tests 🧪
         uses: cypress-io/github-action@v5
         with:
           start: npm run start:frontend
@@ -49,12 +49,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Backend modules
+      - name: Install backend modules
         uses: cypress-io/github-action@v6
         with:
           install-command: npm run install:backend
           runTests: false
-      - name: Install Frontend modules
+      - name: Install frontend modules
         uses: cypress-io/github-action@v6
         with:
           install-command: npm run install:frontend
