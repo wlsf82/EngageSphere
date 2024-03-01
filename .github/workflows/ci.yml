@@ -29,6 +29,21 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           command: npm run test:frontend:component
+  gui-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Frontend modules
+        uses: cypress-io/github-action@v5
+        with:
+          install-command: npm run install:frontend
+          runTests: false
+      - name: Run Frontend UI tests 🧪
+        uses: cypress-io/github-action@v5
+        with:
+          start: npm run start:frontend
+          command: npm run test:frontend:gui
   api-tests:
     runs-on: ubuntu-latest
     steps:
