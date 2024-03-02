@@ -40,7 +40,7 @@ describe('EngageSphere API', () => {
   it('handles invalid requests gracefully (e.g., negative page)', () => {
     cy.request({
       method: 'GET',
-      url: `${CUSTOMERS_API_URL}?page=-1&limit=10`,
+      url: `${CUSTOMERS_API_URL}?page=-1`,
       failOnStatusCode: false,
     }).then(({ status, body }) => {
       expect(status).to.eq(400)
@@ -51,7 +51,7 @@ describe('EngageSphere API', () => {
   it('handles invalid requests gracefully (e.g., negative limit)', () => {
     cy.request({
       method: 'GET',
-      url: `${CUSTOMERS_API_URL}?page=1&limit=-1`,
+      url: `${CUSTOMERS_API_URL}?limit=-1`,
       failOnStatusCode: false,
     }).then(({ status, body }) => {
       expect(status).to.eq(400)
@@ -62,7 +62,7 @@ describe('EngageSphere API', () => {
   it('handles invalid requests gracefully (e.g., unsupported size)', () => {
     cy.request({
       method: 'GET',
-      url: `${CUSTOMERS_API_URL}?page=1&limit=10&size=UnsupportedSize`,
+      url: `${CUSTOMERS_API_URL}?size=UnsupportedSize`,
       failOnStatusCode: false,
     }).then(({ status, body }) => {
       expect(status).to.eq(400)
