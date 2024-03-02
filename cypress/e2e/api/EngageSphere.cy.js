@@ -2,7 +2,7 @@ describe('EngageSphere API', () => {
   const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`
 
   it('successfully retrieves customers', () => {
-    cy.request('POST', CUSTOMERS_API_URL, { page: 1, limit: 10 })
+    cy.request('GET', CUSTOMERS_API_URL)
       .then(({ status }) => {
         expect(status).to.eq(200)
       })
