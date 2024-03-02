@@ -91,9 +91,7 @@ This endpoint accepts three query parameters, as listed below.
 
 Below is an example of how the request URL would look like.
 
-```js
 `http://localhost:3001/customers?page=2&limit=10&size=Medium`
-```
 
 #### Response body
 
