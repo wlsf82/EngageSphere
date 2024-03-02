@@ -79,19 +79,25 @@ In this view, a **Back** button is presented, and when clicked, the user is take
 
 The app backend offers one endpoint:
 
-### POST /customers
+### GET /customers
 
-#### Request body
+This endpoint accepts three query parameters, as listed below.
 
-```json
-{
-    "page": "<current page>",
-    "limit": "<number of customers to be shown per page>",
-    "size": "<optional; filter customers by size: 'Small', 'Medium', 'Big'>"
-}
+#### Query parameters
+
+- `page` (current page)
+- `limit` (number of customers to be shown per page)
+- `size` (optional; filter customers by size: 'Small', 'Medium', 'Big')
+
+Below is an example of how the request URL would look like.
+
+```js
+`http://localhost:3001/customers?page=2&limit=10&size=Medium`
 ```
 
 #### Response body
+
+If there are customers in the database, the following JSON structure should be returned after a successful request.
 
 ```json
 {
