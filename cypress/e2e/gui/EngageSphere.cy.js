@@ -7,8 +7,8 @@ describe('EngageSphere Frontend', {
     cy.clock(now)
 
     cy.intercept(
-      'POST',
-      `${Cypress.env('API_URL')}/customers`,
+      'GET',
+      `${Cypress.env('API_URL')}/customers**`,
       { fixture: 'customers' }
     ).as('getCustomers')
 
