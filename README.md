@@ -44,7 +44,7 @@ Run `npm run test:frontend:gui` to run the GUI tests.
 
 > To use the above script, the frontend server should be up and running.
 
-Or, run `test:frontend:gui:with:server` to automatically start the server, run the tests, and shut it down.
+Or, run `npm run test:frontend:gui:with:server` to automatically start the server, run the tests, and shut it down.
 
 ### API tests
 
