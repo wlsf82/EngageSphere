@@ -18,7 +18,7 @@ When in light mode, a half-moon is shown just below the application's heading, w
 
 When in dark mode, a sun is shown just below the application's heading, which allows switching to the light mode.
 
-The CSS is adjusted to light or darkk mode depending on the selected theme.
+The CSS is adjusted to light or dark mode depending on the selected theme.
 
 The theme is persisted in the local storage, and the last chosen one is kept in case of a page load.
 
