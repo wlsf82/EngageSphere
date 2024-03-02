@@ -1,7 +1,7 @@
 import App from './App'
 import { render, screen } from '@testing-library/react'  
 
-it('renders the welcome screen', () => {
+it('renders the "main" app elements', () => {
   render(<App />)
   expect(screen.getByText('EngageSphere')).toBeInTheDocument()
   expect(screen.getByTestId('name')).toBeInTheDocument()
