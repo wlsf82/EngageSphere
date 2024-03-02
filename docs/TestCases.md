@@ -6,7 +6,7 @@ The tests should cover both the API and Graphical User Interface (GUI.)
 
 ## API
 
-When sending a POST request to the `/customers` endpoint:
+When sending a GET request to the `/customers` endpoint:
 
 - Successfully retrieves customers (e.g., checks for the 200 status code)
 - Paginates the customer list correctly
