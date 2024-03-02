@@ -85,9 +85,9 @@ This endpoint accepts three query parameters, as listed below.
 
 #### Query parameters
 
-- `page` (current page)
-- `limit` (number of customers to be shown per page)
-- `size` (optional; filter customers by size: 'Small', 'Medium', 'Big')
+- `page` (optional; current page - default is 1)
+- `limit` (optional; number of customers to be shown per page - default is 10)
+- `size` (optional; filter customers by size: 'Small', 'Medium', 'Big' - default is '', which means All)
 
 Below is an example of how the request URL would look like.
 
