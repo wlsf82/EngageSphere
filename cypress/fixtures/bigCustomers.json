@@ -1,0 +1,23 @@
+{
+  "customers": [
+      {
+          "id": 1,
+          "name": "Jacobs, Bechtelar and Von",
+          "employees": 2174,
+          "contactInfo": null,
+          "size": "Big"
+      },
+      {
+          "id": 5,
+          "name": "Runolfsson, Satterfield and Huel",
+          "employees": 1015,
+          "contactInfo": null,
+          "size": "Big"
+      }
+  ],
+  "pageInfo": {
+      "currentPage": 1,
+      "totalPages": 1,
+      "totalCustomers": 2
+  }
+}

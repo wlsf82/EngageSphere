@@ -1,0 +1,19 @@
+{
+  "customers": [
+      {
+          "id": 2,
+          "name": "Kilback - Kerluke",
+          "employees": 226,
+          "contactInfo": {
+              "name": "Daija",
+              "email": "Daija_Gislason93@gmail.com"
+          },
+          "size": "Medium"
+      }
+  ],
+  "pageInfo": {
+      "currentPage": 1,
+      "totalPages": 1,
+      "totalCustomers": 1
+  }
+}
