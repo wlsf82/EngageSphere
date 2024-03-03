@@ -14,12 +14,12 @@ const Table = ({
           <th>Company name</th>
           <th onClick={sortNumberOfEmployessHandler}>
             <button onClick={sortNumberOfEmployessHandler}>
-              Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
+              Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span aria-label="up arrow">&uarr;</span> : <span aria-label="down arrow">&darr;</span>)}
             </button>
           </th>
           <th onClick={sortSizeHandler}>
             <button onClick={sortSizeHandler}>
-              Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span>&uarr;</span> : <span>&darr;</span>)}
+              Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span aria-label="up arrow">&uarr;</span> : <span aria-label="down arrow">&darr;</span>)}
             </button>
           </th>
         </tr>
