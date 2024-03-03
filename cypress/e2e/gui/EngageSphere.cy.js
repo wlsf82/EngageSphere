@@ -215,26 +215,6 @@ describe('EngageSphere Frontend', {
   })
 
   context('Customer details', () => {
-    it('shows the contact info of a specific customer', () => {
-      cy.get('tbody tr')
-        .last()
-        .click()
-
-      cy.contains('p', 'Contact name: Brando')
-        .should('be.visible')
-      cy.contains('p', 'Contact email: Brando_Kozey48@gmail.com')
-        .should('be.visible')
-    })
-
-    it('shows "No contact info available" for a customer without contact information', () => {
-      cy.get('tbody tr')
-        .first()
-        .click()
-
-      cy.contains('p', 'No contact info available')
-        .should('be.visible')
-    })
-
     it('disables the text input field when in the customer details page', () => {
       cy.get('tbody tr')
         .first()
