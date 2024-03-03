@@ -24,7 +24,7 @@ Read the following [doc](./docs/TestEnvironment.md) to install and start the bac
 
 ## Installation of `devDependencies`
 
-After cloning this project, to install the dev dependencies, open a terminal and run `npm install` (or `npm i`, for short.)
+After cloning this project, to install the dev dependencies, open a terminal, go to the root of this repo, and run `npm install` (or `npm i`, for short.)
 
 ## Tests
 
