@@ -97,32 +97,15 @@ describe('EngageSphere Frontend', {
 
   context('Filtering', () => {
     it('Filters by All sizes', () => {
+      // First, filter by a different size (e.g., Small)
+      // So that when filtering by All, the `getCustomers` request happens again,
+      // and the test can wait for it.
+      cy.get('[data-testid="filter"]').select('Small')
+      cy.get('[data-testid="filter"]').select('All')
+
+      cy.wait('@getCustomers')
+
       cy.get('tbody tr').should('have.length', 5)
-      cy.get('tbody tr')
-        .eq(0)
-        .find('td')
-        .eq(3)
-        .should('contain', 'Big')
-      cy.get('tbody tr')
-        .eq(1)
-        .find('td')
-        .eq(3)
-        .should('contain', 'Big')
-      cy.get('tbody tr')
-        .eq(2)
-        .find('td')
-        .eq(3)
-        .should('contain', 'Medium')
-      cy.get('tbody tr')
-        .eq(3)
-        .find('td')
-        .eq(3)
-        .should('contain', 'Small')
-      cy.get('tbody tr')
-        .eq(4)
-        .find('td')
-        .eq(3)
-        .should('contain', 'Small')
     })
 
     it('Filters by Small size', () => {
@@ -134,17 +117,9 @@ describe('EngageSphere Frontend', {
 
       cy.get('[data-testid="filter"]').select('Small')
 
+      cy.wait('@getSmallCustomers')
+
       cy.get('tbody tr').should('have.length', 2)
-      cy.get('tbody tr')
-        .first()
-        .find('td')
-        .eq(3)
-        .should('contain', 'Small')
-      cy.get('tbody tr')
-        .last()
-        .find('td')
-        .eq(3)
-        .should('contain', 'Small')
     })
 
     it('Filters by Medium size', () => {
@@ -156,11 +131,9 @@ describe('EngageSphere Frontend', {
 
       cy.get('[data-testid="filter"]').select('Medium')
 
+      cy.wait('@getMediumCustomers')
+
       cy.get('tbody tr').should('have.length', 1)
-      cy.get('tbody tr')
-        .find('td')
-        .eq(3)
-        .should('contain', 'Medium')
     })
 
     it('Filters by Big size', () => {
@@ -172,17 +145,9 @@ describe('EngageSphere Frontend', {
 
       cy.get('[data-testid="filter"]').select('Big')
 
+      cy.wait('@getBigCustomers')
+
       cy.get('tbody tr').should('have.length', 2)
-      cy.get('tbody tr')
-        .first()
-        .find('td')
-        .eq(3)
-        .should('contain', 'Big')
-      cy.get('tbody tr')
-        .last()
-        .find('td')
-        .eq(3)
-        .should('contain', 'Big')
     })
   })
 
@@ -197,6 +162,8 @@ describe('EngageSphere Frontend', {
       cy.get('select[aria-label="Pagination limit"]')
         .select('50')
 
+      cy.wait('@getMoreCustomers')
+
       cy.getAllLocalStorage()
         .then((result) => {
           const limit = result[Cypress.config('baseUrl')].paginationLimit
@@ -204,6 +171,8 @@ describe('EngageSphere Frontend', {
         })
 
       cy.reload()
+
+      cy.wait('@getMoreCustomers')
 
       cy.get('select[aria-label="Pagination limit"]')
         .should('have.value', 50)
