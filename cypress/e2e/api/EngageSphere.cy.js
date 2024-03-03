@@ -30,7 +30,7 @@ describe('EngageSphere API', () => {
   })
 
   it('returns the correct structure of the response', () => {
-    cy.request('GET', `${CUSTOMERS_API_URL}?page=1&limit=10`)
+    cy.request('GET', CUSTOMERS_API_URL)
       .then(({ body }) => {
         expect(body).to.have.all.keys('customers', 'pageInfo')
         expect(body.pageInfo).to.include.keys('currentPage', 'totalPages', 'totalCustomers')
