@@ -30,7 +30,7 @@ const port = 3001;
 
 Open a new terminal, go to the root of this repo and:
 
-**Important:** if you changed the backend port number, you will have to change it also on `/frontend/src/App.js`, on line 12, before starting the frontend.
+**Important:** if you changed the backend port number, you will have to change it also on `/frontend/src/components/EngageSphere.js` on line 11, before starting the frontend.
 
 ```sh
 cd frontend
