@@ -12,7 +12,7 @@ If there are no customers in the database, the text input field gets disabled.
 
 ### Theme
 
-The EngageSphere application offers two themes (light and dark.)
+The EngageSphere application offers two themes (light and dark.) Light is the default theme.
 
 When in light mode, a half-moon is shown just below the application's heading, which allows switching to the dark mode.
 
