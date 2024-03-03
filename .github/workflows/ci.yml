@@ -28,7 +28,9 @@ jobs:
       - name: Run frontend component tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          command: npm run test:frontend:component
+          command: npm run test:frontend:component:cloud
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   gui-tests:
     runs-on: ubuntu-latest
     steps:
@@ -43,7 +45,9 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           start: npm run start:frontend
-          command: npm run test:frontend:gui
+          command: npm run test:frontend:gui:cloud
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   api-tests:
     runs-on: ubuntu-latest
     steps:
@@ -63,4 +67,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm run start:frontend, npm run start:server
-          command: npm run test:api
+          command: npm run test:api:cloud
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

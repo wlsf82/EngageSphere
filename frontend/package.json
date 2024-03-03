@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "cy:open": "cypress open",
-    "cy:run:ct": "cypress run --component"
+    "cy:run:ct": "cypress run --component",
+    "cy:run:ct:cloud": "cypress run --record --component"
   },
   "eslintConfig": {
     "extends": [
