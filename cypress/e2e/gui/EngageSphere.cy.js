@@ -29,6 +29,36 @@ describe('EngageSphere Frontend', {
     })
   })
 
+  context('Customers table', () => {
+    it("shows a list of customers when there's data in the database", () => {
+      cy.get('tbody tr').eq(0).find('td').eq(0).should('contain', '1')
+      cy.get('tbody tr').eq(0)
+        .should('contain', 'Jacobs, Bechtelar and Von')
+        .and('contain', '2174')
+        .and('contain', 'Big')
+      cy.get('tbody tr').eq(1).find('td').eq(0).should('contain', '5')
+      cy.get('tbody tr').eq(1)
+        .should('contain', 'Runolfsson, Satterfield and Huel')
+        .and('contain', '1015')
+        .and('contain', 'Big')
+      cy.get('tbody tr').eq(2).find('td').eq(0).should('contain', '2')
+      cy.get('tbody tr').eq(2)
+        .should('contain', 'Kilback - Kerluke')
+        .and('contain', '226')
+        .and('contain', 'Medium')
+      cy.get('tbody tr').eq(3).find('td').eq(0).should('contain', '3')
+      cy.get('tbody tr').eq(3)
+        .should('contain', 'Parisian - Berge')
+        .and('contain', '47')
+        .and('contain', 'Small')
+      cy.get('tbody tr').eq(4).find('td').eq(0).should('contain', '4')
+      cy.get('tbody tr').eq(4)
+        .should('contain', 'Wilderman, Marks and Funk')
+        .and('contain', '24')
+        .and('contain', 'Small')
+    })
+  })
+
   context('Sorting', () => {
     it('sorts by Size in descending order by default', () => {
       cy.contains('th', 'Size ↓').should('be.visible')
