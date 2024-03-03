@@ -97,6 +97,11 @@ describe('EngageSphere Frontend', {
 
   context('Filtering', () => {
     it('Filters by All sizes', () => {
+      cy.intercept(
+        'GET',
+        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Small`,
+        { fixture: 'smallCustomers' }
+      )
       // First, filter by a different size (e.g., Small)
       // So that when filtering by All, the `getCustomers` request happens again,
       // and the test can wait for it.
