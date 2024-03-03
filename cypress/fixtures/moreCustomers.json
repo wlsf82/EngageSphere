@@ -430,7 +430,7 @@
       }
   ],
   "pageInfo": {
-      "currentPage": "1",
+      "currentPage": 1,
       "totalPages": 1,
       "totalCustomers": 50
   }
