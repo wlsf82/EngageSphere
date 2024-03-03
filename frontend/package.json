@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "cy:open": "cypress open",
     "cy:run:ct": "cypress run --component",
-    "cy:run:ct:cloud": "cypress run --record --component"
+    "cy:run:ct:cloud": "cypress run --record --tag 'component' --component"
   },
   "eslintConfig": {
     "extends": [
