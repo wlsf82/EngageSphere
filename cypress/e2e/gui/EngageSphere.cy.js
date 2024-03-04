@@ -282,3 +282,36 @@ describe('EngageSphere Frontend - empty state', {
     cy.get('input[type="text"]').should('be.disabled')
   })
 })
+
+describe('EngageSphere Frontend - A11y', () => {
+  beforeEach(() => {
+    cy.visit('/')
+    cy.injectAxe()
+  })
+
+  context('Customers table', () => {
+    it('finds no a11y issues in light mode.', () => {
+      cy.checkA11y()
+    })
+
+    it('finds no a11y issues in dark mode.', () => {
+      cy.get('#theme-toggle-button').click()
+      cy.checkA11y()
+    })
+  })
+
+  context('Customer details', () => {
+    beforeEach(() => {
+      cy.get('tbody tr').first().click()
+    })
+
+    it('finds no a11y issues in light mode.', () => {
+      cy.checkA11y()
+    })
+
+    it('finds no a11y issues in dark mode.', () => {
+      cy.get('#theme-toggle-button').click()
+      cy.checkA11y()
+    })
+  })
+})
