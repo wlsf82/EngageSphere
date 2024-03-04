@@ -10,7 +10,7 @@
     "test:frontend:unit": "cd frontend && npm test",
     "test:frontend:gui": "cypress run --spec cypress/e2e/gui/*.cy.js",
     "test:frontend:gui:cloud": "cypress run --record --tag 'GUI' --spec cypress/e2e/gui/*.cy.js",
-    "test:frontend:gui:with:server": "start-server-and-test start:frontend 3000 test:frontend:gui",
+    "test:frontend:gui:with:servers": "start-server-and-test start:frontend 3000 start:server 3000 test:frontend:gui",
     "test:frontend:component": "cd frontend && npm run cy:run:ct",
     "test:frontend:component:cloud": "cd frontend && npm run cy:run:ct:cloud",
     "test:api": "cypress run --spec cypress/e2e/api/*.cy.js",

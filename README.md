@@ -42,9 +42,11 @@ Run `npm run test:frontend:component` to run the frontend component tests.
 
 Run `npm run test:frontend:gui` to run the GUI tests.
 
-> To use the above script, the frontend server should be up and running.
+> To use the above script, both the backend and frontend servers should be up and running.
 
-Or, run `npm run test:frontend:gui:with:server` to automatically start the server, run the tests, and shut it down.
+Or, run `npm run test:frontend:gui:with:servers` to automatically start the servers, run the tests, and shut them down.
+
+> The GUI tests include a small suite of accessibility (a11y) tests.
 
 ### API tests
 
