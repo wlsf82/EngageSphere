@@ -101,7 +101,7 @@ h1 {
 }
 
 .customer-details {
-  max-width: 25%;
+  max-width: 400px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -375,7 +375,7 @@ tr:hover {
   color: var(--text-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 468px) {
   th, td {
     padding: 10px;
   }
