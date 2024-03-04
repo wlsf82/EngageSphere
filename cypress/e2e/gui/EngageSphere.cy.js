@@ -290,11 +290,11 @@ describe('EngageSphere Frontend - A11y', () => {
   })
 
   context('Customers table', () => {
-    it('finds no a11y issues in light mode.', () => {
+    it('finds no a11y issues in light mode', () => {
       cy.checkA11y()
     })
 
-    it('finds no a11y issues in dark mode.', () => {
+    it('finds no a11y issues in dark mode', () => {
       cy.get('#theme-toggle-button').click()
       cy.checkA11y()
     })
@@ -305,11 +305,11 @@ describe('EngageSphere Frontend - A11y', () => {
       cy.get('tbody tr').first().click()
     })
 
-    it('finds no a11y issues in light mode.', () => {
+    it('finds no a11y issues in light mode', () => {
       cy.checkA11y()
     })
 
-    it('finds no a11y issues in dark mode.', () => {
+    it('finds no a11y issues in dark mode', () => {
       cy.get('#theme-toggle-button').click()
       cy.checkA11y()
     })

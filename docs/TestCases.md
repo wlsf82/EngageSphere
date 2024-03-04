@@ -42,3 +42,12 @@ When sending a GET request to the `/customers` endpoint:
 - Shows "No contact info available" for a customer without contact information
 - Goes back to the customers list when clicking the "Back" button
 - Shows the footer and its links
+
+### A11y
+
+- Customers table
+  - finds no a11y issues in light mode
+  - finds no a11y issues in dark mode
+- Customer details
+  - finds no a11y issues in light mode
+  - finds no a11y issues in dark mode
