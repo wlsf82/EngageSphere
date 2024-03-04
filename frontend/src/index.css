@@ -3,16 +3,16 @@
   --background-color: #fffffe;
   --text-color: #094067;
   --container-bg-color: #f9f9f9;
-  --header-bg-color: #2b6a99;
+  --header-bg-color: #035B9B;
   --input-border-color: #3da9fc;
-  --button-bg-color: #3da9fc;
+  --button-bg-color: #035B9B;
   --button-text-color: #ffffff;
-  --table-header-bg-color: #4a8ed6;
+  --table-header-bg-color: #035B9B;
   --table-row-hover-bg-color: #f5f5f5;
   --pagination-button-bg-color: #ffffff;
   --pagination-button-text-color: #094067;
-  --pagination-button-border-color: #3da9fc;
-  --pagination-select-border-color: #3da9fc;
+  --pagination-button-border-color: #035B9B;
+  --pagination-select-border-color: #035B9B;
   --footer-bg-color: #2b6a99;
   --footer-text-color: #ffffff;
   --link-text-color: #ffffff;
@@ -21,7 +21,7 @@
   --input-disabled-text-color: #444444;
   --button-hover-bg-color: #3072b3;
   --button-hover-text-color: #ffffff;
-  --pagination-button-hover-bg-color: #3da9fc;
+  --pagination-button-hover-bg-color: #035B9B;
   --pagination-button-hover-text-color: #ffffff;
   --pagination-button-disabled-border-color: #cccccc;
   --pagination-button-disabled-color: #cccccc;
@@ -243,7 +243,6 @@ tr:hover {
   margin: 0 12px;
   font-size: 0.9rem;
   border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .pagination button:hover {
@@ -267,7 +266,6 @@ tr:hover {
   color: var(--text-color);
   cursor: pointer;
   font-size: 0.9rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .pagination select:hover {

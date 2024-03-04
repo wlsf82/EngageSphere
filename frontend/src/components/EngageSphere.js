@@ -119,7 +119,7 @@ const EngageSphere = () => {
   }
 
   return (
-    <div className="container">
+    <main className="container">
       <Header theme={theme} onClick={toggleTheme} />
       <Input
         customer={customer}
@@ -166,7 +166,7 @@ const EngageSphere = () => {
           ) : null}
         </div>
       )}
-    </div>
+    </main>
   )
 }
 
