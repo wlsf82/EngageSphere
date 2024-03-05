@@ -11,8 +11,8 @@
     "test:frontend:gui": "cypress run --spec cypress/e2e/gui/*.cy.js",
     "test:frontend:gui:cloud": "cypress run --record --tag 'GUI' --spec cypress/e2e/gui/*.cy.js",
     "test:frontend:gui:with:servers": "start-server-and-test start:frontend 3000 start:server 3000 test:frontend:gui",
-    "test:frontend:component": "cd frontend && npm run cy:run:ct",
-    "test:frontend:component:cloud": "cd frontend && npm run cy:run:ct:cloud",
+    "test:frontend:component": "cypress run --component",
+    "test:frontend:component:cloud": "cypress run --record --tag 'component' --component",
     "test:api": "cypress run --spec cypress/e2e/api/*.cy.js",
     "test:api:cloud": "cypress run --record --tag 'API' --spec cypress/e2e/api/*.cy.js",
     "test:api:with:servers": "start-server-and-test start:frontend 3000 start:server 3000 test:api",
@@ -35,6 +35,22 @@
     "axe-core": "^4.8.4",
     "cypress": "^13.6.6",
     "cypress-axe": "^1.5.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
     "start-server-and-test": "^2.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

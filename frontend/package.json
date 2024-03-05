@@ -9,17 +9,12 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^6.1.3",
-    "@testing-library/react": "^14.0.0",
-    "cypress": "^13.6.6",
-    "eslint-plugin-cypress": "^2.15.1"
+    "@testing-library/react": "^14.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "cy:open": "cypress open",
-    "cy:run:ct": "cypress run --component",
-    "cy:run:ct:cloud": "cypress run --record --tag 'component' --component"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
