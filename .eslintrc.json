@@ -37,5 +37,10 @@
         "no-trailing-spaces": [
             "error"
         ]
-    }
+    },
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }
 }
