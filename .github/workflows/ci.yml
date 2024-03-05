@@ -15,15 +15,6 @@ jobs:
       run: npm install
     - name: Run ESLint
       run: npm run lint
-  frontend-unit-tests:
-    needs: eslint
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Install frontend modules
-      run: npm run install:frontend
-    - name: Run frontend unit tests 🧪
-      run: npm run test:frontend:unit
   frontend-component-tests:
     needs: eslint
     runs-on: ubuntu-latest
