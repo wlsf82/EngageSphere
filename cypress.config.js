@@ -6,7 +6,6 @@ module.exports = defineConfig({
     API_URL: 'http://localhost:3001',
   },
   e2e: {
-    setupNodeEvents(on, config) {},
     baseUrl: 'http://localhost:3000',
   },
   component: {

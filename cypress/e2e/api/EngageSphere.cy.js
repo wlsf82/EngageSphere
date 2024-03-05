@@ -47,7 +47,7 @@ describe('EngageSphere API', () => {
       expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
     })
   })
-  
+
   it('handles invalid requests gracefully (e.g., negative limit)', () => {
     cy.request({
       method: 'GET',
@@ -58,7 +58,7 @@ describe('EngageSphere API', () => {
       expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
     })
   })
-  
+
   it('handles invalid requests gracefully (e.g., unsupported size)', () => {
     cy.request({
       method: 'GET',

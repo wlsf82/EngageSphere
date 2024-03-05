@@ -1,6 +1,6 @@
 describe('EngageSphere Frontend', {
- viewportHeight: 1240,
- viewportWidth: 1024
+  viewportHeight: 1240,
+  viewportWidth: 1024
 }, () => {
   beforeEach(() => {
     const now = new Date(2024, 3, 15) // month is 0-indexed
@@ -30,7 +30,7 @@ describe('EngageSphere Frontend', {
   })
 
   context('Customers table', () => {
-    it("shows a list of customers when there's data in the database", () => {
+    it('shows a list of customers when there\'s data in the database', () => {
       cy.get('tbody tr').eq(0).find('td').eq(0).should('contain', '1')
       cy.get('tbody tr').eq(0)
         .should('contain', 'Jacobs, Bechtelar and Von')
@@ -261,7 +261,7 @@ describe('EngageSphere Frontend', {
 describe('EngageSphere Frontend - empty state', {
   viewportHeight: 1240,
   viewportWidth: 1024
- }, () => {
+}, () => {
   beforeEach(() => {
     cy.intercept(
       'GET',
@@ -276,7 +276,7 @@ describe('EngageSphere Frontend - empty state', {
   it('shows the image of an empty box and the text "No customers available." when there are no customers in the database', () => {
     cy.get('svg').should('be.visible')
     cy.contains('span', 'No customers available.').should('be.visible')
-   })
+  })
 
   it('disables the text input field when there are no customers in the database', () => {
     cy.get('input[type="text"]').should('be.disabled')
