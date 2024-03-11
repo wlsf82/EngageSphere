@@ -30,6 +30,8 @@ After cloning this project, to install the dev dependencies, open a terminal, go
 
 This project has frontend component tests, GUI tests, and backend API tests.
 
+To run them all, simply run `npm test` (or `npm t`, for short.)
+
 ### Frontend component tests
 
 Run `npm run test:frontend:component` to run the frontend component tests.
