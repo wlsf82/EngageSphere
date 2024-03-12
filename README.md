@@ -12,9 +12,9 @@ Read the following [doc](./docs/Requirements.md) to understand all the EngangeSp
 
 To run this project, you will need:
 
-- [git](https://git-scm.com/downloads) (I've used version `2.34.1` while writing this doc)
-- [Node.js](https://nodejs.org/en/) (I've used version `v18.15.0` while writing this doc)
-- npm (I've used version `9.5.0` while writing this doc)
+- [git](https://git-scm.com/downloads) (I've used version `2.42.1` while writing this doc)
+- [Node.js](https://nodejs.org/en/) (I've used version `v20.11.1` while writing this doc)
+- npm (I've used version `10.2.4` while writing this doc)
 
 **Note:** When installing Node.js, npm is automatically installed too.
 
