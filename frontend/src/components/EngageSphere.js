@@ -9,7 +9,7 @@ import SizeFilter from './SizeFilter'
 import Table from './Table'
 
 const serverPort = 3001
-const serverURL = `http://localhost:${serverPort}`
+const serverURL = process.env.REACT_APP_HEROKU_API_URL || `http://localhost:${serverPort}`
 
 const EngageSphere = () => {
   const [name, setName] = useState('')
