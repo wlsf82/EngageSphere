@@ -1,4 +1,4 @@
-const port = 3001
+const PORT = process.env.PORT || 3001
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -55,4 +55,4 @@ app.get('/customers', (req, res) => {
   return res.json(response)
 })
 
-app.listen(port, () => console.log(`Backend app listening on port ${port}!`))
+app.listen(PORT, () => console.log(`Backend app listening on port ${PORT}!`))
