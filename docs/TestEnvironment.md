@@ -12,6 +12,10 @@ After cloning the repo ...
 
 ### 1 Starting the backend
 
+You can run the backend locally or using Docker.
+
+#### Running locally
+
 Open a terminal, go to the root of this repo and:
 
 ```sh
@@ -25,6 +29,10 @@ The server will be listening on port 3001. If you need to change this, go to `/b
 ```js
 const port = 3001;
 ```
+
+#### Using Docker
+
+Run `docker run --publish 3001:3001 wlsf82/engagesphereserver` to start the server using Docker.
 
 ### 2 Starting the frontend
 
