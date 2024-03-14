@@ -116,6 +116,12 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.table-container:has(#loading) {
+  border: none;
+  background-color: none;
+  box-shadow: none;
+}
+
 .feather-inbox {
   width: 50vw;
   height: auto;

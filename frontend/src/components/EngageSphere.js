@@ -153,7 +153,7 @@ const EngageSphere = () => {
               ) : (
                 <EmptyState />
               )
-            ) : null}
+            ) : <p id="loading">Loading...</p>}
           </div>
         </>
       )}
