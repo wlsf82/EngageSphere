@@ -26,9 +26,13 @@ The theme is persisted in the local storage, and the last chosen one is kept in 
 
 Independent of the view, the application always shows a footer with the text "Copyright 2024 - Talking About Testing", and links to TAT's Udemy, Blog, and YouTube.
 
-### Customers table
+### Customers' table
 
-The customers table shows the list of registered customers in the database.
+The customers' table shows the list of registered customers in the database.
+
+Before the initial table rendering (while the first request to get customers is happening), a fallback paragraph with the text 'Loading...' is shown instead.
+
+When the request is finished, the customers' table is rendered.
 
 For each customer, the following information is displayed:
 
