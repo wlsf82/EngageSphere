@@ -315,3 +315,21 @@ describe('EngageSphere Frontend - A11y', () => {
     })
   })
 })
+
+describe('EnageSphere Frontend - Loading fallback', () => {
+  it('shows a Loading... fallback element before the initial customers\' fetch', () => {
+    cy.intercept(
+      'GET',
+      `${Cypress.env('API_URL')}/customers**`,
+      {
+        delay: 1000,
+        fixture: 'customers',
+      }
+    ).as('getDelayedCustomers')
+
+    cy.visit('/')
+    cy.contains('p', 'Loading...').should('be.visible')
+    cy.wait('@getDelayedCustomers')
+    cy.contains('p', 'Loading...').should('not.exist')
+  })
+})

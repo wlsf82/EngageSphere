@@ -24,6 +24,7 @@ When sending a GET request to the `/customers` endpoint:
 - Changes the theme to dark mode ensuring its persisted in the local storage
 - Changes the theme to light mode ensuring its persisted in the local storage
 - Shows a list of customers when there's data in the database
+- Shows a Loading... fallback element before the initial customers' fetch
 - Shows the image of an empty box and the text "No customers available." when there are no customers in the database
 - Disables the text input field when there are no customers in the database
 - Disables the text input field when in the customer details page
