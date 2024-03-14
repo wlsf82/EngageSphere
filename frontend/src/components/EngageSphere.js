@@ -121,50 +121,41 @@ const EngageSphere = () => {
   return (
     <main className="container">
       <Header theme={theme} onClick={toggleTheme} />
-      <Input
-        customer={customer}
-        customers={customers}
-        onChange={handleInputChange}
-      />
-      {!customer ? (
-        <SizeFilter sizeFilter={sizeFilter} onChange={handleFilterChange} />
-      ) : (
-        null
-      )}
+      <Input customer={customer} customers={customers} onChange={handleInputChange} />
       {customer ? (
-        <CustomerDetails
-          customer={customer}
-          onClick={handleCustomerDetailsBackButtonClick}
-        />
+        <CustomerDetails customer={customer} onClick={handleCustomerDetailsBackButtonClick} />
       ) : (
-        <div data-testid="table" className="table-container">
-          {initialFetchDone && !customers.length ? (
-            <EmptyState />
-          ) : customers.length ? (
-            <>
-              <p>Hi <b>{name ? name : 'there'}</b>! It is now <b>{(new Date()).toDateString()}</b>.</p>
-              <p>Below is our customer list.</p>
-              <p>Click on each of them to view their contact details.</p>
-              <>
-                <Table
-                  customers={sortedCustomers}
-                  customerClickHandler={customerClickHandler}
-                  sortCriteria={sortCriteria}
-                  sortOrder={sortOrder}
-                  sortNumberOfEmployessHandler={() => sortHandler('employees')}
-                  sortSizeHandler={() => sortHandler('size')}
-                />
-                <Pagination
-                  currentPage={currentPage}
-                  paginationInfo={paginationInfo}
-                  onClickPrev={handlePaginationPrevClick}
-                  onClickNext={handlePaginationNextClick}
-                  onChange={handleLimitChange}
-                 />
-              </>
-            </>
-          ) : null}
-        </div>
+        <>
+          <SizeFilter sizeFilter={sizeFilter} onChange={handleFilterChange} />
+          <div data-testid="table" className="table-container">
+            {initialFetchDone ? (
+              customers.length ? (
+                <>
+                  <p>Hi <b>{name || 'there'}</b>! It is now <b>{new Date().toDateString()}</b>.</p>
+                  <p>Below is our customer list.</p>
+                  <p>Click on each of them to view their contact details.</p>
+                  <Table
+                    customers={sortedCustomers}
+                    customerClickHandler={customerClickHandler}
+                    sortCriteria={sortCriteria}
+                    sortOrder={sortOrder}
+                    sortNumberOfEmployessHandler={() => sortHandler('employees')}
+                    sortSizeHandler={() => sortHandler('size')}
+                  />
+                  <Pagination
+                    currentPage={currentPage}
+                    paginationInfo={paginationInfo}
+                    onClickPrev={handlePaginationPrevClick}
+                    onClickNext={handlePaginationNextClick}
+                    onChange={handleLimitChange}
+                  />
+                </>
+              ) : (
+                <EmptyState />
+              )
+            ) : null}
+          </div>
+        </>
       )}
     </main>
   )
