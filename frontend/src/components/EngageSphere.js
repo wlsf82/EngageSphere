@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import CustomerDetails from './CustomerDetails'
-import EmptySate from './EmptyState'
+import EmptyState from './EmptyState'
 import Input from './Input'
 import Header from './Header'
 import Pagination from './Pagination'
@@ -139,7 +139,7 @@ const EngageSphere = () => {
       ) : (
         <div data-testid="table" className="table-container">
           {initialFetchDone && !customers.length ? (
-            <EmptySate />
+            <EmptyState />
           ) : customers.length ? (
             <>
               <p>Hi <b>{name ? name : 'there'}</b>! It is now <b>{(new Date()).toDateString()}</b>.</p>
