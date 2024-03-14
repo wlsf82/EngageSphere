@@ -21,8 +21,8 @@ When sending a GET request to the `/customers` endpoint:
 - Renders the header with an h1 and theme toggle
 - Shows the default greeting (i.e., Hi there! ...)
 - Shows a customized greeting (e.g., Hi Joe! ...)
-- Changes the theme to dark mode ensuring its persisted in the local storage
-- Changes the theme to light mode ensuring its persisted in the local storage
+- Changes the theme to dark mode, ensuring it persists in the local storage
+- Changes the theme to light mode, ensuring it persists in the local storage
 - Shows a list of customers when there's data in the database
 - Shows a Loading... fallback element before the initial customers' fetch
 - Shows the image of an empty box and the text "No customers available." when there are no customers in the database
@@ -33,16 +33,16 @@ When sending a GET request to the `/customers` endpoint:
 - Sorts by Size in ascending order
 - Sorts by Size in descending order by default
 - Sorts in descending order by default when changing the sorting column
-- Disables the Prev pagination button when in the first page
-- Disables the Next pagination button when in the last page
+- Disables the Prev pagination button when on the first page
+- Disables the Next pagination button when on the last page
 - Disables both the Prev and Next pagination buttons when there's only one page
-- Leaves both the Prev and Next pagination buttons enabled when in a middle page (e.g., Page 2 of 3)
+- Leaves both the Prev and Next pagination buttons enabled when on a middle page (e.g., Page 2 of 3)
 - Shows "Page 1 of n" (where 'n' is the number of pages)
-- Configures a new pagination limit (e.g., from 10 to 50) ensuring its persisted in the local storage
+- Configures a new pagination limit (e.g., from 10 to 50), ensuring it persists in the local storage
 - Filters by each size ('All', 'Small', 'Medium', and 'Big')
 - Shows the contact info of a specific customer
 - Shows "No contact info available" for a customer without contact information
-- Goes back to the customers list when clicking the "Back" button
+- Goes back to the customers' list when clicking the "Back" button
 - Shows the footer and its links
 
 ### A11y
