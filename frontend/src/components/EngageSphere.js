@@ -91,15 +91,15 @@ const EngageSphere = () => {
     return order * (a[sortCriteria] - b[sortCriteria])
   })
 
-  const sortHandler = (header) => sortCustomers(header)
+  const sortHandler = (criteria) => sortCustomers(criteria)
 
-  const handleInputChange = (e) => setName(e.target.value)
+  const handleInputChange = (event) => setName(event.target.value)
 
   const customerClickHandler = (customer) => setCustomer(customer)
   const handleCustomerDetailsBackButtonClick = () => setCustomer(null)
 
-  const handleLimitChange = (e) => {
-    const newLimit = parseInt(e.target.value, 10)
+  const handleLimitChange = (event) => {
+    const newLimit = parseInt(event.target.value, 10)
     setPaginationInfo(prevState => ({ ...prevState, limit: newLimit }))
     setCurrentPage(1)
   }
@@ -113,8 +113,8 @@ const EngageSphere = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
   }
 
-  const handleFilterChange = (e) => {
-    setSizeFilter(e.target.value)
+  const handleFilterChange = (event) => {
+    setSizeFilter(event.target.value)
     setCurrentPage(1)
   }
 
