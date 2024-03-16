@@ -136,4 +136,4 @@ If there are customers in the database, the following JSON structure should be r
 - The **contactInfo**'s value is `null` when the customer doesn't have contact information in the database;
 - The `size` attribute in the response for each customer is dynamically determined based on the number of employees according to the specified criteria;
 - Customer **size** is: **Small**, when **Number of employees** is less than or equal to 100; **Medium** when it is greater than 100 and less than or equal to 1000; **Big** otherwise;
-- The API responds with a `400 Bad Request` status code for invalid request parameters, such as negative values for `page` or `limit`, or unsupported values for `size`.
+- The API responds with a `400 Bad Request` status code for invalid request parameters, such as negative or non-number values for `page` or `limit`, or unsupported values for `size`.
