@@ -37,36 +37,60 @@ describe('EngageSphere API', () => {
       })
   })
 
-  it('handles invalid requests gracefully (e.g., negative page)', () => {
-    cy.request({
-      method: 'GET',
-      url: `${CUSTOMERS_API_URL}?page=-1`,
-      failOnStatusCode: false,
-    }).then(({ status, body }) => {
-      expect(status).to.eq(400)
-      expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+  context('Error scenarios', () => {
+    it('handles invalid requests gracefully (e.g., negative page)', () => {
+      cy.request({
+        method: 'GET',
+        url: `${CUSTOMERS_API_URL}?page=-1`,
+        failOnStatusCode: false,
+      }).then(({ status, body }) => {
+        expect(status).to.eq(400)
+        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+      })
     })
-  })
 
-  it('handles invalid requests gracefully (e.g., negative limit)', () => {
-    cy.request({
-      method: 'GET',
-      url: `${CUSTOMERS_API_URL}?limit=-1`,
-      failOnStatusCode: false,
-    }).then(({ status, body }) => {
-      expect(status).to.eq(400)
-      expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+    it('handles invalid requests gracefully (e.g., negative limit)', () => {
+      cy.request({
+        method: 'GET',
+        url: `${CUSTOMERS_API_URL}?limit=-1`,
+        failOnStatusCode: false,
+      }).then(({ status, body }) => {
+        expect(status).to.eq(400)
+        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+      })
     })
-  })
 
-  it('handles invalid requests gracefully (e.g., unsupported size)', () => {
-    cy.request({
-      method: 'GET',
-      url: `${CUSTOMERS_API_URL}?size=UnsupportedSize`,
-      failOnStatusCode: false,
-    }).then(({ status, body }) => {
-      expect(status).to.eq(400)
-      expect(body.error).to.include('Unsupported size value')
+    it('handles invalid requests gracefully (e.g., page as a string)', () => {
+      cy.request({
+        method: 'GET',
+        url: `${CUSTOMERS_API_URL}?page=One`,
+        failOnStatusCode: false,
+      }).then(({ status, body }) => {
+        expect(status).to.eq(400)
+        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+      })
+    })
+
+    it('handles invalid requests gracefully (e.g., limit as a boolean)', () => {
+      cy.request({
+        method: 'GET',
+        url: `${CUSTOMERS_API_URL}?limit=true`,
+        failOnStatusCode: false,
+      }).then(({ status, body }) => {
+        expect(status).to.eq(400)
+        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+      })
+    })
+
+    it('handles invalid requests gracefully (e.g., unsupported size)', () => {
+      cy.request({
+        method: 'GET',
+        url: `${CUSTOMERS_API_URL}?size=UnsupportedSize`,
+        failOnStatusCode: false,
+      }).then(({ status, body }) => {
+        expect(status).to.eq(400)
+        expect(body.error).to.include('Unsupported size value')
+      })
     })
   })
 })

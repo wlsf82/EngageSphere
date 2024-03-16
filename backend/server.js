@@ -20,7 +20,7 @@ app.get('/customers', (req, res) => {
   const { page = 1, limit = 10, size = '' } = req.query
   const validSizes = ['Small', 'Medium', 'Big', '']
 
-  if (page < 1 || limit < 1) {
+  if (isNaN(page) || isNaN(limit) || page < 1 || limit < 1) {
     return res.status(400).json({error: 'Invalid page or limit. Both must be positive numbers.'})
   }
 
