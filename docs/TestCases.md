@@ -39,7 +39,7 @@ When sending a GET request to the `/customers` endpoint:
 - Leaves both the Prev and Next pagination buttons enabled when on a middle page (e.g., Page 2 of 3)
 - Shows "Page 1 of n" (where 'n' is the number of pages)
 - Configures a new pagination limit (e.g., from 10 to 50), ensuring it persists in the local storage
-- Filters by each size ('All', 'Small', 'Medium', and 'Big')
+- Filters by each size ('All', 'Small', 'Medium', 'Enterprise', 'Large Enterprise', and 'Very Large Enterprise')
 - Shows the contact info of a specific customer
 - Shows "No contact info available" for a customer without contact information
 - Goes back to the customers' list when clicking the "Back" button
