@@ -1,7 +1,9 @@
-describe('EngageSphere Frontend', {
+const options = {
   viewportHeight: 1240,
   viewportWidth: 1024
-}, () => {
+}
+
+describe('EngageSphere Frontend', options, () => {
   beforeEach(() => {
     const now = new Date(2024, 3, 15) // month is 0-indexed
     cy.clock(now)
@@ -31,30 +33,30 @@ describe('EngageSphere Frontend', {
 
   context('Customers table', () => {
     it('shows a list of customers when there\'s data in the database', () => {
-      cy.get('tbody tr').eq(0).find('td').eq(0).should('contain', '1')
+      cy.get('tbody tr').eq(0).find('td').eq(0).should('contain', '5')
       cy.get('tbody tr').eq(0)
+        .should('contain', 'Runolfsson, Satterfield and Huel')
+        .and('contain', '51015')
+        .and('contain', 'Very Large Enterprise')
+      cy.get('tbody tr').eq(1).find('td').eq(0).should('contain', '4')
+      cy.get('tbody tr').eq(1)
+        .should('contain', 'Wilderman, Marks and Funk')
+        .and('contain', '24000')
+        .and('contain', 'Enterprise')
+      cy.get('tbody tr').eq(2).find('td').eq(0).should('contain', '1')
+      cy.get('tbody tr').eq(2)
         .should('contain', 'Jacobs, Bechtelar and Von')
         .and('contain', '2174')
-        .and('contain', 'Big')
-      cy.get('tbody tr').eq(1).find('td').eq(0).should('contain', '5')
-      cy.get('tbody tr').eq(1)
-        .should('contain', 'Runolfsson, Satterfield and Huel')
-        .and('contain', '1015')
-        .and('contain', 'Big')
-      cy.get('tbody tr').eq(2).find('td').eq(0).should('contain', '2')
-      cy.get('tbody tr').eq(2)
+        .and('contain', 'Enterprise')
+      cy.get('tbody tr').eq(3).find('td').eq(0).should('contain', '2')
+      cy.get('tbody tr').eq(3)
         .should('contain', 'Kilback - Kerluke')
         .and('contain', '226')
         .and('contain', 'Medium')
-      cy.get('tbody tr').eq(3).find('td').eq(0).should('contain', '3')
-      cy.get('tbody tr').eq(3)
+      cy.get('tbody tr').eq(4).find('td').eq(0).should('contain', '3')
+      cy.get('tbody tr').eq(4)
         .should('contain', 'Parisian - Berge')
         .and('contain', '47')
-        .and('contain', 'Small')
-      cy.get('tbody tr').eq(4).find('td').eq(0).should('contain', '4')
-      cy.get('tbody tr').eq(4)
-        .should('contain', 'Wilderman, Marks and Funk')
-        .and('contain', '24')
         .and('contain', 'Small')
     })
   })
@@ -66,7 +68,7 @@ describe('EngageSphere Frontend', {
         .first()
         .find('td')
         .eq(3)
-        .should('contain', 'Big')
+        .should('contain', 'Very Large Enterprise')
 
       cy.get('tbody tr')
         .last()
@@ -88,7 +90,7 @@ describe('EngageSphere Frontend', {
         .last()
         .find('td')
         .eq(3)
-        .should('contain', 'Big')
+        .should('contain', 'Very Large Enterprise')
     })
 
     it('sorts by Number of employees in descending order', () => {
@@ -98,13 +100,13 @@ describe('EngageSphere Frontend', {
         .first()
         .find('td')
         .eq(2)
-        .should('contain', '2174')
+        .should('contain', '51015')
 
       cy.get('tbody tr')
         .last()
         .find('td')
         .eq(2)
-        .should('contain', '24')
+        .should('contain', '47')
     })
 
     it('sorts by Number of employees in ascending order', () => {
@@ -115,35 +117,35 @@ describe('EngageSphere Frontend', {
         .first()
         .find('td')
         .eq(2)
-        .should('contain', '24')
+        .should('contain', '47')
 
       cy.get('tbody tr')
         .last()
         .find('td')
         .eq(2)
-        .should('contain', '2174')
+        .should('contain', '51015')
     })
   })
 
   context('Filtering', () => {
-    it('Filters by All sizes', () => {
+    it('filters by All sizes', () => {
       cy.intercept(
         'GET',
         `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Small`,
         { fixture: 'smallCustomers' }
-      )
+      ).as('getSmallCustomers')
       // First, filter by a different size (e.g., Small)
       // So that when filtering by All, the `getCustomers` request happens again,
       // and the test can wait for it.
       cy.get('[data-testid="filter"]').select('Small')
+      cy.wait('@getSmallCustomers')
       cy.get('[data-testid="filter"]').select('All')
-
       cy.wait('@getCustomers')
 
       cy.get('tbody tr').should('have.length', 5)
     })
 
-    it('Filters by Small size', () => {
+    it('filters by Small size', () => {
       cy.intercept(
         'GET',
         `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Small`,
@@ -154,10 +156,10 @@ describe('EngageSphere Frontend', {
 
       cy.wait('@getSmallCustomers')
 
-      cy.get('tbody tr').should('have.length', 2)
+      cy.get('tbody tr').should('have.length', 1)
     })
 
-    it('Filters by Medium size', () => {
+    it('filters by Medium size', () => {
       cy.intercept(
         'GET',
         `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Medium`,
@@ -171,18 +173,46 @@ describe('EngageSphere Frontend', {
       cy.get('tbody tr').should('have.length', 1)
     })
 
-    it('Filters by Big size', () => {
+    it('filters by Enterprise size', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Big`,
-        { fixture: 'bigCustomers' }
-      ).as('getBigCustomers')
+        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Enterprise`,
+        { fixture: 'enterpriseCustomers' }
+      ).as('getEnterpriseCustomers')
 
-      cy.get('[data-testid="filter"]').select('Big')
+      cy.get('[data-testid="filter"]').select('Enterprise')
 
-      cy.wait('@getBigCustomers')
+      cy.wait('@getEnterpriseCustomers')
 
-      cy.get('tbody tr').should('have.length', 2)
+      cy.get('tbody tr').should('have.length', 1)
+    })
+
+    it('filters by Large Enterprise size', () => {
+      cy.intercept(
+        'GET',
+        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Large%20Enterprise`,
+        { fixture: 'largeEnterpriseCustomers'}
+      ).as('getLargeEnterPriseCustomers')
+
+      cy.get('[data-testid="filter"]').select('Large Enterprise')
+
+      cy.wait('@getLargeEnterPriseCustomers')
+
+      cy.get('tbody tr').should('have.length', 1)
+    })
+
+    it('filters by Very Large Enterprise size', () => {
+      cy.intercept(
+        'GET',
+        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Very%20Large%20Enterprise`,
+        { fixture: 'veryLargeEnterpriseCustomers'}
+      ).as('getLargeEnterPriseCustomers')
+
+      cy.get('[data-testid="filter"]').select('Very Large Enterprise')
+
+      cy.wait('@getLargeEnterPriseCustomers')
+
+      cy.get('tbody tr').should('have.length', 1)
     })
   })
 
@@ -258,10 +288,7 @@ describe('EngageSphere Frontend', {
   })
 })
 
-describe('EngageSphere Frontend - empty state', {
-  viewportHeight: 1240,
-  viewportWidth: 1024
-}, () => {
+describe('EngageSphere Frontend - empty state', options, () => {
   beforeEach(() => {
     cy.intercept(
       'GET',
@@ -283,7 +310,7 @@ describe('EngageSphere Frontend - empty state', {
   })
 })
 
-describe('EngageSphere Frontend - A11y', () => {
+describe('EngageSphere Frontend - A11y', options, () => {
   beforeEach(() => {
     cy.visit('/')
     cy.injectAxe()
@@ -316,7 +343,7 @@ describe('EngageSphere Frontend - A11y', () => {
   })
 })
 
-describe('EnageSphere Frontend - Loading fallback', () => {
+describe('EnageSphere Frontend - Loading fallback', options, () => {
   it('shows a Loading... fallback element before the initial customers\' fetch', () => {
     cy.intercept(
       'GET',

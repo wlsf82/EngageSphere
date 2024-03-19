@@ -18,7 +18,7 @@ describe('EngageSphere API', () => {
   })
 
   it('filters customers by size correctly', () => {
-    const sizes = ['Small', 'Medium', 'Big']
+    const sizes = ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise']
     sizes.forEach((size) => {
       cy.request('GET', `${CUSTOMERS_API_URL}?size=${size}`)
         .then(({ body }) => {

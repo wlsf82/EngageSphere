@@ -1,0 +1,16 @@
+{
+  "customers": [
+    {
+        "id": 1,
+        "name": "Jacobs, Bechtelar and Von",
+        "employees": 2174,
+        "contactInfo": null,
+        "size": "Enterprise"
+    }
+  ],
+  "pageInfo": {
+      "currentPage": 1,
+      "totalPages": 1,
+      "totalCustomers": 1
+  }
+}

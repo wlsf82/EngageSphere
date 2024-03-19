@@ -1,29 +1,19 @@
 {
   "customers": [
-      {
-          "id": 3,
-          "name": "Parisian - Berge",
-          "employees": 47,
-          "contactInfo": {
-              "name": "Alysson",
-              "email": "Alysson.Lang@hotmail.com"
-          },
-          "size": "Small"
+    {
+      "id": 3,
+      "name": "Parisian - Berge",
+      "employees": 47,
+      "contactInfo": {
+          "name": "Alysson",
+          "email": "Alysson.Lang@hotmail.com"
       },
-      {
-          "id": 4,
-          "name": "Wilderman, Marks and Funk",
-          "employees": 24,
-          "contactInfo": {
-              "name": "Brando",
-              "email": "Brando_Kozey48@gmail.com"
-          },
-          "size": "Small"
-      }
+      "size": "Small"
+    }
   ],
   "pageInfo": {
-      "currentPage": 1,
-      "totalPages": 1,
-      "totalCustomers": 2
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 1
   }
 }

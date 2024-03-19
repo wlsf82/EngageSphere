@@ -1,437 +1,437 @@
 {
   "customers": [
-      {
-          "id": 1,
-          "name": "Kovacek - Waters",
-          "employees": 2939,
-          "contactInfo": {
-              "name": "Jean",
-              "email": "Jean.Kautzer@gmail.com"
-          },
-          "size": "Big"
+    {
+      "id": 1,
+      "name": "Jacobs, Bechtelar and Von",
+      "employees": 2174,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 2,
+      "name": "Kilback - Kerluke",
+      "employees": 226,
+      "contactInfo": {
+        "name": "Daija",
+        "email": "Daija_Gislason93@gmail.com"
       },
-      {
-          "id": 2,
-          "name": "Cronin - Quigley",
-          "employees": 715,
-          "contactInfo": {
-              "name": "Andreane",
-              "email": "Andreane_Beer@gmail.com"
-          },
-          "size": "Medium"
+      "size": "Medium"
+    },
+    {
+      "id": 3,
+      "name": "Parisian - Berge",
+      "employees": 47,
+      "contactInfo": {
+        "name": "Alysson",
+        "email": "Alysson.Lang@hotmail.com"
       },
-      {
-          "id": 3,
-          "name": "Daniel - Hintz",
-          "employees": 3407,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Small"
+    },
+    {
+      "id": 4,
+      "name": "Wilderman, Marks and Funk",
+      "employees": 24000,
+      "contactInfo": {
+        "name": "Brando",
+        "email": "Brando_Kozey48@gmail.com"
       },
-      {
-          "id": 4,
-          "name": "Howe, Stroman and Ruecker",
-          "employees": 2528,
-          "contactInfo": {
-              "name": "Nestor",
-              "email": "Nestor.Block93@yahoo.com"
-          },
-          "size": "Big"
+      "size": "Large Enterprise"
+    },
+    {
+      "id": 5,
+      "name": "Runolfsson, Satterfield and Huel",
+      "employees": 51015,
+      "contactInfo": null,
+      "size": "Very Large Enterprise"
+    },
+    {
+      "id": 6,
+      "name": "Littel - Flatley",
+      "employees": 1343,
+      "contactInfo": {
+        "name": "Selena",
+        "email": "Selena.Gleichner7@gmail.com"
       },
-      {
-          "id": 5,
-          "name": "Terry, Dicki and Nienow",
-          "employees": 2984,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 7,
+      "name": "Weber LLC",
+      "employees": 3069,
+      "contactInfo": {
+        "name": "Malika",
+        "email": "Malika16@hotmail.com"
       },
-      {
-          "id": 6,
-          "name": "Littel - Flatley",
-          "employees": 1343,
-          "contactInfo": {
-              "name": "Selena",
-              "email": "Selena.Gleichner7@gmail.com"
-          },
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 8,
+      "name": "Lowe Group",
+      "employees": 3017,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 9,
+      "name": "Rice - Stark",
+      "employees": 3239,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 10,
+      "name": "Hayes - Runolfsdottir",
+      "employees": 2600,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 11,
+      "name": "Larson LLC",
+      "employees": 1462,
+      "contactInfo": {
+        "name": "Benjamin",
+        "email": "Benjamin_Hoeger33@hotmail.com"
       },
-      {
-          "id": 7,
-          "name": "Weber LLC",
-          "employees": 3069,
-          "contactInfo": {
-              "name": "Malika",
-              "email": "Malika16@hotmail.com"
-          },
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 12,
+      "name": "Mraz, Parisian and Heathcote",
+      "employees": 4710,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 13,
+      "name": "Mante - Terry",
+      "employees": 2154,
+      "contactInfo": {
+        "name": "Johnnie",
+        "email": "Johnnie.Schinner-Leannon@hotmail.com"
       },
-      {
-          "id": 8,
-          "name": "Lowe Group",
-          "employees": 3017,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 14,
+      "name": "Strosin - Okuneva",
+      "employees": 858,
+      "contactInfo": {
+        "name": "Curtis",
+        "email": "Curtis.Witting@gmail.com"
       },
-      {
-          "id": 9,
-          "name": "Rice - Stark",
-          "employees": 3239,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Medium"
+    },
+    {
+      "id": 15,
+      "name": "Bartell - Dach",
+      "employees": 2047,
+      "contactInfo": {
+        "name": "Celestine",
+        "email": "Celestine.Batz65@gmail.com"
       },
-      {
-          "id": 10,
-          "name": "Hayes - Runolfsdottir",
-          "employees": 2600,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 16,
+      "name": "Blick - Abernathy",
+      "employees": 2340,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 17,
+      "name": "Sipes LLC",
+      "employees": 2480,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 18,
+      "name": "Will, Greenholt and DuBuque",
+      "employees": 3319,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 19,
+      "name": "Cassin, Kub and Raynor",
+      "employees": 3365,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 20,
+      "name": "Stracke, Von and Swift",
+      "employees": 1013,
+      "contactInfo": {
+        "name": "Aleen",
+        "email": "Aleen_Robel@yahoo.com"
       },
-      {
-          "id": 11,
-          "name": "Larson LLC",
-          "employees": 1462,
-          "contactInfo": {
-              "name": "Benjamin",
-              "email": "Benjamin_Hoeger33@hotmail.com"
-          },
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 21,
+      "name": "Satterfield - Mraz",
+      "employees": 3740,
+      "contactInfo": {
+        "name": "Ezequiel",
+        "email": "Ezequiel25@yahoo.com"
       },
-      {
-          "id": 12,
-          "name": "Mraz, Parisian and Heathcote",
-          "employees": 4710,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 22,
+      "name": "Bechtelar - Beier",
+      "employees": 386,
+      "contactInfo": {
+        "name": "Onie",
+        "email": "Onie34@yahoo.com"
       },
-      {
-          "id": 13,
-          "name": "Mante - Terry",
-          "employees": 2154,
-          "contactInfo": {
-              "name": "Johnnie",
-              "email": "Johnnie.Schinner-Leannon@hotmail.com"
-          },
-          "size": "Big"
+      "size": "Medium"
+    },
+    {
+      "id": 23,
+      "name": "Hartmann - Reinger",
+      "employees": 3841,
+      "contactInfo": {
+        "name": "Jan",
+        "email": "Jan22@gmail.com"
       },
-      {
-          "id": 14,
-          "name": "Strosin - Okuneva",
-          "employees": 858,
-          "contactInfo": {
-              "name": "Curtis",
-              "email": "Curtis.Witting@gmail.com"
-          },
-          "size": "Medium"
+      "size": "Enterprise"
+    },
+    {
+      "id": 24,
+      "name": "Steuber and Sons",
+      "employees": 4612,
+      "contactInfo": {
+        "name": "Lilyan",
+        "email": "Lilyan_Trantow@gmail.com"
       },
-      {
-          "id": 15,
-          "name": "Bartell - Dach",
-          "employees": 2047,
-          "contactInfo": {
-              "name": "Celestine",
-              "email": "Celestine.Batz65@gmail.com"
-          },
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 25,
+      "name": "Conn, Hackett and Tillman",
+      "employees": 3822,
+      "contactInfo": {
+        "name": "Brad",
+        "email": "Brad_Klein@hotmail.com"
       },
-      {
-          "id": 16,
-          "name": "Blick - Abernathy",
-          "employees": 2340,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 26,
+      "name": "Pfeffer, Prohaska and Johns",
+      "employees": 4316,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 27,
+      "name": "Kuhic - McKenzie",
+      "employees": 3475,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 28,
+      "name": "Swift, Wintheiser and Paucek",
+      "employees": 2624,
+      "contactInfo": {
+        "name": "Holly",
+        "email": "Holly_Brakus@hotmail.com"
       },
-      {
-          "id": 17,
-          "name": "Sipes LLC",
-          "employees": 2480,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 29,
+      "name": "Feeney - Cruickshank",
+      "employees": 3575,
+      "contactInfo": {
+          "name": "Stan",
+          "email": "Stan_Cormier@hotmail.com"
       },
-      {
-          "id": 18,
-          "name": "Will, Greenholt and DuBuque",
-          "employees": 3319,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 30,
+      "name": "Orn, Deckow and Luettgen",
+      "employees": 3224,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 31,
+      "name": "Hartmann - Donnelly",
+      "employees": 1500,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 32,
+      "name": "Volkman, Satterfield and Altenwerth",
+      "employees": 4624,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 33,
+      "name": "Harber - Schroeder",
+      "employees": 2644,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 34,
+      "name": "Hessel - Schneider",
+      "employees": 1094,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 35,
+      "name": "Gerlach, Volkman and Rippin",
+      "employees": 1188,
+      "contactInfo": {
+        "name": "Lurline",
+        "email": "Lurline.Erdman@yahoo.com"
       },
-      {
-          "id": 19,
-          "name": "Cassin, Kub and Raynor",
-          "employees": 3365,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 36,
+      "name": "Johnston and Sons",
+      "employees": 4227,
+      "contactInfo": {
+          "name": "Fred",
+          "email": "Fred45@hotmail.com"
       },
-      {
-          "id": 20,
-          "name": "Stracke, Von and Swift",
-          "employees": 1013,
-          "contactInfo": {
-              "name": "Aleen",
-              "email": "Aleen_Robel@yahoo.com"
-          },
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 37,
+      "name": "Buckridge, Wintheiser and Dietrich",
+      "employees": 2468,
+      "contactInfo": {
+          "name": "Eliane",
+          "email": "Eliane46@yahoo.com"
       },
-      {
-          "id": 21,
-          "name": "Satterfield - Mraz",
-          "employees": 3740,
-          "contactInfo": {
-              "name": "Ezequiel",
-              "email": "Ezequiel25@yahoo.com"
-          },
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 38,
+      "name": "Jenkins and Sons",
+      "employees": 2687,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 39,
+      "name": "Goodwin Group",
+      "employees": 794,
+      "contactInfo": {
+          "name": "Brendan",
+          "email": "Brendan.Larkin9@yahoo.com"
       },
-      {
-          "id": 22,
-          "name": "Bechtelar - Beier",
-          "employees": 386,
-          "contactInfo": {
-              "name": "Onie",
-              "email": "Onie34@yahoo.com"
-          },
-          "size": "Medium"
+      "size": "Medium"
+    },
+    {
+      "id": 40,
+      "name": "Dach, Botsford and Cruickshank",
+      "employees": 1616,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 41,
+      "name": "Hartmann, Doyle and Mante",
+      "employees": 4870,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 42,
+      "name": "Ritchie, Brakus and Luettgen",
+      "employees": 771,
+      "contactInfo": {
+          "name": "Elliott",
+          "email": "Elliott.Waelchi11@yahoo.com"
       },
-      {
-          "id": 23,
-          "name": "Hartmann - Reinger",
-          "employees": 3841,
-          "contactInfo": {
-              "name": "Jan",
-              "email": "Jan22@gmail.com"
-          },
-          "size": "Big"
+      "size": "Medium"
+    },
+    {
+      "id": 43,
+      "name": "Nicolas and Sons",
+      "employees": 3977,
+      "contactInfo": {
+          "name": "Reina",
+          "email": "Reina55@hotmail.com"
       },
-      {
-          "id": 24,
-          "name": "Steuber and Sons",
-          "employees": 4612,
-          "contactInfo": {
-              "name": "Lilyan",
-              "email": "Lilyan_Trantow@gmail.com"
-          },
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 44,
+      "name": "Treutel - Skiles",
+      "employees": 4239,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 45,
+      "name": "Ryan - Kassulke",
+      "employees": 3226,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 46,
+      "name": "Bauch LLC",
+      "employees": 1446,
+      "contactInfo": {
+        "name": "Janessa",
+        "email": "Janessa_Hilpert@hotmail.com"
       },
-      {
-          "id": 25,
-          "name": "Conn, Hackett and Tillman",
-          "employees": 3822,
-          "contactInfo": {
-              "name": "Brad",
-              "email": "Brad_Klein@hotmail.com"
-          },
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 47,
+      "name": "Hansen and Sons",
+      "employees": 4422,
+      "contactInfo": {
+        "name": "Jairo",
+        "email": "Jairo28@yahoo.com"
       },
-      {
-          "id": 26,
-          "name": "Pfeffer, Prohaska and Johns",
-          "employees": 4316,
-          "contactInfo": null,
-          "size": "Big"
+      "size": "Enterprise"
+    },
+    {
+      "id": 48,
+      "name": "Larkin, Kutch and Kessler",
+      "employees": 4797,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 49,
+      "name": "Adams, Parisian and Turner",
+      "employees": 3088,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 50,
+      "name": "Grant, Corwin and Hahn",
+      "employees": 1294,
+      "contactInfo": {
+        "name": "Kavon",
+        "email": "Kavon47@yahoo.com"
       },
-      {
-          "id": 27,
-          "name": "Kuhic - McKenzie",
-          "employees": 3475,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 28,
-          "name": "Swift, Wintheiser and Paucek",
-          "employees": 2624,
-          "contactInfo": {
-              "name": "Holly",
-              "email": "Holly_Brakus@hotmail.com"
-          },
-          "size": "Big"
-      },
-      {
-          "id": 29,
-          "name": "Feeney - Cruickshank",
-          "employees": 3575,
-          "contactInfo": {
-              "name": "Stan",
-              "email": "Stan_Cormier@hotmail.com"
-          },
-          "size": "Big"
-      },
-      {
-          "id": 30,
-          "name": "Orn, Deckow and Luettgen",
-          "employees": 3224,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 31,
-          "name": "Hartmann - Donnelly",
-          "employees": 1500,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 32,
-          "name": "Volkman, Satterfield and Altenwerth",
-          "employees": 4624,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 33,
-          "name": "Harber - Schroeder",
-          "employees": 2644,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 34,
-          "name": "Hessel - Schneider",
-          "employees": 1094,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 35,
-          "name": "Gerlach, Volkman and Rippin",
-          "employees": 1188,
-          "contactInfo": {
-              "name": "Lurline",
-              "email": "Lurline.Erdman@yahoo.com"
-          },
-          "size": "Big"
-      },
-      {
-          "id": 36,
-          "name": "Johnston and Sons",
-          "employees": 4227,
-          "contactInfo": {
-              "name": "Fred",
-              "email": "Fred45@hotmail.com"
-          },
-          "size": "Big"
-      },
-      {
-          "id": 37,
-          "name": "Buckridge, Wintheiser and Dietrich",
-          "employees": 2468,
-          "contactInfo": {
-              "name": "Eliane",
-              "email": "Eliane46@yahoo.com"
-          },
-          "size": "Big"
-      },
-      {
-          "id": 38,
-          "name": "Jenkins and Sons",
-          "employees": 2687,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 39,
-          "name": "Goodwin Group",
-          "employees": 794,
-          "contactInfo": {
-              "name": "Brendan",
-              "email": "Brendan.Larkin9@yahoo.com"
-          },
-          "size": "Medium"
-      },
-      {
-          "id": 40,
-          "name": "Dach, Botsford and Cruickshank",
-          "employees": 1616,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 41,
-          "name": "Hartmann, Doyle and Mante",
-          "employees": 4870,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 42,
-          "name": "Ritchie, Brakus and Luettgen",
-          "employees": 771,
-          "contactInfo": {
-              "name": "Elliott",
-              "email": "Elliott.Waelchi11@yahoo.com"
-          },
-          "size": "Medium"
-      },
-      {
-          "id": 43,
-          "name": "Nicolas and Sons",
-          "employees": 3977,
-          "contactInfo": {
-              "name": "Reina",
-              "email": "Reina55@hotmail.com"
-          },
-          "size": "Big"
-      },
-      {
-          "id": 44,
-          "name": "Treutel - Skiles",
-          "employees": 4239,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 45,
-          "name": "Ryan - Kassulke",
-          "employees": 3226,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 46,
-          "name": "Bauch LLC",
-          "employees": 1446,
-          "contactInfo": {
-              "name": "Janessa",
-              "email": "Janessa_Hilpert@hotmail.com"
-          },
-          "size": "Big"
-      },
-      {
-          "id": 47,
-          "name": "Hansen and Sons",
-          "employees": 4422,
-          "contactInfo": {
-              "name": "Jairo",
-              "email": "Jairo28@yahoo.com"
-          },
-          "size": "Big"
-      },
-      {
-          "id": 48,
-          "name": "Larkin, Kutch and Kessler",
-          "employees": 4797,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 49,
-          "name": "Adams, Parisian and Turner",
-          "employees": 3088,
-          "contactInfo": null,
-          "size": "Big"
-      },
-      {
-          "id": 50,
-          "name": "Grant, Corwin and Hahn",
-          "employees": 1294,
-          "contactInfo": {
-              "name": "Kavon",
-              "email": "Kavon47@yahoo.com"
-          },
-          "size": "Big"
-      }
+      "size": "Enterprise"
+    }
   ],
   "pageInfo": {
-      "currentPage": 1,
-      "totalPages": 1,
-      "totalCustomers": 50
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 50
   }
 }

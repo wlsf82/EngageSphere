@@ -1,0 +1,19 @@
+{
+  "customers": [
+    {
+      "id": 4,
+      "name": "Wilderman, Marks and Funk",
+      "employees": 24000,
+      "contactInfo": {
+          "name": "Brando",
+          "email": "Brando_Kozey48@gmail.com"
+      },
+      "size": "Large Enterprise"
+    }
+  ],
+  "pageInfo": {
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 1
+  }
+}

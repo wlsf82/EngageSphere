@@ -1,53 +1,53 @@
 {
   "customers": [
-      {
-          "id": 1,
-          "name": "Jacobs, Bechtelar and Von",
-          "employees": 2174,
-          "contactInfo": null,
-          "size": "Big"
+    {
+      "id": 1,
+      "name": "Jacobs, Bechtelar and Von",
+      "employees": 2174,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 2,
+      "name": "Kilback - Kerluke",
+      "employees": 226,
+      "contactInfo": {
+        "name": "Daija",
+        "email": "Daija_Gislason93@gmail.com"
       },
-      {
-          "id": 2,
-          "name": "Kilback - Kerluke",
-          "employees": 226,
-          "contactInfo": {
-              "name": "Daija",
-              "email": "Daija_Gislason93@gmail.com"
-          },
-          "size": "Medium"
+      "size": "Medium"
+    },
+    {
+      "id": 3,
+      "name": "Parisian - Berge",
+      "employees": 47,
+      "contactInfo": {
+        "name": "Alysson",
+        "email": "Alysson.Lang@hotmail.com"
       },
-      {
-          "id": 3,
-          "name": "Parisian - Berge",
-          "employees": 47,
-          "contactInfo": {
-              "name": "Alysson",
-              "email": "Alysson.Lang@hotmail.com"
-          },
-          "size": "Small"
+      "size": "Small"
+    },
+    {
+      "id": 4,
+      "name": "Wilderman, Marks and Funk",
+      "employees": 24000,
+      "contactInfo": {
+        "name": "Brando",
+        "email": "Brando_Kozey48@gmail.com"
       },
-      {
-          "id": 4,
-          "name": "Wilderman, Marks and Funk",
-          "employees": 24,
-          "contactInfo": {
-              "name": "Brando",
-              "email": "Brando_Kozey48@gmail.com"
-          },
-          "size": "Small"
-      },
-      {
-          "id": 5,
-          "name": "Runolfsson, Satterfield and Huel",
-          "employees": 1015,
-          "contactInfo": null,
-          "size": "Big"
-      }
+      "size": "Large Enterprise"
+    },
+    {
+      "id": 5,
+      "name": "Runolfsson, Satterfield and Huel",
+      "employees": 51015,
+      "contactInfo": null,
+      "size": "Very Large Enterprise"
+    }
   ],
   "pageInfo": {
-      "currentPage": 1,
-      "totalPages": 1,
-      "totalCustomers": 5
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 5
   }
 }
