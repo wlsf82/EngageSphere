@@ -39,7 +39,7 @@ For each customer, the following information is displayed:
 - **ID**
 - **Company name**
 - **Number of employees**
-- **Size**: if **Number of employees** is less than or equal to 100, size is **Small**; if greater than 100 and less than or equal to 1000, **Medium**; otherwise, **Big**
+- **Size**: if **Number of employees** is less than 100, size is **Small**; if greater than or equal to 100 and less than 1000, **Medium**; if greater than or equal to 1000 and less than 10000, **Enterprise**; if greater than or equal to 10000 and less than 50000 **Large Enterprise**; otherwise, **Very Large Enterprise**
 
 When the user clicks on a customer's row, the **Contact details** are shown.
 
@@ -49,7 +49,7 @@ If there are no customers in the database, the image of an empty box is shown. B
 
 The table headings for **Number of employees** and **Size** are sortable. They can be sorted in ascending or descending order.
 
-By default, it's sorted by **Size** in descending order (i.e., Big, Medium, Small.)
+By default, it's sorted by **Size** in descending order (i.e., Very Large Enterprise, Large Enterprise, Enterprise, Medium, Small.)
 
 When a column is being sorted by, it shows an up (&uarr;) or down arrow (&darr;), depending on whether sort by is ascending or descending.
 
@@ -65,7 +65,7 @@ The page limit is persisted in the local storage, and the last chosen one is kep
 
 #### Filtering
 
-It's possible to apply a filter based on the customers' size. The available options are 'All', 'Small', 'Medium', and 'Big'. 'All' is the default one.
+It's possible to apply a filter based on the customers' size. The available options are 'All', 'Small', 'Medium', 'Enterprise, 'Large Enterprise' and 'Very Large Enterprise'. 'All' is the default one.
 
 If there are no customers in the database for the filtered size, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
 
@@ -91,7 +91,7 @@ This endpoint accepts three query parameters, as listed below.
 
 - `page` (optional; current page - default is 1)
 - `limit` (optional; number of customers to be shown per page - default is 10)
-- `size` (optional; filter customers by size: 'Small', 'Medium', 'Big' - default is '', which means All)
+- `size` (optional; filter customers by size: 'Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise' - default is 'All')
 
 Below is an example of how the request URL would look like.
 
@@ -109,12 +109,12 @@ If there are customers in the database, the following JSON structure should be r
             "name": "Thompson, Zboncak and Mueller",
             "employees": 1125,
             "contactInfo": null,
-            "size": "Big"
+            "size": "Enterprise"
         },
         {
             "id": 2,
             "name": "Americas Inc.",
-            "employees": 100,
+            "employees": 98,
             "contactInfo": {
                 "name": "John Smith",
                 "email": "jsmith@americasinc.com"
@@ -135,5 +135,5 @@ If there are customers in the database, the following JSON structure should be r
 
 - The **contactInfo**'s value is `null` when the customer doesn't have contact information in the database;
 - The `size` attribute in the response for each customer is dynamically determined based on the number of employees according to the specified criteria;
-- Customer **size** is: **Small**, when **Number of employees** is less than or equal to 100; **Medium** when it is greater than 100 and less than or equal to 1000; **Big** otherwise;
+- Customer **size** is: **Small**, when **Number of employees** is less than 100; **Medium** when it is greater or equal to 100 and less than 1000; **Enterprise** when it is greater than or equal to 1000 and less than 10000; **Large Enterprise** when it is greater than or equal to 10000 and less than 50000; **Very Large Enterprise** otherwise;
 - The API responds with a `400 Bad Request` status code for invalid request parameters, such as negative or non-number values for `page` or `limit`, or unsupported values for `size`.
