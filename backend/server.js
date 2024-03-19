@@ -13,19 +13,24 @@ app.use(function(req, res, next) {
   next()
 })
 
-const getSize = (customer) =>
-  customer.employees <= 100 ? 'Small' : customer.employees <= 1000 ? 'Medium' : 'Big'
+const getSize = ({ employees }) => {
+  if (employees >= 50000) return 'Very Large Enterprise'
+  if (employees >= 10000) return 'Large Enterprise'
+  if (employees >= 1000) return 'Enterprise'
+  if (employees >= 100) return 'Medium'
+  return 'Small'
+}
 
 app.get('/customers', (req, res) => {
-  const { page = 1, limit = 10, size = '' } = req.query
-  const validSizes = ['Small', 'Medium', 'Big', '']
+  const { page = 1, limit = 10, size = 'All' } = req.query
+  const validSizes = ['Small', 'Medium',  'Enterprise', 'Large Enterprise', 'Very Large Enterprise', 'All']
 
   if (isNaN(page) || isNaN(limit) || page < 1 || limit < 1) {
     return res.status(400).json({error: 'Invalid page or limit. Both must be positive numbers.'})
   }
 
   if (!validSizes.includes(size)) {
-    return res.status(400).json({ error: 'Unsupported size value. Supported values are Small, Medium, Big.' })
+    return res.status(400).json({ error: 'Unsupported size value. Supported values are All, Small, Medium, Enterprise, Large Enterprise, and Very Large Enterprise.' })
   }
 
   const startIndex = (page - 1) * limit
@@ -33,7 +38,7 @@ app.get('/customers', (req, res) => {
 
   let filteredCustomers = database.customers
 
-  if (size) {
+  if (size != 'All') {
     filteredCustomers = filteredCustomers.filter(customer => getSize(customer) === size)
   }
 
