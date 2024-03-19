@@ -30,7 +30,7 @@ const EngageSphere = () => {
 
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
 
-  const [sizeFilter, setSizeFilter] = useState('')
+  const [sizeFilter, setSizeFilter] = useState('All')
 
   useEffect(() => {
     localStorage.setItem('theme', theme)
@@ -82,7 +82,9 @@ const EngageSphere = () => {
         switch (size.toLowerCase()) {
           case 'small': return 1
           case 'medium': return 2
-          case 'big': return 3
+          case 'enterprise': return 3
+          case 'large enterprise': return 4
+          case 'very large enterprise': return 5
           default: return 0
         }
       }

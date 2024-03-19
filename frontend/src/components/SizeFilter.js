@@ -3,10 +3,12 @@ const SizeFilter = ({ sizeFilter, onChange }) => {
     <div className="filter-container">
       <label htmlFor="sizeFilter">Filter by size:</label>
       <select data-testid="filter" id="sizeFilter" value={sizeFilter} onChange={onChange}>
-        <option value="">All</option>
+        <option value="All">All</option>
         <option value="Small">Small</option>
         <option value="Medium">Medium</option>
-        <option value="Big">Big</option>
+        <option value="Enterprise">Enterprise</option>
+        <option value="Large Enterprise">Large Enterprise</option>
+        <option value="Very Large Enterprise">Very Large Enterprise</option>
       </select>
     </div>
   )
