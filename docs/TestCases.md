@@ -14,6 +14,8 @@ When sending a GET request to the `/customers` endpoint:
 - Returns the correct structure of the response (i.e., `customers` and `pageInfo` properties)
 - Handles invalid requests gracefully (e.g., negative page )
 - Handles invalid requests gracefully (e.g., negative limit)
+- Handles invalid requests gracefully (e.g., page as a string)
+- Handles invalid requests gracefully (e.g., limit as a boolean)
 - Handles invalid requests gracefully (e.g., unsupported size)
 
 ## GUI/Component
