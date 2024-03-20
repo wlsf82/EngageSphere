@@ -15,7 +15,7 @@ const randomlyGenContactInfo = () => {
 }
 
 const numberOfDynamicCustomers = process.env.NUMBER_OF_DYNAMIC_CUSTOMERS || 42
-let initialId = 1
+let initialId = 9
 
 const getRandomIntegerBetween = (n, m) => {
   // Ensure n and m are integers and n <= m
@@ -44,5 +44,5 @@ const dynamicCustomers = times(numberOfDynamicCustomers, () => {
 })
 
 module.exports = {
-  customers: [...dynamicCustomers, ...staticCustomers]
+  customers: [...staticCustomers, ...dynamicCustomers]
 }

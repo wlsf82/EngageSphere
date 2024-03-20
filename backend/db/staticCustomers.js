@@ -1,12 +1,12 @@
 module.exports = [
   {
-    id: 91,
+    id: 1,
     name: 'Jacobs Co',
     employees: 99,
     contactInfo: null
   },
   {
-    id: 92,
+    id: 2,
     name: 'Kilback Co',
     employees: 100,
     contactInfo: {
@@ -15,7 +15,7 @@ module.exports = [
     }
   },
   {
-    id: 93,
+    id: 3,
     name: 'Parisian Co',
     employees: 999,
     contactInfo: {
@@ -24,7 +24,7 @@ module.exports = [
     }
   },
   {
-    id: 94,
+    id: 4,
     name: 'Wilderman Co',
     employees: 1000,
     contactInfo: {
@@ -33,13 +33,13 @@ module.exports = [
     }
   },
   {
-    id: 95,
+    id: 5,
     name: 'Runolfsson Co',
     employees: 9999,
     contactInfo: null
   },
   {
-    id: 96,
+    id: 6,
     name: 'Littel Co',
     employees: 10000,
     contactInfo: {
@@ -48,7 +48,7 @@ module.exports = [
     }
   },
   {
-    id: 97,
+    id: 7,
     name: 'Weber Co',
     employees: 49999,
     contactInfo: {
@@ -57,7 +57,7 @@ module.exports = [
     }
   },
   {
-    id: 98,
+    id: 8,
     name: 'Lowe Co',
     employees: 50000,
     contactInfo: null
