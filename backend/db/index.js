@@ -30,8 +30,8 @@ const randomlyGenNumOfEmployees = () => {
   if (Math.random() > 0.8) return getRandomIntegerBetween(50000, 100000)
   if (Math.random() > 0.6) return getRandomIntegerBetween(10000, 49999)
   if (Math.random() > 0.4) return getRandomIntegerBetween(1000, 9999)
-  if (Math.random() > 0.2) return getRandomIntegerBetween(500, 999)
-  return getRandomIntegerBetween(1, 499)
+  if (Math.random() > 0.2) return getRandomIntegerBetween(100, 999)
+  return getRandomIntegerBetween(1, 99)
 }
 
 const dynamicCustomers = times(numberOfDynamicCustomers, () => {
