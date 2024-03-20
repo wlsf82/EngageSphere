@@ -93,7 +93,7 @@ This endpoint accepts three query parameters, as listed below.
 - `limit` (optional; number of customers to be shown per page - default is 10)
 - `size` (optional; filter customers by size: 'Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise' - default is 'All')
 
-Below is an example of how the request URL would look like.
+Below is an example of how the request URL would look like if you wanted to retrieve ten medium customers from page two.
 
 `http://localhost:3001/customers?page=2&limit=10&size=Medium`
 
@@ -107,24 +107,24 @@ If there are customers in the database, the following JSON structure should be r
         {
             "id": 1,
             "name": "Thompson, Zboncak and Mueller",
-            "employees": 1125,
+            "employees": 850,
             "contactInfo": null,
-            "size": "Enterprise"
+            "size": "Medium"
         },
         {
             "id": 2,
             "name": "Americas Inc.",
-            "employees": 98,
+            "employees": 200,
             "contactInfo": {
                 "name": "John Smith",
                 "email": "jsmith@americasinc.com"
             },
-            "size": "Small"
+            "size": "Medium"
         },
         ...
     ],
     "pageInfo": {
-        "currentPage": 1,
+        "currentPage": 2,
         "totalPages": 20,
         "totalCustomers": 199
     }
