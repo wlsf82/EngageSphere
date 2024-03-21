@@ -47,13 +47,7 @@ const EngageSphere = () => {
 
   async function getCustomers(page, limit, sizeFilter) {
     try {
-      const response = await fetch(`${serverURL}/customers?page=${page}&limit=${limit}&size=${sizeFilter}`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-      })
+      const response = await fetch(`${serverURL}/customers?page=${page}&limit=${limit}&size=${sizeFilter}`, { method: 'GET' })
       const jsonResponse = await response.json()
       const { customers, pageInfo } = jsonResponse
 
