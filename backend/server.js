@@ -62,7 +62,6 @@ app.get('/customers', (req, res) => {
     }
   }
 
-  res.set('Access-Control-Allow-Origin', '*')
   return res.json(response)
 })
 
