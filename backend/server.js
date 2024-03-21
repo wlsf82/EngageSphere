@@ -9,7 +9,7 @@ const allowedOrigins = ['https://engage-sphere.vercel.app', 'http://localhost:30
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   const origin = req.headers.origin
 
   if (allowedOrigins.includes(origin)) {
