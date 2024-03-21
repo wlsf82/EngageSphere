@@ -5,10 +5,16 @@ const app = express()
 
 const database = require('./db')
 
+const allowedOrigins = ['https://engage-sphere.vercel.app', 'http://localhost:3000']
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
+  const origin = req.headers.origin
+
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin)
+  }
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   next()
 })
