@@ -92,7 +92,14 @@ body {
 .input-container {
   width: 100%;
   text-align: center;
-  padding: 20px 0;
+}
+
+.header-container {
+  padding: 30px 0 0 0;
+}
+
+.input-container {
+  padding: 0 0 15px 0;
 }
 
 h1 {
@@ -310,7 +317,7 @@ tr:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 10px 0 4px 0;
 }
 
 #theme-toggle-label {
