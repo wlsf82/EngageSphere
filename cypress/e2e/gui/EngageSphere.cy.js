@@ -5,9 +5,6 @@ const options = {
 
 describe('EngageSphere Frontend', options, () => {
   beforeEach(() => {
-    const now = new Date(2024, 3, 15) // month is 0-indexed
-    cy.clock(now)
-
     cy.intercept(
       'GET',
       `${Cypress.env('API_URL')}/customers**`,
@@ -16,19 +13,6 @@ describe('EngageSphere Frontend', options, () => {
 
     cy.visit('/')
     cy.wait('@getCustomers')
-  })
-
-  context('Greeting', () => {
-    it('shows the default greeting', () => {
-      cy.contains('p', 'Hi there! It is now Mon Apr 15 2024.')
-        .should('be.visible')
-    })
-
-    it('shows a customized greeting (e.g., Hi Joe! ...)', () => {
-      cy.get('input[type="text"]').type('Joe')
-      cy.contains('p', 'Hi Joe! It is now Mon Apr 15 2024.')
-        .should('be.visible')
-    })
   })
 
   context('Customers table', () => {

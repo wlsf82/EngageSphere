@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import CustomerDetails from './CustomerDetails'
+import Greeting from './Greeting'
 import EmptyState from './EmptyState'
 import Input from './Input'
 import Header from './Header'
@@ -23,19 +24,9 @@ const EngageSphere = () => {
   }))
   const [currentPage, setCurrentPage] = useState(1)
 
-  const [sortCriteria, setSortCriteria] = useState('size')
-  const [sortOrder, setSortOrder] = useState('desc')
-
   const [initialFetchDone, setInitialFetchDone] = useState(false)
 
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
-
   const [sizeFilter, setSizeFilter] = useState('All')
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme)
-    document.body.setAttribute('data-theme', theme)
-  }, [theme])
 
   useEffect(() => {
     localStorage.setItem('paginationLimit', paginationInfo.limit.toString())
@@ -60,35 +51,6 @@ const EngageSphere = () => {
     }
   }
 
-  const sortCustomers = (criteria) => {
-    if (sortCriteria === criteria) {
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
-    } else {
-      setSortOrder('desc')
-    }
-    setSortCriteria(criteria)
-  }
-
-  const sortedCustomers = [...customers].sort((a, b) => {
-    const order = sortOrder === 'asc' ? 1 : -1
-    if (sortCriteria === 'size') {
-      const mapSizeToNumber = (size) => {
-        switch (size.toLowerCase()) {
-          case 'small': return 1
-          case 'medium': return 2
-          case 'enterprise': return 3
-          case 'large enterprise': return 4
-          case 'very large enterprise': return 5
-          default: return 0
-        }
-      }
-      return order * (mapSizeToNumber(a[sortCriteria]) - mapSizeToNumber(b[sortCriteria]))
-    }
-    return order * (a[sortCriteria] - b[sortCriteria])
-  })
-
-  const sortHandler = (criteria) => sortCustomers(criteria)
-
   const handleInputChange = (event) => setName(event.target.value)
 
   const customerClickHandler = (customer) => setCustomer(customer)
@@ -105,10 +67,6 @@ const EngageSphere = () => {
   const handlePaginationNextClick = () =>
     setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))
 
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
-  }
-
   const handleFilterChange = (event) => {
     setSizeFilter(event.target.value)
     setCurrentPage(1)
@@ -116,7 +74,7 @@ const EngageSphere = () => {
 
   return (
     <main className="container">
-      <Header theme={theme} onClick={toggleTheme} />
+      <Header />
       <Input customer={customer} customers={customers} onChange={handleInputChange} />
       {customer ? (
         <CustomerDetails customer={customer} onClick={handleCustomerDetailsBackButtonClick} />
@@ -127,16 +85,10 @@ const EngageSphere = () => {
             {initialFetchDone ? (
               customers.length ? (
                 <>
-                  <p>Hi <b>{name || 'there'}</b>! It is now <b>{new Date().toDateString()}</b>.</p>
-                  <p>Below is our customer list.</p>
-                  <p>Click on each of them to view their contact details.</p>
+                  <Greeting name={name} />
                   <Table
-                    customers={sortedCustomers}
+                    customers={customers}
                     customerClickHandler={customerClickHandler}
-                    sortCriteria={sortCriteria}
-                    sortOrder={sortOrder}
-                    sortNumberOfEmployessHandler={() => sortHandler('employees')}
-                    sortSizeHandler={() => sortHandler('size')}
                   />
                   <Pagination
                     currentPage={currentPage}

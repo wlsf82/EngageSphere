@@ -20,7 +20,6 @@ When sending a GET request to the `/customers` endpoint:
 
 ## GUI/Component
 
-- Renders the header with an h1 and theme toggle
 - Shows the default greeting (i.e., Hi there! ...)
 - Shows a customized greeting (e.g., Hi Joe! ...)
 - Changes the theme to dark mode, ensuring it persists in the local storage

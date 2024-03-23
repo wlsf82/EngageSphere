@@ -1,11 +1,42 @@
+import { useState } from 'react'
+
 const Table = ({
   customers,
   customerClickHandler,
-  sortCriteria,
-  sortOrder,
-  sortNumberOfEmployessHandler,
-  sortSizeHandler,
 }) => {
+  const [sortCriteria, setSortCriteria] = useState('size')
+  const [sortOrder, setSortOrder] = useState('desc')
+
+  const sortCustomers = (criteria) => {
+    if (sortCriteria === criteria) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
+    } else {
+      setSortOrder('desc')
+    }
+    setSortCriteria(criteria)
+  }
+
+  const sortedCustomers = [...customers].sort((a, b) => {
+    const order = sortOrder === 'asc' ? 1 : -1
+    if (sortCriteria === 'size') {
+      const mapSizeToNumber = (size) => {
+        switch (size.toLowerCase()) {
+          case 'small': return 1
+          case 'medium': return 2
+          case 'enterprise': return 3
+          case 'large enterprise': return 4
+          case 'very large enterprise': return 5
+          default: return 0
+        }
+      }
+      return order * (mapSizeToNumber(a[sortCriteria]) - mapSizeToNumber(b[sortCriteria]))
+    }
+    return order * (a[sortCriteria] - b[sortCriteria])
+  })
+
+  const sortNumberOfEmployessHandler = () => sortCustomers('employees')
+  const sortSizeHandler = () => sortCustomers('size')
+
   return (
     <table border="1">
       <thead>
@@ -25,7 +56,7 @@ const Table = ({
         </tr>
       </thead>
       <tbody>
-        {customers.map((customer) => (
+        {sortedCustomers.map((customer) => (
           <tr key={customer.id} onClick={() => customerClickHandler(customer)}>
             <td>
               <button key={customer.id} onClick={() => customerClickHandler(customer)}>
