@@ -40,6 +40,13 @@ const dynamicCustomers = times(numberOfDynamicCustomers, () => {
     name: faker.company.name(),
     employees: randomlyGenNumOfEmployees(),
     contactInfo: randomlyGenContactInfo(),
+    address: {
+      street: faker.location.streetAddress(),
+      city: faker.location.city(),
+      state: faker.location.state(),
+      zipCode: faker.location.zipCode(),
+      country: 'United States of America',
+    },
   }
 })
 
