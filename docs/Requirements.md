@@ -75,7 +75,17 @@ When in the Contact details view, the text input field gets disabled (with or wi
 
 This view shows the customer details information (**Company name**, **Number of employees**, and **Size**), besides the contact details (**Contact name** and **Contact e-mail**) of the person to be contacted.
 
-When a customer doesn't have contact information, a paragraph is shown with the following text: **No contact info available**.
+When the customer doesn't have contact information, a paragraph is shown with the following text: **No contact info available**.
+
+#### Show address
+
+There's also the option to show the customer's address.
+
+When clicking the Show address button, the customer's address is shown (**Street**, **City**, **State**, **Zip code**, and **Country**).
+
+When the customer doesn't have an address, a paragraph is shown with the following text: **No address available**.
+
+#### Back button
 
 In this view, a **Back** button is presented, and when clicked, the user is taken back to **Customers table**.
 
@@ -103,31 +113,45 @@ If there are customers in the database, the following JSON structure should be r
 
 ```json
 {
-    "customers": [
-        {
-            "id": 1,
-            "name": "Thompson, Zboncak and Mueller",
-            "employees": 850,
-            "contactInfo": null,
-            "size": "Medium"
-        },
-        {
-            "id": 2,
-            "name": "Americas Inc.",
-            "employees": 200,
-            "contactInfo": {
-                "name": "John Smith",
-                "email": "jsmith@americasinc.com"
-            },
-            "size": "Medium"
-        },
-        ...
-    ],
-    "pageInfo": {
-        "currentPage": 2,
-        "totalPages": 20,
-        "totalCustomers": 199
-    }
+  "customers": [
+    {
+      "id": 1,
+      "name": "Thompson, Zboncak and Mueller",
+      "employees": 850,
+      "contactInfo": null,
+      "size": "Medium",
+      "address": {
+        "street": "988 Kimberly Fort Apt. 921",
+        "city": "Lake Tracy",
+        "state": "Connecticut",
+        "zipCode": "07115",
+        "country": "United States of America"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Americas Inc.",
+      "employees": 200,
+      "contactInfo": {
+        "name": "John Smith",
+        "email": "jsmith@americasinc.com"
+      },
+      "size": "Medium",
+      "address": {
+        "street": "5099 Murray Inlet",
+        "city": "South Tiffany",
+        "state": "Kentucky",
+        "zipCode": "08496",
+        "country": "United States of America"
+      }
+    },
+    ...
+  ],
+  "pageInfo": {
+    "currentPage": 2,
+    "totalPages": 20,
+    "totalCustomers": 199
+  }
 }
 ```
 
