@@ -1,10 +1,10 @@
-import ThemeToggler from './ThemeToggler'
+import ThemeToggle from './ThemeToggle'
 
 const Header = () => {
   return (
     <div className="header-container">
       <h1>EngageSphere</h1>
-      <ThemeToggler />
+      <ThemeToggle />
     </div>
   )
 }

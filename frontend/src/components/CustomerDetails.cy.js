@@ -7,17 +7,25 @@ describe('<CustomerDetails />', () => {
     backButtonClickHandler = cy.stub().as('backBtnClickHandler')
   })
 
-  it('renders with contact details', () => {
-    const customer = {
-      name: 'Caca Cala',
-      employees: 1000,
-      size: 'Medium',
-      contactInfo: {
-        name: 'Joe',
-        email: 'joe@cacacala.com'
-      }
+  const completeCustomer = {
+    name: 'Caca Cala',
+    employees: 1000,
+    size: 'Medium',
+    contactInfo: {
+      name: 'Joe',
+      email: 'joe@cacacala.com'
+    },
+    address: {
+      street: '988 Kimberly Fort Apt. 921',
+      city: 'Lake Tracy',
+      state: 'Connecticut',
+      zipCode: '07115',
+      country: 'United States of America'
     }
-    cy.mount(<CustomerDetails customer={customer} onClick={backButtonClickHandler} />)
+  }
+
+  it('renders with contact details', () => {
+    cy.mount(<CustomerDetails customer={completeCustomer} onClick={backButtonClickHandler} />)
 
     cy.contains('h2', 'Customer Details').should('be.visible')
     cy.contains('p', 'Company name: Caca Cala').should('be.visible')
@@ -35,7 +43,14 @@ describe('<CustomerDetails />', () => {
       name: 'Cocoa Cola',
       employees: 100,
       size: 'Small',
-      contactInfo: null
+      contactInfo: null,
+      address: {
+        street: '5099 Murray Inlet',
+        city: 'South Tiffany',
+        state: 'Kentucky',
+        zipCode: '08496',
+        country: 'United States of America'
+      }
     }
     cy.mount(<CustomerDetails customer={customer} onClick={backButtonClickHandler} />)
 
@@ -47,5 +62,34 @@ describe('<CustomerDetails />', () => {
     cy.contains('p', 'No contact info available').should('be.visible')
 
     cy.contains('button', 'Back').should('be.visible')
+  })
+
+  it('shows and hides customer address', () => {
+    cy.mount(<CustomerDetails customer={completeCustomer} onClick={backButtonClickHandler} />)
+
+    cy.contains('button', 'Show address').click()
+
+    cy.contains('h3', 'Address').should('be.visible')
+    cy.contains('p', `Street: ${completeCustomer.address.street}`).should('be.visible')
+    cy.contains('p', `City: ${completeCustomer.address.city}`).should('be.visible')
+    cy.contains('p', `State: ${completeCustomer.address.state}`).should('be.visible')
+    cy.contains('p', `Zip code: ${completeCustomer.address.zipCode}`).should('be.visible')
+    cy.contains('p', `Country: ${completeCustomer.address.country}`).should('be.visible')
+
+    cy.contains('button', 'Hide address').click()
+
+    cy.get('.address-info').should('not.be.exist')
+  })
+
+  it('renders a fallback paragraph when address is not avaiblable', () => {
+    const customerWithoutAddress = {
+      ...completeCustomer,
+      address: null,
+    }
+    cy.mount(<CustomerDetails customer={customerWithoutAddress} onClick={backButtonClickHandler} />)
+
+    cy.contains('button', 'Show address').click()
+
+    cy.contains('p', 'No address available').should('be.visible')
   })
 })

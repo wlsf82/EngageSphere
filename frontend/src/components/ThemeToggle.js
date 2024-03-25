@@ -17,7 +17,7 @@ const ThemeToggler = () => {
       <button
         id="theme-toggle-button"
         onClick={toggleTheme}
-        aria-label="theme-toggle-label"
+        aria-label="theme-toggle-button"
         style={{
           background: 'none',
           border: 'none',

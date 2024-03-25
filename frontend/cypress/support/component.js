@@ -1,6 +1,4 @@
-import './commands'
-
-import '../../frontend/src/index.css'
+import '../../src/index.css'
 
 import { mount } from 'cypress/react18'
 

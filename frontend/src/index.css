@@ -177,6 +177,25 @@ input[type='button']:hover,
   color: var(--button-hover-text-color);
 }
 
+.show-hide-address .show-address-btn {
+  all: unset;
+  text-decoration: underline;
+  outline: revert;
+}
+
+.show-hide-address .hide-address-btn {
+  all: unset;
+  text-decoration: underline;
+  outline: revert;
+}
+
+.show-hide-address button:hover {
+  all: unset;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
