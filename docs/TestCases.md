@@ -20,6 +20,7 @@ When sending a GET request to the `/customers` endpoint:
 
 ## GUI/Component
 
+- Shows the heading and theme's toggle
 - Shows the default greeting (i.e., Hi there! ...)
 - Shows a customized greeting (e.g., Hi Joe! ...)
 - Changes the theme to dark mode, ensuring it persists in the local storage
@@ -54,3 +55,6 @@ When sending a GET request to the `/customers` endpoint:
 - Customer details
   - finds no a11y issues in light mode
   - finds no a11y issues in dark mode
+  - Show address
+    - finds no a11y issues in light mode
+    - finds no a11y issues in dark mode
