@@ -50,12 +50,12 @@ const App = () => {
     }
   }
 
-  const handleInputChange = (event) => setName(event.target.value)
+  const handleInputChange = event => setName(event.target.value)
 
-  const customerClickHandler = (customer) => setCustomer(customer)
+  const customerClickHandler = customer => setCustomer(customer)
   const handleCustomerDetailsBackButtonClick = () => setCustomer(null)
 
-  const handleLimitChange = (event) => {
+  const handleLimitChange = event => {
     const newLimit = parseInt(event.target.value, 10)
     setPaginationInfo(prevState => ({ ...prevState, limit: newLimit }))
     setCurrentPage(1)
@@ -66,7 +66,7 @@ const App = () => {
   const handlePaginationNextClick = () =>
     setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))
 
-  const handleFilterChange = (event) => {
+  const handleFilterChange = event => {
     setSizeFilter(event.target.value)
     setCurrentPage(1)
   }
