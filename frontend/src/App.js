@@ -18,15 +18,14 @@ const App = () => {
   const [customers, setCustomers] = useState([])
   const [customer, setCustomer] = useState(null)
 
+  const [sizeFilter, setSizeFilter] = useState('All')
+  const [currentPage, setCurrentPage] = useState(1)
   const [paginationInfo, setPaginationInfo] = useState(() => ({
     totalPages: 1,
     limit: parseInt(localStorage.getItem('paginationLimit'), 10) || 10,
   }))
-  const [currentPage, setCurrentPage] = useState(1)
 
   const [initialFetchDone, setInitialFetchDone] = useState(false)
-
-  const [sizeFilter, setSizeFilter] = useState('All')
 
   useEffect(() => {
     localStorage.setItem('paginationLimit', paginationInfo.limit.toString())
