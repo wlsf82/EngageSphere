@@ -50,23 +50,23 @@ const App = () => {
     }
   }
 
-  const handleInputChange = event => setName(event.target.value)
+  const inputChangeHandler = event => setName(event.target.value)
 
   const customerClickHandler = customer => setCustomer(customer)
-  const handleCustomerDetailsBackButtonClick = () => setCustomer(null)
+  const customerDetailsBackButtonClickHandler = () => setCustomer(null)
 
-  const handleLimitChange = event => {
+  const limitChangeHandler = event => {
     const newLimit = parseInt(event.target.value, 10)
     setPaginationInfo(prevState => ({ ...prevState, limit: newLimit }))
     setCurrentPage(1)
   }
 
-  const handlePaginationPrevClick = () =>
+  const paginationPrevClickHandler = () =>
     setCurrentPage(prev => Math.max(prev - 1, 1))
-  const handlePaginationNextClick = () =>
+  const paginationNextClickHandler = () =>
     setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))
 
-  const handleFilterChange = event => {
+  const filterChangeHandler = event => {
     setSizeFilter(event.target.value)
     setCurrentPage(1)
   }
@@ -75,12 +75,12 @@ const App = () => {
     <>
       <main className="container">
         <Header />
-        <Input customer={customer} customers={customers} onChange={handleInputChange} />
+        <Input customer={customer} customers={customers} onChange={inputChangeHandler} />
         {customer ? (
-          <CustomerDetails customer={customer} onClick={handleCustomerDetailsBackButtonClick} />
+          <CustomerDetails customer={customer} onClick={customerDetailsBackButtonClickHandler} />
         ) : (
           <>
-            <SizeFilter sizeFilter={sizeFilter} onChange={handleFilterChange} />
+            <SizeFilter sizeFilter={sizeFilter} onChange={filterChangeHandler} />
             <div data-testid="table" className="table-container">
               {initialFetchDone ? (
                 customers.length ? (
@@ -93,9 +93,9 @@ const App = () => {
                     <Pagination
                       currentPage={currentPage}
                       paginationInfo={paginationInfo}
-                      onClickPrev={handlePaginationPrevClick}
-                      onClickNext={handlePaginationNextClick}
-                      onChange={handleLimitChange}
+                      onClickPrev={paginationPrevClickHandler}
+                      onClickNext={paginationNextClickHandler}
+                      onChange={limitChangeHandler}
                     />
                   </>
                 ) : (

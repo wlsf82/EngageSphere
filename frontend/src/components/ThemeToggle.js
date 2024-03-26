@@ -8,7 +8,7 @@ const ThemeToggler = () => {
     document.body.setAttribute('data-theme', theme)
   }, [theme])
 
-  const toggleTheme = () => {
+  const toggleThemeHandler = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
   }
 
@@ -16,7 +16,7 @@ const ThemeToggler = () => {
     <div className="theme-toggle-container">
       <button
         id="theme-toggle-button"
-        onClick={toggleTheme}
+        onClick={toggleThemeHandler}
         aria-label="theme-toggle-button"
         style={{
           background: 'none',
