@@ -19,7 +19,6 @@ const App = () => {
   const [customer, setCustomer] = useState(null)
 
   const [paginationInfo, setPaginationInfo] = useState(() => ({
-    currentPage: 1,
     totalPages: 1,
     limit: parseInt(localStorage.getItem('paginationLimit'), 10) || 10,
   }))
@@ -44,7 +43,7 @@ const App = () => {
       const { customers, pageInfo } = jsonResponse
 
       setCustomers(customers)
-      setPaginationInfo(prevState => ({ ...prevState, currentPage: pageInfo.currentPage, totalPages: pageInfo.totalPages }))
+      setPaginationInfo(prevState => ({ ...prevState, totalPages: pageInfo.totalPages }))
     } catch (error) {
       console.error(error)
     } finally {
