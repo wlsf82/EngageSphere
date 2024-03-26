@@ -94,11 +94,11 @@ describe('EngageSphere Frontend', options, () => {
         'GET',
         `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Very%20Large%20Enterprise`,
         { fixture: 'veryLargeEnterpriseCustomers'}
-      ).as('getLargeEnterPriseCustomers')
+      ).as('getVeryLargeEnterpriseCustomers')
 
       cy.get('[data-testid="filter"]').select('Very Large Enterprise')
 
-      cy.wait('@getLargeEnterPriseCustomers')
+      cy.wait('@getVeryLargeEnterpriseCustomers')
 
       cy.get('tbody tr').should('have.length', 1)
     })
