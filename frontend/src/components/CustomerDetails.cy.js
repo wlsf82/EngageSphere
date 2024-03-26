@@ -78,7 +78,7 @@ describe('<CustomerDetails />', () => {
 
     cy.contains('button', 'Hide address').click()
 
-    cy.get('.address-info').should('not.be.exist')
+    cy.get('.address-info').should('not.exist')
   })
 
   it('renders a fallback paragraph when address is not avaiblable', () => {
