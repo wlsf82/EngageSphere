@@ -14,6 +14,19 @@ const randomlyGenContactInfo = () => {
   return null
 }
 
+const randomlyGenAddressInfo = () => {
+  if (Math.random() > 0.2) {
+    return {
+      street: faker.location.streetAddress(),
+      city: faker.location.city(),
+      state: faker.location.state(),
+      zipCode: faker.location.zipCode(),
+      country: 'United States of America',
+    }
+  }
+  return null
+}
+
 const numberOfDynamicCustomers = process.env.NUMBER_OF_DYNAMIC_CUSTOMERS || 42
 let initialId = 9
 
@@ -40,13 +53,7 @@ const dynamicCustomers = times(numberOfDynamicCustomers, () => {
     name: faker.company.name(),
     employees: randomlyGenNumOfEmployees(),
     contactInfo: randomlyGenContactInfo(),
-    address: {
-      street: faker.location.streetAddress(),
-      city: faker.location.city(),
-      state: faker.location.state(),
-      zipCode: faker.location.zipCode(),
-      country: 'United States of America',
-    },
+    address: randomlyGenAddressInfo(),
   }
 })
 
