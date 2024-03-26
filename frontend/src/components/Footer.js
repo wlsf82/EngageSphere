@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer data-testid="footer" className="footer">
+    <footer data-testid="footer">
       <p>Copyright 2024 - Talking About Testing</p>
       <a href="https://udemy.com/user/walmyr" target="_blank" rel="noopener noreferrer">Udemy</a>
       <a href="https://talkingabouttesting.com" target="_blank" rel="noopener noreferrer">Blog</a>
