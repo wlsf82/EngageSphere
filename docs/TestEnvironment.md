@@ -24,7 +24,7 @@ npm install
 npm start
 ```
 
-The server will be listening on port 3001. If you need to change this, go to `/backend/server.js` and change the port variable value in the first line.
+The server will be listening on port 3001. If you need to change this, go to `/backend/server.js` and change the port variable value on line 6.
 
 ```js
 const port = 3001;

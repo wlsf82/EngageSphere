@@ -1,6 +1,11 @@
-const PORT = process.env.PORT || 3001
 const express = require('express')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('./swaggerConfig')
+
 const app = express()
+const PORT = process.env.PORT || 3001
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 const database = require('./db')
 
@@ -23,6 +28,50 @@ const getSize = ({ employees }) => {
   return 'Small'
 }
 
+/**
+ * @swagger
+ * /customers:
+ *   get:
+ *     summary: Returns a list of customers
+ *     description: EngageSphere Server API.
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *           default: 1
+ *         description: Page number
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *           default: 10
+ *         description: Number of items per page
+ *       - in: query
+ *         name: size
+ *         schema:
+ *           type: string
+ *           enum: [Small, Medium, Enterprise, Large Enterprise, Very Large Enterprise, All]
+ *           default: All
+ *         description: Size of the company
+ *     responses:
+ *       200:
+ *         description: A list of customers
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 customers:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/Customer'
+ *                 pageInfo:
+ *                   type: object
+ *                   $ref: '#/components/schemas/PageInfo'
+ *       400:
+ *         description: Invalid parameters
+ */
 app.get('/customers', (req, res) => {
   const { page = 1, limit = 10, size = 'All' } = req.query
   const validSizes = ['Small', 'Medium',  'Enterprise', 'Large Enterprise', 'Very Large Enterprise', 'All']
