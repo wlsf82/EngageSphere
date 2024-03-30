@@ -86,7 +86,7 @@ const getSize = ({ employees }) => {
  *             examples:
  *               invalidPage:
  *                 value: { error: "Invalid page or limit. Both must be positive numbers." }
- *                 summary: Invalid page number
+ *                 summary: Invalid page or limit
  *               invalidSize:
  *                 value: { error: "Unsupported size value. Supported values are All, Small, Medium, Enterprise, Large Enterprise, and Very Large Enterprise." }
  *                 summary: Unsupported size parameter
