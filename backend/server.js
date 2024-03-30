@@ -70,7 +70,26 @@ const getSize = ({ employees }) => {
  *                   type: object
  *                   $ref: '#/components/schemas/PageInfo'
  *       400:
- *         description: Invalid parameters
+ *         description: >
+ *           Invalid request parameters. This can occur for several reasons:
+ *           - The `page` or `limit` parameters are not positive integers.
+ *           - The `size` parameter is not one of the supported values.
+ *           Each error includes a message indicating the specific issue.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: 'Invalid page or limit. Both must be positive numbers.'
+ *             examples:
+ *               invalidPage:
+ *                 value: { error: "Invalid page or limit. Both must be positive numbers." }
+ *                 summary: Invalid page number
+ *               invalidSize:
+ *                 value: { error: "Unsupported size value. Supported values are All, Small, Medium, Enterprise, Large Enterprise, and Very Large Enterprise." }
+ *                 summary: Unsupported size parameter
  */
 app.get('/customers', (req, res) => {
   const { page = 1, limit = 10, size = 'All' } = req.query
