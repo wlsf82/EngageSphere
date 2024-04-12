@@ -32,7 +32,15 @@ const port = 3001;
 
 #### Using Docker
 
-Run `docker run --publish 3001:3001 wlsf82/engagesphereserver` to start the server using Docker.
+There are two different images for different platforms: **amd64** and **arm64**.
+
+##### AMD64 (aka x86_64)
+
+To run it using the AMD64 architecture (typical for most desktops and servers), execute the following command: `docker run --publish 3001:3001 wlsf82/engagesphereserver:amd64`.
+
+##### ARM64
+
+To run it using the ARM64 platform (often used in newer Macs with Apple Silicon, Raspberry Pis, and other ARM-based systems), execute the following command: `docker run --publish 3001:3001 wlsf82/engagesphereserver:arm64`.
 
 ### 2 Starting the frontend
 
