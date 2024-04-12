@@ -44,6 +44,9 @@ When sending a GET request to the `/customers` endpoint:
 - Filters by each size ('All', 'Small', 'Medium', 'Enterprise', 'Large Enterprise', and 'Very Large Enterprise')
 - Shows the contact info of a specific customer
 - Shows "No contact info available" for a customer without contact information
+- Shows customer address
+- Hides customer address
+- Shows "No address available" for a customer without address information
 - Goes back to the customers' list when clicking the "Back" button
 - Shows the footer and its links
 
