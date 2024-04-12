@@ -42,6 +42,10 @@ To run it using the AMD64 architecture (typical for most desktops and servers), 
 
 To run it using the ARM64 platform (often used in newer Macs with Apple Silicon, Raspberry Pis, and other ARM-based systems), execute the following command: `docker run --publish 3001:3001 wlsf82/engagesphereserver:arm64`.
 
+##### DockerHub
+
+Acesse o [repositório da imagem da API no DockerHub](https://hub.docker.com/r/wlsf82/engagesphereserver).
+
 ### 2 Starting the frontend
 
 Open a new terminal, go to the root of this repo and:
