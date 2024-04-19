@@ -35,7 +35,7 @@
   "homepage": "https://github.com/wlsf82/frontend-and-backend#readme",
   "devDependencies": {
     "axe-core": "^4.9.0",
-    "cypress": "^13.7.3",
+    "cypress": "^13.8.0",
     "cypress-axe": "^1.5.0",
     "eslint": "^8.57.0",
     "eslint-plugin-cypress": "^2.15.2",
