@@ -1,5 +1,5 @@
 {
-  "name": "frontend-and-backend",
+  "name": "EngageSphere",
   "version": "1.0.0",
   "description": "Sample project with basic 'backend' and frontend running Cypress tests on GitHub Actions.",
   "scripts": {
