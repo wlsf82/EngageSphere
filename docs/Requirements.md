@@ -69,6 +69,14 @@ It's possible to apply a filter based on the customers' size. The available opti
 
 If there are no customers in the database for the filtered size, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
 
+#### Downloading as CSV
+
+It's possible to download the list of customers to a CSV file called `download.csv`.
+
+When clicking the Download CSV button, the downloaded file will respect the size filter and the customer limit per page.
+
+If there are no customers in the database, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available.", and the Download CSV button won't be displayed.
+
 ### Contact details
 
 When in the Contact details view, the text input field gets disabled (with or without a defined name.)

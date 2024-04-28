@@ -42,6 +42,7 @@ When sending a GET request to the `/customers` endpoint:
 - Shows "Page 1 of n" (where 'n' is the number of pages)
 - Configures a new pagination limit (e.g., from 10 to 50), ensuring it persists in the local storage
 - Filters by each size ('All', 'Small', 'Medium', 'Enterprise', 'Large Enterprise', and 'Very Large Enterprise')
+- Correctly downloads a list of customers as a CSV file
 - Shows the contact info of a specific customer
 - Shows "No contact info available" for a customer without contact information
 - Shows customer address
