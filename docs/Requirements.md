@@ -71,7 +71,7 @@ If there are no customers in the database for the filtered size, the image of an
 
 #### Downloading as CSV
 
-It's possible to download the list of customers to a CSV file called `download.csv`.
+It's possible to download the list of customers to a CSV file called `customers.csv`.
 
 When clicking the Download CSV button, the downloaded file will respect the size filter and the customer limit per page.
 

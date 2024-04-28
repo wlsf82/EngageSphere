@@ -9,6 +9,6 @@ describe('<DownloadCSV />', () => {
 
     cy.contains('button', 'Download CSV').click()
 
-    cy.readFile('cypress/downloads/download.csv').should('be.equal', sampleCSV)
+    cy.readFile('cypress/downloads/customers.csv').should('be.equal', sampleCSV)
   })
 })

@@ -21,7 +21,7 @@ const DownloadCSVButton = ({ customers }) => {
     const a = document.createElement('a')
     a.setAttribute('hidden', '')
     a.setAttribute('href', url)
-    a.setAttribute('download', 'download.csv')
+    a.setAttribute('download', 'customers.csv')
     a.click()
     window.URL.revokeObjectURL(url)
     a.remove()
