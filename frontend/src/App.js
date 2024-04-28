@@ -6,6 +6,7 @@ import EmptyState from './components/EmptyState'
 import Input from './components/Input'
 import Header from './components/Header'
 import Pagination from './components/Pagination'
+import DownloadCSVButton from './components/DownloadCSV'
 import SizeFilter from './components/SizeFilter'
 import Table from './components/Table'
 import Footer from './components/Footer'
@@ -97,6 +98,9 @@ const App = () => {
                       onClickNext={paginationNextClickHandler}
                       onChange={limitChangeHandler}
                     />
+                    <div className="download-csv-button-container">
+                      <DownloadCSVButton customers={customers} />
+                    </div>
                   </>
                 ) : (
                   <EmptyState />
