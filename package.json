@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wlsf82/frontend-and-backend.git"
+    "url": "git+https://github.com/wlsf82/EngageSphere.git"
   },
   "keywords": [
     "Cypress.io",
@@ -32,7 +32,7 @@
   ],
   "author": "Walmyr Filho <wlsf82@gmail.com> (https://walmyr.dev)",
   "license": "MIT",
-  "homepage": "https://github.com/wlsf82/frontend-and-backend#readme",
+  "homepage": "https://github.com/wlsf82/EngageSphere/blob/main/README.md",
   "devDependencies": {
     "axe-core": "^4.9.0",
     "cypress": "^13.8.1",
