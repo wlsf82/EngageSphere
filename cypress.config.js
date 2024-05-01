@@ -7,6 +7,13 @@ module.exports = defineConfig({
   },
   e2e: {
     baseUrl: 'http://localhost:3000',
+    setupNodeEvents(on, config) {
+      config.env.API_URL = process.env.API_URL_PROD ?
+        process.env.API_URL_PROD :
+        config.env.API_URL
+
+      return config
+    },
   },
   component: {
     devServer: {
