@@ -1,6 +1,6 @@
 # EngangeSphere
 
-[![CI](https://github.com/wlsf82/EngageSphere/actions/workflows/ci.yml/badge.svg)](https://github.com/wlsf82/EngageSphere/actions/workflows/ci.yml)
+[![CI](https://github.com/wlsf82/EngageSphere/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/wlsf82/EngageSphere/actions/workflows/ci-cd.yml)
 
 Sample project with basic "backend" and frontend, running tests on GitHub Actions.
 
