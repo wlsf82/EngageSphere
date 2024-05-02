@@ -13,7 +13,7 @@
     "test:frontend:gui": "cypress run --spec cypress/e2e/gui/*.cy.js",
     "test:frontend:gui:cloud": "cypress run --record --tag 'GUI' --spec cypress/e2e/gui/*.cy.js",
     "test:frontend:gui:with:servers": "start-server-and-test start:frontend 3000 start:server 3000 test:frontend:gui",
-    "test:frontend:gui:prod:cloud": "cypress run --record --tag 'GUI-PROD' --spec cypress/e2e/gui/*.cy.js --config baseUrl='https://engage-sphere.vercel.app'",
+    "test:prod:cloud": "cypress run --record --tag 'PROD' --spec cypress/e2e/**/*.cy.js --config baseUrl='https://engage-sphere.vercel.app'",
     "test:frontend:component": "cypress run --component",
     "test:frontend:component:cloud": "cypress run --record --tag 'component' --component",
     "test:api": "cypress run --spec cypress/e2e/api/*.cy.js",

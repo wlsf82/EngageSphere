@@ -101,4 +101,4 @@ jobs:
           API_URL_PROD: ${{ secrets.API_URL_PROD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          command: npm run test:frontend:gui:prod:cloud
+          command: npm run test:prod:cloud
