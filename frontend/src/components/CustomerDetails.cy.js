@@ -38,7 +38,7 @@ describe('<CustomerDetails />', () => {
     cy.contains('button', 'Back').should('be.visible')
   })
 
-  it('renders without contact details', () => {
+  it('renders a fallback paragraph (\'No contact info available\') when contact details are not avaiblable', () => {
     const customer = {
       name: 'Cocoa Cola',
       employees: 100,
@@ -81,7 +81,7 @@ describe('<CustomerDetails />', () => {
     cy.get('.address-info').should('not.exist')
   })
 
-  it('renders a fallback paragraph when address is not avaiblable', () => {
+  it('renders a fallback paragraph (\'No address available\') when address is not avaiblable', () => {
     const customerWithoutAddress = {
       ...completeCustomer,
       address: null,
