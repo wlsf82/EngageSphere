@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/wlsf82/EngageSphere/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/wlsf82/EngageSphere/actions/workflows/ci-cd.yml)
 
-Sample project with basic "backend" and frontend, running tests on GitHub Actions.
+Sample project with a [Node.js](https://nodejs.org/) backend and a [React](https://react.dev/) frontend, running [Cypress](https://www.cypress.io/) tests on [GitHub Actions](https://github.com/features/actions).
 
 ## Business rules
 
