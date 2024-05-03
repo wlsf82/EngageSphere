@@ -81,7 +81,7 @@ describe('<Pagination />', () => {
     cy.get('select').should('have.value', 5)
   })
 
-  it('renders with a page limit of 50', () => {
+  it('renders with a limit of 50 items per page', () => {
     const props = {
       currentPage: 1,
       paginationInfo: {
