@@ -88,7 +88,21 @@ jobs:
           vercel-args: '--prod'
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
-  post-deployment-tests:
+  post-deployment-api-tests:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run API tests in production 🧪
+        uses: cypress-io/github-action@v6
+        env:
+          API_URL_PROD: ${{ secrets.API_URL_PROD }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        with:
+          command: npm run test:api:prod:cloud
+  post-deployment-gui-tests:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
@@ -101,4 +115,4 @@ jobs:
           API_URL_PROD: ${{ secrets.API_URL_PROD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          command: npm run test:prod:cloud
+          command: npm run test:frontend:gui:prod:cloud
