@@ -12,7 +12,7 @@ describe('<Pagination />', () => {
     }
   })
 
-  it('renders in the middle page', () => {
+  it('renders in the middle page (both Prev and Next buttons are enabled)', () => {
     const props = {
       currentPage: 2,
       paginationInfo: {
@@ -35,7 +35,7 @@ describe('<Pagination />', () => {
     cy.get('select').should('have.value', 5)
   })
 
-  it('renders in the first of two pages', () => {
+  it('renders in the first of two pages (Prev button is disabled)', () => {
     const props = {
       currentPage: 1,
       paginationInfo: {
@@ -58,7 +58,7 @@ describe('<Pagination />', () => {
     cy.get('select').should('have.value', 5)
   })
 
-  it('renders in the last of two pages', () => {
+  it('renders in the last of two pages (Next button is disabled)', () => {
     const props = {
       currentPage: 2,
       paginationInfo: {
@@ -81,22 +81,7 @@ describe('<Pagination />', () => {
     cy.get('select').should('have.value', 5)
   })
 
-  it('renders with a limit of 50 items per page', () => {
-    const props = {
-      currentPage: 1,
-      paginationInfo: {
-        totalPages: 10,
-        limit: 50
-      },
-      ...defaultProps,
-    }
-
-    cy.mount(<Pagination {...props} />)
-    
-    cy.get('select').should('have.value', 50)
-  })
-
-  it('renders the prev and next buttons disabled when there is only one page', () => {
+  it('renders the Prev and Next buttons disabled when there is only one page', () => {
     const props = {
       currentPage: 1,
       paginationInfo: {
@@ -116,5 +101,20 @@ describe('<Pagination />', () => {
       .and('be.visible')
     cy.contains('span', 'Page 1 of 1')
       .should('be.visible')
+  })
+
+  it('renders with a limit of 50 items per page', () => {
+    const props = {
+      currentPage: 1,
+      paginationInfo: {
+        totalPages: 10,
+        limit: 50
+      },
+      ...defaultProps,
+    }
+
+    cy.mount(<Pagination {...props} />)
+
+    cy.get('select').should('have.value', 50)
   })
 })
