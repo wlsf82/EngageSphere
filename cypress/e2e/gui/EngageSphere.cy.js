@@ -105,7 +105,7 @@ describe('EngageSphere Frontend', options, () => {
   })
 
   context('Pagination', () => {
-    it('changing the page limit is persisted in the local storage', () => {
+    it('persists the limit of items per page in the local storage when changing the limit', () => {
       cy.intercept(
         'GET',
         `${Cypress.env('API_URL')}/customers?page=1&limit=50**`,
