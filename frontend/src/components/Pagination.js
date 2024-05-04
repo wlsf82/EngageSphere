@@ -1,3 +1,11 @@
+import React from 'react'
+import {
+  currentPagePropType,
+  paginationShape,
+  onClickPropType,
+  onChangePropType
+} from '../propTypes'
+
 const Pagination = ({
   currentPage,
   paginationInfo,
@@ -18,6 +26,14 @@ const Pagination = ({
       </select>
     </div>
   )
+}
+
+Pagination.propTypes = {
+  currentPage: currentPagePropType,
+  onClickPrev: onClickPropType,
+  onClickNext: onClickPropType,
+  onChange: onChangePropType,
+  paginationInfo: paginationShape
 }
 
 export default Pagination

@@ -1,3 +1,4 @@
+import React from 'react'
 import DownloadCSV from './DownloadCSV.js'
 
 const customers = require('../../../cypress/fixtures/customers.json').customers

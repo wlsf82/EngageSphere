@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import PropTypes, { customerShape, onClickPropType } from '../propTypes'
 
 const Table = ({
   customers,
@@ -21,6 +22,7 @@ const Table = ({
     if (sortCriteria === 'size') {
       const mapSizeToNumber = (size) => {
         switch (size.toLowerCase()) {
+        /* eslint-disable indent */
           case 'small': return 1
           case 'medium': return 2
           case 'enterprise': return 3
@@ -83,6 +85,11 @@ const Table = ({
       </tbody>
     </table>
   )
+}
+
+Table.propTypes = {
+  customers: PropTypes.arrayOf(customerShape).isRequired,
+  customerClickHandler: onClickPropType,
 }
 
 export default Table

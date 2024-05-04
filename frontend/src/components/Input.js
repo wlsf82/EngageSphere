@@ -1,3 +1,6 @@
+import React from 'react'
+import PropTypes, { customerShape, onChangePropType } from '../propTypes'
+
 const Input = ({ customer, customers, onChange }) => {
   return (
     <div className="input-container">
@@ -12,6 +15,12 @@ const Input = ({ customer, customers, onChange }) => {
       />
     </div>
   )
+}
+
+Input.propTypes = {
+  customer: customerShape,
+  customers: PropTypes.arrayOf(customerShape).isRequired,
+  onChange: onChangePropType,
 }
 
 export default Input

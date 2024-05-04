@@ -1,3 +1,6 @@
+import React from 'react'
+import PropTypes, { customerShape } from '../propTypes'
+
 const DownloadCSVButton = ({ customers }) => {
   function convertArrayToCSV(data) {
     const csvRows = []
@@ -51,6 +54,10 @@ const DownloadCSVButton = ({ customers }) => {
   }
 
   return <button className="download-csv-button" onClick={exportCustomersToCSVHandler}>Download CSV</button>
+}
+
+DownloadCSVButton.propTypes = {
+  customers: PropTypes.arrayOf(customerShape).isRequired
 }
 
 export default DownloadCSVButton

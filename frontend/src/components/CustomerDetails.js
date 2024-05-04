@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { customerShape , onClickPropType } from '../propTypes'
 
 const CustomerDetails = ({ customer, onClick }) => {
   const [showAddress, setShowAddress] = useState(false)
@@ -53,6 +54,11 @@ const CustomerDetails = ({ customer, onClick }) => {
       </div>
     </div>
   )
+}
+
+CustomerDetails.propTypes = {
+  customer: customerShape,
+  onClick: onClickPropType
 }
 
 export default CustomerDetails

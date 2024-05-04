@@ -1,3 +1,6 @@
+import React from 'react'
+import { sizeFilterPropType, onChangePropType } from '../propTypes'
+
 const SizeFilter = ({ sizeFilter, onChange }) => {
   return (
     <div className="filter-container">
@@ -12,6 +15,11 @@ const SizeFilter = ({ sizeFilter, onChange }) => {
       </select>
     </div>
   )
+}
+
+SizeFilter.propTypes = {
+  sizeFilter: sizeFilterPropType,
+  onChange: onChangePropType,
 }
 
 export default SizeFilter

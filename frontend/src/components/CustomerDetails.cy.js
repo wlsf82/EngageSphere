@@ -1,3 +1,4 @@
+import React from 'react'
 import CustomerDetails from './CustomerDetails'
 
 describe('<CustomerDetails />', () => {

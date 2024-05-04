@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import CustomerDetails from './components/CustomerDetails'
 import Greeting from './components/Greeting'

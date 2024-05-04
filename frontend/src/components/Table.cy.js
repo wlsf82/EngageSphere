@@ -1,3 +1,4 @@
+import React from 'react'
 import Table from './Table'
 
 const customers = require('../../../cypress/fixtures/customers.json').customers

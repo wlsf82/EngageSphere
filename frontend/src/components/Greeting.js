@@ -1,3 +1,6 @@
+import React from 'react'
+import { namePropType } from '../propTypes'
+
 const Greeting = ({ name }) => {
   return (
     <>
@@ -6,6 +9,10 @@ const Greeting = ({ name }) => {
       <p>Click on each of them to view their contact details.</p>
     </>
   )
+}
+
+Greeting.propTypes = {
+  name: namePropType
 }
 
 export default Greeting
