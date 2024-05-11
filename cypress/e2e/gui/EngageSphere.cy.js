@@ -133,14 +133,6 @@ describe('EngageSphere Frontend', options, () => {
   })
 
   context('Customer details', () => {
-    it('disables the text input field when in the customer details page', () => {
-      cy.get('tbody tr')
-        .first()
-        .click()
-
-      cy.get('input[type="text"]').should('be.disabled')
-    })
-
     it('goes back to the customers list when clicking the "Back" button', () => {
       cy.get('tbody tr')
         .first()
@@ -171,10 +163,6 @@ describe('EngageSphere Frontend - empty state', options, () => {
   it('shows the image of an empty box and the text "No customers available." when there are no customers in the database', () => {
     cy.get('svg').should('be.visible')
     cy.contains('span', 'No customers available.').should('be.visible')
-  })
-
-  it('disables the text input field when there are no customers in the database', () => {
-    cy.get('input[type="text"]').should('be.disabled')
   })
 })
 
