@@ -7,12 +7,12 @@ describe('<Input />', () => {
   it('disables the text input field when in the customer details page', () => {
     cy.mount(<Input customer={customer} />)
 
-    cy.get('input[type="text"]').should('be.disabled')
+    cy.get('input[placeholder="Enter your name"]').should('be.disabled')
   })
 
   it('disables the text input field when there are no customers in the database', () => {
     cy.mount(<Input customers={[]} />)
 
-    cy.get('input[type="text"]').should('be.disabled')
+    cy.get('input[placeholder="Enter your name"]').should('be.disabled')
   })
 })
