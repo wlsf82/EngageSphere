@@ -60,6 +60,28 @@ describe('EngageSphere API', () => {
       })
     })
 
+    it('handles invalid requests gracefully (e.g., page=0)', () => {
+      cy.request({
+        method: 'GET',
+        url: `${CUSTOMERS_API_URL}?page=0`,
+        failOnStatusCode: false,
+      }).then(({ status, body }) => {
+        expect(status).to.eq(400)
+        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+      })
+    })
+
+    it('handles invalid requests gracefully (e.g., limit=0)', () => {
+      cy.request({
+        method: 'GET',
+        url: `${CUSTOMERS_API_URL}?limit=0`,
+        failOnStatusCode: false,
+      }).then(({ status, body }) => {
+        expect(status).to.eq(400)
+        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
+      })
+    })
+
     it('handles invalid requests gracefully (e.g., page as a string)', () => {
       cy.request({
         method: 'GET',
