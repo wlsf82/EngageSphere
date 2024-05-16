@@ -37,6 +37,13 @@ describe('EngageSphere API', () => {
       })
   })
 
+  it('returns an empty array of customers when in an empty page', () => {
+    cy.request('GET', `${CUSTOMERS_API_URL}?page=6&limit=10`)
+      .then(({ body }) => {
+        expect(body.customers).to.be.empty
+      })
+  })
+
   context('Error scenarios', () => {
     it('handles invalid requests gracefully (e.g., negative page)', () => {
       cy.request({
