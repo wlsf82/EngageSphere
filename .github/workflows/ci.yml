@@ -32,14 +32,14 @@ jobs:
   gui-tests:
     needs: eslint
     runs-on: ubuntu-latest
+    services:
+      engagesphere-backend:
+        image: wlsf82/engagesphereserver:amd64
+        ports:
+          - 3001:3001
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install backend modules
-        uses: cypress-io/github-action@v6
-        with:
-          install-command: npm run install:backend
-          runTests: false
       - name: Install frontend modules
         uses: cypress-io/github-action@v6
         with:
@@ -48,21 +48,21 @@ jobs:
       - name: Run frontend GUI tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          start: npm run start:frontend, npm run start:server
+          start: npm run start:frontend
           command: npm run test:frontend:gui:cloud
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   api-tests:
     needs: eslint
     runs-on: ubuntu-latest
+    services:
+      engagesphere-backend:
+        image: wlsf82/engagesphereserver:amd64
+        ports:
+          - 3001:3001
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install backend modules
-        uses: cypress-io/github-action@v6
-        with:
-          install-command: npm run install:backend
-          runTests: false
       - name: Install frontend modules
         uses: cypress-io/github-action@v6
         with:
@@ -71,7 +71,7 @@ jobs:
       - name: Run API tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          start: npm run start:frontend, npm run start:server
+          start: npm run start:frontend
           command: npm run test:api:cloud
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
