@@ -1,47 +1,97 @@
 describe('EngageSphere API', () => {
   const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`
 
-  it('successfully retrieves customers', () => {
-    cy.request('GET', CUSTOMERS_API_URL)
-      .then(({ status }) => {
-        expect(status).to.eq(200)
-      })
-  })
+  context('General', () => {
+    beforeEach(() => {
+      cy.request('GET', CUSTOMERS_API_URL).as('getCustomers')
+    })
 
-  it('paginates the customer list correctly', () => {
-    // @TODO: Fix for the case there's only one page
-    cy.request('GET', `${CUSTOMERS_API_URL}?page=2&limit=5`)
-      .then(({ body }) => {
-        expect(body.customers).to.have.length(5)
-        expect(body.pageInfo.currentPage).to.eq('2') // TODO: Find out why 2 is a string.
-      })
-  })
+    it('successfully retrieves customers', () => {
+      cy.get('@getCustomers')
+        .its('status')
+        .should('eq', 200)
+    })
 
-  it('filters customers by size correctly', () => {
-    const sizes = ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise']
-    sizes.forEach((size) => {
-      cy.request('GET', `${CUSTOMERS_API_URL}?size=${size}`)
-        .then(({ body }) => {
-          body.customers.forEach((customer) => {
-            expect(customer.size).to.eq(size)
-          })
+    it('returns the correct structure of the response', () => {
+      cy.get('@getCustomers')
+        .its('body')
+        .should('have.all.keys', 'customers', 'pageInfo')
+      cy.get('@getCustomers')
+        .its('body.customers')
+        .each(customer => {
+          expect(customer.id).to.exist
+          expect(customer.name).to.exist
+          expect(customer.employees).to.exist
+
+          if (customer.contactInfo) {
+            expect(customer.contactInfo.name).to.exist
+            expect(customer.contactInfo.email).to.exist
+          }
+
+          if (customer.address) {
+            expect(customer.address.street).to.exist
+            expect(customer.address.city).to.exist
+            expect(customer.address.state).to.exist
+            expect(customer.address.zipCode).to.exist
+            expect(customer.address.country).to.exist
+          }
         })
+
+      cy.get('@getCustomers')
+        .its('body.pageInfo')
+        .should('have.all.keys', 'currentPage', 'totalPages', 'totalCustomers')
+    })
+
+    it('returns an empty array of customers when in an empty page', () => {
+      cy.request('GET', `${CUSTOMERS_API_URL}?page=6&limit=10`)
+        .as('getEmptyCustomers') // Supposing there are 50 clients in the database.
+
+      cy.get('@getEmptyCustomers')
+        .its('body.customers')
+        .should('be.empty')
     })
   })
 
-  it('returns the correct structure of the response', () => {
-    cy.request('GET', CUSTOMERS_API_URL)
-      .then(({ body }) => {
-        expect(body).to.have.all.keys('customers', 'pageInfo')
-        expect(body.pageInfo).to.include.keys('currentPage', 'totalPages', 'totalCustomers')
+  context('Pagination', () => {
+    it('paginates the customer list correctly', () => {
+      cy.request('GET', `${CUSTOMERS_API_URL}?page=2`).as('getCustomersPageTwo')
+
+      cy.get('@getCustomersPageTwo')
+        .its('body.pageInfo.currentPage')
+        .should('eq', '2')
+    })
+
+    it('filters limit of customers correctly', () => {
+      const resultsPerPageLimit = ['5', '10', '20', '50']
+      const totalPagesPerLimit = [10, 5, 3, 1] // Supposing there are 50 clients in the database.
+
+      resultsPerPageLimit.forEach((limit, index) => {
+        cy.request('GET', `${CUSTOMERS_API_URL}?limit=${limit}`).as('getLimittedCustomers')
+
+        cy.get('@getLimittedCustomers')
+          .its('body.customers')
+          .should('have.length', limit)
+        cy.get('@getLimittedCustomers')
+          .its('body.pageInfo.totalPages')
+          .should('be.eq', totalPagesPerLimit[index])
       })
+    })
   })
 
-  it('returns an empty array of customers when in an empty page', () => {
-    cy.request('GET', `${CUSTOMERS_API_URL}?page=6&limit=10`)
-      .then(({ body }) => {
-        expect(body.customers).to.be.empty
+  context('Size filtering', () => {
+    it('filters customers by size correctly', () => {
+      const sizes = ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise']
+
+      sizes.forEach((size) => {
+        cy.request('GET', `${CUSTOMERS_API_URL}?size=${size}`).as('getSizedCustomers')
+
+        cy.get('@getSizedCustomers')
+          .its('body.customers')
+          .each(customer => {
+            expect(customer.size).to.eq(size)
+          })
       })
+    })
   })
 
   context('Error scenarios', () => {
