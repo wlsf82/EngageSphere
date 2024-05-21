@@ -167,47 +167,77 @@ describe('EngageSphere Frontend - empty state', options, () => {
 })
 
 describe('EngageSphere Frontend - A11y', options, () => {
-  beforeEach(() => {
-    cy.visit('/')
-    cy.injectAxe()
-  })
-
-  context('Customers table', () => {
-    it('finds no a11y issues in light mode', () => {
-      cy.checkA11y()
-    })
-
-    it('finds no a11y issues in dark mode', () => {
-      cy.get('#theme-toggle-button').click()
-      cy.checkA11y()
-    })
-  })
-
-  context('Customer details', () => {
+  context('With customers', () => {
     beforeEach(() => {
-      cy.get('tbody tr').first().click()
+      cy.visit('/')
+      cy.injectAxe()
+      cy.get('[data-theme="light"]').should('exist')
     })
 
-    it('finds no a11y issues in light mode', () => {
-      cy.checkA11y()
-    })
-
-    it('finds no a11y issues in dark mode', () => {
-      cy.get('#theme-toggle-button').click()
-      cy.checkA11y()
-    })
-
-    context('Show address', () => {
+    context('Customers table', () => {
       it('finds no a11y issues in light mode', () => {
-        cy.contains('button', 'Show address').click()
         cy.checkA11y()
       })
 
       it('finds no a11y issues in dark mode', () => {
         cy.get('#theme-toggle-button').click()
-        cy.contains('button', 'Show address').click()
+        cy.get('[data-theme="dark"]').should('exist')
         cy.checkA11y()
       })
+    })
+
+    context('Customer details', () => {
+      beforeEach(() => {
+        cy.get('tbody tr').first().click()
+      })
+
+      it('finds no a11y issues in light mode', () => {
+        cy.checkA11y()
+      })
+
+      it('finds no a11y issues in dark mode', () => {
+        cy.get('#theme-toggle-button').click()
+        cy.get('[data-theme="dark"]').should('exist')
+        cy.checkA11y()
+      })
+
+      context('Show address', () => {
+        it('finds no a11y issues in light mode', () => {
+          cy.contains('button', 'Show address').click()
+          cy.checkA11y()
+        })
+
+        it('finds no a11y issues in dark mode', () => {
+          cy.get('#theme-toggle-button').click()
+          cy.get('[data-theme="dark"]').should('exist')
+          cy.contains('button', 'Show address').click()
+          cy.checkA11y()
+        })
+      })
+    })
+  })
+
+  context('Without customers (empty state)', () => {
+    beforeEach(() => {
+      cy.intercept(
+        'GET',
+        `${Cypress.env('API_URL')}/customers**`,
+        { body: null }
+      ).as('getEmptyCustomers')
+      cy.visit('/')
+      cy.wait('@getEmptyCustomers')
+      cy.injectAxe()
+      cy.get('[data-theme="light"]').should('exist')
+    })
+
+    it('finds no a11y issues in light mode', () => {
+      cy.checkA11y()
+    })
+
+    it('finds no a11y issues in dark mode', () => {
+      cy.get('#theme-toggle-button').click()
+      cy.get('[data-theme="dark"]').should('exist')
+      cy.checkA11y()
     })
   })
 })
