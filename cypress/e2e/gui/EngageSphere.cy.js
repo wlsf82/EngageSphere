@@ -181,7 +181,9 @@ describe('EngageSphere Frontend - A11y', options, () => {
 
       it('finds no a11y issues in dark mode', () => {
         cy.get('#theme-toggle-button').click()
+
         cy.get('[data-theme="dark"]').should('exist')
+
         cy.checkA11y()
       })
     })
@@ -197,20 +199,26 @@ describe('EngageSphere Frontend - A11y', options, () => {
 
       it('finds no a11y issues in dark mode', () => {
         cy.get('#theme-toggle-button').click()
+
         cy.get('[data-theme="dark"]').should('exist')
+
         cy.checkA11y()
       })
 
       context('Show address', () => {
         it('finds no a11y issues in light mode', () => {
           cy.contains('button', 'Show address').click()
+
           cy.checkA11y()
         })
 
         it('finds no a11y issues in dark mode', () => {
           cy.get('#theme-toggle-button').click()
+
           cy.get('[data-theme="dark"]').should('exist')
+
           cy.contains('button', 'Show address').click()
+
           cy.checkA11y()
         })
       })
@@ -236,7 +244,9 @@ describe('EngageSphere Frontend - A11y', options, () => {
 
     it('finds no a11y issues in dark mode', () => {
       cy.get('#theme-toggle-button').click()
+
       cy.get('[data-theme="dark"]').should('exist')
+
       cy.checkA11y()
     })
   })
@@ -254,8 +264,11 @@ describe('EnageSphere Frontend - Loading fallback', options, () => {
     ).as('getDelayedCustomers')
 
     cy.visit('/')
+
     cy.contains('p', 'Loading...').should('be.visible')
+
     cy.wait('@getDelayedCustomers')
+
     cy.contains('p', 'Loading...').should('not.exist')
   })
 })
