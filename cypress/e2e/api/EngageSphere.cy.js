@@ -58,7 +58,7 @@ describe('EngageSphere API', () => {
 
       cy.get('@getCustomersPageTwo')
         .its('body.pageInfo.currentPage')
-        .should('eq', '2')
+        .should('eq', '2') // Supposing there are at least 2 pages
     })
 
     it('filters limit of customers correctly', () => {
@@ -81,14 +81,16 @@ describe('EngageSphere API', () => {
   context('Size filtering', () => {
     it('filters customers by size correctly', () => {
       const sizes = ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise']
+      const limitOfEmployessPerSize = [99, 999, 9999, 49999, 999999] // Assuming that there aren't companies with more than 999999 employess in the database
 
-      sizes.forEach((size) => {
+      sizes.forEach((size, index) => {
         cy.request('GET', `${CUSTOMERS_API_URL}?size=${size}`).as('getSizedCustomers')
 
         cy.get('@getSizedCustomers')
           .its('body.customers')
           .each(customer => {
             expect(customer.size).to.eq(size)
+            expect(customer.employees).to.be.lte(limitOfEmployessPerSize[index])
           })
       })
     })
