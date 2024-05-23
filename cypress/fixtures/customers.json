@@ -15,6 +15,13 @@
         "name": "Daija",
         "email": "Daija_Gislason93@gmail.com"
       },
+      "address": {
+        "street": "988 Kimberly Fort Apt. 921",
+        "city": "Lake Tracy",
+        "state": "Connecticut",
+        "zipCode": "07115",
+        "country": "United States of America"
+      },
       "size": "Medium"
     },
     {
