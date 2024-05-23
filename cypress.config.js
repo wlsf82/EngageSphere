@@ -8,6 +8,7 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
+      // Use the production API URL if it's set, otherwise, use the default one.
       config.env.API_URL = process.env.API_URL_PROD ?
         process.env.API_URL_PROD :
         config.env.API_URL
