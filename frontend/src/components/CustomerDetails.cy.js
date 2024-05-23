@@ -1,6 +1,8 @@
 import CustomerDetails from './CustomerDetails'
 
 // Import a complete customer from a fixture
+// where a complete customer means it has
+// ID, name, employees, size, contact info, and address
 const completeCustomer = require('../../../cypress/fixtures/customers.json').customers[1]
 
 describe('<CustomerDetails />', () => {
