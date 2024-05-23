@@ -2,17 +2,13 @@ describe('EngageSphere API', () => {
   const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`
 
   context('General', () => {
-    beforeEach(() => {
+    it('returns the correct status and body structure', () => {
       cy.request('GET', CUSTOMERS_API_URL).as('getCustomers')
-    })
 
-    it('successfully retrieves customers', () => {
       cy.get('@getCustomers')
         .its('status')
         .should('eq', 200)
-    })
 
-    it('returns the correct structure of the response', () => {
       cy.get('@getCustomers')
         .its('body')
         .should('have.all.keys', 'customers', 'pageInfo')
