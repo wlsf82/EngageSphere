@@ -1,5 +1,8 @@
 import CustomerDetails from './CustomerDetails'
 
+// Import a complete customer from a fixture
+const completeCustomer = require('../../../cypress/fixtures/customers.json').customers[1]
+
 describe('<CustomerDetails />', () => {
   let backButtonClickHandler
 
@@ -7,57 +10,31 @@ describe('<CustomerDetails />', () => {
     backButtonClickHandler = cy.stub().as('backBtnClickHandler')
   })
 
-  const completeCustomer = {
-    name: 'Caca Cala',
-    employees: 1000,
-    size: 'Medium',
-    contactInfo: {
-      name: 'Joe',
-      email: 'joe@cacacala.com'
-    },
-    address: {
-      street: '988 Kimberly Fort Apt. 921',
-      city: 'Lake Tracy',
-      state: 'Connecticut',
-      zipCode: '07115',
-      country: 'United States of America'
-    }
-  }
-
   it('renders with contact details', () => {
     cy.mount(<CustomerDetails customer={completeCustomer} onClick={backButtonClickHandler} />)
 
     cy.contains('h2', 'Customer Details').should('be.visible')
-    cy.contains('p', 'Company name: Caca Cala').should('be.visible')
-    cy.contains('p', 'Number of employees: 1000').should('be.visible')
-    cy.contains('p', 'Size: Medium').should('be.visible')
+    cy.contains('p', `Company name: ${completeCustomer.name}`).should('be.visible')
+    cy.contains('p', `Number of employees: ${completeCustomer.employees}`).should('be.visible')
+    cy.contains('p', `Size: ${completeCustomer.size}`).should('be.visible')
 
-    cy.contains('p', 'Contact name: Joe').should('be.visible')
-    cy.contains('p', 'Contact email: joe@cacacala.com').should('be.visible')
+    cy.contains('p', `Contact name: ${completeCustomer.contactInfo.name}`).should('be.visible')
+    cy.contains('p', `Contact email: ${completeCustomer.contactInfo.email}`).should('be.visible')
 
     cy.contains('button', 'Back').should('be.visible')
   })
 
   it('renders a fallback paragraph (\'No contact info available\') when contact details are not available', () => {
     const customer = {
-      name: 'Cocoa Cola',
-      employees: 100,
-      size: 'Small',
+      ...completeCustomer,
       contactInfo: null,
-      address: {
-        street: '5099 Murray Inlet',
-        city: 'South Tiffany',
-        state: 'Kentucky',
-        zipCode: '08496',
-        country: 'United States of America'
-      }
     }
     cy.mount(<CustomerDetails customer={customer} onClick={backButtonClickHandler} />)
 
     cy.contains('h2', 'Customer Details').should('be.visible')
-    cy.contains('p', 'Company name: Cocoa Cola').should('be.visible')
-    cy.contains('p', 'Number of employees: 100').should('be.visible')
-    cy.contains('p', 'Size: Small').should('be.visible')
+    cy.contains('p', `Company name: ${completeCustomer.name}`).should('be.visible')
+    cy.contains('p', `Number of employees: ${completeCustomer.employees}`).should('be.visible')
+    cy.contains('p', `Size: ${completeCustomer.size}`).should('be.visible')
 
     cy.contains('p', 'No contact info available').should('be.visible')
 
