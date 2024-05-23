@@ -56,6 +56,9 @@ When sending a GET request to the `/customers` endpoint:
 - Customers table
   - finds no a11y issues in light mode
   - finds no a11y issues in dark mode
+  - Empty state
+    - finds no a11y issues in light mode
+    - finds no a11y issues in dark mode
 - Customer details
   - finds no a11y issues in light mode
   - finds no a11y issues in dark mode
