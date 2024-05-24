@@ -1,4 +1,4 @@
-# EngangeSphere
+# EngageSphere
 
 [![CI](https://github.com/wlsf82/EngageSphere/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/wlsf82/EngageSphere/actions/workflows/ci-cd.yml)
 
@@ -6,7 +6,7 @@ Sample project with a [Node.js](https://nodejs.org/) backend and a [React](https
 
 ## Business rules
 
-Read the following [doc](./docs/Requirements.md) to understand all the EngangeSphere application's functionalities.
+Read the following [doc](./docs/Requirements.md) to understand all the EngageSphere application's functionalities.
 
 ## Pre-requirements
 
