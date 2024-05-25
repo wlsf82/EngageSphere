@@ -9,7 +9,7 @@ describe('<CustomerDetails />', () => {
   let backButtonClickHandler
 
   beforeEach(() => {
-    backButtonClickHandler = cy.stub().as('backBtnClickHandler')
+    backButtonClickHandler = cy.stub()
   })
 
   it('renders with contact details', () => {
