@@ -27,11 +27,11 @@ describe('<CustomerDetails />', () => {
   })
 
   it('renders a fallback paragraph (\'No contact info available\') when contact details are not available', () => {
-    const customer = {
+    const customerWithoutContactInfo = {
       ...completeCustomer,
       contactInfo: null,
     }
-    cy.mount(<CustomerDetails customer={customer} onClick={backButtonClickHandler} />)
+    cy.mount(<CustomerDetails customer={customerWithoutContactInfo} onClick={backButtonClickHandler} />)
 
     cy.contains('h2', 'Customer Details').should('be.visible')
     cy.contains('p', `Company name: ${completeCustomer.name}`).should('be.visible')
