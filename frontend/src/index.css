@@ -114,10 +114,11 @@ h1 {
 }
 
 .table-container,
-.customer-details {
+.customer-details,
+.not-found {
+  border: 1px solid #ccc;
   margin: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 8px;
   background-color: var(--container-bg-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -159,7 +160,8 @@ input[type="text"]:disabled {
 }
 
 input[type="button"],
-.customer-details button {
+.customer-details button,
+.not-found button {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
   border: none;
@@ -171,8 +173,13 @@ input[type="button"],
   transition: background-color 0.3s, color 0.3s;
 }
 
+.not-found * {
+  text-align: center;
+}
+
 input[type='button']:hover,
-.customer-details button:hover {
+.customer-details button:hover,
+.not-found button:hover {
   background-color: var(--button-hover-bg-color);
   color: var(--button-hover-text-color);
 }
@@ -434,18 +441,21 @@ footer a:hover {
   }
 
   .table-container,
-  .customer-details {
+  .customer-details,
+  .not-found {
     margin: 10px;
   }
 
   input[type="text"],
   input[type="button"],
-  .customer-details input[type='button'] {
+  .customer-details input[type='button'],
+  .not-found button {
     font-size: medium;
     margin: 4px 0;
   }
 
-  .customer-details {
+  .customer-details,
+  .not-found {
     padding: 15px;
     max-width: 90%;
   }
@@ -454,7 +464,8 @@ footer a:hover {
     padding: 8px 16px;
   }
 
-  .customer-details p {
+  .customer-details p,
+  .not-found p {
     font-size: 14px;
   }
 

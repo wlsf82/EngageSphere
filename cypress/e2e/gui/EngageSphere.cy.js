@@ -11,7 +11,7 @@ describe('EngageSphere Frontend', options, () => {
       { fixture: 'customers' }
     ).as('getCustomers')
 
-    cy.visit('/')
+    cy.visit('/customers')
     cy.wait('@getCustomers')
   })
 
@@ -133,16 +133,54 @@ describe('EngageSphere Frontend', options, () => {
   })
 
   context('Customer details', () => {
-    it('goes back to the customers list when clicking the "Back" button', () => {
+    beforeEach(() => {
       cy.get('tbody tr')
         .first()
         .click()
+    })
 
+    it('changes the URL path to /customers/n when accessing the customer details', () => {
+      cy.location('pathname').should('be.equal', '/customers/5')
+    })
+
+    it('goes back to the customers list when clicking the "Back" button', () => {
       cy.get('.customer-details').should('be.visible')
       cy.get('table').should('not.exist')
 
       cy.contains('button', 'Back').click()
 
+      cy.get('table').should('be.visible')
+    })
+  })
+})
+
+describe('Customer details - access via URL', () => {
+  it('visits the customer details directly via the URL', () => {
+    cy.visit('/customers/1')
+
+    cy.contains('h2', 'Customer Details').should('be.visible')
+    cy.location('pathname').should('be.equal', '/customers/1')
+  })
+
+  context('Customer not found', () => {
+    beforeEach(() => {
+      cy.visit('/customers/1111') // Supposing customer 1111 does not exist in the database
+    })
+
+    it('shows a 404 - customer not found when visiting an non existing customer', () => {
+      cy.contains('h2', '404').should('be.visible')
+      cy.contains('p', 'Customer not found.').should('be.visible')
+      cy.contains('button', 'Back').should('be.visible')
+      cy.location('pathname').should('be.equal', '/customers/1111')
+    })
+
+    it('goes back to the customers list when clicking the "Back" button at the 404 view', () => {
+      cy.get('.not-found').should('be.visible')
+      cy.get('table').should('not.exist')
+
+      cy.contains('button', 'Back').click()
+
+      cy.url().should('be.equal', `${Cypress.config('baseUrl')}/customers`)
       cy.get('table').should('be.visible')
     })
   })
@@ -156,7 +194,7 @@ describe('EngageSphere Frontend - empty state', options, () => {
       { body: '' }
     ).as('getEmptyCustomers')
 
-    cy.visit('/')
+    cy.visit('/customers')
     cy.wait('@getEmptyCustomers')
   })
 
@@ -169,7 +207,7 @@ describe('EngageSphere Frontend - empty state', options, () => {
 describe('EngageSphere Frontend - A11y', options, () => {
   context('With customers', () => {
     beforeEach(() => {
-      cy.visit('/')
+      cy.visit('/customers')
       cy.injectAxe()
       cy.get('[data-theme="light"]').should('exist')
     })
@@ -232,7 +270,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
         `${Cypress.env('API_URL')}/customers**`,
         { body: null }
       ).as('getEmptyCustomers')
-      cy.visit('/')
+      cy.visit('/customers')
       cy.wait('@getEmptyCustomers')
       cy.injectAxe()
       cy.get('[data-theme="light"]').should('exist')
@@ -263,7 +301,7 @@ describe('EnageSphere Frontend - Loading fallback', options, () => {
       }
     ).as('getDelayedCustomers')
 
-    cy.visit('/')
+    cy.visit('/customers')
 
     cy.contains('p', 'Loading...').should('be.visible')
 

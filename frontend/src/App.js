@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react'
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom'
 
-import CustomerDetails from './components/CustomerDetails'
-import Greeting from './components/Greeting'
-import EmptyState from './components/EmptyState'
+import { useCustomer } from './CustomerContext'
+
+import CustomerFetcher from './CustomerFetcher'
+import CustomersFetcher from './CustomersFetcher'
+
 import Input from './components/Input'
 import Header from './components/Header'
-import Pagination from './components/Pagination'
-import DownloadCSV from './components/DownloadCSV'
-import SizeFilter from './components/SizeFilter'
-import Table from './components/Table'
 import Footer from './components/Footer'
 
 const serverPort = 3001
 const serverURL = process.env.REACT_APP_HEROKU_API_URL || `http://localhost:${serverPort}`
 
 const App = () => {
+  const navigate = useNavigate()
+
   const [name, setName] = useState('')
   const [customers, setCustomers] = useState([])
-  const [customer, setCustomer] = useState(null)
+  const { setCustomer, disabled, setDisabled } = useCustomer()
 
   const [sizeFilter, setSizeFilter] = useState('All')
   const [currentPage, setCurrentPage] = useState(1)
@@ -30,9 +31,6 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem('paginationLimit', paginationInfo.limit.toString())
-  }, [paginationInfo.limit])
-
-  useEffect(() => {
     getCustomers(currentPage, paginationInfo.limit, sizeFilter)
   }, [currentPage, paginationInfo.limit, sizeFilter])
 
@@ -51,13 +49,16 @@ const App = () => {
     }
   }
 
-  const inputChangeHandler = event => setName(event.target.value)
+  const inputChangeHandler = ({ target }) => setName(target.value)
 
-  const customerClickHandler = customer => setCustomer(customer)
-  const customerDetailsBackButtonClickHandler = () => setCustomer(null)
+  const customerClickHandler = customer => {
+    setDisabled(true)
+    setCustomer(customer)
+    navigate(`/customers/${customer.id}`)
+  }
 
-  const limitChangeHandler = event => {
-    const newLimit = parseInt(event.target.value, 10)
+  const limitChangeHandler = ({ target }) => {
+    const newLimit = parseInt(target.value, 10)
     setPaginationInfo(prevState => ({ ...prevState, limit: newLimit }))
     setCurrentPage(1)
   }
@@ -67,8 +68,8 @@ const App = () => {
   const paginationNextClickHandler = () =>
     setCurrentPage(prev => (prev < paginationInfo.totalPages ? prev + 1 : prev))
 
-  const filterChangeHandler = event => {
-    setSizeFilter(event.target.value)
+  const filterChangeHandler =  ({ target }) => {
+    setSizeFilter(target.value)
     setCurrentPage(1)
   }
 
@@ -76,39 +77,27 @@ const App = () => {
     <>
       <main className="container">
         <Header />
-        <Input customer={customer} customers={customers} onChange={inputChangeHandler} />
-        {customer ? (
-          <CustomerDetails customer={customer} onClick={customerDetailsBackButtonClickHandler} />
-        ) : (
-          <>
-            <SizeFilter sizeFilter={sizeFilter} onChange={filterChangeHandler} />
-            <div data-testid="table" className="table-container">
-              {initialFetchDone ? (
-                customers.length ? (
-                  <>
-                    <Greeting name={name} />
-                    <Table
-                      customers={customers}
-                      customerClickHandler={customerClickHandler}
-                    />
-                    <Pagination
-                      currentPage={currentPage}
-                      paginationInfo={paginationInfo}
-                      onClickPrev={paginationPrevClickHandler}
-                      onClickNext={paginationNextClickHandler}
-                      onChange={limitChangeHandler}
-                    />
-                    <div className="download-csv-button-container">
-                      <DownloadCSV customers={customers} />
-                    </div>
-                  </>
-                ) : (
-                  <EmptyState />
-                )
-              ) : <p id="loading">Loading...</p>}
-            </div>
-          </>
-        )}
+        <Input disabled={disabled} onChange={inputChangeHandler} />
+        <Routes>
+          <Route path="/" element={<Navigate replace to="/customers" />} />
+          <Route path="customers" element={
+            <CustomersFetcher
+              sizeFilter={sizeFilter}
+              filterChangeHandler={filterChangeHandler}
+              initialFetchDone={initialFetchDone}
+              customers={customers}
+              name={name}
+              customerClickHandler={customerClickHandler}
+              currentPage={currentPage}
+              paginationInfo={paginationInfo}
+              paginationNextClickHandler={paginationNextClickHandler}
+              paginationPrevClickHandler={paginationPrevClickHandler}
+              limitChangeHandler={limitChangeHandler}
+            />
+          } />
+          <Route path="customers/:id" element={<CustomerFetcher customers={customers} />} />
+          <Route path="*" element={<Navigate replace to="/customers" />} />
+        </Routes>
       </main>
       <Footer />
     </>

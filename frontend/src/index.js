@@ -1,12 +1,23 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+
 import './index.css'
 import App from './App'
+import { CustomerProvider } from './CustomerContext'
 import * as serviceWorker from './serviceWorker'
 
 const container = document.getElementById('root')
 const root = createRoot(container)
-root.render(<App />)
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <CustomerProvider>
+        <App />
+      </CustomerProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

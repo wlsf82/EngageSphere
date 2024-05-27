@@ -1,4 +1,4 @@
-const Input = ({ customer, customers, onChange }) => {
+const Input = ({ disabled, onChange }) => {
   return (
     <div className="input-container">
       <input
@@ -8,7 +8,7 @@ const Input = ({ customer, customers, onChange }) => {
         data-testid="name"
         placeholder="Enter your name"
         onChange={onChange}
-        disabled={customer || !customers.length ? true : false}
+        disabled={disabled}
       />
     </div>
   )
