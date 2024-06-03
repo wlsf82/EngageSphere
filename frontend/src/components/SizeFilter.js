@@ -1,8 +1,8 @@
-const SizeFilter = ({ sizeFilter, onChange }) => {
+const SizeFilter = ({ size, onChange }) => {
   return (
     <div className="filter-container">
       <label htmlFor="sizeFilter">Filter by size:</label>
-      <select data-testid="filter" id="sizeFilter" value={sizeFilter} onChange={onChange}>
+      <select data-testid="filter" id="sizeFilter" value={size} onChange={onChange}>
         <option value="All">All</option>
         <option value="Small">Small</option>
         <option value="Medium">Medium</option>
