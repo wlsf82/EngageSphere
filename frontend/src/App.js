@@ -88,7 +88,7 @@ const App = () => {
           <CustomerDetails customer={customer} onClick={customerDetailsBackButtonClickHandler} />
         ) : (
           <>
-            <SizeFilter sizeFilter={sizeFilter} onChange={filterChangeHandler} />
+            <SizeFilter size={sizeFilter} onChange={filterChangeHandler} />
             <div data-testid="table" className="table-container">
               {initialFetchDone ? (
                 customers.length ? (
