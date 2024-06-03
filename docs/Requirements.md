@@ -83,11 +83,15 @@ If there are no customers in the database, the image of an empty box is shown. B
 
 ### Contact details
 
-When in the Contact details view, the text input field gets disabled (with or without a defined name.)
+When in the Contact details view, the URL changes to `/customers/n`, where n is the customer ID.
+
+Also, when in this view, the text input field gets disabled (with or without a defined name.)
 
 This view shows the customer details information (**Company name**, **Number of employees**, and **Size**), besides the contact details (**Contact name** and **Contact e-mail**) of the person to be contacted.
 
 When the customer doesn't have contact information, a paragraph is shown with the following text: **No contact info available**.
+
+It's also possible to access customer contact details directly via its URL (e.g., `/customers/1`).
 
 #### Show address
 
@@ -100,6 +104,10 @@ When the customer doesn't have an address, a paragraph is shown with the followi
 #### Back button
 
 In this view, a **Back** button is presented, and when clicked, the user is taken back to **Customers table**.
+
+#### Customer not found
+
+When visiting the customer contact details directly via its URL, its possible that such a customer doesn't exist. In this case, a '404 Customer not found' view is shown instead.
 
 ## API
 

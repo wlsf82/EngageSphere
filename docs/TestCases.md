@@ -48,7 +48,11 @@ When sending a GET request to the `/customers` endpoint:
 - Shows customer address
 - Hides customer address
 - Shows "No address available" for a customer without address information
-- Goes back to the customers' list when clicking the "Back" button
+- Goes back to the customers' list when clicking the "Back" button, going back to the '/customers' URL
+- Changes the URL path to /customers/n when accessing the customer details (where n is the customer ID)
+- Visits the customer details directly via the URL
+- Shows a 404 - customer not found - when visiting an non existing customer
+- Goes back to the customers list when clicking the "Back" button at the 404 view
 - Shows the footer and its links
 
 ### A11y
@@ -63,5 +67,8 @@ When sending a GET request to the `/customers` endpoint:
   - finds no a11y issues in light mode
   - finds no a11y issues in dark mode
   - Show address
+    - finds no a11y issues in light mode
+    - finds no a11y issues in dark mode
+  - Customer not found
     - finds no a11y issues in light mode
     - finds no a11y issues in dark mode
