@@ -160,7 +160,7 @@ describe('Customer details - access via URL', () => {
     cy.visit('/customers/1')
 
     cy.contains('h2', 'Customer Details').should('be.visible')
-    cy.location('pathname').should('be.equal', '/customers/1')
+    cy.location('pathname').should('be.equal', '/customers/11')
   })
 
   context('Customer not found', () => {
