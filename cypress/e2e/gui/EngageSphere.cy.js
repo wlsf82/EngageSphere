@@ -149,6 +149,7 @@ describe('EngageSphere Frontend', options, () => {
 
       cy.contains('button', 'Back').click()
 
+      cy.location('pathname').should('be.equal', '/customers')
       cy.get('table').should('be.visible')
     })
   })
@@ -180,7 +181,7 @@ describe('Customer details - access via URL', () => {
 
       cy.contains('button', 'Back').click()
 
-      cy.url().should('be.equal', `${Cypress.config('baseUrl')}/customers`)
+      cy.location('pathname').should('be.equal', '/customers')
       cy.get('table').should('be.visible')
     })
   })
