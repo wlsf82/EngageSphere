@@ -1,17 +1,15 @@
 import React from 'react'
 import Input from './Input'
 
-const customer = require('../../../cypress/fixtures/customers.json').customers[0]
-
 describe('<Input />', () => {
-  it('disables the text input field when in the customer details page', () => {
-    cy.mount(<Input customer={customer} />)
+  it('renders enabled', () => {
+    cy.mount(<Input disabled={false} />)
 
-    cy.get('input[placeholder="Enter your name"]').should('be.disabled')
+    cy.get('input[placeholder="Enter your name"]').should('be.enabled')
   })
 
-  it('disables the text input field when there are no customers in the database', () => {
-    cy.mount(<Input customers={[]} />)
+  it('renders disabled', () => {
+    cy.mount(<Input disabled={true} />)
 
     cy.get('input[placeholder="Enter your name"]').should('be.disabled')
   })

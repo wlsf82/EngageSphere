@@ -18,6 +18,7 @@ const App = () => {
   const [name, setName] = useState('')
   const [customers, setCustomers] = useState([])
   const [customer, setCustomer] = useState(null)
+  const [inputDisabled, setInputDisabled] = useState(false)
 
   const [sizeFilter, setSizeFilter] = useState('All')
   const [currentPage, setCurrentPage] = useState(1)
@@ -53,8 +54,14 @@ const App = () => {
 
   const inputChangeHandler = event => setName(event.target.value)
 
-  const customerClickHandler = customer => setCustomer(customer)
-  const customerDetailsBackButtonClickHandler = () => setCustomer(null)
+  const customerClickHandler = customer => {
+    setCustomer(customer)
+    setInputDisabled(true)
+  }
+  const customerDetailsBackButtonClickHandler = () => {
+    setCustomer(null)
+    setInputDisabled(false)
+  }
 
   const limitChangeHandler = event => {
     const newLimit = parseInt(event.target.value, 10)
@@ -76,7 +83,7 @@ const App = () => {
     <>
       <main className="container">
         <Header />
-        <Input customer={customer} customers={customers} onChange={inputChangeHandler} />
+        <Input disabled={inputDisabled} onChange={inputChangeHandler} />
         {customer ? (
           <CustomerDetails customer={customer} onClick={customerDetailsBackButtonClickHandler} />
         ) : (
