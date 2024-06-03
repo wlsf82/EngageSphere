@@ -168,7 +168,7 @@ describe('Customer details - access via URL', () => {
       cy.visit('/customers/1111') // Supposing customer 1111 does not exist in the database
     })
 
-    it('shows a 404 - customer not found when visiting an non existing customer', () => {
+    it('shows a 404 - customer not found - when visiting an non existing customer', () => {
       cy.contains('h2', '404').should('be.visible')
       cy.contains('p', 'Customer not found.').should('be.visible')
       cy.contains('button', 'Back').should('be.visible')
@@ -273,6 +273,26 @@ describe('EngageSphere Frontend - A11y', options, () => {
       ).as('getEmptyCustomers')
       cy.visit('/customers')
       cy.wait('@getEmptyCustomers')
+      cy.injectAxe()
+      cy.get('[data-theme="light"]').should('exist')
+    })
+
+    it('finds no a11y issues in light mode', () => {
+      cy.checkA11y()
+    })
+
+    it('finds no a11y issues in dark mode', () => {
+      cy.get('#theme-toggle-button').click()
+
+      cy.get('[data-theme="dark"]').should('exist')
+
+      cy.checkA11y()
+    })
+  })
+
+  context('404 - Customer not found', () => {
+    beforeEach(() => {
+      cy.visit('/customers/1111') // Supposing customer 1111 does not exist in the database
       cy.injectAxe()
       cy.get('[data-theme="light"]').should('exist')
     })
