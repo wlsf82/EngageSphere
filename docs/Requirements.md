@@ -24,7 +24,7 @@ The theme is persisted in the local storage, and the last chosen one is kept in 
 
 ### Footer
 
-Independent of the view, the application always shows a footer with the text "Copyright 2024 - Talking About Testing", and links to TAT's Udemy, Blog, and YouTube.
+Independent of the view, the application always shows a footer with the text "Copyright 2024 - Talking About Testing", and links to TAT's Hotmart, Udemy, Blog, and YouTube.
 
 ### Customers' table
 
