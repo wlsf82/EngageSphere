@@ -331,6 +331,10 @@ footer {
   text-align: center;
 }
 
+footer ul {
+  all: unset;
+}
+
 footer ul li {
   all: unset;
 }
