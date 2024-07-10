@@ -7,7 +7,7 @@ describe('<Header />', () => {
 
   it('renders with heading and theme\'s toggle', () => {
     cy.contains('h1', 'EngageSphere').should('be.visible')
-    cy.get('[aria-label="theme-toggle-button"]').should('be.visible')
+    cy.get('#theme-toggle-button').should('be.visible')
   })
 
   it('changes to the dark mode then back to light mode', () => {

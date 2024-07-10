@@ -41,16 +41,16 @@ const Table = ({
     <table border="1">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Company name</th>
-          <th onClick={sortNumberOfEmployessHandler}>
+          <th scope="col">ID</th>
+          <th scope="col">Company name</th>
+          <th scope="col" onClick={sortNumberOfEmployessHandler}>
             <button onClick={sortNumberOfEmployessHandler}>
-              Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span aria-label="up arrow">&uarr;</span> : <span aria-label="down arrow">&darr;</span>)}
+              Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span aria-label="order by number of employess desc">&uarr;</span> : <span aria-label="order by number of employess asc">&darr;</span>)}
             </button>
           </th>
-          <th onClick={sortSizeHandler}>
+          <th scope="col" onClick={sortSizeHandler}>
             <button onClick={sortSizeHandler}>
-              Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span aria-label="up arrow">&uarr;</span> : <span aria-label="down arrow">&darr;</span>)}
+              Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span aria-label="order by size desc">&uarr;</span> : <span aria-label="order by size asc">&darr;</span>)}
             </button>
           </th>
         </tr>
