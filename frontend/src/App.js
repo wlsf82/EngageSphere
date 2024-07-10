@@ -37,6 +37,12 @@ const App = () => {
     getCustomers(currentPage, paginationInfo.limit, sizeFilter)
   }, [currentPage, paginationInfo.limit, sizeFilter])
 
+  useEffect(() => {
+    if (initialFetchDone && customers.length === 0) {
+      setInputDisabled(true)
+    }
+  }, [initialFetchDone, customers])
+
   async function getCustomers(page, limit, sizeFilter) {
     try {
       const response = await fetch(`${serverURL}/customers?page=${page}&limit=${limit}&size=${sizeFilter}`, { method: 'GET' })
