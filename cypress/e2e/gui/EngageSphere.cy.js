@@ -164,6 +164,10 @@ describe('EngageSphere Frontend - empty state', options, () => {
     cy.get('svg[alt="image of an empty box"]').should('be.visible')
     cy.contains('span', 'No customers available.').should('be.visible')
   })
+
+  it('disables the name text input field when there are no customers in the database', () => {
+    cy.get('input[type="text"]').should('be.disabled')
+  })
 })
 
 describe('EngageSphere Frontend - A11y', options, () => {
