@@ -73,7 +73,8 @@ jobs:
       - name: Run API tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          start: npm run start:frontend, npm run start:server
+          start: npm run start:server
+          wait-on: 'http://localhost:3001/customers'
           command: npm run test:api:cloud
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
