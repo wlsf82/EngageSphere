@@ -63,15 +63,10 @@ jobs:
         with:
           install-command: npm run install:backend
           runTests: false
-      - name: Install frontend modules
-        uses: cypress-io/github-action@v6
-        with:
-          install-command: npm run install:frontend
-          runTests: false
       - name: Run API tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          start: npm run start:frontend, npm run start:server
+          start: npm run start:server
           command: npm run test:api:cloud
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
