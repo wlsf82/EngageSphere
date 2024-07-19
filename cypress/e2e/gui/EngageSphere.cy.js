@@ -130,6 +130,27 @@ describe('EngageSphere Frontend', options, () => {
       cy.get('select[aria-label="Pagination limit"]')
         .should('have.value', 50)
     })
+
+    it('triggers the correct request when clicking the Next and Prev buttons', () => {
+      cy.intercept(
+        'GET',
+        `${Cypress.env('API_URL')}/customers?page=1**`,
+        { fixture: 'customers' }
+      ).as('getCustomersFromPageOne')
+      cy.intercept(
+        'GET',
+        `${Cypress.env('API_URL')}/customers?page=2**`,
+        { fixture: 'pageTwoCustomers' }
+      ).as('getCustomersFromPageTwo')
+
+      cy.contains('button', 'Next').click()
+
+      cy.wait('@getCustomersFromPageTwo')
+
+      cy.contains('button', 'Prev').click()
+
+      cy.wait('@getCustomersFromPageOne')
+    })
   })
 
   context('Customer details', () => {

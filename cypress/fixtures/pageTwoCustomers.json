@@ -1,0 +1,60 @@
+{
+  "customers": [
+    {
+      "id": 6,
+      "name": "Joe, Ben and Walter",
+      "employees": 2199,
+      "contactInfo": null,
+      "size": "Enterprise"
+    },
+    {
+      "id": 7,
+      "name": "Kurtz - Krause",
+      "employees": 309,
+      "contactInfo": {
+        "name": "Gil",
+        "email": "Gil_Son@gmail.com"
+      },
+      "address": {
+        "street": "988 Kimberly Fort Apt. 922",
+        "city": "Lake Tracy",
+        "state": "Connecticut",
+        "zipCode": "07115",
+        "country": "United States of America"
+      },
+      "size": "Medium"
+    },
+    {
+      "id": 8,
+      "name": "Persian Co",
+      "employees": 33,
+      "contactInfo": {
+        "name": "Alex",
+        "email": "Alex.Doe@hotmail.com"
+      },
+      "size": "Small"
+    },
+    {
+      "id": 9,
+      "name": "Supertramp Co",
+      "employees": 22222,
+      "contactInfo": {
+        "name": "Brian",
+        "email": "Brian_Smiths32@gmail.com"
+      },
+      "size": "Large Enterprise"
+    },
+    {
+      "id": 10,
+      "name": "Rudolf, Stainfield",
+      "employees": 51113,
+      "contactInfo": null,
+      "size": "Very Large Enterprise"
+    }
+  ],
+  "pageInfo": {
+    "currentPage": 2,
+    "totalPages": 2,
+    "totalCustomers": 10
+  }
+}
