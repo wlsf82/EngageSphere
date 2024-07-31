@@ -1,6 +1,6 @@
 module.exports = [
   {
-    'id': 'base', // collection id
+    'id': 'deafult', // collection id
     'routes': ['get-customers:with-customers'] // collection routes
   },
 ]

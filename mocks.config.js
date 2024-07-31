@@ -50,7 +50,7 @@ module.exports = {
     },
     collections: {
       // Selected collection
-      selected: 'base',
+      selected: 'default',
     },
   },
   server: {
