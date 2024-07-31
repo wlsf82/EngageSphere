@@ -4,7 +4,7 @@
 
 module.exports = {
   // Log level. Can be one of silly, debug, verbose, info, warn or error
-  //log: "info",
+  //log: 'info',
   config: {
     // Allow unknown arguments
     //allowUnknownArguments: false,
@@ -18,7 +18,7 @@ module.exports = {
       // Port number for the admin API server to be listening at
       //port: 3110,
       // Host for the admin API server
-      //host: "0.0.0.0",
+      //host: '0.0.0.0',
       https: {
         // Use https protocol or not
         //enabled: false,
@@ -37,7 +37,7 @@ module.exports = {
     openapi: {
       collection: {
         // Name for the collection created from OpenAPI definitions
-        //id: "openapi",
+        //id: 'openapi',
         // Name of the collection to extend from
         //from: undefined,
       },
@@ -57,12 +57,12 @@ module.exports = {
     // Port number for the server to be listening at
     // port: 3001,
     // Host for the server
-    //host: "0.0.0.0",
+    //host: '0.0.0.0',
     cors: {
       // Use CORS middleware or not
       //enabled: true,
       // Options for the CORS middleware. Further information at https://github.com/expressjs/cors#configuration-options
-      //options: {"preflightContinue":false},
+      //options: {'preflightContinue':false},
     },
     jsonBodyParser: {
       // Use json body-parser middleware or not
@@ -74,7 +74,7 @@ module.exports = {
       // Use urlencoded body-parser middleware or not
       //enabled: true,
       // Options for the urlencoded body-parser middleware. Further information at https://github.com/expressjs/body-parser
-      //options: {"extended":true},
+      //options: {'extended':true},
     },
     https: {
       // Use https protocol or not
@@ -89,7 +89,7 @@ module.exports = {
     // Allows to disable files load
     //enabled: true,
     // Define folder from where to load collections and routes
-    //path: "mocks",
+    //path: 'mocks',
     // Enable/disable files watcher
     //watch: true,
     babelRegister: {
