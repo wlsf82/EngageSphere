@@ -1,11 +1,12 @@
 describe('EngageSphere - Mocks Server', () => {
   beforeEach(() => {
+    cy.mocksRestoreRouteVariants()
     cy.mocksSetDelay(0)
   })
 
   context('DB with customers', () => {
     beforeEach(() => {
-      cy.mocksUseRouteVariant('get-customers:with-customers')
+      cy.mocksUseRouteVariant('with-customers')
       cy.visit('/')
     })
 
@@ -48,8 +49,8 @@ describe('EngageSphere - Mocks Server', () => {
 
   context('Slow API', () => {
     beforeEach(() => {
-      cy.mocksSetDelay(1500)
-      cy.mocksUseRouteVariant('get-customers:with-customers')
+      cy.mocksUseRouteVariant('with-customers')
+      cy.mocksSetDelay(1000)
       cy.visit('/')
     })
 
