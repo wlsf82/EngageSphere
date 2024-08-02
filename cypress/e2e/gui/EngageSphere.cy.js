@@ -213,9 +213,11 @@ describe('EngageSphere Frontend - A11y', options, () => {
       })
     })
 
-    context('Customer details', () => {
+    context('Customer details and address', () => {
       beforeEach(() => {
         cy.get('tbody tr').first().click()
+        cy.contains('button', 'Show address').click()
+        cy.contains('h3', 'Address').should('be.visible')
       })
 
       it('finds no a11y issues in light mode', () => {
@@ -228,24 +230,6 @@ describe('EngageSphere Frontend - A11y', options, () => {
         cy.get('[data-theme="dark"]').should('exist')
 
         cy.checkA11y()
-      })
-
-      context('Show address', () => {
-        it('finds no a11y issues in light mode', () => {
-          cy.contains('button', 'Show address').click()
-
-          cy.checkA11y()
-        })
-
-        it('finds no a11y issues in dark mode', () => {
-          cy.get('#theme-toggle-button').click()
-
-          cy.get('[data-theme="dark"]').should('exist')
-
-          cy.contains('button', 'Show address').click()
-
-          cy.checkA11y()
-        })
       })
     })
   })
