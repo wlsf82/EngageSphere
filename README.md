@@ -51,11 +51,9 @@ Or, run `npm run test:frontend:gui:with:servers` to automatically start the serv
 
 Run `npm run test:api` to run the backend tests.
 
-> To use the above script, both the backend and frontend servers should be up and running.
->
-> **Note:** Although these are backend tests, the frontend server needs to be running due to the `baseUrl` definition at the `cypress.config.js` file.
+> To use the above script, the backend server should be up and running.
 
-Or, run `npm run test:api:with:servers` to automatically start the servers, run the tests, and shut them down.
+Or, run `npm run test:api:with:server` to automatically start the backend server, run the tests, and shut it down.
 
 ### Test cases
 
