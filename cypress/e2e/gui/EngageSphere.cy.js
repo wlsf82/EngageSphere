@@ -3,11 +3,13 @@ const options = {
   viewportWidth: 1024
 }
 
+const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`
+
 describe('EngageSphere Frontend', options, () => {
   beforeEach(() => {
     cy.intercept(
       'GET',
-      `${Cypress.env('API_URL')}/customers**`,
+      `${CUSTOMERS_API_URL}**`,
       { fixture: 'customers' }
     ).as('getCustomers')
 
@@ -19,7 +21,7 @@ describe('EngageSphere Frontend', options, () => {
     it('filters by All sizes', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Small`,
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Small`,
         { fixture: 'smallCustomers' }
       ).as('getSmallCustomers')
       // First, filter by a different size (e.g., Small)
@@ -36,7 +38,7 @@ describe('EngageSphere Frontend', options, () => {
     it('filters by Small size', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Small`,
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Small`,
         { fixture: 'smallCustomers' }
       ).as('getSmallCustomers')
 
@@ -50,7 +52,7 @@ describe('EngageSphere Frontend', options, () => {
     it('filters by Medium size', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Medium`,
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Medium`,
         { fixture: 'mediumCustomers' }
       ).as('getMediumCustomers')
 
@@ -64,7 +66,7 @@ describe('EngageSphere Frontend', options, () => {
     it('filters by Enterprise size', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Enterprise`,
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise`,
         { fixture: 'enterpriseCustomers' }
       ).as('getEnterpriseCustomers')
 
@@ -78,7 +80,7 @@ describe('EngageSphere Frontend', options, () => {
     it('filters by Large Enterprise size', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Large%20Enterprise`,
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Large%20Enterprise`,
         { fixture: 'largeEnterpriseCustomers'}
       ).as('getLargeEnterpriseCustomers')
 
@@ -92,7 +94,7 @@ describe('EngageSphere Frontend', options, () => {
     it('filters by Very Large Enterprise size', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1&limit=10&size=Very%20Large%20Enterprise`,
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Very%20Large%20Enterprise`,
         { fixture: 'veryLargeEnterpriseCustomers'}
       ).as('getVeryLargeEnterpriseCustomers')
 
@@ -108,7 +110,7 @@ describe('EngageSphere Frontend', options, () => {
     it('persists the limit of items per page in the local storage when changing the limit', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1&limit=50**`,
+        `${CUSTOMERS_API_URL}?page=1&limit=50**`,
         { fixture: 'moreCustomers' }
       ).as('getMoreCustomers')
 
@@ -134,12 +136,12 @@ describe('EngageSphere Frontend', options, () => {
     it('triggers the correct request when clicking the Next and Prev buttons', () => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=1**`,
+        `${CUSTOMERS_API_URL}?page=1**`,
         { fixture: 'customers' }
       ).as('getCustomersFromPageOne')
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers?page=2**`,
+        `${CUSTOMERS_API_URL}?page=2**`,
         { fixture: 'pageTwoCustomers' }
       ).as('getCustomersFromPageTwo')
 
@@ -173,7 +175,7 @@ describe('EngageSphere Frontend - empty state', options, () => {
   beforeEach(() => {
     cy.intercept(
       'GET',
-      `${Cypress.env('API_URL')}/customers**`,
+      `${CUSTOMERS_API_URL}**`,
       { body: '' }
     ).as('getEmptyCustomers')
 
@@ -238,7 +240,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
     beforeEach(() => {
       cy.intercept(
         'GET',
-        `${Cypress.env('API_URL')}/customers**`,
+        `${CUSTOMERS_API_URL}**`,
         { body: null }
       ).as('getEmptyCustomers')
       cy.visit('/')
@@ -265,7 +267,7 @@ describe('EngageSphere Frontend - Loading fallback', options, () => {
   it('shows a Loading... fallback element before the initial customers\' fetch', () => {
     cy.intercept(
       'GET',
-      `${Cypress.env('API_URL')}/customers**`,
+      `${CUSTOMERS_API_URL}**`,
       {
         delay: 1000,
         fixture: 'customers',
