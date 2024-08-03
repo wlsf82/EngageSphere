@@ -261,7 +261,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
   })
 })
 
-describe('EnageSphere Frontend - Loading fallback', options, () => {
+describe('EngageSphere Frontend - Loading fallback', options, () => {
   it('shows a Loading... fallback element before the initial customers\' fetch', () => {
     cy.intercept(
       'GET',
