@@ -22,7 +22,7 @@ describe('<Table />', options, () => {
     cy.get('tbody tr').eq(1)
       .should('contain', 'Wilderman, Marks and Funk')
       .and('contain', '24000')
-      .and('contain', 'Enterprise')
+      .and('contain', 'Large Enterprise')
     cy.get('tbody tr').eq(2).find('td').eq(0).should('contain', '1')
     cy.get('tbody tr').eq(2)
       .should('contain', 'Jacobs, Bechtelar and Von')
