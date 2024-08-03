@@ -52,6 +52,24 @@ jobs:
           command: npm run test:frontend:gui:cloud
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  gui-tests-mocks-server:
+    needs: eslint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install frontend modules
+        uses: cypress-io/github-action@v6
+        with:
+          install-command: npm run install:frontend
+          runTests: false
+      - name: Run frontend GUI tests with mocks server 🧪
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm run mocks:ci, npm run start:frontend
+          command: npm run test:frontend:gui:mocksserver:cloud
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   api-tests:
     needs: eslint
     runs-on: ubuntu-latest
