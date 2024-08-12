@@ -157,7 +157,7 @@ describe('EngageSphere Frontend', options, () => {
 
   context('Customer details', () => {
     it('goes back to the customers list when clicking the "Back" button', () => {
-      cy.get('tbody tr')
+      cy.get('button[aria-label^="View company:"]')
         .first()
         .click()
 
@@ -217,7 +217,9 @@ describe('EngageSphere Frontend - A11y', options, () => {
 
     context('Customer details and address', () => {
       beforeEach(() => {
-        cy.get('tbody tr').first().click()
+        cy.get('button[aria-label^="View company:"]')
+          .first()
+          .click()
         cy.contains('button', 'Show address').click()
         cy.contains('h3', 'Address').should('be.visible')
       })

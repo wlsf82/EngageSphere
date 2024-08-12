@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Table = ({
   customers,
-  customerClickHandler,
+  customerActionClickHandler,
 }) => {
   const [sortCriteria, setSortCriteria] = useState('size')
   const [sortOrder, setSortOrder] = useState('desc')
@@ -53,30 +53,30 @@ const Table = ({
               Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span aria-label="order by size desc">&uarr;</span> : <span aria-label="order by size asc">&darr;</span>)}
             </button>
           </th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         {sortedCustomers.map((customer) => (
-          <tr key={customer.id} onClick={() => customerClickHandler(customer)}>
+          <tr key={customer.id}>
             <td>
-              <button key={customer.id} onClick={() => customerClickHandler(customer)}>
-                {customer.id}
-              </button>
+              {customer.id}
             </td>
             <td>
-              <button key={customer.id} onClick={() => customerClickHandler(customer)}>
-                {customer.name}
-              </button>
+              {customer.name}
             </td>
             <td>
-              <button key={customer.id} onClick={() => customerClickHandler(customer)}>
-                {customer.employees}
-              </button>
+              {customer.employees}
             </td>
             <td>
-              <button key={customer.id} onClick={() => customerClickHandler(customer)}>
-                {customer.size}
-              </button>
+              {customer.size}
+            </td>
+            <td onClick={() => customerActionClickHandler(customer)}>
+              <strong>
+                <button aria-label={`View company: ${customer.name}`} key={customer.id} onClick={() => customerActionClickHandler(customer)}>
+                  View
+                </button>
+              </strong>
             </td>
           </tr>
         ))}

@@ -227,7 +227,9 @@ th, td {
   white-space: nowrap;
 }
 
-th, td:nth-child(1) {
+th:nth-child(1),
+th:nth-child(5),
+td:nth-child(1) {
   text-align: center;
 }
 
@@ -251,20 +253,26 @@ th:nth-child(4) button {
   outline: revert;
 }
 
-tbody tr {
-  cursor: pointer;
-}
-
 tbody tr button {
   all: unset;
 }
 
-tbody tr button {
-  outline: revert;
+tbody tr td:nth-child(5) {
+  cursor: pointer;
+  text-align: center;
+}
+
+tbody tr td:nth-child(5):hover {
+  background-color: var(--pagination-button-hover-bg-color);
+  color: var(--pagination-button-hover-text-color);
 }
 
 table th:nth-child(1) {
   width: 20px;
+}
+
+table th:nth-child(5) {
+  width: 8%;
 }
 
 tr:hover {
@@ -453,6 +461,19 @@ footer a:hover {
 @media (max-width: 468px) {
   th, td {
     padding: 10px;
+  }
+
+  table thead th:nth-child(1),
+  table thead th:nth-child(3),
+  table thead th:nth-child(4),
+  table tbody tr td:nth-child(1),
+  table tbody tr td:nth-child(3),
+  table tbody tr td:nth-child(4) {
+    display: none;
+  }
+
+  table th:nth-child(5) {
+    width: 20%;
   }
 
   .table-container,
