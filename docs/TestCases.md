@@ -29,6 +29,10 @@ Below are the three kinds of GUI tests:
 
 ### Frontend integrated tests
 
+Below are the three kinds of GUI tests:
+
+### Frontend integrated tests
+
 - It filters by All sizes
 - It filters by Small size
 - It filters by Medium size
