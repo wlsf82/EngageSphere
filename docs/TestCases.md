@@ -1,10 +1,12 @@
 # Test cases
 
-Below is a list of test cases that could be covered by automated scripts for the **EngageSphere** application.
+Below is a list of test cases currently covered by automated scripts for the **EngageSphere** application.
 
-The tests should cover both the API and Graphical User Interface (GUI.)
+The tests cover both the API and Graphical User Interface (GUI.)
 
-## API
+> The GUI tests cover integrated frontend tests, accessibility (a11y) tests, and component tests.
+
+## API tests
 
 When sending a GET request to the `/customers` endpoint:
 
@@ -21,7 +23,11 @@ When sending a GET request to the `/customers` endpoint:
 - It handles invalid requests gracefully (e.g., limit as a boolean)
 - It handles invalid requests gracefully (e.g., unsupported size)
 
-## GUI
+## GUI tests
+
+Below are the three kinds of GUI tests:
+
+### Frontend integrated tests
 
 - It filters by All sizes
 - It filters by Small size
@@ -36,7 +42,7 @@ When sending a GET request to the `/customers` endpoint:
 - It disables the name text input field when there are no customers in the database
 - It shows a Loading... fallback element before the initial customers' fetch
 
-### A11y
+### A11y tests
 
 - Customers table
   - It finds no a11y issues in light mode
@@ -51,7 +57,7 @@ When sending a GET request to the `/customers` endpoint:
   - It finds no a11y issues in light mode
   - It finds no a11y issues in dark mode
 
-## Component
+### Component tests
 
 - `<CustomerDetails />`
   - It renders with contact details
