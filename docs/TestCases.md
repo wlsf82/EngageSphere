@@ -8,60 +8,80 @@ The tests should cover both the API and Graphical User Interface (GUI.)
 
 When sending a GET request to the `/customers` endpoint:
 
-- Successfully retrieves customers (e.g., checks for the 200 status code)
-- Paginates the customer list correctly
-- Filters customers by size correctly
-- Returns the correct structure of the response (i.e., `customers` and `pageInfo` properties)
-- Handles invalid requests gracefully (e.g., negative page )
-- Handles invalid requests gracefully (e.g., negative limit)
-- Handles invalid requests gracefully (e.g., page as a string)
-- Handles invalid requests gracefully (e.g., limit as a boolean)
-- Handles invalid requests gracefully (e.g., unsupported size)
+- It returns the correct status and body structure
+- It returns an empty array of customers when in an empty page
+- It paginates the customer list correctly
+- It filters limit of customers correctly
+- It filters customers by size correctly
+- It handles invalid requests gracefully (e.g., negative page)
+- It handles invalid requests gracefully (e.g., negative limit)
+- It handles invalid requests gracefully (e.g., page=0)
+- It handles invalid requests gracefully (e.g., limit=0)
+- It handles invalid requests gracefully (e.g., page as a string)
+- It handles invalid requests gracefully (e.g., limit as a boolean)
+- It handles invalid requests gracefully (e.g., unsupported size)
 
-## GUI/Component
+## GUI
 
-- Shows the heading and theme's toggle
-- Shows the default greeting (i.e., Hi there! ...)
-- Shows a customized greeting (e.g., Hi Joe! ...)
-- Changes the theme to dark mode, ensuring it persists in the local storage
-- Changes the theme to light mode, ensuring it persists in the local storage
-- Shows a list of customers when there's data in the database
-- Shows a Loading... fallback element before the initial customers' fetch
-- Shows the image of an empty box and the text "No customers available." when there are no customers in the database
-- Disables the text input field when there are no customers in the database
-- Disables the text input field when in the customer details page
-- Sorts by Number of employees in ascending order
-- Sorts by Number of employees in descending order
-- Sorts by Size in ascending order
-- Sorts by Size in descending order by default
-- Sorts in descending order by default when changing the sorting column
-- Disables the Prev pagination button when on the first page
-- Disables the Next pagination button when on the last page
-- Disables both the Prev and Next pagination buttons when there's only one page
-- Leaves both the Prev and Next pagination buttons enabled when on a middle page (e.g., Page 2 of 3)
-- Shows "Page 1 of n" (where 'n' is the number of pages)
-- Configures a new pagination limit (e.g., from 10 to 50), ensuring it persists in the local storage
-- Filters by each size ('All', 'Small', 'Medium', 'Enterprise', 'Large Enterprise', and 'Very Large Enterprise')
-- Correctly downloads a list of customers as a CSV file
-- Shows the contact info of a specific customer
-- Shows "No contact info available" for a customer without contact information
-- Shows customer address
-- Hides customer address
-- Shows "No address available" for a customer without address information
-- Goes back to the customers' list when clicking the "Back" button
-- Shows the footer and its links
+- It filters by All sizes
+- It filters by Small size
+- It filters by Medium size
+- It filters by Enterprise size
+- It filters by Large Enterprise size
+- It filters by Very Large Enterprise size
+- It persists the limit of items per page in the local storage when changing the limit
+- It triggers the correct request when clicking the Next and Prev buttons
+- It goes back to the customers list when clicking the "Back" button
+- It shows the image of an empty box and the text "No customers available." when there are no customers in the database
+- It disables the name text input field when there are no customers in the database
+- It shows a Loading... fallback element before the initial customers' fetch
 
 ### A11y
 
 - Customers table
-  - finds no a11y issues in light mode
-  - finds no a11y issues in dark mode
+  - It finds no a11y issues in light mode
+  - It finds no a11y issues in dark mode
   - Empty state
-    - finds no a11y issues in light mode
-    - finds no a11y issues in dark mode
-- Customer details
-  - finds no a11y issues in light mode
-  - finds no a11y issues in dark mode
-  - Show address
-    - finds no a11y issues in light mode
-    - finds no a11y issues in dark mode
+    - It finds no a11y issues in light mode
+    - It finds no a11y issues in dark mode
+- Customer details and address
+  - It finds no a11y issues in light mode
+  - It finds no a11y issues in dark mode
+- Without customers (empty state)
+  - It finds no a11y issues in light mode
+  - It finds no a11y issues in dark mode
+
+## Component
+
+- `<CustomerDetails />`
+  - It renders with contact details
+  - It renders a fallback paragraph ('No contact info available') when contact details are not available
+  - It shows and hides customer address
+  - It renders a fallback paragraph ('No address available') when address is not available
+- `<DownloadCSV />`
+  - It correctly downloads a list of customers as a CSV file
+- `<Footer />`
+  - It renders with the right text and links
+- `<Greeting />`
+  - It renders "Hi there" when no name is provided
+  - It renders "Hi Joe" when name is provided
+- `<Header />`
+  - It renders with heading and theme's toggle
+  - It changes to the dark mode then back to light mode
+- `<Input />`
+  - It renders enabled
+  - It renders disabled
+- `<Pagination />`
+  - It renders in the middle page (both Prev and Next buttons are enabled)
+  - It renders in the first of two pages (Prev button is disabled)
+  - It renders in the last of two pages (Next button is disabled)
+  - It renders the Prev and Next buttons disabled when there is only one page
+  - It renders with a limit of 50 items per page
+- `<Table />`
+  - It shows a list of customers when there's data in the database
+  - It sorts by Size in descending order by default
+  - It sorts by Size in ascending order
+  - It sorts by Number of employees in descending order
+  - It sorts by Number of employees in ascending order
+  - Mobile
+    - It shows the Company name and Action columns, and hides the ID, Number of Employees, and Size columns
