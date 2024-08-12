@@ -353,12 +353,11 @@ footer p {
 
 footer a {
   color: var(--link-text-color);
-  text-decoration: none;
   margin: 0 10px;
 }
 
 footer a:hover {
-  text-decoration: var(--link-hover-text-decoration);
+  text-decoration: none
 }
 
 .theme-toggle-container {
