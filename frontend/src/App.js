@@ -60,7 +60,7 @@ const App = () => {
 
   const inputChangeHandler = event => setName(event.target.value)
 
-  const customerClickHandler = customer => {
+  const customerActionClickHandler = customer => {
     setCustomer(customer)
     setInputDisabled(true)
   }
@@ -102,7 +102,7 @@ const App = () => {
                     <Greeting name={name} />
                     <Table
                       customers={customers}
-                      customerClickHandler={customerClickHandler}
+                      customerActionClickHandler={customerActionClickHandler}
                     />
                     <Pagination
                       currentPage={currentPage}

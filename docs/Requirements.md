@@ -34,14 +34,22 @@ Before the initial table rendering (while the first request to get customers is 
 
 When the request is finished, the customers' table is rendered.
 
-For each customer, the following information is displayed:
+For each customer, the following information is displayed (if the viewport width is greater than `468px`):
 
 - **ID**
 - **Company name**
 - **Number of employees**
 - **Size**: if **Number of employees** is less than 100, size is **Small**; if greater than or equal to 100 and less than 1000, **Medium**; if greater than or equal to 1000 and less than 10000, **Enterprise**; if greater than or equal to 10000 and less than 50000 **Large Enterprise**; otherwise, **Very Large Enterprise**
 
-When the user clicks on a customer's row, the **Contact details** are shown.
+If the viewport width is less than or equal to `468px`, only the **Company name** is displayed.
+
+#### Action column
+
+In addition to the customer information, the table also shows an **Action** column (visible independent of the viewport), which allows you to view a customer's details.
+
+When the user clicks on the view column of a customer's row, the **Contact details** are shown.
+
+#### Empty state
 
 If there are no customers in the database, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
 
@@ -66,6 +74,8 @@ The page limit is persisted in the local storage, and the last chosen one is kep
 #### Filtering
 
 It's possible to apply a filter based on the customers' size. The available options are 'All', 'Small', 'Medium', 'Enterprise, 'Large Enterprise' and 'Very Large Enterprise'. 'All' is the default one.
+
+##### Empty state per size
 
 If there are no customers in the database for the filtered size, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
 

@@ -104,3 +104,22 @@ describe('<Table />', options, () => {
       .should('contain', '51015')
   })
 })
+
+const mobileOptions = {
+  viewportHeight: 800,
+  viewportWidth: 468
+}
+
+describe('<Table /> mobile', mobileOptions, () => {
+  beforeEach(() => {
+    cy.mount(<Table customers={customers} customerClickHandler={cy.stub()} />)
+  })
+
+  it('shows the Company name and Action columns, and hides the ID, Number of Employees, and Size columns', () => {
+    cy.contains('th', 'Company name').should('be.visible')
+    cy.contains('th', 'Action').should('be.visible')
+    cy.contains('th', 'ID').should('not.be.visible')
+    cy.contains('th', 'Number of employees').should('not.be.visible')
+    cy.contains('th', 'Size').should('not.be.visible')
+  })
+})
