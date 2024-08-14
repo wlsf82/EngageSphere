@@ -89,7 +89,7 @@ The following fields are available at the file, in this exact order: ID, Company
 
 For customers with no contact info or address, empty values should be available for such fields at the downloaded file.
 
-If there are no customers in the database, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available.", and the Download CSV button won't be displayed.
+The Download CSV button isn't displayed if there are no customers in the database.
 
 ### Contact details
 
