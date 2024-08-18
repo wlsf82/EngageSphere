@@ -5,6 +5,7 @@ const Input = ({ disabled, onChange }) => {
       <input
         type="text"
         id="name"
+        autoComplete="off"
         data-testid="name"
         placeholder="E.g., John Doe"
         onChange={onChange}
