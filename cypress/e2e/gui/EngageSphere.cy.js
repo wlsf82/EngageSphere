@@ -184,7 +184,7 @@ describe('EngageSphere Frontend - empty state', options, () => {
   })
 
   it('shows the image of an empty box and the text "No customers available." when there are no customers in the database', () => {
-    cy.get('svg[alt="image of an empty box"]').should('be.visible')
+    cy.get('svg[title="image of an empty box"]').should('be.visible')
     cy.contains('span', 'No customers available.').should('be.visible')
   })
 
