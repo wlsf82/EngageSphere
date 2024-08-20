@@ -146,7 +146,7 @@ h1 {
   border: 0 !important;
 	clip: rect(1px, 1px, 1px, 1px) !important;
 	-webkit-clip-path: inset(50%) !important;
-		clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
 	height: 1px !important;
 	margin: -1px !important;
 	overflow: hidden !important;
@@ -172,7 +172,6 @@ input[type="text"]:disabled {
   color: var(--input-disabled-text-color);
 }
 
-input[type="button"],
 .customer-details button {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
@@ -185,7 +184,6 @@ input[type="button"],
   transition: background-color 0.3s, color 0.3s;
 }
 
-input[type='button']:hover,
 .customer-details button:hover {
   background-color: var(--button-hover-bg-color);
   color: var(--button-hover-text-color);
@@ -481,8 +479,7 @@ footer a:hover {
   }
 
   input[type="text"],
-  input[type="button"],
-  .customer-details input[type='button'] {
+  .customer-details {
     font-size: medium;
     margin: 4px 0;
   }
