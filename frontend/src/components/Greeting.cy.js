@@ -10,14 +10,14 @@ describe('<Greeting />', () => {
   it('renders "Hi there" when no name is provided', () => {
     cy.mount(<Greeting />)
 
-    cy.contains('p', 'Hi there! It is now Mon Apr 15 2024.')
+    cy.contains('p', 'Hi there! It is now Monday, April 15, 2024.')
       .should('be.visible')
   })
 
   it('renders "Hi Joe" when name is provided', () => {
     cy.mount(<Greeting name='Joe' />)
 
-    cy.contains('p', 'Hi Joe! It is now Mon Apr 15 2024.')
+    cy.contains('p', 'Hi Joe! It is now Monday, April 15, 2024.')
       .should('be.visible')
   })
 })
