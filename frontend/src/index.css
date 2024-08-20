@@ -258,11 +258,13 @@ tbody tr button {
 tbody tr td:nth-child(5) {
   cursor: pointer;
   text-align: center;
+  background-color: var(--pagination-button-hover-bg-color);
+  color: var(--pagination-button-hover-text-color);
 }
 
 tbody tr td:nth-child(5):hover {
-  background-color: var(--pagination-button-hover-bg-color);
-  color: var(--pagination-button-hover-text-color);
+  background-color: var(--pagination-button-bg-color);
+  color: var(--pagination-button-text-color);
 }
 
 table th:nth-child(1) {
