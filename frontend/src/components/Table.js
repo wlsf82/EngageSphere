@@ -45,12 +45,12 @@ const Table = ({
           <th scope="col">Company name</th>
           <th scope="col" onClick={sortNumberOfEmployessHandler}>
             <button onClick={sortNumberOfEmployessHandler}>
-              Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span aria-label="order by number of employess desc">&uarr;</span> : <span aria-label="order by number of employess asc">&darr;</span>)}
+              Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span aria-label="ordering by number of employess asc">&uarr;</span> : <span aria-label="ordering by number of employess desc">&darr;</span>)}
             </button>
           </th>
           <th scope="col" onClick={sortSizeHandler}>
             <button onClick={sortSizeHandler}>
-              Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span aria-label="order by size desc">&uarr;</span> : <span aria-label="order by size asc">&darr;</span>)}
+              Size {sortCriteria === 'size' && (sortOrder === 'asc' ? <span aria-label="ordering by size asc">&uarr;</span> : <span aria-label="ordering by size desc">&darr;</span>)}
             </button>
           </th>
           <th scope="col">Action</th>
