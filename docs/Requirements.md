@@ -4,9 +4,9 @@ The **EngageSphere** web application is aimed at our salespeople so they can acc
 
 ## Graphical User Interface
 
-As soon as the user access the application, he/she can type his/her name, which will show in the greeting (e.g., Hi Joe! It is now Fri Feb 23 2024.)
+As soon as the user access the application, he/she can type his/her name, which will show in the greeting (e.g., Hi Joe! It is now Friday, February 23, 2024.)
 
-If no name is typed, a default greeting is shown instead (i.e., Hi there! ...)
+If no name is provided, a default greeting is shown instead (i.e., Hi there! ...)
 
 If there are no customers in the database, the text input field gets disabled.
 
