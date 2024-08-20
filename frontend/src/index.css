@@ -279,6 +279,10 @@ tr:hover {
   background-color: var(--table-row-hover-bg-color);
 }
 
+table th:nth-child(5) {
+  width: 5%;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
