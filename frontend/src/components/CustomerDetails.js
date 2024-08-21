@@ -14,6 +14,7 @@ const CustomerDetails = ({ customer, onClick }) => {
   return (
     <div className="customer-details">
       <h2>Customer Details</h2>
+      <p><strong>Company ID:</strong> {customer.id}</p>
       <p><strong>Company name:</strong> {customer.name}</p>
       <p><strong>Number of employees:</strong> {customer.employees}</p>
       <p><strong>Size:</strong> {customer.size}</p>

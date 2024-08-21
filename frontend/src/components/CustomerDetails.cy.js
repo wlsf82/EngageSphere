@@ -16,6 +16,7 @@ describe('<CustomerDetails />', () => {
     cy.mount(<CustomerDetails customer={completeCustomer} onClick={backButtonClickHandler} />)
 
     cy.contains('h2', 'Customer Details').should('be.visible')
+    cy.contains('p', `Company ID: ${completeCustomer.id}`).should('be.visible')
     cy.contains('p', `Company name: ${completeCustomer.name}`).should('be.visible')
     cy.contains('p', `Number of employees: ${completeCustomer.employees}`).should('be.visible')
     cy.contains('p', `Size: ${completeCustomer.size}`).should('be.visible')
@@ -34,6 +35,7 @@ describe('<CustomerDetails />', () => {
     cy.mount(<CustomerDetails customer={customerWithoutContactInfo} onClick={backButtonClickHandler} />)
 
     cy.contains('h2', 'Customer Details').should('be.visible')
+    cy.contains('p', `Company ID: ${completeCustomer.id}`).should('be.visible')
     cy.contains('p', `Company name: ${completeCustomer.name}`).should('be.visible')
     cy.contains('p', `Number of employees: ${completeCustomer.employees}`).should('be.visible')
     cy.contains('p', `Size: ${completeCustomer.size}`).should('be.visible')

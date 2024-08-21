@@ -95,7 +95,7 @@ The Download CSV button isn't displayed if there are no customers in the databas
 
 When in the Contact details view, the text input field gets disabled (with or without a defined name.)
 
-This view shows the customer details information (**Company name**, **Number of employees**, and **Size**), besides the contact details (**Contact name** and **Contact e-mail**) of the person to be contacted.
+This view shows the customer details information (**Company ID**, **Company name**, **Number of employees**, and **Size**), besides the contact details (**Contact name** and **Contact e-mail**) of the person to be contacted.
 
 When the customer doesn't have contact information, a paragraph is shown with the following text: **No contact info available**.
 
