@@ -111,6 +111,14 @@ When the customer doesn't have an address, a paragraph is shown with the followi
 
 In this view, a **Back** button is presented, and when clicked, the user is taken back to **Customers table**.
 
+### Accessibility (A11y)
+
+The EngageSphere's front end was created with a11y in mind, so users should be able to navigate through it using the <kbd>TAB</kbd> keyboard key.
+
+Also, screen readers should be able to read the relevant app's information so that users who need such assistive tools can use it.
+
+Finally, the color contrast between text and backgrounds was thoroughly designed to be suitable for anyone reading it.
+
 ## API
 
 The app backend offers one endpoint:
