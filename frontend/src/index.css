@@ -242,17 +242,10 @@ th:nth-child(4) {
 }
 
 th:nth-child(3) button,
-th:nth-child(4) button {
-  all: unset;
-}
-
-th:nth-child(3) button,
-th:nth-child(4) button {
-  outline: revert;
-}
-
+th:nth-child(4) button,
 tbody tr button {
   all: unset;
+  outline: revert;
 }
 
 tbody tr td:nth-child(5) {
