@@ -56,6 +56,12 @@ Below are the three kinds of GUI tests:
 - Without customers (empty state)
   - It finds no a11y issues in light mode
   - It finds no a11y issues in dark mode
+- `<Messenger />`
+  - Light mode
+    - It opens and closes the messenger and finds no a11y issue
+  - Dark mode
+    - It finds on a11y issues with the bubble button
+    - It successfully submits the form and finds no a11y issue
 
 ### Component tests
 
@@ -77,6 +83,11 @@ Below are the three kinds of GUI tests:
 - `<Input />`
   - It renders enabled
   - It renders disabled
+- `<Messenger />`
+  - Light mode
+    - It opens and closes the messenger
+    - It makes sure all fields are mandatory
+    - It shows and hides a success message when successfully submitting the form
 - `<Pagination />`
   - It renders in the middle page (both Prev and Next buttons are enabled)
   - It renders in the first of two pages (Prev button is disabled)
