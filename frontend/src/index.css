@@ -543,6 +543,7 @@ textarea {
 .send-button {
   cursor: pointer;
   background-color: var(--button-bg-color);
+  border: 2px solid var(--messenger-input-border-color);
   color: var(--button-text-color);
   padding: 10px 16px;
   border-radius: 4px;
