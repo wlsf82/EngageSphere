@@ -26,6 +26,7 @@
   --pagination-button-disabled-border-color: #cccccc;
   --pagination-button-disabled-color: #cccccc;
   --pagination-button-disabled-bg-color: #f9f9f9;
+  --messenger-input-border-color: #3da9fc;
 }
 
 /* Dark Theme Styles */
@@ -56,6 +57,7 @@
   --pagination-button-disabled-border-color: #666666;
   --pagination-button-disabled-color: #666666;
   --pagination-button-disabled-bg-color: #333333;
+  --messenger-input-border-color: #666666;
 }
 
 body {
@@ -156,12 +158,16 @@ h1 {
 	white-space: nowrap !important;
 }
 
-input[type="text"] {
+input[type="text"]:not(.messenger-input) {
+  width: 90%;
+}
+
+input[type="text"],
+input[type="email"] {
   padding: 8px;
   margin: 8px 0;
   border: 2px solid var(--input-border-color);
   border-radius: 5px;
-  width: 90%;
   max-width: 500px;
   box-sizing: border-box;
   font-size: 1rem;
@@ -454,6 +460,119 @@ footer a:hover {
   color: var(--button-hover-text-color);
 }
 
+.messenger-container {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 50;
+}
+
+.messenger-button {
+  cursor: pointer;
+  background-color: var(--button-text-color);
+  color: var(--button-bg-color);
+  padding: 16px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.messenger-button:hover {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+}
+
+.messenger-box {
+  background-color: var(--button-text-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  overflow: hidden;
+}
+
+.messenger-header {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messenger-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: var(--button-text-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #d0d0d0;
+}
+
+.messenger-form {
+  padding: 16px;
+}
+
+.messenger-input {
+  width: 100%;
+}
+
+textarea {
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 5px;
+  width: 93%;
+  height: 100px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--messenger-input-border-color) !important; /* TODO: Find a way to not need the !important expression */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.send-button {
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  padding: 10px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-top: 8px;
+}
+
+.send-button:hover {
+  background-color: var(--button-text-color);
+  color: var(--button-bg-color);
+}
+
+.send-button svg {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.success {
+  background-color: #408140;
+  display: inline-block;
+  color: var(--button-text-color);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
 @media (max-width: 468px) {
   th, td {
     padding: 10px;
@@ -494,10 +613,6 @@ footer a:hover {
 
   .customer-details p {
     font-size: 14px;
-  }
-
-  input[type="text"] {
-    width: calc(100% - 20px);
   }
 
   .header-container,

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import Messenger from './components/Messenger'
 import CustomerDetails from './components/CustomerDetails'
 import Greeting from './components/Greeting'
 import EmptyState from './components/EmptyState'
@@ -123,6 +124,7 @@ const App = () => {
           </>
         )}
       </main>
+      <Messenger />
       <Footer />
     </>
   )

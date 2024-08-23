@@ -111,6 +111,23 @@ When the customer doesn't have an address, a paragraph is shown with the followi
 
 In this view, a **Back** button is presented, and when clicked, the user is taken back to **Customers table**.
 
+### Messenger
+
+Independent of the user's view (customers' table, contact details, or empty state), a chat bubble button appears at the bottom right of the screen.
+
+When the chat bubble button is clicked, it opens the messenger form.
+
+The for has a close button and three fields (Name, Email, and Message).
+All fields are mandatory.
+
+**Note:** The email field must be filled with an email with a valid email format.
+
+After submitting the form with valid data, a success message is displayed for three seconds and then disappears.
+
+The success message is: Your message has been sent.
+
+When clicking the close button, the form is closed, and the chat bubble button is shown again.
+
 ### Accessibility (A11y)
 
 The EngageSphere's front end was created with a11y in mind, so users should be able to navigate through it using the <kbd>TAB</kbd> keyboard key.
