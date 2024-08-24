@@ -117,7 +117,7 @@ Independent of the user's view (customers' table, contact details, or empty stat
 
 When the chat bubble button is clicked, it opens the messenger form.
 
-The for has a close button and three fields (Name, Email, and Message).
+The form has a close button and three fields (Name, Email, and Message).
 All fields are mandatory.
 
 **Note:** The email field must be filled with an email with a valid email format.
