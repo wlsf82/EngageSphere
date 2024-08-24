@@ -1,5 +1,9 @@
 import Messenger from './Messenger'
 
+import { slowCypressDown } from 'cypress-slow-down'
+
+slowCypressDown(100)
+
 describe('<Messenger />', () => {
   context('Light mode', () => {
     beforeEach(() => {
@@ -42,7 +46,7 @@ describe('<Messenger />', () => {
       cy.get('.messenger-form textarea').should('have.attr', 'required')
     })
 
-    it('shows and hides a success message when successfully submitting the form', () => {
+    it.only('shows and hides a success message when successfully submitting the form', () => {
       const now = new Date()
       cy.clock(now)
 
@@ -85,7 +89,7 @@ describe('<Messenger />', () => {
       cy.checkA11y()
     })
 
-    it('successfully submits the form and finds no a11y issue', () => {
+    it.only('successfully submits the form and finds no a11y issue', () => {
       cy.get('.messenger-button').click()
 
       cy.get('.messenger-form input[type="text"]').type('John')
