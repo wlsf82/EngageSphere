@@ -523,6 +523,7 @@ footer a:hover {
 
 .messenger-input {
   width: 100%;
+  border: 2px solid var(--messenger-input-border-color) !important; /* TODO: Find a way to not need the !important expression */
 }
 
 textarea {
