@@ -77,7 +77,7 @@ export default function Messenger() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="messenger-button"
-        aria-label={isOpen ? 'Close chat' : 'Open chat'}
+        aria-label={isOpen ? 'Close messenger' : 'Open messenger'}
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
       </button>
