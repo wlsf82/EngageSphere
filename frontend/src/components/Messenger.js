@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { MessageCircle, X, Send } from 'lucide-react'
 
 export default function Messenger() {
@@ -7,6 +7,8 @@ export default function Messenger() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [messageSent, setMessageSent] = useState(false)
+
+  const nameInputRef = useRef(null)
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -19,6 +21,12 @@ export default function Messenger() {
     setMessage('')
   }
 
+  useEffect(() => {
+    if (isOpen && nameInputRef.current) {
+      nameInputRef.current.focus()
+    }
+  }, [isOpen])
+
   return (
     <div className="messenger-container">
       {isOpen && (
@@ -27,11 +35,11 @@ export default function Messenger() {
             <h2>How can we help you?</h2>
           </div>
           <div className="messenger-form">
-            { messageSent ? (
+            {messageSent ? (
               <div aria-label="Your message has been sent." className='success'>
                 Your message has been sent.
               </div>
-            ) : null }
+            ) : null}
             <form onSubmit={handleSubmit}>
               <label htmlFor="messenger-name" className='sr-only'>Type your name</label>
               <input
@@ -43,6 +51,7 @@ export default function Messenger() {
                 placeholder="Type your name here"
                 className="messenger-input"
                 required
+                ref={nameInputRef}
               />
               <label htmlFor="email" className='sr-only'>Type your email</label>
               <input
