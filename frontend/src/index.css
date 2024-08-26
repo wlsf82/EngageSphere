@@ -465,22 +465,9 @@ footer a:hover {
   bottom: 16px;
   right: 16px;
   z-index: 50;
-}
-
-.messenger-button {
-  cursor: pointer;
-  background-color: var(--button-text-color);
-  color: var(--button-bg-color);
-  padding: 16px;
-  border-radius: 50%;
-  border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-.messenger-button:hover {
-  background-color: var(--button-bg-color);
-  color: var(--button-text-color);
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: flex-end; /* Align the form and button to the right */
 }
 
 .messenger-box {
@@ -488,6 +475,7 @@ footer a:hover {
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   width: 320px;
+  margin-bottom: 8px; /* Space between form and button */
   overflow: hidden;
 }
 
@@ -505,25 +493,13 @@ footer a:hover {
   font-weight: 600;
 }
 
-.close-button {
-  background: none;
-  border: none;
-  color: var(--button-text-color);
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.close-button:hover {
-  color: #d0d0d0;
-}
-
 .messenger-form {
   padding: 16px;
 }
 
 .messenger-input {
   width: 100%;
-  border: 2px solid var(--messenger-input-border-color) !important; /* TODO: Find a way to not need the !important expression */
+  border: 2px solid var(--messenger-input-border-color) !important;
 }
 
 textarea {
@@ -535,7 +511,7 @@ textarea {
   width: 93%;
   height: 100px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid var(--messenger-input-border-color) !important; /* TODO: Find a way to not need the !important expression */
+  border: 2px solid var(--messenger-input-border-color) !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -573,6 +549,22 @@ textarea {
   padding: 8px 12px;
   margin-bottom: 8px;
   border-radius: 5px;
+}
+
+.messenger-button {
+  cursor: pointer;
+  background-color: var(--button-text-color);
+  color: var(--button-bg-color);
+  padding: 16px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.messenger-button:hover {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
 }
 
 @media (max-width: 468px) {

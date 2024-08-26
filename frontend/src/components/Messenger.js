@@ -21,28 +21,10 @@ export default function Messenger() {
 
   return (
     <div className="messenger-container">
-      {!isOpen ? (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="messenger-button"
-          aria-label="Open chat"
-        >
-          <MessageCircle className="w-6 h-6" />
-        </button>
-      ) : (
+      {isOpen && (
         <div className="messenger-box">
           <div className="messenger-header">
             <h2>How can we help you?</h2>
-            <button
-              onClick={() => {
-                setMessageSent(false)
-                setIsOpen(false)
-              }}
-              className="close-button"
-              aria-label="Close chat"
-            >
-              <X className="w-6 h-6" />
-            </button>
           </div>
           <div className="messenger-form">
             { messageSent ? (
@@ -92,6 +74,13 @@ export default function Messenger() {
           </div>
         </div>
       )}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="messenger-button"
+        aria-label={isOpen ? 'Close chat' : 'Open chat'}
+      >
+        {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
+      </button>
     </div>
   )
 }

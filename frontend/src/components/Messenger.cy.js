@@ -1,6 +1,11 @@
 import Messenger from './Messenger'
 
-describe('<Messenger />', () => {
+const options = {
+  viewportHeight: 600,
+  viewportWidth: 400
+}
+
+describe('<Messenger />', options, () => {
   context('Light mode', () => {
     beforeEach(() => {
       cy.mount(
@@ -27,7 +32,7 @@ describe('<Messenger />', () => {
       cy.get('.messenger-box').should('be.visible')
       cy.checkA11y()
 
-      cy.get('.close-button').click()
+      cy.get('.messenger-button').click()
 
       cy.get('.messenger-box').should('not.exist')
       cy.get('.messenger-button').should('be.visible')
