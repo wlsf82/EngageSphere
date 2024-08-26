@@ -115,7 +115,7 @@ In this view, a **Back** button is presented, and when clicked, the user is take
 
 Independent of the user's view (customers' table, contact details, or empty state), a chat bubble button appears at the bottom right of the screen.
 
-When the chat bubble button is clicked, it opens the messenger form, and the bubble turns into the close button.
+When the chat bubble button is clicked, it opens the messenger form with focus on its first input field, and the bubble turns into the close button.
 
 The form has three fields (Name, Email, and Message) and they're all mandatory.
 
