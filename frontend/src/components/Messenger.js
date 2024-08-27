@@ -36,7 +36,7 @@ export default function Messenger() {
           </div>
           <div className="messenger-form">
             {messageSent ? (
-              <div aria-label="Your message has been sent." className='success'>
+              <div role="alert" aria-live="polite" className='success'>
                 Your message has been sent.
               </div>
             ) : null}
