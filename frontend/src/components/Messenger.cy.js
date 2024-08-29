@@ -39,7 +39,7 @@ describe('<Messenger />', options, () => {
       cy.checkA11y()
     })
 
-    it('makes sure all fields are mandatory and the first on is focused', () => {
+    it('makes sure all fields are mandatory and the first one is focused', () => {
       cy.get('.messenger-button').click()
 
       cy.get('.messenger-form input[type="text"]')
