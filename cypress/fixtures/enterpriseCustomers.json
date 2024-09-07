@@ -5,7 +5,8 @@
         "name": "Jacobs, Bechtelar and Von",
         "employees": 2174,
         "contactInfo": null,
-        "size": "Enterprise"
+        "size": "Enterprise",
+        "segment": "Logistics"
     }
   ],
   "pageInfo": {

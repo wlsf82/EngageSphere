@@ -29,12 +29,13 @@ const DownloadCSVButton = ({ customers }) => {
 
   const exportCustomersToCSVHandler = () => {
     const customerData = customers.map(customer => {
-      const { id, name, employees, size, contactInfo, address } = customer
+      const { id, name, employees, size, segment, contactInfo, address } = customer
       const dataRow = {
         ID: id,
         Company_Name: name,
         Number_of_Employees: employees,
         Size: size,
+        Segment: segment,
         Contact_Name: contactInfo?.name || '',
         Contact_Email: contactInfo?.email || '',
         Street: address?.street || '',

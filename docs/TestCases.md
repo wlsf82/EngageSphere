@@ -15,6 +15,7 @@ When sending a GET request to the `/customers` endpoint:
 - It paginates the customer list correctly
 - It filters limit of customers correctly
 - It filters customers by size correctly
+- It filters customers by segment correctly
 - It handles invalid requests gracefully (e.g., negative page)
 - It handles invalid requests gracefully (e.g., negative limit)
 - It handles invalid requests gracefully (e.g., page=0)
@@ -22,6 +23,7 @@ When sending a GET request to the `/customers` endpoint:
 - It handles invalid requests gracefully (e.g., page as a string)
 - It handles invalid requests gracefully (e.g., limit as a boolean)
 - It handles invalid requests gracefully (e.g., unsupported size)
+- It handles invalid requests gracefully (e.g., unsupported segment)
 
 ## GUI tests
 
@@ -35,6 +37,12 @@ Below are the three kinds of GUI tests:
 - It filters by Enterprise size
 - It filters by Large Enterprise size
 - It filters by Very Large Enterprise size
+- It filters by All segments
+- It filters by Logistics segment
+- It filters by Retail segment
+- It filters by Technology segment
+- It filters by HR segment
+- It filters by Finance segment
 - It persists the limit of items per page in the local storage when changing the limit
 - It triggers the correct request when clicking the Next and Prev buttons
 - It goes back to the customers list when clicking the "Back" button
@@ -101,4 +109,4 @@ Below are the three kinds of GUI tests:
   - It sorts by Number of employees in descending order
   - It sorts by Number of employees in ascending order
   - Mobile
-    - It shows the Company name and Action columns, and hides the ID, Number of Employees, and Size columns
+    - It shows the Company name and Action columns, and hides the ID, Segment, Number of Employees, and Size columns

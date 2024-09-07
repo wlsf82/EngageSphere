@@ -1,0 +1,27 @@
+{
+  "customers": [
+    {
+      "id": 5,
+      "name": "Finance Masters",
+      "employees": 1500,
+      "contactInfo": {
+        "name": "Sara Lee",
+        "email": "sara.lee@financemasters.com"
+      },
+      "address": {
+        "street": "654 Finance Blvd",
+        "city": "Finance City",
+        "state": "Finance State",
+        "zipCode": "98765",
+        "country": "United States of America"
+      },
+      "size": "Enterprise",
+      "segment": "Finance"
+    }
+  ],
+  "pageInfo": {
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 1
+  }
+}

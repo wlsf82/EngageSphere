@@ -18,6 +18,7 @@ describe('EngageSphere API', () => {
           expect(customer.id).to.exist
           expect(customer.name).to.exist
           expect(customer.employees).to.exist
+          expect(customer.segment).to.exist
 
           if (customer.contactInfo) {
             expect(customer.contactInfo.name).to.exist
@@ -77,7 +78,7 @@ describe('EngageSphere API', () => {
   context('Size filtering', () => {
     it('filters customers by size correctly', () => {
       const sizes = ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise']
-      const limitOfEmployessPerSize = [99, 999, 9999, 49999, 999999] // Assuming that there aren't companies with more than 999999 employess in the database
+      const limitOfEmployeesPerSize = [99, 999, 9999, 49999, 999999] // Assuming that there aren't companies with more than 999999 employees in the database
 
       sizes.forEach((size, index) => {
         cy.request('GET', `${CUSTOMERS_API_URL}?size=${size}`).as('getSizedCustomers')
@@ -86,7 +87,23 @@ describe('EngageSphere API', () => {
           .its('body.customers')
           .each(customer => {
             expect(customer.size).to.eq(size)
-            expect(customer.employees).to.be.lte(limitOfEmployessPerSize[index])
+            expect(customer.employees).to.be.lte(limitOfEmployeesPerSize[index])
+          })
+      })
+    })
+  })
+
+  context('Segment filtering', () => {
+    it('filters customers by segment correctly', () => {
+      const segments = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance']
+
+      segments.forEach(segment => {
+        cy.request('GET', `${CUSTOMERS_API_URL}?segment=${segment}`).as('getSegmentedCustomers')
+
+        cy.get('@getSegmentedCustomers')
+          .its('body.customers')
+          .each(customer => {
+            expect(customer.segment).to.eq(segment)
           })
       })
     })
@@ -167,6 +184,17 @@ describe('EngageSphere API', () => {
       }).then(({ status, body }) => {
         expect(status).to.eq(400)
         expect(body.error).to.include('Unsupported size value')
+      })
+    })
+
+    it('handles invalid requests gracefully (e.g., unsupported segment)', () => {
+      cy.request({
+        method: 'GET',
+        url: `${CUSTOMERS_API_URL}?segment=UnsupportedSegment`,
+        failOnStatusCode: false,
+      }).then(({ status, body }) => {
+        expect(status).to.eq(400)
+        expect(body.error).to.include('Unsupported segment value')
       })
     })
   })

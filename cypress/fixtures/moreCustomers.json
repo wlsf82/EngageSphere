@@ -5,7 +5,8 @@
       "name": "Jacobs, Bechtelar and Von",
       "employees": 2174,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 2,
@@ -15,14 +16,15 @@
         "name": "Daija",
         "email": "Daija_Gislason93@gmail.com"
       },
-      "size": "Medium",
       "address": {
         "street": "988 Kimberly Fort Apt. 921",
         "city": "Lake Tracy",
         "state": "Connecticut",
         "zipCode": "07115",
         "country": "United States of America"
-      }
+      },
+      "size": "Medium",
+      "segment": "Retail"
     },
     {
       "id": 3,
@@ -32,7 +34,8 @@
         "name": "Alysson",
         "email": "Alysson.Lang@hotmail.com"
       },
-      "size": "Small"
+      "size": "Small",
+      "segment": "Technology"
     },
     {
       "id": 4,
@@ -42,55 +45,72 @@
         "name": "Brando",
         "email": "Brando_Kozey48@gmail.com"
       },
-      "size": "Large Enterprise"
+      "size": "Large Enterprise",
+      "segment": "HR"
     },
     {
       "id": 5,
       "name": "Runolfsson, Satterfield and Huel",
       "employees": 51015,
       "contactInfo": null,
-      "size": "Very Large Enterprise"
+      "size": "Very Large Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 6,
-      "name": "Littel - Flatley",
-      "employees": 1343,
-      "contactInfo": {
-        "name": "Selena",
-        "email": "Selena.Gleichner7@gmail.com"
-      },
-      "size": "Enterprise"
+      "name": "Joe, Ben and Walter",
+      "employees": 2199,
+      "contactInfo": null,
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 7,
-      "name": "Weber LLC",
-      "employees": 3069,
+      "name": "Kurtz - Krause",
+      "employees": 309,
       "contactInfo": {
-        "name": "Malika",
-        "email": "Malika16@hotmail.com"
+        "name": "Gil",
+        "email": "Gil_Son@gmail.com"
       },
-      "size": "Enterprise"
+      "address": {
+        "street": "988 Kimberly Fort Apt. 922",
+        "city": "Lake Tracy",
+        "state": "Connecticut",
+        "zipCode": "07115",
+        "country": "United States of America"
+      },
+      "size": "Medium",
+      "segment": "Retail"
     },
     {
       "id": 8,
-      "name": "Lowe Group",
-      "employees": 3017,
-      "contactInfo": null,
-      "size": "Enterprise"
+      "name": "Persian Co",
+      "employees": 33,
+      "contactInfo": {
+        "name": "Alex",
+        "email": "Alex.Doe@hotmail.com"
+      },
+      "size": "Small",
+      "segment": "Technology"
     },
     {
       "id": 9,
-      "name": "Rice - Stark",
-      "employees": 3239,
-      "contactInfo": null,
-      "size": "Enterprise"
+      "name": "Supertramp Co",
+      "employees": 22222,
+      "contactInfo": {
+        "name": "Brian",
+        "email": "Brian_Smiths32@gmail.com"
+      },
+      "size": "Large Enterprise",
+      "segment": "HR"
     },
     {
       "id": 10,
-      "name": "Hayes - Runolfsdottir",
-      "employees": 2600,
+      "name": "Rudolf, Stainfield",
+      "employees": 51113,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Very Large Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 11,
@@ -100,14 +120,16 @@
         "name": "Benjamin",
         "email": "Benjamin_Hoeger33@hotmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 12,
       "name": "Mraz, Parisian and Heathcote",
       "employees": 4710,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Retail"
     },
     {
       "id": 13,
@@ -117,7 +139,8 @@
         "name": "Johnnie",
         "email": "Johnnie.Schinner-Leannon@hotmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Technology"
     },
     {
       "id": 14,
@@ -127,7 +150,8 @@
         "name": "Curtis",
         "email": "Curtis.Witting@gmail.com"
       },
-      "size": "Medium"
+      "size": "Medium",
+      "segment": "HR"
     },
     {
       "id": 15,
@@ -137,35 +161,40 @@
         "name": "Celestine",
         "email": "Celestine.Batz65@gmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 16,
       "name": "Blick - Abernathy",
       "employees": 2340,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 17,
       "name": "Sipes LLC",
       "employees": 2480,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Retail"
     },
     {
       "id": 18,
       "name": "Will, Greenholt and DuBuque",
       "employees": 3319,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Technology"
     },
     {
       "id": 19,
       "name": "Cassin, Kub and Raynor",
       "employees": 3365,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "HR"
     },
     {
       "id": 20,
@@ -175,7 +204,8 @@
         "name": "Aleen",
         "email": "Aleen_Robel@yahoo.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 21,
@@ -185,7 +215,8 @@
         "name": "Ezequiel",
         "email": "Ezequiel25@yahoo.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 22,
@@ -195,7 +226,8 @@
         "name": "Onie",
         "email": "Onie34@yahoo.com"
       },
-      "size": "Medium"
+      "size": "Medium",
+      "segment": "Rretail"
     },
     {
       "id": 23,
@@ -205,7 +237,8 @@
         "name": "Jan",
         "email": "Jan22@gmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Technology"
     },
     {
       "id": 24,
@@ -215,7 +248,8 @@
         "name": "Lilyan",
         "email": "Lilyan_Trantow@gmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "HR"
     },
     {
       "id": 25,
@@ -225,21 +259,24 @@
         "name": "Brad",
         "email": "Brad_Klein@hotmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 26,
       "name": "Pfeffer, Prohaska and Johns",
       "employees": 4316,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 27,
       "name": "Kuhic - McKenzie",
       "employees": 3475,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Retail"
     },
     {
       "id": 28,
@@ -249,52 +286,59 @@
         "name": "Holly",
         "email": "Holly_Brakus@hotmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Technology"
     },
     {
       "id": 29,
       "name": "Feeney - Cruickshank",
       "employees": 3575,
       "contactInfo": {
-          "name": "Stan",
-          "email": "Stan_Cormier@hotmail.com"
+        "name": "Stan",
+        "email": "Stan_Cormier@hotmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "HR"
     },
     {
       "id": 30,
       "name": "Orn, Deckow and Luettgen",
       "employees": 3224,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 31,
       "name": "Hartmann - Donnelly",
       "employees": 1500,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 32,
       "name": "Volkman, Satterfield and Altenwerth",
       "employees": 4624,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Retail"
     },
     {
       "id": 33,
       "name": "Harber - Schroeder",
       "employees": 2644,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Technology"
     },
     {
       "id": 34,
       "name": "Hessel - Schneider",
       "employees": 1094,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "HR"
     },
     {
       "id": 35,
@@ -304,92 +348,103 @@
         "name": "Lurline",
         "email": "Lurline.Erdman@yahoo.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 36,
       "name": "Johnston and Sons",
       "employees": 4227,
       "contactInfo": {
-          "name": "Fred",
-          "email": "Fred45@hotmail.com"
+        "name": "Fred",
+        "email": "Fred45@hotmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 37,
       "name": "Buckridge, Wintheiser and Dietrich",
       "employees": 2468,
       "contactInfo": {
-          "name": "Eliane",
-          "email": "Eliane46@yahoo.com"
+        "name": "Eliane",
+        "email": "Eliane46@yahoo.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Retail"
     },
     {
       "id": 38,
       "name": "Jenkins and Sons",
       "employees": 2687,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Technology"
     },
     {
       "id": 39,
       "name": "Goodwin Group",
       "employees": 794,
       "contactInfo": {
-          "name": "Brendan",
-          "email": "Brendan.Larkin9@yahoo.com"
+        "name": "Brendan",
+        "email": "Brendan.Larkin9@yahoo.com"
       },
-      "size": "Medium"
+      "size": "Medium",
+      "segment": "HR"
     },
     {
       "id": 40,
       "name": "Dach, Botsford and Cruickshank",
       "employees": 1616,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 41,
       "name": "Hartmann, Doyle and Mante",
       "employees": 4870,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 42,
       "name": "Ritchie, Brakus and Luettgen",
       "employees": 771,
       "contactInfo": {
-          "name": "Elliott",
-          "email": "Elliott.Waelchi11@yahoo.com"
+        "name": "Elliott",
+        "email": "Elliott.Waelchi11@yahoo.com"
       },
-      "size": "Medium"
+      "size": "Medium",
+      "segment": "Logistics"
     },
     {
       "id": 43,
       "name": "Nicolas and Sons",
       "employees": 3977,
       "contactInfo": {
-          "name": "Reina",
-          "email": "Reina55@hotmail.com"
+        "name": "Reina",
+        "email": "Reina55@hotmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Retail"
     },
     {
       "id": 44,
       "name": "Treutel - Skiles",
       "employees": 4239,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Technology"
     },
     {
       "id": 45,
       "name": "Ryan - Kassulke",
       "employees": 3226,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "HR"
     },
     {
       "id": 46,
@@ -399,7 +454,8 @@
         "name": "Janessa",
         "email": "Janessa_Hilpert@hotmail.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Finance"
     },
     {
       "id": 47,
@@ -409,21 +465,24 @@
         "name": "Jairo",
         "email": "Jairo28@yahoo.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 48,
       "name": "Larkin, Kutch and Kessler",
       "employees": 4797,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Retail"
     },
     {
       "id": 49,
       "name": "Adams, Parisian and Turner",
       "employees": 3088,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Technology"
     },
     {
       "id": 50,
@@ -433,7 +492,8 @@
         "name": "Kavon",
         "email": "Kavon47@yahoo.com"
       },
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "HR"
     }
   ],
   "pageInfo": {

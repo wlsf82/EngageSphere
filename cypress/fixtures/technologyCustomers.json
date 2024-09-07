@@ -1,0 +1,27 @@
+{
+  "customers": [
+    {
+      "id": 3,
+      "name": "Tech Pioneers",
+      "employees": 3000,
+      "contactInfo": {
+        "name": "Alice Johnson",
+        "email": "alice.johnson@techpioneers.com"
+      },
+      "address": {
+        "street": "789 Tech Avenue",
+        "city": "Tech City",
+        "state": "Tech State",
+        "zipCode": "54321",
+        "country": "United States of America"
+      },
+      "size": "Enterprise",
+      "segment": "Technology"
+    }
+  ],
+  "pageInfo": {
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 1
+  }
+}

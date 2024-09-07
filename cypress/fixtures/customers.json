@@ -5,7 +5,8 @@
       "name": "Jacobs, Bechtelar and Von",
       "employees": 2174,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
         "zipCode": "07115",
         "country": "United States of America"
       },
-      "size": "Medium"
+      "size": "Medium",
+      "segment": "Retail"
     },
     {
       "id": 3,
@@ -32,7 +34,8 @@
         "name": "Alysson",
         "email": "Alysson.Lang@hotmail.com"
       },
-      "size": "Small"
+      "size": "Small",
+      "segment": "Technology"
     },
     {
       "id": 4,
@@ -42,14 +45,16 @@
         "name": "Brando",
         "email": "Brando_Kozey48@gmail.com"
       },
-      "size": "Large Enterprise"
+      "size": "Large Enterprise",
+      "segment": "HR"
     },
     {
       "id": 5,
       "name": "Runolfsson, Satterfield and Huel",
       "employees": 51015,
       "contactInfo": null,
-      "size": "Very Large Enterprise"
+      "size": "Very Large Enterprise",
+      "segment": "Finance"
     }
   ],
   "pageInfo": {

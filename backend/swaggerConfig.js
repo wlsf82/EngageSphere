@@ -12,7 +12,7 @@ const options = {
       schemas: {
         Customer: {
           type: 'object',
-          required: ['id', 'name', 'address'],
+          required: ['id', 'name', 'address', 'segment'],
           properties: {
             id: {
               type: 'integer',
@@ -71,14 +71,26 @@ const options = {
               },
               description: 'The mailing address of the company. It can be null',
             },
+            segment: {
+              type: 'string',
+              enum: ['Logistics', 'Retail', 'Technology', 'HR', 'Finance'],
+              description: 'The business segment of the company (Logistics, Retail, Technology, HR, Finance)',
+            },
+            size: {
+              type: 'string',
+              enum: ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise'],
+              description: 'The size of the company based on employee count',
+            },
           },
           example: {
-            name: 'Caca Cala',
-            employees: 1000,
-            size: 'Medium',
+            id: 1,
+            name: 'Jacobs Co',
+            employees: 100,
+            size: 'Small',
+            segment: 'Logistics',
             contactInfo: {
               name: 'Joe',
-              email: 'joe@cacacala.com'
+              email: 'joe@jacobsco.com'
             },
             address: {
               street: '988 Kimberly Fort Apt. 921',
