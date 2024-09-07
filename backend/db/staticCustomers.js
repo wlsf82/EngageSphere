@@ -3,6 +3,7 @@ module.exports = [
     id: 1,
     name: 'Jacobs Co',
     employees: 99,
+    segment: 'Logistics',
     contactInfo: null,
     address: {
       street: '988 Kimberly Fort Apt. 921',
@@ -16,6 +17,7 @@ module.exports = [
     id: 2,
     name: 'Kilback Co',
     employees: 100,
+    segment: 'Retail',
     contactInfo: {
       name: 'Daija',
       email: 'Daija_Gislason93@gmail.com'
@@ -32,6 +34,7 @@ module.exports = [
     id: 3,
     name: 'Parisian Co',
     employees: 999,
+    segment: 'Technology',
     contactInfo: {
       name: 'Alysson',
       email: 'Alysson.Lang@hotmail.com'
@@ -48,6 +51,7 @@ module.exports = [
     id: 4,
     name: 'Wilderman Co',
     employees: 1000,
+    segment: 'HR',
     contactInfo: {
       name: 'Brando',
       email: 'Brando_Kozey48@gmail.com'
@@ -64,6 +68,7 @@ module.exports = [
     id: 5,
     name: 'Runolfsson Co',
     employees: 9999,
+    segment: 'Finance',
     contactInfo: null,
     address: {
       street: '851 John Shores Suite 956',
@@ -77,6 +82,7 @@ module.exports = [
     id: 6,
     name: 'Littel Co',
     employees: 10000,
+    segment: 'Logistics',
     contactInfo: {
       name: 'Selena',
       email: 'Selena.Gleichner7@gmail.com'
@@ -93,6 +99,7 @@ module.exports = [
     id: 7,
     name: 'Weber Co',
     employees: 49999,
+    segment: 'Retail',
     contactInfo: {
       name: 'Malika',
       email: 'Malika16@hotmail.com'
@@ -109,6 +116,7 @@ module.exports = [
     id: 8,
     name: 'Lowe Co',
     employees: 50000,
+    segment: 'Technology',
     contactInfo: null,
     address: {
       street: '87908 Adkins Islands Apt. 944',

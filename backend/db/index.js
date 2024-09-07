@@ -47,11 +47,17 @@ const randomlyGenNumOfEmployees = () => {
   return getRandomIntegerBetween(1, 99)
 }
 
+const randomlyGenSegment = () => {
+  const segments = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance']
+  return segments[Math.floor(Math.random() * segments.length)]
+}
+
 const dynamicCustomers = times(numberOfDynamicCustomers, () => {
   return {
     id: initialId++,
     name: faker.company.name(),
     employees: randomlyGenNumOfEmployees(),
+    segment: randomlyGenSegment(),
     contactInfo: randomlyGenContactInfo(),
     address: randomlyGenAddressInfo(),
   }

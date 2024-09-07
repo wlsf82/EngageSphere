@@ -5,7 +5,8 @@
       "name": "Joe, Ben and Walter",
       "employees": 2199,
       "contactInfo": null,
-      "size": "Enterprise"
+      "size": "Enterprise",
+      "segment": "Logistics"
     },
     {
       "id": 7,
@@ -22,7 +23,8 @@
         "zipCode": "07115",
         "country": "United States of America"
       },
-      "size": "Medium"
+      "size": "Medium",
+      "segment": "Retail"
     },
     {
       "id": 8,
@@ -32,7 +34,8 @@
         "name": "Alex",
         "email": "Alex.Doe@hotmail.com"
       },
-      "size": "Small"
+      "size": "Small",
+      "segment": "Technology"
     },
     {
       "id": 9,
@@ -42,14 +45,16 @@
         "name": "Brian",
         "email": "Brian_Smiths32@gmail.com"
       },
-      "size": "Large Enterprise"
+      "size": "Large Enterprise",
+      "segment": "HR"
     },
     {
       "id": 10,
       "name": "Rudolf, Stainfield",
       "employees": 51113,
       "contactInfo": null,
-      "size": "Very Large Enterprise"
+      "size": "Very Large Enterprise",
+      "segment": "Finance"
     }
   ],
   "pageInfo": {

@@ -20,6 +20,7 @@ describe('<CustomerDetails />', () => {
     cy.contains('p', `Company name: ${completeCustomer.name}`).should('be.visible')
     cy.contains('p', `Number of employees: ${completeCustomer.employees}`).should('be.visible')
     cy.contains('p', `Size: ${completeCustomer.size}`).should('be.visible')
+    cy.contains('p', `Segment: ${completeCustomer.segment}`).should('be.visible')
 
     cy.contains('p', `Contact name: ${completeCustomer.contactInfo.name}`).should('be.visible')
     cy.contains('p', `Contact email: ${completeCustomer.contactInfo.email}`).should('be.visible')

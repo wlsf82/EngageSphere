@@ -1,0 +1,27 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Logistics Solutions",
+      "employees": 500,
+      "contactInfo": {
+        "name": "John Doe",
+        "email": "john.doe@logistics.com"
+      },
+      "address": {
+        "street": "123 Logistics Lane",
+        "city": "Logistic City",
+        "state": "Logistic State",
+        "zipCode": "12345",
+        "country": "United States of America"
+      },
+      "size": "Medium",
+      "segment": "Logistics"
+    }
+  ],
+  "pageInfo": {
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 1
+  }
+}

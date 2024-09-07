@@ -1,0 +1,27 @@
+{
+  "customers": [
+    {
+      "id": 4,
+      "name": "HR Experts",
+      "employees": 800,
+      "contactInfo": {
+        "name": "Bob Williams",
+        "email": "bob.williams@hrexperts.com"
+      },
+      "address": {
+        "street": "321 HR Street",
+        "city": "HR Town",
+        "state": "HR State",
+        "zipCode": "67812",
+        "country": "United States of America"
+      },
+      "size": "Medium",
+      "segment": "HR"
+    }
+  ],
+  "pageInfo": {
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 1
+  }
+}

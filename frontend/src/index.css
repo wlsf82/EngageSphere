@@ -231,8 +231,17 @@ th, td {
   white-space: nowrap;
 }
 
+th {
+  background-color: var(--table-header-bg-color);
+  color: #ffffff;
+}
+
+tbody tr td {
+  text-align: left;
+}
+
 th:nth-child(1),
-th:nth-child(5),
+th:nth-child(6),
 td:nth-child(1) {
   text-align: center;
 }
@@ -242,26 +251,26 @@ th {
   color: #ffffff;
 }
 
-th:nth-child(3),
-th:nth-child(4) {
+th:nth-child(4),
+th:nth-child(5) {
   cursor: pointer;
 }
 
-th:nth-child(3) button,
 th:nth-child(4) button,
+th:nth-child(5) button,
 tbody tr button {
   all: unset;
   outline: revert;
 }
 
-tbody tr td:nth-child(5) {
+tbody tr td:nth-child(6) {
   cursor: pointer;
   text-align: center;
   background-color: var(--pagination-button-hover-bg-color);
   color: var(--pagination-button-hover-text-color);
 }
 
-tbody tr td:nth-child(5):hover {
+tbody tr td:nth-child(6):hover {
   background-color: var(--pagination-button-bg-color);
   color: var(--pagination-button-text-color);
 }
@@ -270,7 +279,7 @@ table th:nth-child(1) {
   width: 20px;
 }
 
-table th:nth-child(5) {
+table th:nth-child(6) {
   width: 8%;
 }
 
@@ -278,7 +287,7 @@ tr:hover {
   background-color: var(--table-row-hover-bg-color);
 }
 
-table th:nth-child(5) {
+table th:nth-child(6) {
   width: 5%;
 }
 
@@ -438,6 +447,17 @@ footer a:hover {
   color: var(--text-color);
 }
 
+.filters-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.filter-container {
+  margin: 0;
+}
+
 .download-csv-button-container {
   margin-top: 20px;
   display: flex;
@@ -568,6 +588,12 @@ textarea {
 }
 
 @media (max-width: 468px) {
+  .filters-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
   th, td {
     padding: 10px;
   }
@@ -575,13 +601,15 @@ textarea {
   table thead th:nth-child(1),
   table thead th:nth-child(3),
   table thead th:nth-child(4),
+  table thead th:nth-child(5),
   table tbody tr td:nth-child(1),
   table tbody tr td:nth-child(3),
-  table tbody tr td:nth-child(4) {
+  table tbody tr td:nth-child(4),
+  table tbody tr td:nth-child(5) {
     display: none;
   }
 
-  table th:nth-child(5) {
+  table th:nth-child(6) {
     width: 25%;
   }
 

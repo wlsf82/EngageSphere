@@ -1,0 +1,27 @@
+{
+  "customers": [
+    {
+      "id": 2,
+      "name": "Retail Innovators",
+      "employees": 1200,
+      "contactInfo": {
+        "name": "Jane Smith",
+        "email": "jane.smith@retailinnovators.com"
+      },
+      "address": {
+        "street": "456 Retail Road",
+        "city": "Retailville",
+        "state": "Retail State",
+        "zipCode": "67890",
+        "country": "United States of America"
+      },
+      "size": "Enterprise",
+      "segment": "Retail"
+    }
+  ],
+  "pageInfo": {
+    "currentPage": 1,
+    "totalPages": 1,
+    "totalCustomers": 1
+  }
+}

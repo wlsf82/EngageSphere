@@ -34,7 +34,7 @@ const Table = ({
     return order * (a[sortCriteria] - b[sortCriteria])
   })
 
-  const sortNumberOfEmployessHandler = () => sortCustomers('employees')
+  const sortNumberOfEmployeesHandler = () => sortCustomers('employees')
   const sortSizeHandler = () => sortCustomers('size')
 
   return (
@@ -43,9 +43,10 @@ const Table = ({
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Company name</th>
-          <th scope="col" onClick={sortNumberOfEmployessHandler}>
-            <button onClick={sortNumberOfEmployessHandler}>
-              Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span aria-label="ordering by number of employess asc">&uarr;</span> : <span aria-label="ordering by number of employess desc">&darr;</span>)}
+          <th scope="col">Segment</th>
+          <th scope="col" onClick={sortNumberOfEmployeesHandler}>
+            <button onClick={sortNumberOfEmployeesHandler}>
+              Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span aria-label="ordering by number of employees asc">&uarr;</span> : <span aria-label="ordering by number of employees desc">&darr;</span>)}
             </button>
           </th>
           <th scope="col" onClick={sortSizeHandler}>
@@ -59,18 +60,11 @@ const Table = ({
       <tbody>
         {sortedCustomers.map((customer) => (
           <tr key={customer.id}>
-            <td>
-              {customer.id}
-            </td>
-            <td>
-              {customer.name}
-            </td>
-            <td>
-              {customer.employees}
-            </td>
-            <td>
-              {customer.size}
-            </td>
+            <td>{customer.id}</td>
+            <td>{customer.name}</td>
+            <td>{customer.segment}</td>
+            <td>{customer.employees}</td>
+            <td>{customer.size}</td>
             <td onClick={() => customerActionClickHandler(customer)}>
               <strong>
                 <button aria-label={`View company: ${customer.name}`} key={customer.id} onClick={() => customerActionClickHandler(customer)}>
