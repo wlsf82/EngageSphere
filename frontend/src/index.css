@@ -592,6 +592,7 @@ textarea {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-bottom: 10px;
   }
 
   th, td {
