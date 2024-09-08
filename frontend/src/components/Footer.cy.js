@@ -8,7 +8,7 @@ describe('<Footer />', () => {
       .should('be.visible')
     cy.contains('a', 'Hotmart')
       .should('be.visible')
-      .and('have.attr', 'href', 'https://hotmart.com/pt-br/club/talking-about-testing')
+      .and('have.attr', 'href', 'https://hotmart.com/pt-br/club/cypress-playground-ate-a-nuvem')
     cy.contains('a', 'Udemy')
       .should('be.visible')
       .and('have.attr', 'href', 'https://udemy.com/user/walmyr')
