@@ -9,7 +9,7 @@ import Header from './components/Header'
 import Pagination from './components/Pagination'
 import DownloadCSV from './components/DownloadCSV'
 import SizeFilter from './components/SizeFilter'
-import SegmentFilter from './components/SegmentFilter'
+import IndustryFilter from './components/IndustryFilter'
 import Table from './components/Table'
 import Footer from './components/Footer'
 
@@ -23,7 +23,7 @@ const App = () => {
   const [inputDisabled, setInputDisabled] = useState(false)
 
   const [sizeFilter, setSizeFilter] = useState('All')
-  const [segmentFilter, setSegmentFilter] = useState('All')
+  const [industryFilter, setIndustryFilter] = useState('All')
   const [currentPage, setCurrentPage] = useState(1)
   const [paginationInfo, setPaginationInfo] = useState(() => ({
     totalPages: 1,
@@ -37,8 +37,8 @@ const App = () => {
   }, [paginationInfo.limit])
 
   useEffect(() => {
-    getCustomers(currentPage, paginationInfo.limit, sizeFilter, segmentFilter)
-  }, [currentPage, paginationInfo.limit, sizeFilter, segmentFilter])
+    getCustomers(currentPage, paginationInfo.limit, sizeFilter, industryFilter)
+  }, [currentPage, paginationInfo.limit, sizeFilter, industryFilter])
 
   useEffect(() => {
     if (initialFetchDone && customers.length === 0) {
@@ -46,9 +46,9 @@ const App = () => {
     }
   }, [initialFetchDone, customers])
 
-  async function getCustomers(page, limit, sizeFilter, segmentFilter) {
+  async function getCustomers(page, limit, sizeFilter, industryFilter) {
     try {
-      const response = await fetch(`${serverURL}/customers?page=${page}&limit=${limit}&size=${sizeFilter}&segment=${segmentFilter}`, { method: 'GET' })
+      const response = await fetch(`${serverURL}/customers?page=${page}&limit=${limit}&size=${sizeFilter}&industry=${industryFilter}`, { method: 'GET' })
       const jsonResponse = await response.json()
       const { customers, pageInfo } = jsonResponse
 
@@ -88,8 +88,8 @@ const App = () => {
     setCurrentPage(1)
   }
 
-  const segmentFilterChangeHandler = event => {
-    setSegmentFilter(event.target.value)
+  const industryFilterChangeHandler = event => {
+    setIndustryFilter(event.target.value)
     setCurrentPage(1)
   }
 
@@ -104,7 +104,7 @@ const App = () => {
           <>
             <div className="filters-container">
               <SizeFilter size={sizeFilter} onChange={sizeFilterChangeHandler} />
-              <SegmentFilter segment={segmentFilter} onChange={segmentFilterChangeHandler} />
+              <IndustryFilter industry={industryFilter} onChange={industryFilterChangeHandler} />
             </div>
             <div data-testid="table" className="table-container">
               {initialFetchDone ? (

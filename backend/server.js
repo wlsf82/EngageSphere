@@ -55,12 +55,12 @@ const getSize = ({ employees }) => {
  *           default: All
  *         description: Size of the company
  *       - in: query
- *         name: segment
+ *         name: industry
  *         schema:
  *           type: string
  *           enum: [Logistics, Retail, Technology, HR, Finance, All]
  *           default: All
- *         description: Segment of the company
+ *         description: Industry of the company
  *     responses:
  *       200:
  *         description: A list of customers
@@ -80,7 +80,7 @@ const getSize = ({ employees }) => {
  *         description: >
  *           Invalid request parameters. This can occur for several reasons:
  *           - The `page` or `limit` parameters are not positive integers.
- *           - The `size` or `segment` parameters are not one of the supported values.
+ *           - The `size` or `industry` parameters are not one of the supported values.
  *           Each error includes a message indicating the specific issue.
  *         content:
  *           application/json:
@@ -97,14 +97,14 @@ const getSize = ({ employees }) => {
  *               invalidSize:
  *                 value: { error: "Unsupported size value. Supported values are All, Small, Medium, Enterprise, Large Enterprise, and Very Large Enterprise." }
  *                 summary: Unsupported size parameter
- *               invalidSegment:
- *                 value: { error: "Unsupported segment value. Supported values are All, Logistics, Retail, Technology, HR, and Finance." }
- *                 summary: Unsupported segment parameter
+ *               invalidIndustry:
+ *                 value: { error: "Unsupported industry value. Supported values are All, Logistics, Retail, Technology, HR, and Finance." }
+ *                 summary: Unsupported industry parameter
  */
 app.get('/customers', (req, res) => {
-  const { page = 1, limit = 10, size = 'All', segment = 'All' } = req.query
+  const { page = 1, limit = 10, size = 'All', industry = 'All' } = req.query
   const validSizes = ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise', 'All']
-  const validSegments = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance', 'All']
+  const validIndustries = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance', 'All']
 
   if (isNaN(page) || isNaN(limit) || page < 1 || limit < 1) {
     return res.status(400).json({ error: 'Invalid page or limit. Both must be positive numbers.' })
@@ -114,8 +114,8 @@ app.get('/customers', (req, res) => {
     return res.status(400).json({ error: 'Unsupported size value. Supported values are All, Small, Medium, Enterprise, Large Enterprise, and Very Large Enterprise.' })
   }
 
-  if (!validSegments.includes(segment)) {
-    return res.status(400).json({ error: 'Unsupported segment value. Supported values are All, Logistics, Retail, Technology, HR, and Finance.' })
+  if (!validIndustries.includes(industry)) {
+    return res.status(400).json({ error: 'Unsupported industry value. Supported values are All, Logistics, Retail, Technology, HR, and Finance.' })
   }
 
   const startIndex = (page - 1) * limit
@@ -127,8 +127,8 @@ app.get('/customers', (req, res) => {
     filteredCustomers = filteredCustomers.filter(customer => getSize(customer) === size)
   }
 
-  if (segment !== 'All') {
-    filteredCustomers = filteredCustomers.filter(customer => customer.segment === segment)
+  if (industry !== 'All') {
+    filteredCustomers = filteredCustomers.filter(customer => customer.industry === industry)
   }
 
   const paginatedCustomers = filteredCustomers.slice(startIndex, endIndex).map(customer => {

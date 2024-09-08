@@ -18,7 +18,7 @@ describe('EngageSphere API', () => {
           expect(customer.id).to.exist
           expect(customer.name).to.exist
           expect(customer.employees).to.exist
-          expect(customer.segment).to.exist
+          expect(customer.industry).to.exist
 
           if (customer.contactInfo) {
             expect(customer.contactInfo.name).to.exist
@@ -93,17 +93,17 @@ describe('EngageSphere API', () => {
     })
   })
 
-  context('Segment filtering', () => {
-    it('filters customers by segment correctly', () => {
-      const segments = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance']
+  context('Industry filtering', () => {
+    it('filters customers by industry correctly', () => {
+      const industries = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance']
 
-      segments.forEach(segment => {
-        cy.request('GET', `${CUSTOMERS_API_URL}?segment=${segment}`).as('getSegmentedCustomers')
+      industries.forEach(industry => {
+        cy.request('GET', `${CUSTOMERS_API_URL}?industry=${industry}`).as('getIndustryedCustomers')
 
-        cy.get('@getSegmentedCustomers')
+        cy.get('@getIndustryedCustomers')
           .its('body.customers')
           .each(customer => {
-            expect(customer.segment).to.eq(segment)
+            expect(customer.industry).to.eq(industry)
           })
       })
     })
@@ -187,14 +187,14 @@ describe('EngageSphere API', () => {
       })
     })
 
-    it('handles invalid requests gracefully (e.g., unsupported segment)', () => {
+    it('handles invalid requests gracefully (e.g., unsupported industry)', () => {
       cy.request({
         method: 'GET',
-        url: `${CUSTOMERS_API_URL}?segment=UnsupportedSegment`,
+        url: `${CUSTOMERS_API_URL}?industry=UnsupportedIndustry`,
         failOnStatusCode: false,
       }).then(({ status, body }) => {
         expect(status).to.eq(400)
-        expect(body.error).to.include('Unsupported segment value')
+        expect(body.error).to.include('Unsupported industry value')
       })
     })
   })

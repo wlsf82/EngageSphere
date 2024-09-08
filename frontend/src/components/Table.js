@@ -43,7 +43,7 @@ const Table = ({
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Company name</th>
-          <th scope="col">Segment</th>
+          <th scope="col">Industry</th>
           <th scope="col" onClick={sortNumberOfEmployeesHandler}>
             <button onClick={sortNumberOfEmployeesHandler}>
               Number of employees {sortCriteria === 'employees' && (sortOrder === 'asc' ? <span aria-label="ordering by number of employees asc">&uarr;</span> : <span aria-label="ordering by number of employees desc">&darr;</span>)}
@@ -62,7 +62,7 @@ const Table = ({
           <tr key={customer.id}>
             <td>{customer.id}</td>
             <td>{customer.name}</td>
-            <td>{customer.segment}</td>
+            <td>{customer.industry}</td>
             <td>{customer.employees}</td>
             <td>{customer.size}</td>
             <td onClick={() => customerActionClickHandler(customer)}>

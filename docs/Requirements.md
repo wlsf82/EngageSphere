@@ -38,7 +38,7 @@ For each customer, the following information is displayed (if the viewport width
 
 - **ID**
 - **Company name**
-- **Segment** (where the possible options are Logistics', 'Retail'. 'Technology', 'HR', and 'Finance')
+- **Industry** (where the possible options are Logistics', 'Retail'. 'Technology', 'HR', and 'Finance')
 - **Number of employees**
 - **Size**: if **Number of employees** is less than 100, size is **Small**; if greater than or equal to 100 and less than 1000, **Medium**; if greater than or equal to 1000 and less than 10000, **Enterprise**; if greater than or equal to 10000 and less than 50000 **Large Enterprise**; otherwise, **Very Large Enterprise**
 
@@ -74,27 +74,27 @@ The page limit is persisted in the local storage, and the last chosen one is kep
 
 #### Filtering
 
-It's possible to apply filters based on both customers' size and segment. The available size options are 'All', 'Small', 'Medium', 'Enterprise', 'Large Enterprise', and 'Very Large Enterprise'. The available segment options are 'All', 'Logistics', 'Retail', 'Technology', 'HR', and 'Finance'. 'All' is the default for both filters.
+It's possible to apply filters based on both customers' size and industry. The available size options are 'All', 'Small', 'Medium', 'Enterprise', 'Large Enterprise', and 'Very Large Enterprise'. The available industry options are 'All', 'Logistics', 'Retail', 'Technology', 'HR', and 'Finance'. 'All' is the default for both filters.
 
 ##### Empty state per size
 
 If there are no customers in the database for the filtered size, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
 
-##### Empty state per segment
+##### Empty state per industry
 
-If there are no customers in the database for the filtered segment, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
+If there are no customers in the database for the filtered industry, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
 
-##### Filtering by both size and segment
+##### Filtering by both size and industry
 
-The filters can be applied independently or in combination. If there are no customers that match the combination of the selected size and segment, the empty state message ("No customers available") is displayed.
+The filters can be applied independently or in combination. If there are no customers that match the combination of the selected size and industry, the empty state message ("No customers available") is displayed.
 
 #### Downloading
 
 It's possible to download the list of customers to a CSV file called `customers.csv`.
 
-When clicking the Download CSV button, the downloaded file will respect both the size and segment filters along with the customer limit per page.
+When clicking the Download CSV button, the downloaded file will respect both the size and industry filters along with the customer limit per page.
 
-The following fields are available in the file, in this exact order: ID, Company_Name, Number_of_Employees, Size, Segment, Contact_Name, Contact_Email, Street, City, State, Zip_Code, and Country.
+The following fields are available in the file, in this exact order: ID, Company_Name, Number_of_Employees, Size, Industry, Contact_Name, Contact_Email, Street, City, State, Zip_Code, and Country.
 
 For customers with no contact info or address, empty values should be available for such fields in the downloaded file.
 
@@ -157,11 +157,11 @@ This endpoint accepts four query parameters, as listed below.
 - `page` (optional; current page - default is 1)
 - `limit` (optional; number of customers to be shown per page - default is 10)
 - `size` (optional; filter customers by size: 'Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise' - default is 'All')
-- `segment` (optional; filter customers by business segment: 'Logistics', 'Retail', 'Technology', 'HR', 'Finance' - default is 'All')
+- `industry` (optional; filter customers by business industry: 'Logistics', 'Retail', 'Technology', 'HR', 'Finance' - default is 'All')
 
-Below is an example of how the request URL would look like if you wanted to retrieve ten medium-sized customers from the technology segment on page two:
+Below is an example of how the request URL would look like if you wanted to retrieve ten medium-sized customers from the technology industry on page two:
 
-`http://localhost:3001/customers?page=2&limit=10&size=Medium&segment=technology`
+`http://localhost:3001/customers?page=2&limit=10&size=Medium&industry=technology`
 
 #### Response body
 
@@ -176,7 +176,7 @@ If there are customers in the database, the following JSON structure should be r
       "employees": 850,
       "contactInfo": null,
       "size": "Medium",
-      "segment": "Technology",
+      "industry": "Technology",
       "address": {
         "street": "988 Kimberly Fort Apt. 921",
         "city": "Lake Tracy",
@@ -194,7 +194,7 @@ If there are customers in the database, the following JSON structure should be r
         "email": "jsmith@americasinc.com"
       },
       "size": "Medium",
-      "segment": "Technology",
+      "industry": "Technology",
       "address": {
         "street": "5099 Murray Inlet",
         "city": "South Tiffany",
@@ -222,8 +222,8 @@ If there are customers in the database, the following JSON structure should be r
   - **Enterprise** when it is greater than or equal to 1000 and less than 10000;
   - **Large Enterprise** when it is greater than or equal to 10000 and less than 50000;
   - **Very Large Enterprise** otherwise;
-- The `segment` attribute corresponds to the business sector the company belongs to and can be one of the following: **Logistics**, **Retail**, **Technology**, **HR**, **Finance**;
-- The API responds with a `400 Bad Request` status code for invalid request parameters, such as negative or non-number values for `page` or `limit`, or unsupported values for `size` or `segment`.
+- The `industry` attribute corresponds to the business sector the company belongs to and can be one of the following: **Logistics**, **Retail**, **Technology**, **HR**, **Finance**;
+- The API responds with a `400 Bad Request` status code for invalid request parameters, such as negative or non-number values for `page` or `limit`, or unsupported values for `size` or `industry`.
 
 ### Swagger
 

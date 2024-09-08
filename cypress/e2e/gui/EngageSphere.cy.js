@@ -22,7 +22,7 @@ describe('EngageSphere Frontend', options, () => {
       it('filters by All sizes', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Small&segment=All`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Small&industry=All`,
           { fixture: 'smallCustomers' }
         ).as('getSmallCustomers')
         // First, filter by a different size (e.g., Small)
@@ -39,7 +39,7 @@ describe('EngageSphere Frontend', options, () => {
       it('filters by Small size', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Small&segment=All`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Small&industry=All`,
           { fixture: 'smallCustomers' }
         ).as('getSmallCustomers')
 
@@ -53,7 +53,7 @@ describe('EngageSphere Frontend', options, () => {
       it('filters by Medium size', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Medium&segment=All`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Medium&industry=All`,
           { fixture: 'mediumCustomers' }
         ).as('getMediumCustomers')
 
@@ -67,7 +67,7 @@ describe('EngageSphere Frontend', options, () => {
       it('filters by Enterprise size', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&segment=All`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&industry=All`,
           { fixture: 'enterpriseCustomers' }
         ).as('getEnterpriseCustomers')
 
@@ -81,7 +81,7 @@ describe('EngageSphere Frontend', options, () => {
       it('filters by Large Enterprise size', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Large%20Enterprise&segment=All`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Large%20Enterprise&industry=All`,
           { fixture: 'largeEnterpriseCustomers'}
         ).as('getLargeEnterpriseCustomers')
 
@@ -95,7 +95,7 @@ describe('EngageSphere Frontend', options, () => {
       it('filters by Very Large Enterprise size', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Very%20Large%20Enterprise&segment=All`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Very%20Large%20Enterprise&industry=All`,
           { fixture: 'veryLargeEnterpriseCustomers'}
         ).as('getVeryLargeEnterpriseCustomers')
 
@@ -107,90 +107,90 @@ describe('EngageSphere Frontend', options, () => {
       })
     })
 
-    context('By segment', () => {
-      it('filters by All segments', () => {
+    context('By industry', () => {
+      it('filters by All industries', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&segment=Logistics`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Logistics`,
           { fixture: 'logisticsCustomers' }
         ).as('getLogisticsCustomers')
 
-        // First, filter by a different segment (e.g., Logistics)
+        // First, filter by a different industry (e.g., Logistics)
         // So that when filtering by All, the `getCustomers` request happens again,
         // and the test can wait for it.
-        cy.get('[data-testid="segment-filter"]').select('Logistics')
+        cy.get('[data-testid="industry-filter"]').select('Logistics')
         cy.wait('@getLogisticsCustomers')
 
-        cy.get('[data-testid="segment-filter"]').select('All')
+        cy.get('[data-testid="industry-filter"]').select('All')
         cy.wait('@getCustomers')
 
         cy.get('tbody tr').should('have.length', 5)
       })
 
-      it('filters by Logistics segment', () => {
+      it('filters by Logistics industry', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&segment=Logistics`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Logistics`,
           { fixture: 'logisticsCustomers' }
         ).as('getLogisticsCustomers')
 
-        cy.get('[data-testid="segment-filter"]').select('Logistics')
+        cy.get('[data-testid="industry-filter"]').select('Logistics')
 
         cy.wait('@getLogisticsCustomers')
 
         cy.get('tbody tr').should('have.length', 1)
       })
 
-      it('filters by Retail segment', () => {
+      it('filters by Retail industry', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&segment=Retail`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Retail`,
           { fixture: 'retailCustomers' }
         ).as('getRetailCustomers')
 
-        cy.get('[data-testid="segment-filter"]').select('Retail')
+        cy.get('[data-testid="industry-filter"]').select('Retail')
 
         cy.wait('@getRetailCustomers')
 
         cy.get('tbody tr').should('have.length', 1)
       })
 
-      it('filters by Technology segment', () => {
+      it('filters by Technology industry', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&segment=Technology`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Technology`,
           { fixture: 'technologyCustomers' }
         ).as('getTechnologyCustomers')
 
-        cy.get('[data-testid="segment-filter"]').select('Technology')
+        cy.get('[data-testid="industry-filter"]').select('Technology')
 
         cy.wait('@getTechnologyCustomers')
 
         cy.get('tbody tr').should('have.length', 1)
       })
 
-      it('filters by HR segment', () => {
+      it('filters by HR industry', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&segment=HR`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=HR`,
           { fixture: 'hrCustomers' }
         ).as('getHRCustomers')
 
-        cy.get('[data-testid="segment-filter"]').select('HR')
+        cy.get('[data-testid="industry-filter"]').select('HR')
 
         cy.wait('@getHRCustomers')
 
         cy.get('tbody tr').should('have.length', 1)
       })
 
-      it('filters by Finance segment', () => {
+      it('filters by Finance industry', () => {
         cy.intercept(
           'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&segment=Finance`,
+          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Finance`,
           { fixture: 'financeCustomers' }
         ).as('getFinanceCustomers')
 
-        cy.get('[data-testid="segment-filter"]').select('Finance')
+        cy.get('[data-testid="industry-filter"]').select('Finance')
 
         cy.wait('@getFinanceCustomers')
 

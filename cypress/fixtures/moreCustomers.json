@@ -6,7 +6,7 @@
       "employees": 2174,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
         "country": "United States of America"
       },
       "size": "Medium",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 3,
@@ -35,7 +35,7 @@
         "email": "Alysson.Lang@hotmail.com"
       },
       "size": "Small",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 4,
@@ -46,7 +46,7 @@
         "email": "Brando_Kozey48@gmail.com"
       },
       "size": "Large Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 5,
@@ -54,7 +54,7 @@
       "employees": 51015,
       "contactInfo": null,
       "size": "Very Large Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 6,
@@ -62,7 +62,7 @@
       "employees": 2199,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 7,
@@ -80,7 +80,7 @@
         "country": "United States of America"
       },
       "size": "Medium",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 8,
@@ -91,7 +91,7 @@
         "email": "Alex.Doe@hotmail.com"
       },
       "size": "Small",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 9,
@@ -102,7 +102,7 @@
         "email": "Brian_Smiths32@gmail.com"
       },
       "size": "Large Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 10,
@@ -110,7 +110,7 @@
       "employees": 51113,
       "contactInfo": null,
       "size": "Very Large Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 11,
@@ -121,7 +121,7 @@
         "email": "Benjamin_Hoeger33@hotmail.com"
       },
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 12,
@@ -129,7 +129,7 @@
       "employees": 4710,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 13,
@@ -140,7 +140,7 @@
         "email": "Johnnie.Schinner-Leannon@hotmail.com"
       },
       "size": "Enterprise",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 14,
@@ -151,7 +151,7 @@
         "email": "Curtis.Witting@gmail.com"
       },
       "size": "Medium",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 15,
@@ -162,7 +162,7 @@
         "email": "Celestine.Batz65@gmail.com"
       },
       "size": "Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 16,
@@ -170,7 +170,7 @@
       "employees": 2340,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 17,
@@ -178,7 +178,7 @@
       "employees": 2480,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 18,
@@ -186,7 +186,7 @@
       "employees": 3319,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 19,
@@ -194,7 +194,7 @@
       "employees": 3365,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 20,
@@ -205,7 +205,7 @@
         "email": "Aleen_Robel@yahoo.com"
       },
       "size": "Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 21,
@@ -216,7 +216,7 @@
         "email": "Ezequiel25@yahoo.com"
       },
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 22,
@@ -227,7 +227,7 @@
         "email": "Onie34@yahoo.com"
       },
       "size": "Medium",
-      "segment": "Rretail"
+      "industry": "Rretail"
     },
     {
       "id": 23,
@@ -238,7 +238,7 @@
         "email": "Jan22@gmail.com"
       },
       "size": "Enterprise",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 24,
@@ -249,7 +249,7 @@
         "email": "Lilyan_Trantow@gmail.com"
       },
       "size": "Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 25,
@@ -260,7 +260,7 @@
         "email": "Brad_Klein@hotmail.com"
       },
       "size": "Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 26,
@@ -268,7 +268,7 @@
       "employees": 4316,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 27,
@@ -276,7 +276,7 @@
       "employees": 3475,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 28,
@@ -287,7 +287,7 @@
         "email": "Holly_Brakus@hotmail.com"
       },
       "size": "Enterprise",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 29,
@@ -298,7 +298,7 @@
         "email": "Stan_Cormier@hotmail.com"
       },
       "size": "Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 30,
@@ -306,7 +306,7 @@
       "employees": 3224,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 31,
@@ -314,7 +314,7 @@
       "employees": 1500,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 32,
@@ -322,7 +322,7 @@
       "employees": 4624,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 33,
@@ -330,7 +330,7 @@
       "employees": 2644,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 34,
@@ -338,7 +338,7 @@
       "employees": 1094,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 35,
@@ -349,7 +349,7 @@
         "email": "Lurline.Erdman@yahoo.com"
       },
       "size": "Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 36,
@@ -360,7 +360,7 @@
         "email": "Fred45@hotmail.com"
       },
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 37,
@@ -371,7 +371,7 @@
         "email": "Eliane46@yahoo.com"
       },
       "size": "Enterprise",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 38,
@@ -379,7 +379,7 @@
       "employees": 2687,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 39,
@@ -390,7 +390,7 @@
         "email": "Brendan.Larkin9@yahoo.com"
       },
       "size": "Medium",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 40,
@@ -398,7 +398,7 @@
       "employees": 1616,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 41,
@@ -406,7 +406,7 @@
       "employees": 4870,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 42,
@@ -417,7 +417,7 @@
         "email": "Elliott.Waelchi11@yahoo.com"
       },
       "size": "Medium",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 43,
@@ -428,7 +428,7 @@
         "email": "Reina55@hotmail.com"
       },
       "size": "Enterprise",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 44,
@@ -436,7 +436,7 @@
       "employees": 4239,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 45,
@@ -444,7 +444,7 @@
       "employees": 3226,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 46,
@@ -455,7 +455,7 @@
         "email": "Janessa_Hilpert@hotmail.com"
       },
       "size": "Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     },
     {
       "id": 47,
@@ -466,7 +466,7 @@
         "email": "Jairo28@yahoo.com"
       },
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 48,
@@ -474,7 +474,7 @@
       "employees": 4797,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 49,
@@ -482,7 +482,7 @@
       "employees": 3088,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 50,
@@ -493,7 +493,7 @@
         "email": "Kavon47@yahoo.com"
       },
       "size": "Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     }
   ],
   "pageInfo": {

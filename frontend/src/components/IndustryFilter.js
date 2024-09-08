@@ -1,8 +1,8 @@
-const SegmentFilter = ({ segment, onChange }) => {
+const IndustryFilter = ({ industry, onChange }) => {
   return (
     <div className="filter-container">
-      <label htmlFor="segmentFilter">Filter by segment:</label>
-      <select data-testid="segment-filter" id="segmentFilter" value={segment} onChange={onChange}>
+      <label htmlFor="industryFilter">Filter by industry:</label>
+      <select data-testid="industry-filter" id="industryFilter" value={industry} onChange={onChange}>
         <option value="All">All</option>
         <option value="Logistics">Logistics</option>
         <option value="Retail">Retail</option>
@@ -14,4 +14,4 @@ const SegmentFilter = ({ segment, onChange }) => {
   )
 }
 
-export default SegmentFilter
+export default IndustryFilter

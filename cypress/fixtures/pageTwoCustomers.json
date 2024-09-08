@@ -6,7 +6,7 @@
       "employees": 2199,
       "contactInfo": null,
       "size": "Enterprise",
-      "segment": "Logistics"
+      "industry": "Logistics"
     },
     {
       "id": 7,
@@ -24,7 +24,7 @@
         "country": "United States of America"
       },
       "size": "Medium",
-      "segment": "Retail"
+      "industry": "Retail"
     },
     {
       "id": 8,
@@ -35,7 +35,7 @@
         "email": "Alex.Doe@hotmail.com"
       },
       "size": "Small",
-      "segment": "Technology"
+      "industry": "Technology"
     },
     {
       "id": 9,
@@ -46,7 +46,7 @@
         "email": "Brian_Smiths32@gmail.com"
       },
       "size": "Large Enterprise",
-      "segment": "HR"
+      "industry": "HR"
     },
     {
       "id": 10,
@@ -54,7 +54,7 @@
       "employees": 51113,
       "contactInfo": null,
       "size": "Very Large Enterprise",
-      "segment": "Finance"
+      "industry": "Finance"
     }
   ],
   "pageInfo": {

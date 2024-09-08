@@ -47,9 +47,9 @@ const randomlyGenNumOfEmployees = () => {
   return getRandomIntegerBetween(1, 99)
 }
 
-const randomlyGenSegment = () => {
-  const segments = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance']
-  return segments[Math.floor(Math.random() * segments.length)]
+const randomlyGenIndustry = () => {
+  const industries = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance']
+  return industries[Math.floor(Math.random() * industries.length)]
 }
 
 const dynamicCustomers = times(numberOfDynamicCustomers, () => {
@@ -57,7 +57,7 @@ const dynamicCustomers = times(numberOfDynamicCustomers, () => {
     id: initialId++,
     name: faker.company.name(),
     employees: randomlyGenNumOfEmployees(),
-    segment: randomlyGenSegment(),
+    industry: randomlyGenIndustry(),
     contactInfo: randomlyGenContactInfo(),
     address: randomlyGenAddressInfo(),
   }

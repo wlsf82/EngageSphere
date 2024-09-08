@@ -18,7 +18,7 @@ const CustomerDetails = ({ customer, onClick }) => {
       <p><strong>Company name:</strong> {customer.name}</p>
       <p><strong>Number of employees:</strong> {customer.employees}</p>
       <p><strong>Size:</strong> {customer.size}</p>
-      <p><strong>Segment:</strong> {customer.segment}</p>
+      <p><strong>Industry:</strong> {customer.industry}</p>
       {customer.contactInfo ? (
         <>
           <p><strong>Contact name:</strong> {customer.contactInfo.name}</p>
