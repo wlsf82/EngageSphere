@@ -80,7 +80,7 @@ It's possible to apply filters based on both customers' size and segment. The av
 
 If there are no customers in the database for the filtered size, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
 
-##### Segment Filter Empty State
+##### Empty state per segment
 
 If there are no customers in the database for the filtered segment, the image of an empty box is shown. Below it, a paragraph is displayed with the following text: "No customers available."
 
@@ -222,7 +222,7 @@ If there are customers in the database, the following JSON structure should be r
   - **Enterprise** when it is greater than or equal to 1000 and less than 10000;
   - **Large Enterprise** when it is greater than or equal to 10000 and less than 50000;
   - **Very Large Enterprise** otherwise;
-- The `segment` attribute corresponds to the business sector the company belongs to and can be one of the following: **Logistics**, **Retail**, **Technology**, **HR**, **finance**;
+- The `segment` attribute corresponds to the business sector the company belongs to and can be one of the following: **Logistics**, **Retail**, **Technology**, **HR**, **Finance**;
 - The API responds with a `400 Bad Request` status code for invalid request parameters, such as negative or non-number values for `page` or `limit`, or unsupported values for `size` or `segment`.
 
 ### Swagger
