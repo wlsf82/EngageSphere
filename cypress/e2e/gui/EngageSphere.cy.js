@@ -303,6 +303,8 @@ describe('EngageSphere Frontend - A11y', options, () => {
         cy.get('[class^="ThemeToggle_button"]').click()
 
         cy.get('[data-theme="dark"]').should('exist')
+        cy.contains('button', 'Next')
+          .should('have.css', 'background-color', 'rgb(66, 66, 66)')
 
         cy.checkA11y()
       })
