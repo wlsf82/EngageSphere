@@ -1,3 +1,5 @@
+import styles from './Pagination.module.css'
+
 const Pagination = ({
   currentPage,
   paginationInfo,
@@ -6,7 +8,7 @@ const Pagination = ({
   onChange
 }) => {
   return (
-    <div data-testid="pagination" className="pagination">
+    <div data-testid="pagination" className={styles.container}>
       <button onClick={onClickPrev} disabled={currentPage === 1}>Prev</button>
       <span>Page {currentPage} of {paginationInfo.totalPages}</span>
       <button onClick={onClickNext} disabled={currentPage === paginationInfo.totalPages}>Next</button>

@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react'
 
-const ThemeToggler = () => {
+import { useEffect, useState } from 'react'
+import styles from './ThemeToggle.module.css'
+
+const ThemeToggle = () => {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
 
   useEffect(() => {
@@ -13,9 +15,9 @@ const ThemeToggler = () => {
   }
 
   return (
-    <div className="theme-toggle-container">
+    <div className={styles.container}>
       <button
-        id="theme-toggle-button"
+        className={styles.button}
         onClick={toggleThemeHandler}
         aria-label={`theme ${theme} activated`}
         style={{
@@ -28,4 +30,4 @@ const ThemeToggler = () => {
   )
 }
 
-export default ThemeToggler
+export default ThemeToggle

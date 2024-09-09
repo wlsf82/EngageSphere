@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { MessageCircle, X, Send } from 'lucide-react'
+import styles from './Messenger.module.css'
 
 export default function Messenger() {
   const [isOpen, setIsOpen] = useState(false)
@@ -28,15 +29,15 @@ export default function Messenger() {
   }, [isOpen])
 
   return (
-    <div className="messenger-container">
+    <div className={styles.container}>
       {isOpen && (
-        <div className="messenger-box">
-          <div className="messenger-header">
+        <div className={styles.box}>
+          <div className={styles.header}>
             <h2>How can we help you?</h2>
           </div>
-          <div className="messenger-form">
+          <div className={styles.form}>
             {messageSent ? (
-              <div role="alert" aria-live="polite" className='success'>
+              <div role="alert" aria-live="polite" className={styles.success}>
                 Your message has been sent.
               </div>
             ) : null}
@@ -49,7 +50,7 @@ export default function Messenger() {
                 value={name}
                 onChange={event => setName(event.target.value)}
                 placeholder="Type your name here"
-                className="messenger-input"
+                className={styles.input}
                 required
                 ref={nameInputRef}
               />
@@ -61,7 +62,7 @@ export default function Messenger() {
                 value={email}
                 onChange={event => setEmail(event.target.value)}
                 placeholder="Type your email here"
-                className="messenger-input"
+                className={styles.input}
                 required
               />
               <label htmlFor="message" className='sr-only'>Type your message</label>
@@ -74,7 +75,7 @@ export default function Messenger() {
               />
               <button
                 type="submit"
-                className="send-button"
+                className={styles.sendButton}
               >
                 <Send />
                 Send
@@ -85,7 +86,7 @@ export default function Messenger() {
       )}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="messenger-button"
+        className={styles.openCloseButton}
         aria-label={isOpen ? 'Close messenger' : 'Open messenger'}
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}

@@ -1,6 +1,8 @@
+import styles from './Footer.module.css'
+
 const Footer = () => {
   return (
-    <footer data-testid="footer">
+    <footer className={styles.container} data-testid="footer">
       <p>Copyright 2024 - Talking About Testing</p>
       <ul>
         <li>

@@ -1,0 +1,17 @@
+.container {
+  background-color: var(--header-bg-color);
+  width: 100%;
+  text-align: center;
+  padding: 30px 0 0 0;
+}
+
+h1 {
+  color: #ffffff;
+  margin: 0;
+}
+
+@media (max-width: 468px) {
+  .container {
+    padding: 15px 0;
+  }
+}

@@ -254,7 +254,7 @@ describe('EngageSphere Frontend', options, () => {
         .first()
         .click()
 
-      cy.get('.customer-details').should('be.visible')
+      cy.get('[class^="CustomerDetails_container"]').should('be.visible')
       cy.get('table').should('not.exist')
 
       cy.contains('button', 'Back').click()
@@ -300,7 +300,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
       })
 
       it('finds no a11y issues in dark mode', () => {
-        cy.get('#theme-toggle-button').click()
+        cy.get('[class^="ThemeToggle_button"]').click()
 
         cy.get('[data-theme="dark"]').should('exist')
 
@@ -322,7 +322,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
       })
 
       it('finds no a11y issues in dark mode', () => {
-        cy.get('#theme-toggle-button').click()
+        cy.get('[class^="ThemeToggle_button"]').click()
 
         cy.get('[data-theme="dark"]').should('exist')
 
@@ -349,7 +349,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
     })
 
     it('finds no a11y issues in dark mode', () => {
-      cy.get('#theme-toggle-button').click()
+      cy.get('[class^="ThemeToggle_button"]').click()
 
       cy.get('[data-theme="dark"]').should('exist')
 

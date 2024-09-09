@@ -1,4 +1,4 @@
-import Header from './Header'
+import Header from './index'
 
 describe('<Header />', () => {
   beforeEach(() => {
@@ -7,15 +7,15 @@ describe('<Header />', () => {
 
   it('renders with heading and theme\'s toggle', () => {
     cy.contains('h1', 'EngageSphere').should('be.visible')
-    cy.get('#theme-toggle-button').should('be.visible')
+    cy.get('[class^="ThemeToggle_button"]').should('be.visible')
   })
 
   it('changes to the dark mode then back to light mode', () => {
-    cy.get('#theme-toggle-button').click()
+    cy.get('[class^="ThemeToggle_button"]').click()
 
     cy.assertLocalStorageThemeIs('dark')
 
-    cy.get('#theme-toggle-button').click()
+    cy.get('[class^="ThemeToggle_button"]').click()
 
     cy.assertLocalStorageThemeIs('light')
   })

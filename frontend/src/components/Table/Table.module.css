@@ -1,0 +1,98 @@
+.container {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background-color: var(--background-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  background-color: var(--table-header-bg-color);
+  color: #ffffff;
+}
+
+tbody tr td {
+  text-align: left;
+}
+
+th:nth-child(1),
+th:nth-child(6),
+td:nth-child(1) {
+  text-align: center;
+}
+
+th {
+  background-color: var(--table-header-bg-color);
+  color: #ffffff;
+}
+
+th:nth-child(4),
+th:nth-child(5) {
+  cursor: pointer;
+}
+
+th:nth-child(4) button,
+th:nth-child(5) button,
+tbody tr button {
+  all: unset;
+  outline: revert;
+}
+
+tbody tr td:nth-child(6) {
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--pagination-button-hover-bg-color);
+  color: var(--pagination-button-hover-text-color);
+}
+
+tbody tr td:nth-child(6):hover,
+tbody tr td:nth-child(6) button:hover {
+  background-color: var(--pagination-button-bg-color);
+  color: var(--pagination-button-text-color);
+}
+
+.container th:nth-child(1) {
+  width: 20px;
+}
+
+.container th:nth-child(6) {
+  width: 8%;
+}
+
+tr:hover {
+  background-color: var(--table-row-hover-bg-color);
+}
+
+.container th:nth-child(6) {
+  width: 5%;
+}
+
+@media (max-width: 468px) {
+  th, td {
+    padding: 10px;
+  }
+
+  .container thead th:nth-child(1),
+  .container thead th:nth-child(3),
+  .container thead th:nth-child(4),
+  .container thead th:nth-child(5),
+  .container tbody tr td:nth-child(1),
+  .container tbody tr td:nth-child(3),
+  .container tbody tr td:nth-child(4),
+  .container tbody tr td:nth-child(5) {
+    display: none;
+  }
+
+  .container th:nth-child(6) {
+    width: 25%;
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './CustomerDetails.module.css'
 
 const CustomerDetails = ({ customer, onClick }) => {
   const [showAddress, setShowAddress] = useState(false)
@@ -12,7 +13,7 @@ const CustomerDetails = ({ customer, onClick }) => {
   }
 
   return (
-    <div className="customer-details">
+    <div className={styles.container}>
       <h2>Customer Details</h2>
       <p><strong>Company ID:</strong> {customer.id}</p>
       <p><strong>Company name:</strong> {customer.name}</p>
@@ -30,7 +31,7 @@ const CustomerDetails = ({ customer, onClick }) => {
       {showAddress ? (
         <>
           {customer.address ? (
-            <div className="address-info" style={{ borderTop: '1px dashed gray' }}>
+            <div style={{ borderTop: '1px dashed gray' }}>
               <h3>Address</h3>
               <p><strong>Street:</strong> {customer.address.street}</p>
               <p><strong>City:</strong> {customer.address.city}</p>
@@ -41,16 +42,16 @@ const CustomerDetails = ({ customer, onClick }) => {
           ) : (
             <p>No address available</p>
           )}
-          <div className="button-container show-hide-address">
-            <button className='hide-address-btn' onClick={hideAddressHandler}>Hide address</button>
+          <div className={`${styles.buttonContainer} ${styles.showHideAddress}`}>
+            <button className={styles.hideAddressBtn} onClick={hideAddressHandler}>Hide address</button>
           </div>
         </>
       ) : (
-        <div className="button-container show-hide-address">
-          <button className='show-address-btn' onClick={showAddressHandler}>Show address</button>
+        <div className={`${styles.buttonContainer} ${styles.showHideAddress}`}>
+          <button className={styles.showAddressBtn} onClick={showAddressHandler}>Show address</button>
         </div>
       )}
-      <div className="button-container">
+      <div className={styles.buttonContainer}>
         <button onClick={onClick}>Back</button>
       </div>
     </div>

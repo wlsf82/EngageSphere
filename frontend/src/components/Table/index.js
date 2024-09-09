@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './Table.module.css'
 
 const Table = ({
   customers,
@@ -38,7 +39,7 @@ const Table = ({
   const sortSizeHandler = () => sortCustomers('size')
 
   return (
-    <table border="1">
+    <table border="1" className={styles.container}>
       <thead>
         <tr>
           <th scope="col">ID</th>

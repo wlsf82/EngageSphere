@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import styles from './App.module.css'
 
 import Messenger from './components/Messenger'
 import CustomerDetails from './components/CustomerDetails'
@@ -8,8 +9,8 @@ import Input from './components/Input'
 import Header from './components/Header'
 import Pagination from './components/Pagination'
 import DownloadCSV from './components/DownloadCSV'
-import SizeFilter from './components/SizeFilter'
-import IndustryFilter from './components/IndustryFilter'
+import SizeFilter from './components/Filters/SizeFilter'
+import IndustryFilter from './components/Filters/IndustryFilter'
 import Table from './components/Table'
 import Footer from './components/Footer'
 
@@ -95,18 +96,18 @@ const App = () => {
 
   return (
     <>
-      <main className="container">
+      <main className={styles.container}>
         <Header />
         <Input disabled={inputDisabled} onChange={inputChangeHandler} />
         {customer ? (
           <CustomerDetails customer={customer} onClick={customerDetailsBackButtonClickHandler} />
         ) : (
           <>
-            <div className="filters-container">
+            <div className={styles.filtersContainer}>
               <SizeFilter size={sizeFilter} onChange={sizeFilterChangeHandler} />
               <IndustryFilter industry={industryFilter} onChange={industryFilterChangeHandler} />
             </div>
-            <div data-testid="table" className="table-container">
+            <div data-testid="table" className={styles.tableContainer}>
               {initialFetchDone ? (
                 customers.length ? (
                   <>
@@ -122,9 +123,7 @@ const App = () => {
                       onClickNext={paginationNextClickHandler}
                       onChange={limitChangeHandler}
                     />
-                    <div className="download-csv-button-container">
-                      <DownloadCSV customers={customers} />
-                    </div>
+                    <DownloadCSV customers={customers} />
                   </>
                 ) : (
                   <EmptyState />
