@@ -1,6 +1,6 @@
-import Table from './Table'
+import Table from './index'
 
-const customers = require('../../../cypress/fixtures/customers.json').customers
+const customers = require('../../../../cypress/fixtures/customers.json').customers
 
 const options = {
   viewportHeight: 1240,

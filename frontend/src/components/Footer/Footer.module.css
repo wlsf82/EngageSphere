@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  padding: 20px 0 40px 0;
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  text-align: center;
+}
+
+.container ul {
+  all: unset;
+}
+
+.container ul li {
+  all: unset;
+}
+
+.container p {
+  margin-bottom: 24px;
+}
+
+.container a {
+  color: var(--link-text-color);
+  margin: 0 10px;
+}
+
+.container a:hover {
+  text-decoration: none
+}

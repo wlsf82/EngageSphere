@@ -1,7 +1,7 @@
-import DownloadCSV from './DownloadCSV.js'
+import DownloadCSV from '.'
 
-const customers = require('../../../cypress/fixtures/customers.json').customers
-const sampleCSV = require('../../../cypress/fixtures/sampleCSV.js')
+const customers = require('../../../../cypress/fixtures/customers.json').customers
+const sampleCSV = require('../../../../cypress/fixtures/sampleCSV.js')
 
 describe('<DownloadCSV />', () => {
   it('correctly downloads a list of customers as a CSV file', () => {

@@ -1,0 +1,72 @@
+.container {
+  background-color: var(--container-bg-color);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 0 20px 20px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: var(--container-bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.container button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container button:hover {
+  background-color: var(--button-hover-bg-color);
+  color: var(--button-hover-text-color);
+}
+
+.showHideAddress .showAddressBtn {
+  all: unset;
+  text-decoration: underline;
+  outline: revert;
+}
+
+.showHideAddress .hideAddressBtn {
+  all: unset;
+  text-decoration: underline;
+  outline: revert;
+}
+
+.showHideAddress button:hover {
+  all: unset;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 468px) {
+  .container {
+    margin: 10px;
+    font-size: medium;
+    margin: 4px 0;
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .container p {
+    font-size: 14px;
+  }
+
+  .buttonContainer button {
+    padding: 8px 16px;
+  }
+}

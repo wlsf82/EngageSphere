@@ -1,0 +1,16 @@
+.featherInbox {
+  width: 80vw;
+  height: auto;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.noCustomersAvailableText {
+  text-align: center;
+}
+
+@media (max-width: 468px) {
+  .featherInbox {
+    width: 80vw;
+  }
+}

@@ -1,4 +1,4 @@
-import Footer from './Footer'
+import Footer from '.'
 
 describe('<Footer />', () => {
   it('renders with the right text and links', () => {

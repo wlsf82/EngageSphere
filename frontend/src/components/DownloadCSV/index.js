@@ -1,3 +1,5 @@
+import styles from './DownloadCSV.module.css'
+
 const DownloadCSVButton = ({ customers }) => {
   function convertArrayToCSV(data) {
     const csvRows = []
@@ -51,7 +53,11 @@ const DownloadCSVButton = ({ customers }) => {
     downloadCSV(csvData)
   }
 
-  return <button className="download-csv-button" onClick={exportCustomersToCSVHandler}>Download CSV</button>
+  return (
+    <div className={styles.buttonContainer}>
+      <button className={styles.button} onClick={exportCustomersToCSVHandler}>Download CSV</button>
+    </div>
+  )
 }
 
 export default DownloadCSVButton

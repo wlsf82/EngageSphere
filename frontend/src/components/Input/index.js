@@ -1,6 +1,8 @@
+import styles from './Input.module.css'
+
 const Input = ({ disabled, onChange }) => {
   return (
-    <div className="input-container">
+    <div className={styles.container}>
       <label className="sr-only" htmlFor="name">Your name</label>
       <input
         type="text"

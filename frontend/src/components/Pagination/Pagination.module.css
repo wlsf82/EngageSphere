@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-radius: 8px;
+}
+
+.container button {
+  background-color: var(--pagination-button-bg-color);
+  color: var(--pagination-button-text-color);
+  border: 1px solid var(--pagination-button-border-color);
+  cursor: pointer;
+  padding: 5px 8px;
+  margin: 0 12px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+.container button:hover {
+  background-color: var(--pagination-button-hover-bg-color);
+  color: var(--pagination-button-hover-text-color);
+}
+
+.container button:disabled {
+  border-color: var(--pagination-button-disabled-border-color);
+  color: var(--pagination-button-disabled-color);
+  background-color: var(--pagination-button-disabled-bg-color);
+  cursor: not-allowed;
+}
+
+.container select {
+  padding: 5px 8px;
+  margin-left: 12px;
+  border: 1px solid var(--pagination-select-border-color);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.container select:hover {
+  background-color: var(--pagination-button-hover-bg-color);
+  color: var(--pagination-button-hover-text-color);
+}
+
+@media (max-width: 468px) {
+  .container {
+    margin-top: 15px;
+  }
+
+  .container select {
+    margin-left: 8px;
+    padding: 4px 6px;
+    font-size: 0.8rem;
+  }
+}

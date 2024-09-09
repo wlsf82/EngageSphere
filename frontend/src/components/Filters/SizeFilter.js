@@ -1,6 +1,8 @@
+import styles from './Filter.module.css'
+
 const SizeFilter = ({ size, onChange }) => {
   return (
-    <div className="filter-container">
+    <div className={styles.container}>
       <label htmlFor="sizeFilter">Filter by size:</label>
       <select data-testid="filter" id="sizeFilter" value={size} onChange={onChange}>
         <option value="All">All</option>
