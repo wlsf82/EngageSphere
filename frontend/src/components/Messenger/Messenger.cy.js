@@ -71,17 +71,13 @@ describe('<Messenger />', options, () => {
         .type('The customer with ID 5 has not contact info.')
       cy.contains('button', 'Send').click()
 
-      cy.contains(
-        '[class^="Messenger_success"]',
-        'Your message has been sent.'
-      ).should('be.visible')
+      cy.getByClassStartsWith('Messenger_success')
+        .should('be.visible')
+        .and('contain', 'Your message has been sent.')
 
       cy.tick(3000)
 
-      cy.contains(
-        '[class^="Messenger_success"]',
-        'Your message has been sent.'
-      ).should('not.exist')
+      cy.getByClassStartsWith('Messenger_success').should('not.exist')
     })
   })
 
@@ -126,10 +122,9 @@ describe('<Messenger />', options, () => {
 
       cy.contains('button', 'Send').click()
 
-      cy.contains(
-        '[class^="Messenger_success"]',
-        'Your message has been sent.'
-      ).should('be.visible')
+      cy.getByClassStartsWith('Messenger_success')
+        .should('be.visible')
+        .and('contain', 'Your message has been sent.')
 
       cy.checkA11y()
     })
