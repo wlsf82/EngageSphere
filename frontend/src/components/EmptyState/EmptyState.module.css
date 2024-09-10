@@ -8,9 +8,3 @@
 .noCustomersAvailableText {
   text-align: center;
 }
-
-@media (max-width: 468px) {
-  .featherInbox {
-    width: 80vw;
-  }
-}
