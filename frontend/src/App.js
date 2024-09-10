@@ -107,7 +107,7 @@ const App = () => {
               <SizeFilter size={sizeFilter} onChange={sizeFilterChangeHandler} />
               <IndustryFilter industry={industryFilter} onChange={industryFilterChangeHandler} />
             </div>
-            <div data-testid="table" className={styles.tableContainer}>
+            <div data-testid="table" className={`${styles.tableContainer} table-container`}>
               {initialFetchDone ? (
                 customers.length ? (
                   <>

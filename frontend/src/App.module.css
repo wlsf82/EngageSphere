@@ -22,12 +22,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.tableContainer:has(#loading) {
-  border: none;
-  background-color: none;
-  box-shadow: none;
-}
-
 @media (max-width: 468px) {
   .filtersContainer {
     flex-direction: column;

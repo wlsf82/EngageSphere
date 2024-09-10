@@ -107,3 +107,9 @@ body {
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+.table-container:has(#loading) {
+  border: none;
+  background-color: none;
+  box-shadow: none;
+}
