@@ -44,6 +44,8 @@ const App = () => {
   useEffect(() => {
     if (initialFetchDone && customers.length === 0) {
       setInputDisabled(true)
+    } else {
+      setInputDisabled(false)
     }
   }, [initialFetchDone, customers])
 
