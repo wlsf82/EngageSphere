@@ -22,4 +22,5 @@
 
 .button:hover {
   transform: scale(1.5);
+  color: #ffffff;
 }
