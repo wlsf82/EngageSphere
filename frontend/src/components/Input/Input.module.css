@@ -14,7 +14,6 @@
   box-sizing: border-box;
   font-size: 1rem;
   max-width: 31.25rem;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .container input[type="text"]:disabled {

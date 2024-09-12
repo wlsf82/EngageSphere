@@ -21,7 +21,6 @@
 .container a {
   color: var(--link-text-color);
   margin: 0 0.625rem;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .container a:hover {

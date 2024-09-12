@@ -60,7 +60,6 @@
 
 .container tbody tr:hover {
   background-color: var(--table-row-hover-bg-color);
-  transition: background-color 0.3s ease;
 }
 
 .container tbody tr:hover td {
@@ -88,7 +87,6 @@ tbody tr:hover td:first-child {
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container button:hover {

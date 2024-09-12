@@ -13,7 +13,6 @@
 @media (max-width: 468px) {
   .container {
     padding: 1rem 0;
-    transition: padding 0.3s ease;
   }
 
   .container h1 {
