@@ -73,6 +73,7 @@
   justify-content: center;
   transition: background-color 0.3s ease;
   margin-top: 8px;
+  font-weight: bold;
 }
 
 .sendButton:hover {

@@ -5,9 +5,9 @@
   --light-gray: #f9f9f9;
   --medium-gray: #f5f5f5;
   --light-blue: #3da9fc;
-  --blue: #035B9B;
+  --blue: #1D4ED8;
+  --hover-blue: #0144ff;
   --dark-cyan: #2b6a99;
-  --hover-blue: #3072b3;
   --gray: #cccccc;
   --dark-gray: #333333;
   --medium-dark-gray: #666666;
@@ -35,7 +35,7 @@
   --pagination-button-text-color: var(--dark-blue);
   --pagination-button-border-color: var(--blue);
   --pagination-select-border-color: var(--blue);
-  --footer-bg-color: var(--dark-cyan);
+  --footer-bg-color: var(--blue);
   --footer-text-color: var(--white);
   --link-text-color: var(--white);
   --link-hover-text-decoration: underline;
@@ -57,7 +57,7 @@
   --text-color: var(--white);
   --container-bg-color: var(--medium-dark-gray-alt);
   --header-bg-color: var(--black);
-  --input-border-color: var(--off-white);
+  --input-border-color: var(--medium-dark-gray);
   --button-bg-color: var(--dark-slate);
   --button-text-color: var(--white);
   --table-header-bg-color: var(--almost-black);
