@@ -1,6 +1,6 @@
 const options = {
   viewportHeight: 1240,
-  viewportWidth: 1024
+  viewportWidth: 1280
 }
 
 const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`

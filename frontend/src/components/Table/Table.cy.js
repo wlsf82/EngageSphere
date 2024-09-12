@@ -3,8 +3,8 @@ import Table from './index'
 const customers = require('../../../../cypress/fixtures/customers.json').customers
 
 const options = {
-  viewportHeight: 1240,
-  viewportWidth: 1024
+  viewportHeight: 500,
+  viewportWidth: 1480
 }
 
 describe('<Table />', options, () => {
@@ -111,8 +111,8 @@ describe('<Table />', options, () => {
 })
 
 const mobileOptions = {
-  viewportHeight: 800,
-  viewportWidth: 468
+  viewportHeight: 600,
+  viewportWidth: 330
 }
 
 describe('<Table /> mobile', mobileOptions, () => {
