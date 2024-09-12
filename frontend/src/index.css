@@ -26,7 +26,8 @@
   --text-color: var(--dark-blue);
   --container-bg-color: var(--light-gray);
   --header-bg-color: var(--blue);
-  --input-border-color: var(--light-blue);
+  --input-border-color: var(--white);
+  --messenger-button-border-color: var(--light-blue);
   --button-bg-color: var(--blue);
   --button-text-color: var(--white);
   --table-header-bg-color: var(--blue);
@@ -57,7 +58,8 @@
   --text-color: var(--white);
   --container-bg-color: var(--medium-dark-gray-alt);
   --header-bg-color: var(--black);
-  --input-border-color: var(--medium-dark-gray);
+  --input-border-color: var(--white);
+  --messenger-button-border-color: var(--medium-dark-gray);
   --button-bg-color: var(--dark-slate);
   --button-text-color: var(--white);
   --table-header-bg-color: var(--almost-black);

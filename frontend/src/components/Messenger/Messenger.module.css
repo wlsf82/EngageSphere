@@ -79,7 +79,7 @@
 .sendButton:hover {
   background-color: var(--button-text-color);
   color: var(--button-bg-color);
-  border: 2px solid var(--input-border-color);
+  border: 2px solid var(--messenger-button-border-color);
 }
 
 .sendButton svg {
