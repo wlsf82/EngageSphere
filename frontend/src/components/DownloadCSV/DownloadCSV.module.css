@@ -1,5 +1,5 @@
 .buttonContainer {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   display: flex;
   justify-content: center;
 }
@@ -8,12 +8,12 @@
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.3125rem;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .buttonContainer button:hover {
@@ -21,9 +21,17 @@
   color: var(--button-hover-text-color);
 }
 
+.buttonContainer button:focus {
+  outline: 2px solid var(--focus-color, #3da9fc);
+}
+
 @media (max-width: 468px) {
   .buttonContainer button {
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .buttonContainer button:hover {
+    background-color: var(--button-bg-color);
   }
 }

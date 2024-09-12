@@ -1,26 +1,26 @@
 .container {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 1rem;
+  right: 1rem;
   z-index: 50;
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: flex-end; /* Align the form and button to the right */
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .box {
   background-color: var(--button-text-color);
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  width: 320px;
-  margin-bottom: 8px; /* Space between form and button */
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  width: 20rem;
+  margin-bottom: 0.5rem;
   overflow: hidden;
 }
 
 .header {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,28 +32,29 @@
 }
 
 .form {
-  padding: 16px;
+  padding: 1rem;
 }
 
 .form .input {
   width: 100%;
   border: 2px solid var(--messenger-input-border-color);
-  padding: 8px;
-  margin: 8px 0;
-  border-radius: 5px;
-  max-width: 500px;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.3125rem;
+  max-width: 31.25rem;
   box-sizing: border-box;
   font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form textarea {
   font-size: 1rem;
-  border-radius: 4px;
-  padding: 8px;
-  margin-top: 6px;
-  margin-bottom: 5px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-top: 0.375rem;
+  margin-bottom: 0.3125rem;
   width: 93%;
-  height: 100px;
+  height: 6.25rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid var(--messenger-input-border-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -66,50 +67,65 @@
   background-color: var(--button-bg-color);
   border: 2px solid var(--messenger-input-border-color);
   color: var(--button-text-color);
-  padding: 10px 16px;
-  border-radius: 4px;
+  padding: 0.625rem 1rem;
+  border-radius: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
-  margin-top: 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin-top: 0.5rem;
 }
 
 .sendButton:hover {
   background-color: var(--button-text-color);
   color: var(--button-bg-color);
-  border: 2px solid var(--input-border-color);
+  border: 2px solid var(--button-bg-color);
+}
+
+.sendButton:focus {
+  outline: 2px solid var(--focus-color, #3da9fc);
 }
 
 .sendButton svg {
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 .success {
   width: 100%;
   box-sizing: border-box;
-  background-color: #408140;
+  background-color: var(--success-bg-color, #408140);
   display: inline-block;
   color: var(--button-text-color);
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.3125rem;
 }
 
 .openCloseButton {
   cursor: pointer;
   background-color: var(--button-text-color);
   color: var(--button-bg-color);
-  padding: 16px;
+  padding: 1rem;
   border-radius: 50%;
   border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 
 .openCloseButton:hover {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
+}
+
+@media (max-width: 468px) {
+  .form .input,
+  .form textarea {
+    padding: 0.375rem;
+  }
+
+  .sendButton {
+    padding: 0.5rem 0.75rem;
+  }
 }

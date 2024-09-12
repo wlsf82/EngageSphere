@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  padding: 20px 0 40px 0;
+  padding: 1.25rem 0 2.5rem 0;
   background-color: var(--footer-bg-color);
   color: var(--footer-text-color);
   text-align: center;
@@ -15,14 +15,16 @@
 }
 
 .container p {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .container a {
   color: var(--link-text-color);
-  margin: 0 10px;
+  margin: 0 0.625rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .container a:hover {
-  text-decoration: none
+  text-decoration: none;
+  color: var(--link-hover-text-color);
 }

@@ -1,11 +1,25 @@
 .featherInbox {
   width: 80vw;
   height: auto;
-  max-width: 400px;
-  max-height: 400px;
-  color: var(--svg-color)
+  max-width: var(--inbox-max-width, 25rem);
+  max-height: var(--inbox-max-height, 25rem);
+  color: var(--svg-color);
+  min-width: 12rem;
 }
 
 .noCustomersAvailableText {
   text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+@media (max-width: 468px) {
+  .featherInbox {
+    width: 90vw;
+    max-width: 20rem;
+  }
+
+  .noCustomersAvailableText {
+    font-size: 0.875rem;
+  }
 }

@@ -7,7 +7,7 @@
 
 .container th,
 .container td {
-  padding: 12px;
+  padding: 0.75rem;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -51,7 +51,7 @@
 }
 
 .container th:nth-child(1) {
-  width: 20px;
+  width: 2rem;
 }
 
 .container th:nth-child(6) {
@@ -60,6 +60,7 @@
 
 .container tbody tr:hover {
   background-color: var(--table-row-hover-bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .container tbody tr:hover td {
@@ -82,12 +83,12 @@ tbody tr:hover td:first-child {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.3125rem;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container button:hover {
@@ -95,9 +96,13 @@ tbody tr:hover td:first-child {
   color: var(--button-hover-text-color);
 }
 
+.container button:focus {
+  outline: 2px solid var(--focus-color, #3da9fc);
+}
+
 @media (max-width: 468px) {
   .container th, td {
-    padding: 10px;
+    padding: 0.625rem;
   }
 
   .container thead th:nth-child(1),
@@ -113,9 +118,6 @@ tbody tr:hover td:first-child {
 
   .container th:nth-child(6) {
     width: 25%;
-  }
-
-  .container th:nth-child(6) {
     text-align: center;
   }
 }

@@ -1,5 +1,6 @@
 /* Generic Colors */
 :root {
+  /* Base Colors */
   --white: #ffffff;
   --dark-blue: #094067;
   --light-gray: #f9f9f9;
@@ -16,10 +17,8 @@
   --medium-dark-slate: #555555;
   --off-white: #f0f0f0;
   --charcoal: #101010;
-}
 
-/* Light Theme Styles */
-:root {
+  /* Light Theme Colors */
   --background-color: var(--white);
   --text-color: var(--dark-blue);
   --container-bg-color: var(--white);
@@ -47,39 +46,67 @@
   --pagination-button-disabled-color: var(--gray);
   --pagination-button-disabled-bg-color: var(--light-gray);
   --messenger-input-border-color: var(--light-blue);
-  --svg-color: var(--dark-blue)
+  --svg-color: var(--dark-blue);
+
+  /* Dark Theme Colors */
+  --dark-theme-background-color: var(--dark-gray);
+  --dark-theme-text-color: var(--white);
+  --dark-theme-container-bg-color: var(--medium-dark-slate);
+  --dark-theme-header-bg-color: var(--black);
+  --dark-theme-input-border-color: var(--off-white);
+  --dark-theme-button-bg-color: var(--black);
+  --dark-theme-button-text-color: var(--white);
+  --dark-theme-table-header-bg-color: var(--almost-black);
+  --dark-theme-table-row-hover-bg-color: var(--medium-dark-slate);
+  --dark-theme-pagination-button-bg-color: var(--dark-slate);
+  --dark-theme-pagination-button-text-color: var(--white);
+  --dark-theme-pagination-button-border-color: var(--white);
+  --dark-theme-pagination-select-border-color: var(--white);
+  --dark-theme-footer-bg-color: var(--black);
+  --dark-theme-footer-text-color: var(--white);
+  --dark-theme-link-text-color: var(--white);
+  --dark-theme-input-disabled-bg-color: var(--medium-dark-gray);
+  --dark-theme-input-disabled-text-color: var(--medium-dark-slate);
+  --dark-theme-button-hover-bg-color: var(--white);
+  --dark-theme-button-hover-text-color: var(--black);
+  --dark-theme-pagination-button-hover-bg-color: var(--almost-black);
+  --dark-theme-pagination-button-hover-text-color: var(--white);
+  --dark-theme-pagination-button-disabled-border-color: var(--medium-dark-gray);
+  --dark-theme-pagination-button-disabled-color: var(--medium-dark-gray);
+  --dark-theme-pagination-button-disabled-bg-color: var(--dark-gray);
+  --dark-theme-messenger-input-border-color: var(--medium-dark-gray);
+  --dark-theme-svg-color: var(--white);
 }
 
 /* Dark Theme Styles */
 [data-theme='dark'] {
-  --background-color: var(--dark-gray);
-  --text-color: var(--white);
-  --container-bg-color: var(--medium-dark-slate);
-  --header-bg-color: var(--black);
-  --input-border-color: var(--off-white);
-  --button-bg-color: var(--black);
-  --button-text-color: var(--white);
-  --table-header-bg-color: var(--almost-black);
-  --table-row-hover-bg-color: var(--medium-dark-slate);
-  --pagination-button-bg-color: var(--dark-slate);
-  --pagination-button-text-color: var(--white);
-  --pagination-button-border-color: var(--white);
-  --pagination-select-border-color: var(--white);
-  --footer-bg-color: var(--black);
-  --footer-text-color: var(--white);
-  --link-text-color: var(--white);
-  --link-hover-text-decoration: underline;
-  --input-disabled-bg-color: var(--medium-dark-gray);
-  --input-disabled-text-color: var(--medium-dark-slate);
-  --button-hover-bg-color: var(--white);
-  --button-hover-text-color: var(--black);
-  --pagination-button-hover-bg-color: var(--almost-black);
-  --pagination-button-hover-text-color: var(--white);
-  --pagination-button-disabled-border-color: var(--medium-dark-gray);
-  --pagination-button-disabled-color: var(--medium-dark-gray);
-  --pagination-button-disabled-bg-color: var(--dark-gray);
-  --messenger-input-border-color: var(--medium-dark-gray);
-  --svg-color: var(--white)
+  --background-color: var(--dark-theme-background-color);
+  --text-color: var(--dark-theme-text-color);
+  --container-bg-color: var(--dark-theme-container-bg-color);
+  --header-bg-color: var(--dark-theme-header-bg-color);
+  --input-border-color: var(--dark-theme-input-border-color);
+  --button-bg-color: var(--dark-theme-button-bg-color);
+  --button-text-color: var(--dark-theme-button-text-color);
+  --table-header-bg-color: var(--dark-theme-table-header-bg-color);
+  --table-row-hover-bg-color: var(--dark-theme-table-row-hover-bg-color);
+  --pagination-button-bg-color: var(--dark-theme-pagination-button-bg-color);
+  --pagination-button-text-color: var(--dark-theme-pagination-button-text-color);
+  --pagination-button-border-color: var(--dark-theme-pagination-button-border-color);
+  --pagination-select-border-color: var(--dark-theme-pagination-select-border-color);
+  --footer-bg-color: var(--dark-theme-footer-bg-color);
+  --footer-text-color: var(--dark-theme-footer-text-color);
+  --link-text-color: var(--dark-theme-link-text-color);
+  --input-disabled-bg-color: var(--dark-theme-input-disabled-bg-color);
+  --input-disabled-text-color: var(--dark-theme-input-disabled-text-color);
+  --button-hover-bg-color: var(--dark-theme-button-hover-bg-color);
+  --button-hover-text-color: var(--dark-theme-button-hover-text-color);
+  --pagination-button-hover-bg-color: var(--dark-theme-pagination-button-hover-bg-color);
+  --pagination-button-hover-text-color: var(--dark-theme-pagination-button-hover-text-color);
+  --pagination-button-disabled-border-color: var(--dark-theme-pagination-button-disabled-border-color);
+  --pagination-button-disabled-color: var(--dark-theme-pagination-button-disabled-color);
+  --pagination-button-disabled-bg-color: var(--dark-theme-pagination-button-disabled-bg-color);
+  --messenger-input-border-color: var(--dark-theme-messenger-input-border-color);
+  --svg-color: var(--dark-theme-svg-color);
 }
 
 body {
@@ -95,21 +122,27 @@ body {
 }
 
 .sr-only {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-  white-space: nowrap !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
 
 div:has(#loading) {
   border: none;
-  background-color: none;
+  background-color: transparent;
   box-shadow: none;
+}
+
+button,
+a,
+input {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

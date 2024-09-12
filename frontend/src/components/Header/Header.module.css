@@ -2,16 +2,21 @@
   background-color: var(--header-bg-color);
   width: 100%;
   text-align: center;
-  padding: 30px 0 0 0;
+  padding: 2rem 0 0 0;
 }
 
 .container h1 {
-  color: #ffffff;
+  color: var(--header-text-color, #ffffff);
   margin: 0;
 }
 
 @media (max-width: 468px) {
   .container {
-    padding: 15px 0;
+    padding: 1rem 0;
+    transition: padding 0.3s ease;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
   }
 }

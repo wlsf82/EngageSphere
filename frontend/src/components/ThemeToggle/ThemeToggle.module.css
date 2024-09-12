@@ -2,25 +2,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0 4px 0;
+  padding: 0.625rem 0 0.25rem 0;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: transparent;
-  color: #ffffff;
-  border-radius: 20px;
-  border: 2px solid #ffffff;
+  color: var(--button-text-color, #ffffff);
+  border-radius: 50%;
+  border: 0.125rem solid var(--button-border-color, #ffffff);
   cursor: pointer;
   font-size: 1.2rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
 
 .button:hover {
-  transform: scale(1.5);
+  transform: scale(1.3);
+  background-color: var(--button-hover-bg-color, rgba(255, 255, 255, 0.1)); /* Optional background change on hover */
   color: #ffffff;
+}
+
+.button:focus {
+  outline: 2px solid var(--focus-color, #3da9fc);
 }

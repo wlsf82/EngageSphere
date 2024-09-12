@@ -4,7 +4,8 @@
 
 .container h3,
 .container p {
-  line-height: .9em;
+  line-height: 1.2em;
+  transition: line-height 0.3s ease;
 }
 
 @media (max-width: 468px) {

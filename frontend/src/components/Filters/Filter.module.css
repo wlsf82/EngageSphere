@@ -6,7 +6,7 @@
 }
 
 .container label {
-  margin-right: 10px;
+  margin-right: 0.625rem;
   font-weight: bold;
   color: var(--text-color);
 }
@@ -15,9 +15,10 @@
   border: 1px solid var(--pagination-select-border-color);
   color: var(--text-color);
   background-color: var(--pagination-button-bg-color);
-  padding: 5px;
-  border-radius: 5px;
+  padding: 0.3125rem;
+  border-radius: 0.3125rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .container select:hover {
@@ -27,9 +28,16 @@
 
 .container select:focus {
   border-color: var(--button-hover-bg-color);
+  outline: 2px solid var(--focus-color, #3da9fc);
 }
 
 .container option {
   background-color: var(--container-bg-color);
   color: var(--text-color);
+}
+
+.container option:hover,
+.container option:focus {
+  background-color: var(--pagination-button-hover-bg-color);
+  color: var(--pagination-button-hover-text-color);
 }
