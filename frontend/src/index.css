@@ -5,14 +5,12 @@
   --light-gray: #f9f9f9;
   --medium-gray: #f5f5f5;
   --light-blue: #3da9fc;
-  --blue: #035B9B;
-  --dark-cyan: #2b6a99;
-  --hover-blue: #3072b3;
+  --blue: #1D4ED8;
+  --hover-blue: #0144ff;
   --gray: #cccccc;
   --dark-gray: #333333;
   --medium-dark-gray: #666666;
   --black: #1a1a1a;
-  --medium-dark-gray-alt: #343434;
   --dark-slate: #424242;
   --almost-black: #101010;
   --medium-dark-slate: #555555;
@@ -24,9 +22,9 @@
 :root {
   --background-color: var(--white);
   --text-color: var(--dark-blue);
-  --container-bg-color: var(--light-gray);
+  --container-bg-color: var(--white);
   --header-bg-color: var(--blue);
-  --input-border-color: var(--light-blue);
+  --input-border-color: var(--white);
   --button-bg-color: var(--blue);
   --button-text-color: var(--white);
   --table-header-bg-color: var(--blue);
@@ -35,7 +33,7 @@
   --pagination-button-text-color: var(--dark-blue);
   --pagination-button-border-color: var(--blue);
   --pagination-select-border-color: var(--blue);
-  --footer-bg-color: var(--dark-cyan);
+  --footer-bg-color: var(--blue);
   --footer-text-color: var(--white);
   --link-text-color: var(--white);
   --link-hover-text-decoration: underline;
@@ -49,16 +47,17 @@
   --pagination-button-disabled-color: var(--gray);
   --pagination-button-disabled-bg-color: var(--light-gray);
   --messenger-input-border-color: var(--light-blue);
+  --svg-color: var(--dark-blue)
 }
 
 /* Dark Theme Styles */
 [data-theme='dark'] {
   --background-color: var(--dark-gray);
   --text-color: var(--white);
-  --container-bg-color: var(--medium-dark-gray-alt);
+  --container-bg-color: var(--medium-dark-slate);
   --header-bg-color: var(--black);
   --input-border-color: var(--off-white);
-  --button-bg-color: var(--dark-slate);
+  --button-bg-color: var(--black);
   --button-text-color: var(--white);
   --table-header-bg-color: var(--almost-black);
   --table-row-hover-bg-color: var(--medium-dark-slate);
@@ -73,13 +72,14 @@
   --input-disabled-bg-color: var(--medium-dark-gray);
   --input-disabled-text-color: var(--medium-dark-slate);
   --button-hover-bg-color: var(--white);
-  --button-hover-text-color: var(--charcoal);
+  --button-hover-text-color: var(--black);
   --pagination-button-hover-bg-color: var(--almost-black);
   --pagination-button-hover-text-color: var(--white);
   --pagination-button-disabled-border-color: var(--medium-dark-gray);
   --pagination-button-disabled-color: var(--medium-dark-gray);
   --pagination-button-disabled-bg-color: var(--dark-gray);
   --messenger-input-border-color: var(--medium-dark-gray);
+  --svg-color: var(--white)
 }
 
 body {

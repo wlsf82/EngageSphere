@@ -3,61 +3,51 @@
   border-collapse: collapse;
   table-layout: fixed;
   background-color: var(--background-color);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
 }
 
-th, td {
-  padding: 15px;
+.container th,
+.container td {
+  padding: 12px;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-th {
-  background-color: var(--table-header-bg-color);
-  color: #ffffff;
+.container tr {
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: 1px solid var(--gray);
 }
 
-tbody tr td {
+.container tbody tr td {
   text-align: left;
+  border-right: none;
 }
 
-th:nth-child(1),
-th:nth-child(6),
-td:nth-child(1) {
+.container tbody tr td:last-child {
+  border-right: 1px solid var(--background-color);
+}
+
+.container tbody tr:last-child {
+  border-bottom: transparent;
+}
+
+.container th:nth-child(1),
+.container th:nth-child(6),
+.container td:nth-child(1) {
   text-align: center;
 }
 
-th {
-  background-color: var(--table-header-bg-color);
-  color: #ffffff;
-}
-
-th:nth-child(4),
-th:nth-child(5) {
+.container th:nth-child(4),
+.container th:nth-child(5) {
   cursor: pointer;
 }
 
-th:nth-child(4) button,
-th:nth-child(5) button,
-tbody tr button {
+.container th:nth-child(4) button,
+.container th:nth-child(5) button {
   all: unset;
   outline: revert;
-}
-
-tbody tr td:nth-child(6) {
-  cursor: pointer;
-  text-align: center;
-  background-color: var(--pagination-button-hover-bg-color);
-  color: var(--pagination-button-hover-text-color);
-}
-
-tbody tr td:nth-child(6):hover,
-tbody tr td:nth-child(6) button:hover {
-  background-color: var(--pagination-button-bg-color);
-  color: var(--pagination-button-text-color);
 }
 
 .container th:nth-child(1) {
@@ -68,16 +58,45 @@ tbody tr td:nth-child(6) button:hover {
   width: 8%;
 }
 
-tr:hover {
+.container tbody tr:hover {
   background-color: var(--table-row-hover-bg-color);
+}
+
+.container tbody tr:hover td {
+  border-left: none;
+}
+
+.container tbody tr:hover td {
+  border-left: none;
+}
+
+tbody tr:hover td:first-child {
+  border-left: 1px solid var(--background-color);
 }
 
 .container th:nth-child(6) {
   width: 5%;
 }
 
+.container button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container button:hover {
+  background-color: var(--button-hover-bg-color);
+  color: var(--button-hover-text-color);
+}
+
 @media (max-width: 468px) {
-  th, td {
+  .container th, td {
     padding: 10px;
   }
 
@@ -94,5 +113,9 @@ tr:hover {
 
   .container th:nth-child(6) {
     width: 25%;
+  }
+
+  .container th:nth-child(6) {
+    text-align: center;
   }
 }

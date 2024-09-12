@@ -3,6 +3,7 @@
   height: auto;
   max-width: 400px;
   max-height: 400px;
+  color: var(--svg-color)
 }
 
 .noCustomersAvailableText {

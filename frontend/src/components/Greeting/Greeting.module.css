@@ -1,0 +1,15 @@
+.container {
+  margin: 1.5rem 0;
+}
+
+.container h3,
+.container p {
+  line-height: .9em;
+}
+
+@media (max-width: 468px) {
+  .container h3,
+  .container p {
+    line-height: 1.5rem;
+  }
+}
