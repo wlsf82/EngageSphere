@@ -3,7 +3,7 @@ const Greeting = ({ name }) => {
   const today = new Date()
   return (
     <>
-      <h2>Hi {name || 'there'}! It is {today.toLocaleDateString("en-US", options)}.</h2>
+      <h2>Hi {name || 'there'}! It is {today.toLocaleDateString("en-US", options)}</h2>
       <p>Below is our customer list.</p>
       <p>Click on the <strong>View</strong> button of each of them to see their contact details.</p>
     </>
