@@ -35,7 +35,7 @@
   padding: 16px;
 }
 
-.input {
+.form .input {
   width: 100%;
   border: 2px solid var(--messenger-input-border-color);
   padding: 8px;
@@ -46,7 +46,7 @@
   font-size: 1rem;
 }
 
-textarea {
+.form textarea {
   font-size: 1rem;
   border-radius: 4px;
   padding: 8px;

@@ -7,7 +7,7 @@
   border-radius: 8px;
 }
 
-th, td {
+.container th, td {
   padding: 15px;
   text-align: left;
   overflow: hidden;
@@ -15,47 +15,47 @@ th, td {
   white-space: nowrap;
 }
 
-th {
+.container th {
   background-color: var(--table-header-bg-color);
   color: #ffffff;
 }
 
-tbody tr td {
+.container tbody tr td {
   text-align: left;
 }
 
-th:nth-child(1),
-th:nth-child(6),
-td:nth-child(1) {
+.container th:nth-child(1),
+.container th:nth-child(6),
+.container td:nth-child(1) {
   text-align: center;
 }
 
-th {
+.container th {
   background-color: var(--table-header-bg-color);
   color: #ffffff;
 }
 
-th:nth-child(4),
-th:nth-child(5) {
+.container th:nth-child(4),
+.container th:nth-child(5) {
   cursor: pointer;
 }
 
-th:nth-child(4) button,
-th:nth-child(5) button,
-tbody tr button {
+.container th:nth-child(4) button,
+.container th:nth-child(5) button,
+.container tbody tr button {
   all: unset;
   outline: revert;
 }
 
-tbody tr td:nth-child(6) {
+.container tbody tr td:nth-child(6) {
   cursor: pointer;
   text-align: center;
   background-color: var(--pagination-button-hover-bg-color);
   color: var(--pagination-button-hover-text-color);
 }
 
-tbody tr td:nth-child(6):hover,
-tbody tr td:nth-child(6) button:hover {
+.container tbody tr td:nth-child(6):hover,
+.container tbody tr td:nth-child(6) button:hover {
   background-color: var(--pagination-button-bg-color);
   color: var(--pagination-button-text-color);
 }
@@ -68,7 +68,7 @@ tbody tr td:nth-child(6) button:hover {
   width: 8%;
 }
 
-tr:hover {
+.container tr:hover {
   background-color: var(--table-row-hover-bg-color);
 }
 
@@ -77,7 +77,7 @@ tr:hover {
 }
 
 @media (max-width: 468px) {
-  th, td {
+  .container th, td {
     padding: 10px;
   }
 
