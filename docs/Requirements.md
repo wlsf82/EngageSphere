@@ -8,7 +8,7 @@ As soon as the user access the application, he/she can type his/her name, which 
 
 If no name is provided, a default greeting is shown instead (i.e., Hi there! ...)
 
-If there are no customers in the database, the text input field gets disabled.
+If there are no customers in the database, the Name text input field gets disabled.
 
 ### Theme
 
@@ -102,7 +102,7 @@ The Download CSV button isn't displayed if there are no customers in the databas
 
 ### Contact details
 
-When in the Contact details view, the text input field gets disabled (with or without a defined name.)
+When in the Contact details view, the Name text input field gets disabled (with or without a defined name.)
 
 This view shows the customer details information (**Company ID**, **Company name**, **Number of employees**, and **Size**), besides the contact details (**Contact name** and **Contact e-mail**) of the person to be contacted.
 
