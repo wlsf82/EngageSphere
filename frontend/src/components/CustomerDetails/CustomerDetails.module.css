@@ -27,7 +27,6 @@
   font-size: 1rem;
   font-weight: bold;
   margin: 10px 0;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .container button:hover {
