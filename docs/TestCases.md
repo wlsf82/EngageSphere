@@ -96,6 +96,7 @@ Below are the three kinds of GUI tests:
     - It opens and closes the messenger
     - It makes sure all fields are mandatory
     - It shows and hides a success message when successfully submitting the form
+    - It clears all form fields when filling them, closing the messenger, and opening it again
 - `<Pagination />`
   - It renders in the middle page (both Prev and Next buttons are enabled)
   - It renders in the first of two pages (Prev button is disabled)
