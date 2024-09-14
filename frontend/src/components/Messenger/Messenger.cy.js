@@ -24,11 +24,11 @@ describe('<Messenger />', options, () => {
 
       cy.getByClassStartsWith('Messenger_box').should('not.exist')
       cy.getByClassStartsWith('Messenger_openCloseButton').should('be.visible')
+
+      cy.getByClassStartsWith('Messenger_openCloseButton').click()
     })
 
     it('opens and closes the messenger and finds no a11y issue', () => {
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
-
       cy.getByClassStartsWith('Messenger_box').should('be.visible')
       cy.checkA11y()
 
@@ -40,8 +40,6 @@ describe('<Messenger />', options, () => {
     })
 
     it('makes sure all fields are mandatory and the first one is focused', () => {
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
-
       cy.getByClassStartsWith('Messenger_form')
         .find('input[type="text"]')
         .should('be.focused')
@@ -57,8 +55,6 @@ describe('<Messenger />', options, () => {
     it('shows and hides a success message when successfully submitting the form', () => {
       const now = new Date()
       cy.clock(now)
-
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
 
       cy.getByClassStartsWith('Messenger_form')
         .find('input[type="text"]')
@@ -81,8 +77,6 @@ describe('<Messenger />', options, () => {
     })
 
     it('clears all form fields when filling them, closing the messenger, and opening it again', () => {
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
-
       cy.getByClassStartsWith('Messenger_form')
         .find('input[type="text"]')
         .type('Joe')
