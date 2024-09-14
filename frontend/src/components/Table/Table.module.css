@@ -72,10 +72,6 @@
   background-color: var(--table-row-hover-bg-color);
 }
 
-.container th:nth-child(6) {
-  width: 5%;
-}
-
 @media (max-width: 468px) {
   .container th, td {
     padding: 10px;
