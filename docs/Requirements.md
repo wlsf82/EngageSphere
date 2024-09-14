@@ -144,6 +144,8 @@ The success message is: Your message has been sent.
 
 When clicking the close button, the form is closed, and the chat bubble button is shown again.
 
+After closing the form, it clears all its fields, and when it is opened again, they are all empty for new typing.
+
 ### Accessibility (A11y)
 
 The EngageSphere's front end was created with a11y in mind, so users should be able to navigate through it using the <kbd>TAB</kbd> keyboard key.
