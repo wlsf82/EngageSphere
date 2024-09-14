@@ -2,13 +2,12 @@
   background-color: var(--header-bg-color);
   width: 100%;
   text-align: center;
-  padding: 0 0 15px 0;
 }
 
 .container input {
   width: 90%;
   padding: 8px;
-  margin: 8px 0;
+  margin-bottom: 20px;
   border: 2px solid var(--input-border-color);
   border-radius: 5px;
   box-sizing: border-box;
@@ -23,10 +22,6 @@
 
 @media (max-width: 468px) {
   .container {
-    padding: 15px 0;
-  }
-
-  .container input[type="text"] {
-    margin: 4px 0;
+    padding-bottom: 15px;
   }
 }
