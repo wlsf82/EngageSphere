@@ -44,9 +44,11 @@ Below are the three kinds of GUI tests:
 Below is a list of all the frontend integrated and a11y tests.
 
 ```sh
-cypress/e2e/gui/EngageSphere.cy.js (24 tests)
+cypress/e2e/gui/EngageSphere.cy.js (26 tests)
 ├─ EngageSphere Frontend
 │ ├─ Filtering
+│ │ ├─ keeps the filters when coming back from the customer details view
+│ │ ├─ re-enables the input field when coming back from an empty state filter to a non-empty one
 │ │ ├─ By size
 │ │ │ ├─ filters by All sizes
 │ │ │ ├─ filters by Small size
