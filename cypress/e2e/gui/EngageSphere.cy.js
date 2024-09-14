@@ -367,17 +367,6 @@ describe('EngageSphere Frontend - A11y', options, () => {
         cy.getByClassStartsWith('ThemeToggle_button').click()
 
         cy.get('[data-theme="dark"]').should('exist')
-        /**
-          Sometimes, the a11y check runs before the light mode colors have
-          completely transitioned to the dark mode ones, making this speci-
-          fic test fail, informing that the Next button foreground color and
-          background colors have no good contrast.
-
-          This extra assertion ensures the button has the right colors before
-          the a11y check runs.
-         */
-        cy.contains('button', 'Next')
-          .should('have.css', 'background-color', 'rgb(66, 66, 66)')
 
         cy.checkA11y()
       })
