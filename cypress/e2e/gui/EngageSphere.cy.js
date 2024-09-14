@@ -197,6 +197,70 @@ describe('EngageSphere Frontend', options, () => {
         cy.get('tbody tr').should('have.length', 1)
       })
     })
+
+    it('keeps the filters when coming back from the customer details view', () => {
+      cy.intercept(
+        'GET',
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&industry=All`,
+        { fixture: 'enterpriseCustomers' }
+      ).as('getEnterpriseCustomers')
+
+      cy.intercept(
+        'GET',
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&industry=Retail`,
+        { fixture: 'enterpriseCustomers' }
+      ).as('getEnterpriseRetailCustomers')
+
+      cy.get('[data-testid="size-filter"]').select('Enterprise')
+      cy.wait('@getEnterpriseCustomers')
+
+      cy.get('[data-testid="industry-filter"]').select('Retail')
+      cy.wait('@getEnterpriseRetailCustomers')
+
+      cy.get('button[aria-label^="View company:"]')
+        .first()
+        .click()
+      cy.contains('button', 'Back').click()
+
+      cy.get('[data-testid="size-filter"]').should('have.value', 'Enterprise')
+      cy.get('[data-testid="industry-filter"]').should('have.value', 'Retail')
+    })
+
+    it('re-enables the input field when coming back from an empty state filter to a non-empty one', () => {
+      cy.intercept(
+        'GET',
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&industry=All`,
+        { fixture: 'enterpriseCustomers' }
+      ).as('getEnterpriseCustomers')
+
+      cy.intercept(
+        'GET',
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&industry=Retail`,
+        {
+          body: {
+            customers: [],
+            pageInfo: {
+              currentPage: 1,
+              totalPages: 1,
+              totalCustomers: 1
+            }
+          }
+        }
+      ).as('getEmptyEnterpriseRetailCustomers')
+
+      cy.get('[data-testid="size-filter"]').select('Enterprise')
+      cy.wait('@getEnterpriseCustomers')
+
+      cy.get('[data-testid="industry-filter"]').select('Retail')
+      cy.wait('@getEmptyEnterpriseRetailCustomers')
+
+      cy.get('input[placeholder="E.g., John Doe"]').should('be.disabled')
+
+      cy.get('[data-testid="industry-filter"]').select('All')
+      cy.wait('@getEnterpriseCustomers')
+
+      cy.get('input[placeholder="E.g., John Doe"]').should('be.enabled')
+    })
   })
 
   context('Pagination', () => {
