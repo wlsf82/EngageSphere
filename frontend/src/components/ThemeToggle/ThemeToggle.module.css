@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0 4px 0;
 }
 
 .button {
@@ -14,6 +13,7 @@
   border-radius: 20px;
   border: 2px solid #ffffff;
   cursor: pointer;
+  margin: 10px;
 }
 
 .button:hover {
