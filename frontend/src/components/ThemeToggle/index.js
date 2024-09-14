@@ -1,3 +1,4 @@
+import { Moon, Sun } from 'lucide-react'
 
 import { useEffect, useState } from 'react'
 
@@ -26,7 +27,7 @@ const ThemeToggle = () => {
           border: 'none',
           cursor: 'pointer'
         }}
-      >{theme === 'light' ? '☽' : '☀'}</button>
+      >{theme === 'light' ? <Moon /> : <Sun />}</button>
     </div>
   )
 }
