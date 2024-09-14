@@ -4,7 +4,7 @@ const SizeFilter = ({ size, onChange }) => {
   return (
     <div className={styles.container}>
       <label htmlFor="sizeFilter">Filter by size:</label>
-      <select data-testid="filter" id="sizeFilter" value={size} onChange={onChange}>
+      <select data-testid="size-filter" id="sizeFilter" value={size} onChange={onChange}>
         <option value="All">All</option>
         <option value="Small">Small</option>
         <option value="Medium">Medium</option>

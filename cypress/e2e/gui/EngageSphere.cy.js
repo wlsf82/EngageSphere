@@ -28,9 +28,9 @@ describe('EngageSphere Frontend', options, () => {
         // First, filter by a different size (e.g., Small)
         // So that when filtering by All, the `getCustomers` request happens again,
         // and the test can wait for it.
-        cy.get('[data-testid="filter"]').select('Small')
+        cy.get('[data-testid="size-filter"]').select('Small')
         cy.wait('@getSmallCustomers')
-        cy.get('[data-testid="filter"]').select('All')
+        cy.get('[data-testid="size-filter"]').select('All')
         cy.wait('@getCustomers')
 
         cy.get('tbody tr').should('have.length', 5)
@@ -43,7 +43,7 @@ describe('EngageSphere Frontend', options, () => {
           { fixture: 'smallCustomers' }
         ).as('getSmallCustomers')
 
-        cy.get('[data-testid="filter"]').select('Small')
+        cy.get('[data-testid="size-filter"]').select('Small')
 
         cy.wait('@getSmallCustomers')
 
@@ -57,7 +57,7 @@ describe('EngageSphere Frontend', options, () => {
           { fixture: 'mediumCustomers' }
         ).as('getMediumCustomers')
 
-        cy.get('[data-testid="filter"]').select('Medium')
+        cy.get('[data-testid="size-filter"]').select('Medium')
 
         cy.wait('@getMediumCustomers')
 
@@ -71,7 +71,7 @@ describe('EngageSphere Frontend', options, () => {
           { fixture: 'enterpriseCustomers' }
         ).as('getEnterpriseCustomers')
 
-        cy.get('[data-testid="filter"]').select('Enterprise')
+        cy.get('[data-testid="size-filter"]').select('Enterprise')
 
         cy.wait('@getEnterpriseCustomers')
 
@@ -85,7 +85,7 @@ describe('EngageSphere Frontend', options, () => {
           { fixture: 'largeEnterpriseCustomers'}
         ).as('getLargeEnterpriseCustomers')
 
-        cy.get('[data-testid="filter"]').select('Large Enterprise')
+        cy.get('[data-testid="size-filter"]').select('Large Enterprise')
 
         cy.wait('@getLargeEnterpriseCustomers')
 
@@ -99,7 +99,7 @@ describe('EngageSphere Frontend', options, () => {
           { fixture: 'veryLargeEnterpriseCustomers'}
         ).as('getVeryLargeEnterpriseCustomers')
 
-        cy.get('[data-testid="filter"]').select('Very Large Enterprise')
+        cy.get('[data-testid="size-filter"]').select('Very Large Enterprise')
 
         cy.wait('@getVeryLargeEnterpriseCustomers')
 
