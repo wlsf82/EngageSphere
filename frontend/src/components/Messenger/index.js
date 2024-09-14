@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { MessageCircle, X, Send } from 'lucide-react'
+
 import styles from './Messenger.module.css'
 
 export default function Messenger() {

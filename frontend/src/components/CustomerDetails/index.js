@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import styles from './CustomerDetails.module.css'
 
 const CustomerDetails = ({ customer, onClick }) => {
