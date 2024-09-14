@@ -26,6 +26,10 @@ export default function Messenger() {
   useEffect(() => {
     if (isOpen && nameInputRef.current) {
       nameInputRef.current.focus()
+    } else {
+      setName('')
+      setEmail('')
+      setMessage('')
     }
   }, [isOpen])
 
