@@ -27,7 +27,7 @@ const ThemeToggle = () => {
           border: 'none',
           cursor: 'pointer'
         }}
-      >{theme === 'light' ? <Moon /> : <Sun />}</button>
+      >{theme === 'light' ? <Moon size={28} /> : <Sun size={28} />}</button>
     </div>
   )
 }
