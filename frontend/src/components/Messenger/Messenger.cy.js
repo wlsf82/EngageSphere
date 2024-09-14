@@ -79,6 +79,33 @@ describe('<Messenger />', options, () => {
 
       cy.getByClassStartsWith('Messenger_success').should('not.exist')
     })
+
+    it('clears all form fields when filling them, closing the messenger, and opening it again', () => {
+      cy.getByClassStartsWith('Messenger_openCloseButton').click()
+
+      cy.getByClassStartsWith('Messenger_form')
+        .find('input[type="text"]')
+        .type('Joe')
+      cy.getByClassStartsWith('Messenger_form')
+        .find('input[type="email"]')
+        .type('Joe@example.com')
+        cy.getByClassStartsWith('Messenger_form')
+        .find('textarea')
+        .type('The customer with ID 5 has not contact info.')
+
+      cy.getByClassStartsWith('Messenger_openCloseButton').click()
+      cy.getByClassStartsWith('Messenger_openCloseButton').click()
+
+      cy.getByClassStartsWith('Messenger_form')
+        .find('input[type="text"]')
+        .should('have.value', '')
+      cy.getByClassStartsWith('Messenger_form')
+        .find('input[type="email"]')
+        .should('have.value', '')
+        cy.getByClassStartsWith('Messenger_form')
+        .find('textarea')
+        .should('have.value', '')
+    })
   })
 
   context('Dark mode', () => {
