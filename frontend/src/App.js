@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react'
 
 import styles from './App.module.css'
 
-import Messenger from './components/Messenger'
 import CustomerDetails from './components/CustomerDetails'
-import Greeting from './components/Greeting'
-import EmptyState from './components/EmptyState'
-import Input from './components/Input'
-import Header from './components/Header'
-import Pagination from './components/Pagination'
 import DownloadCSV from './components/DownloadCSV'
-import SizeFilter from './components/Filters/SizeFilter'
-import IndustryFilter from './components/Filters/IndustryFilter'
-import Table from './components/Table'
+import EmptyState from './components/EmptyState'
 import Footer from './components/Footer'
+import Greeting from './components/Greeting'
+import Header from './components/Header'
+import IndustryFilter from './components/Filters/IndustryFilter'
+import Input from './components/Input'
+import Messenger from './components/Messenger'
+import Pagination from './components/Pagination'
+import SizeFilter from './components/Filters/SizeFilter'
+import Table from './components/Table'
 
 const serverPort = 3001
 const serverURL = process.env.REACT_APP_HEROKU_API_URL || `http://localhost:${serverPort}`
