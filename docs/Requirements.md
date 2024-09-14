@@ -86,7 +86,15 @@ If there are no customers in the database for the filtered industry, the image o
 
 ##### Filtering by both size and industry
 
-The filters can be applied independently or in combination. If there are no customers that match the combination of the selected size and industry, the empty state message ("No customers available") is displayed.
+The filters can be applied independently or in combination.
+
+If there are no customers that match the combination of the selected size and industry, the image of an empty box is shown, followed by the "No customers available" paragraph. (e.g., filtering by the size Small returns only one customer, which is from the Technology industry, but then, filtering by an industry different from the Technology one would lead to no customers.)
+
+Since the above case would lead to the empty state, the Name text input field should be disabled, but when unfiltering by size or industry (e.g., filtering by industry All while size is still Small), the table should show the correct data, and the Name text input field should get back enabled.
+
+##### Filtering, going to the Customer details view, then back
+
+When filtering by size, industry, or a combination of both, then going to the Customer details viewn, and coming back, the filters' values should be kept as before going to the Customer view.
 
 #### Downloading
 
