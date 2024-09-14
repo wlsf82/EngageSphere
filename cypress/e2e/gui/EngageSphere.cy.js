@@ -282,7 +282,7 @@ describe('EngageSphere Frontend - empty state', options, () => {
   })
 
   it('disables the name text input field when there are no customers in the database', () => {
-    cy.get('input[type="text"]').should('be.disabled')
+    cy.get('input[placeholder="E.g., John Doe"]').should('be.disabled')
   })
 })
 
