@@ -1,3 +1,5 @@
+import { Download } from 'lucide-react'
+
 import styles from './DownloadCSV.module.css'
 
 const DownloadCSVButton = ({ customers }) => {
@@ -55,7 +57,10 @@ const DownloadCSVButton = ({ customers }) => {
 
   return (
     <div className={styles.buttonContainer}>
-      <button className={styles.button} onClick={exportCustomersToCSVHandler}>Download CSV</button>
+      <button className={styles.button} onClick={exportCustomersToCSVHandler}>
+        <Download />
+        Download CSV
+      </button>
     </div>
   )
 }
