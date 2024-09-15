@@ -20,4 +20,10 @@ describe('<Greeting />', () => {
     cy.contains('h2', 'Hi Joe! It is Monday, April 15, 2024')
       .should('be.visible')
   })
+
+  it('renders the easteregg', () => {
+    cy.mount(<Greeting name='Squirrel' />)
+
+    cy.get('.lucide-squirrel').should('be.visible')
+  })
 })
