@@ -106,10 +106,11 @@ frontend/src/components/Footer/Footer.cy.js (1 test)
 └─ <Footer />
   └─ renders with the right text and links
 
-frontend/src/components/Greeting/Greeting.cy.js (2 tests)
+frontend/src/components/Greeting/Greeting.cy.js (3 tests)
 └─ <Greeting />
   ├─ renders "Hi there" when no name is provided
-  └─ renders "Hi Joe" when name is provided
+  ├─ renders "Hi Joe" when name is provided
+  └─ renders the easteregg
 
 frontend/src/components/Header/Header.cy.js (2 tests)
 └─ <Header />
