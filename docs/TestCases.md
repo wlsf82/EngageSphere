@@ -84,6 +84,7 @@ cypress/e2e/gui/EngageSphere.cy.js (26 tests)
 │   └─ finds no a11y issues in dark mode
 └─ EngageSphere Frontend - Loading fallback
   └─ shows a Loading... fallback element before the initial customers' fetch
+
 ```
 
 ### Component tests
@@ -91,6 +92,11 @@ cypress/e2e/gui/EngageSphere.cy.js (26 tests)
 Below is a list of all the component tests.
 
 ```sh
+frontend/src/components/Button/Button.cy.js (2 tests)
+└─ <Button />
+  ├─ renders with a sample text
+  └─ renders with an icon and text
+
 frontend/src/components/CustomerDetails/CustomerDetails.cy.js (4 tests)
 └─ <CustomerDetails />
   ├─ renders with contact details
