@@ -2,7 +2,7 @@ import styles from './Button.module.css'
 
 const Button = ({
   icon = null,
-  text = null,
+  text = '',
   onClick = () => {}
 }) => {
   return (
