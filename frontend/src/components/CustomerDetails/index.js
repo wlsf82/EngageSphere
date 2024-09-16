@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import styles from './CustomerDetails.module.css'
 
+import Button from '../Button'
+
 const CustomerDetails = ({ customer, onClick }) => {
   const [showAddress, setShowAddress] = useState(false)
 
@@ -52,9 +54,7 @@ const CustomerDetails = ({ customer, onClick }) => {
           <button className={styles.showAddressBtn} onClick={showAddressHandler}>Show address</button>
         </div>
       )}
-      <div className={styles.buttonContainer}>
-        <button onClick={onClick}>Back</button>
-      </div>
+      <Button text="Back" onClick={onClick} />
     </div>
   )
 }

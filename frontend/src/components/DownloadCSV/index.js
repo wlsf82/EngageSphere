@@ -1,6 +1,6 @@
 import { Download } from 'lucide-react'
 
-import styles from './DownloadCSV.module.css'
+import Button from '../Button'
 
 const DownloadCSVButton = ({ customers }) => {
   function convertArrayToCSV(data) {
@@ -56,12 +56,11 @@ const DownloadCSVButton = ({ customers }) => {
   }
 
   return (
-    <div className={styles.buttonContainer}>
-      <button className={styles.button} onClick={exportCustomersToCSVHandler}>
-        <Download />
-        Download CSV
-      </button>
-    </div>
+    <Button
+      icon={<Download />}
+      text="Download CSV"
+      onClick={exportCustomersToCSVHandler}
+    />
   )
 }
 
