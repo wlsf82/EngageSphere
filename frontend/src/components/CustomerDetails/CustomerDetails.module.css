@@ -11,19 +11,19 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.showHideAddress .showAddressBtn {
+.container .showHideAddress {
+  display: flex;
+  justify-content: center;
+}
+
+.container .showHideAddress .showAddressBtn,
+.container .showHideAddress .hideAddressBtn {
   all: unset;
   text-decoration: underline;
   outline: revert;
 }
 
-.showHideAddress .hideAddressBtn {
-  all: unset;
-  text-decoration: underline;
-  outline: revert;
-}
-
-.showHideAddress button:hover {
+.container .showHideAddress button:hover {
   all: unset;
   font-weight: 700;
   text-decoration: underline;
