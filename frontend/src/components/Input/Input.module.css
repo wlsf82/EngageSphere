@@ -7,7 +7,6 @@
 .container input {
   width: 90%;
   padding: 8px;
-  margin-bottom: 20px;
   border: 2px solid var(--input-border-color);
   border-radius: 5px;
   box-sizing: border-box;
@@ -18,10 +17,4 @@
 .container input[type="text"]:disabled {
   background-color: var(--input-disabled-bg-color);
   color: var(--input-disabled-text-color);
-}
-
-@media (max-width: 468px) {
-  .container {
-    padding-bottom: 15px;
-  }
 }

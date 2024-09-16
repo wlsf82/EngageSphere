@@ -5,9 +5,10 @@ describe('<Header />', () => {
     cy.mount(<Header />)
   })
 
-  it('renders with heading and theme\'s toggle', () => {
+  it('renders with heading, theme\'s toggle, and a text input field', () => {
     cy.contains('h1', 'EngageSphere').should('be.visible')
     cy.getByClassStartsWith('ThemeToggle_button').should('be.visible')
+    cy.get('input[type="text"]').should('be.visible')
   })
 
   it('changes to the dark mode then back to light mode', () => {

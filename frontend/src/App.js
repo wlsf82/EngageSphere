@@ -100,8 +100,7 @@ const App = () => {
   return (
     <>
       <main className={styles.container}>
-        <Header />
-        <Input disabled={inputDisabled} onChange={inputChangeHandler} />
+        <Header inputDisabled={inputDisabled} inputChangeHandler={inputChangeHandler} />
         {customer ? (
           <CustomerDetails customer={customer} onClick={customerDetailsBackButtonClickHandler} />
         ) : (
