@@ -44,7 +44,7 @@ Below are the three kinds of GUI tests:
 Below is a list of all the frontend integrated and a11y tests.
 
 ```sh
-cypress/e2e/gui/EngageSphere.cy.js (26 tests)
+cypress/e2e/gui/EngageSphere.cy.js (28 tests)
 ├─ EngageSphere Frontend
 │ ├─ Filtering
 │ │ ├─ keeps the filters when coming back from the customer details view
@@ -82,8 +82,11 @@ cypress/e2e/gui/EngageSphere.cy.js (26 tests)
 │ └─ Without customers (empty state)
 │   ├─ finds no a11y issues in light mode
 │   └─ finds no a11y issues in dark mode
-└─ EngageSphere Frontend - Loading fallback
-  └─ shows a Loading... fallback element before the initial customers' fetch
+├─ EngageSphere Frontend - Loading fallback
+│ └─ shows a Loading... fallback element before the initial customers' fetch
+└─ Cookie consent
+  ├─ accepts the cookies
+  └─ declines the cookies
 
 ```
 
@@ -96,6 +99,10 @@ frontend/src/components/Button/Button.cy.js (2 tests)
 └─ <Button />
   ├─ renders with a sample text
   └─ renders with an icon and text
+
+frontend/src/components/CookieConsent/CookieConsent.cy.js (1 test)
+└─ <CookieConsent />
+  └─ renders correctly
 
 frontend/src/components/CustomerDetails/CustomerDetails.cy.js (4 tests)
 └─ <CustomerDetails />
@@ -120,7 +127,7 @@ frontend/src/components/Greeting/Greeting.cy.js (3 tests)
 
 frontend/src/components/Header/Header.cy.js (2 tests)
 └─ <Header />
-  ├─ renders with heading and theme's toggle
+  ├─ renders with heading, theme's toggle, and a text input field
   └─ changes to the dark mode then back to light mode
 
 frontend/src/components/Input/Input.cy.js (2 tests)

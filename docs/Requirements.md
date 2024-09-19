@@ -146,6 +146,28 @@ When clicking the close button, the form is closed, and the chat bubble button i
 
 After closing the form, it clears all its fields, and when it is opened again, they are all empty for new typing.
 
+### Cookie consent
+
+The EngageSphere application must comply with privacy regulations (e.g., GDPR) by providing users with clear options to accept or decline the use of cookies.
+
+**Consent banner**: Upon the user's first visit to the application or if no prior consent decision has been stored, a banner must be displayed informing the user about the usage of cookies to ensure our application functions properly, to enhance user experience, and to gather insights on application usage.
+
+**Cookie usage**: No cookies should be set or tracked unless the user explicitly provides consent by clicking the "Accept" button. The decision (accept or decline) must be stored and respected throughout future visits.
+
+**User options**:
+
+- **Accept cookies**: Users clicking the "Accept" button will consent to the use of cookies, and the application will be able to store and track cookies as per the privacy policy.
+- **Decline cookies**: Users clicking the "Decline" button will prevent the application from using any cookies.
+
+**Buttons**:
+
+- When the user clicks the "Accept" button, a cookie named `cookieConsent` should be created with the following value: `accepted`.
+- When the user clicks the "Deline" button, a cookie named `cookieConsent` should be created with the following value: `declined`.
+
+**Persistent consent**: Once a decision (accept or decline) is made, the banner is not displayed again during future visits unless the cookie expires.
+
+The cookie expiration time is 365 days.
+
 ### Accessibility (A11y)
 
 The EngageSphere's front end was created with a11y in mind, so users should be able to navigate through it using the <kbd>TAB</kbd> keyboard key.

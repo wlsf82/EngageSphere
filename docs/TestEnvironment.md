@@ -50,7 +50,7 @@ Acesse o [repositório da imagem da API no DockerHub](https://hub.docker.com/r/w
 
 Open a new terminal, go to the root of this repo and:
 
-**Important:** if you changed the backend port number, you will have to change it also on `/frontend/src/App.js` on line 18, before starting the frontend.
+**Important:** if you changed the backend port number, you will have to change it also on `/frontend/src/App.js` on line 20, before starting the frontend.
 
 ```sh
 cd frontend

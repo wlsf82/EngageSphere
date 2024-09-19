@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 
+import { useCookieConsent } from './components/CookieConsent/useCookeConsent'
+
 import styles from './App.module.css'
 
+import CookieConsent from './components/CookieConsent'
 import CustomerDetails from './components/CustomerDetails'
 import DownloadCSV from './components/DownloadCSV'
 import EmptyState from './components/EmptyState'
@@ -18,6 +21,7 @@ const serverPort = 3001
 const serverURL = process.env.REACT_APP_HEROKU_API_URL || `http://localhost:${serverPort}`
 
 const App = () => {
+  const [consent, giveConsent, declineConsent] = useCookieConsent()
   const [name, setName] = useState('')
   const [customers, setCustomers] = useState([])
   const [customer, setCustomer] = useState(null)
@@ -108,7 +112,7 @@ const App = () => {
               <SizeFilter size={sizeFilter} onChange={sizeFilterChangeHandler} />
               <IndustryFilter industry={industryFilter} onChange={industryFilterChangeHandler} />
             </div>
-            <div data-testid="table" className={styles.tableContainer}>
+            <div data-testid='table' className={styles.tableContainer}>
               {initialFetchDone ? (
                 customers.length ? (
                   <>
@@ -129,9 +133,15 @@ const App = () => {
                 ) : (
                   <EmptyState />
                 )
-              ) : <p id="loading">Loading...</p>}
+              ) : <p id='loading'>Loading...</p>}
             </div>
           </>
+        )}
+        {!consent && (
+          <CookieConsent
+            giveConsentClickHandler={giveConsent}
+            declineConsentClickHandler={declineConsent}
+          />
         )}
       </main>
       <Messenger />

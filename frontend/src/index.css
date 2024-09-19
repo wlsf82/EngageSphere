@@ -42,8 +42,8 @@
   --link-hover-text-decoration: underline;
   --input-disabled-bg-color: var(--dark-blue);
   --input-disabled-text-color: var(--gray);
-  --button-hover-bg-color: var(--hover-blue);
-  --button-hover-text-color: var(--white);
+  --button-hover-bg-color: var(--white);
+  --button-hover-text-color: var(--blue);
   --pagination-button-hover-bg-color: var(--blue);
   --pagination-button-hover-text-color: var(--white);
   --pagination-button-disabled-border-color: var(--gray);

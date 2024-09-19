@@ -7,6 +7,10 @@ const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`
 
 describe('EngageSphere Frontend', options, () => {
   beforeEach(() => {
+    Cypress.on('window:before:load', window => {
+      window.document.cookie = 'cookieConsent=accepted'
+    })
+
     cy.intercept(
       'GET',
       `${CUSTOMERS_API_URL}**`,
@@ -440,5 +444,38 @@ describe('EngageSphere Frontend - Loading fallback', options, () => {
     cy.wait('@getDelayedCustomers')
 
     cy.contains('p', 'Loading...').should('not.exist')
+  })
+})
+
+describe('Cookie consent', () => {
+  beforeEach(() => {
+    Cypress.on('window:before:load', window => {
+      window.document.cookie = 'cookieConsent=null'
+    })
+
+    cy.intercept(
+      'GET',
+      `${CUSTOMERS_API_URL}**`,
+      { fixture: 'customers' }
+    ).as('getCustomers')
+
+    cy.visit('/')
+    cy.wait('@getCustomers')
+  })
+
+  it('accepts the cookies', () => {
+    cy.contains('button', 'Accept').click()
+
+    cy.getCookie('cookieConsent').should('have.property', 'value', 'accepted')
+
+    cy.getByClassStartsWith('CookieConsent_banner').should('not.exist')
+  })
+
+  it('declines the cookies', () => {
+    cy.contains('button', 'Decline').click()
+
+    cy.getCookie('cookieConsent').should('have.property', 'value', 'declined')
+
+    cy.getByClassStartsWith('CookieConsent_banner').should('not.exist')
   })
 })
