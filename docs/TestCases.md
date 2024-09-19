@@ -100,9 +100,10 @@ frontend/src/components/Button/Button.cy.js (2 tests)
   ├─ renders with a sample text
   └─ renders with an icon and text
 
-frontend/src/components/CookieConsent/CookieConsent.cy.js (1 test)
+frontend/src/components/CookieConsent/CookieConsent.cy.js (2 tests)
 └─ <CookieConsent />
-  └─ renders correctly
+  ├─ renders in light mode and finds no a11y issues
+  └─ renders in dark mode and finds no a11y issues
 
 frontend/src/components/CustomerDetails/CustomerDetails.cy.js (4 tests)
 └─ <CustomerDetails />
