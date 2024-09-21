@@ -21,16 +21,11 @@ describe('EngageSphere API', () => {
           expect(customer.industry).to.exist
 
           if (customer.contactInfo) {
-            expect(customer.contactInfo.name).to.exist
-            expect(customer.contactInfo.email).to.exist
+            expect(customer.contactInfo).to.have.all.keys('name', 'email')
           }
 
           if (customer.address) {
-            expect(customer.address.street).to.exist
-            expect(customer.address.city).to.exist
-            expect(customer.address.state).to.exist
-            expect(customer.address.zipCode).to.exist
-            expect(customer.address.country).to.exist
+            expect(customer.address).to.have.all.keys('street', 'city', 'state', 'zipCode', 'country')
           }
         })
 
@@ -110,91 +105,27 @@ describe('EngageSphere API', () => {
   })
 
   context('Error scenarios', () => {
-    it('handles invalid requests gracefully (e.g., negative page)', () => {
-      cy.request({
-        method: 'GET',
-        url: `${CUSTOMERS_API_URL}?page=-1`,
-        failOnStatusCode: false,
-      }).then(({ status, body }) => {
-        expect(status).to.eq(400)
-        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
-      })
-    })
+    const testCases = [
+      { description: 'negative page', query: 'page=-1', error: 'Invalid page or limit. Both must be positive numbers.' },
+      { description: 'negative limit', query: 'limit=-1', error: 'Invalid page or limit. Both must be positive numbers.' },
+      { description: 'page=0', query: 'page=0', error: 'Invalid page or limit. Both must be positive numbers.' },
+      { description: 'limit=0', query: 'limit=0', error: 'Invalid page or limit. Both must be positive numbers.' },
+      { description: 'page as a string', query: 'page=One', error: 'Invalid page or limit. Both must be positive numbers.' },
+      { description: 'limit as a boolean', query: 'limit=true', error: 'Invalid page or limit. Both must be positive numbers.' },
+      { description: 'unsupported size', query: 'size=UnsupportedSize', error: 'Unsupported size value' },
+      { description: 'unsupported industry', query: 'industry=UnsupportedIndustry', error: 'Unsupported industry value' }
+    ]
 
-    it('handles invalid requests gracefully (e.g., negative limit)', () => {
-      cy.request({
-        method: 'GET',
-        url: `${CUSTOMERS_API_URL}?limit=-1`,
-        failOnStatusCode: false,
-      }).then(({ status, body }) => {
-        expect(status).to.eq(400)
-        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
-      })
-    })
-
-    it('handles invalid requests gracefully (e.g., page=0)', () => {
-      cy.request({
-        method: 'GET',
-        url: `${CUSTOMERS_API_URL}?page=0`,
-        failOnStatusCode: false,
-      }).then(({ status, body }) => {
-        expect(status).to.eq(400)
-        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
-      })
-    })
-
-    it('handles invalid requests gracefully (e.g., limit=0)', () => {
-      cy.request({
-        method: 'GET',
-        url: `${CUSTOMERS_API_URL}?limit=0`,
-        failOnStatusCode: false,
-      }).then(({ status, body }) => {
-        expect(status).to.eq(400)
-        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
-      })
-    })
-
-    it('handles invalid requests gracefully (e.g., page as a string)', () => {
-      cy.request({
-        method: 'GET',
-        url: `${CUSTOMERS_API_URL}?page=One`,
-        failOnStatusCode: false,
-      }).then(({ status, body }) => {
-        expect(status).to.eq(400)
-        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
-      })
-    })
-
-    it('handles invalid requests gracefully (e.g., limit as a boolean)', () => {
-      cy.request({
-        method: 'GET',
-        url: `${CUSTOMERS_API_URL}?limit=true`,
-        failOnStatusCode: false,
-      }).then(({ status, body }) => {
-        expect(status).to.eq(400)
-        expect(body.error).to.include('Invalid page or limit. Both must be positive numbers.')
-      })
-    })
-
-    it('handles invalid requests gracefully (e.g., unsupported size)', () => {
-      cy.request({
-        method: 'GET',
-        url: `${CUSTOMERS_API_URL}?size=UnsupportedSize`,
-        failOnStatusCode: false,
-      }).then(({ status, body }) => {
-        expect(status).to.eq(400)
-        expect(body.error).to.include('Unsupported size value')
-      })
-    })
-
-    it('handles invalid requests gracefully (e.g., unsupported industry)', () => {
-      cy.request({
-        method: 'GET',
-        url: `${CUSTOMERS_API_URL}?industry=UnsupportedIndustry`,
-        failOnStatusCode: false,
-      }).then(({ status, body }) => {
-        expect(status).to.eq(400)
-        expect(body.error).to.include('Unsupported industry value')
+    testCases.forEach(({ description, query, error }) => {
+      it(`handles invalid requests gracefully (e.g., ${description})`, () => {
+        cy.request({
+          method: 'GET',
+          url: `${CUSTOMERS_API_URL}?${query}`,
+          failOnStatusCode: false,
+        }).then(({ status, body }) => {
+          expect(status).to.eq(400)
+          expect(body.error).to.include(error)
+        })
       })
     })
   })
