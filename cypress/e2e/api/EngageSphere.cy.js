@@ -50,7 +50,7 @@ describe('EngageSphere API', () => {
 
       cy.get('@getCustomersPageTwo')
         .its('body.pageInfo.currentPage')
-        .should('eq', '2') // Supposing there are at least 2 pages
+        .should('eq', 2) // Supposing there are at least 2 pages
     })
 
     it('filters limit of customers correctly', () => {

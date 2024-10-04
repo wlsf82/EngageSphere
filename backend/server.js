@@ -139,7 +139,7 @@ app.get('/customers', (req, res) => {
   const response = {
     customers: paginatedCustomers,
     pageInfo: {
-      currentPage: page,
+      currentPage: Number(page),
       totalPages: Math.ceil(filteredCustomers.length / limit),
       totalCustomers: filteredCustomers.length,
     }
