@@ -14,8 +14,8 @@ Read the following [doc](./docs/Requirements.md) to understand all the EngageSph
 To run this project, you will need:
 
 - [git](https://git-scm.com/downloads) (I've used version `2.42.1` while writing this doc)
-- [Node.js](https://nodejs.org/en/) (I've used version `v20.13.1` while writing this doc)
-- npm (I've used version `10.5.2` while writing this doc)
+- [Node.js](https://nodejs.org/en/) (I've used version `v20.16.0` while writing this doc)
+- npm (I've used version `10.9.0` while writing this doc)
 
 **Note:** When installing Node.js, npm is automatically installed too.
 
