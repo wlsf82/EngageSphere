@@ -22,32 +22,32 @@ describe('<Messenger />', options, () => {
         }]
       })
 
-      cy.getByClassStartsWith('Messenger_box').should('not.exist')
-      cy.getByClassStartsWith('Messenger_openCloseButton').should('be.visible')
+      cy.getByClassThatStartsWith('Messenger_box').should('not.exist')
+      cy.getByClassThatStartsWith('Messenger_openCloseButton').should('be.visible')
 
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
+      cy.getByClassThatStartsWith('Messenger_openCloseButton').click()
     })
 
     it('opens and closes the messenger and finds no a11y issue', () => {
-      cy.getByClassStartsWith('Messenger_box').should('be.visible')
+      cy.getByClassThatStartsWith('Messenger_box').should('be.visible')
       cy.checkA11y()
 
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
+      cy.getByClassThatStartsWith('Messenger_openCloseButton').click()
 
-      cy.getByClassStartsWith('Messenger_box').should('not.exist')
-      cy.getByClassStartsWith('Messenger_openCloseButton').should('be.visible')
+      cy.getByClassThatStartsWith('Messenger_box').should('not.exist')
+      cy.getByClassThatStartsWith('Messenger_openCloseButton').should('be.visible')
       cy.checkA11y()
     })
 
     it('makes sure all fields are mandatory and the first one is focused', () => {
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="text"]')
         .should('be.focused')
         .and('have.attr', 'required')
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="email"]')
         .should('have.attr', 'required')
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('textarea')
         .should('have.attr', 'required')
     })
@@ -56,47 +56,47 @@ describe('<Messenger />', options, () => {
       const now = new Date()
       cy.clock(now)
 
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="text"]')
         .type('John')
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="email"]')
         .type('john-doe@example.com')
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('textarea')
         .type('The customer with ID 5 has not contact info.')
       cy.contains('button', 'Send').click()
 
-      cy.getByClassStartsWith('Messenger_success')
+      cy.getByClassThatStartsWith('Messenger_success')
         .should('be.visible')
         .and('contain', 'Your message has been sent.')
 
       cy.tick(3000)
 
-      cy.getByClassStartsWith('Messenger_success').should('not.exist')
+      cy.getByClassThatStartsWith('Messenger_success').should('not.exist')
     })
 
     it('clears all form fields when filling them, closing the messenger, and opening it again', () => {
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="text"]')
         .type('Joe')
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="email"]')
         .type('Joe@example.com')
-        cy.getByClassStartsWith('Messenger_form')
+        cy.getByClassThatStartsWith('Messenger_form')
         .find('textarea')
         .type('The customer with ID 5 has not contact info.')
 
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
+      cy.getByClassThatStartsWith('Messenger_openCloseButton').click()
+      cy.getByClassThatStartsWith('Messenger_openCloseButton').click()
 
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="text"]')
         .should('have.value', '')
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="email"]')
         .should('have.value', '')
-        cy.getByClassStartsWith('Messenger_form')
+        cy.getByClassThatStartsWith('Messenger_form')
         .find('textarea')
         .should('have.value', '')
     })
@@ -118,8 +118,8 @@ describe('<Messenger />', options, () => {
         }]
       })
 
-      cy.getByClassStartsWith('Messenger_box').should('not.exist')
-      cy.getByClassStartsWith('Messenger_openCloseButton').should('be.visible')
+      cy.getByClassThatStartsWith('Messenger_box').should('not.exist')
+      cy.getByClassThatStartsWith('Messenger_openCloseButton').should('be.visible')
     })
 
     it('finds on a11y issues with the bubble button', () => {
@@ -127,15 +127,15 @@ describe('<Messenger />', options, () => {
     })
 
     it('successfully submits the form and finds no a11y issue', () => {
-      cy.getByClassStartsWith('Messenger_openCloseButton').click()
+      cy.getByClassThatStartsWith('Messenger_openCloseButton').click()
 
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="text"]')
         .type('John')
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="email"]')
         .type('john-doe@example.com')
-      cy.getByClassStartsWith('Messenger_form')
+      cy.getByClassThatStartsWith('Messenger_form')
         .find('textarea')
         .type('The customer with ID 5 has not contact info.')
 
@@ -143,7 +143,7 @@ describe('<Messenger />', options, () => {
 
       cy.contains('button', 'Send').click()
 
-      cy.getByClassStartsWith('Messenger_success')
+      cy.getByClassThatStartsWith('Messenger_success')
         .should('be.visible')
         .and('contain', 'Your message has been sent.')
 

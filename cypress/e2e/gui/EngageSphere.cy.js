@@ -322,7 +322,7 @@ describe('EngageSphere Frontend', options, () => {
         .first()
         .click()
 
-      cy.getByClassStartsWith('CustomerDetails_container').should('be.visible')
+      cy.getByClassThatStartsWith('CustomerDetails_container').should('be.visible')
       cy.get('table').should('not.exist')
 
       cy.contains('button', 'Back').click()
@@ -368,7 +368,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
       })
 
       it('finds no a11y issues in dark mode', () => {
-        cy.getByClassStartsWith('ThemeToggle_button').click()
+        cy.getByClassThatStartsWith('ThemeToggle_button').click()
 
         cy.get('[data-theme="dark"]').should('exist')
 
@@ -390,7 +390,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
       })
 
       it('finds no a11y issues in dark mode', () => {
-        cy.getByClassStartsWith('ThemeToggle_button').click()
+        cy.getByClassThatStartsWith('ThemeToggle_button').click()
 
         cy.get('[data-theme="dark"]').should('exist')
 
@@ -417,7 +417,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
     })
 
     it('finds no a11y issues in dark mode', () => {
-      cy.getByClassStartsWith('ThemeToggle_button').click()
+      cy.getByClassThatStartsWith('ThemeToggle_button').click()
 
       cy.get('[data-theme="dark"]').should('exist')
 
@@ -468,7 +468,7 @@ describe('Cookie consent', () => {
 
     cy.getCookie('cookieConsent').should('have.property', 'value', 'accepted')
 
-    cy.getByClassStartsWith('CookieConsent_banner').should('not.exist')
+    cy.getByClassThatStartsWith('CookieConsent_banner').should('not.exist')
   })
 
   it('declines the cookies', () => {
@@ -476,6 +476,6 @@ describe('Cookie consent', () => {
 
     cy.getCookie('cookieConsent').should('have.property', 'value', 'declined')
 
-    cy.getByClassStartsWith('CookieConsent_banner').should('not.exist')
+    cy.getByClassThatStartsWith('CookieConsent_banner').should('not.exist')
   })
 })
