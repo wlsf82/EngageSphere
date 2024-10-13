@@ -131,10 +131,11 @@ frontend/src/components/Header/Header.cy.js (2 tests)
   ├─ renders with heading, theme's toggle, and a text input field
   └─ changes to the dark mode then back to light mode
 
-frontend/src/components/Input/Input.cy.js (2 tests)
+frontend/src/components/Input/Input.cy.js (3 tests)
 └─ <Input />
   ├─ renders enabled
-  └─ renders disabled
+  ├─ renders disabled
+  └─ limits the input data to 40 characters
 
 frontend/src/components/Messenger/Messenger.cy.js (6 tests)
 └─ <Messenger />
