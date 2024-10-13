@@ -10,6 +10,8 @@ If no name is provided, a default greeting is shown instead (i.e., Hi there! ...
 
 If there are no customers in the database, the Name text input field gets disabled.
 
+The max length of the Name text input field is 40 characters.
+
 ### Theme
 
 The EngageSphere application offers two themes (light and dark.) Light is the default theme.
