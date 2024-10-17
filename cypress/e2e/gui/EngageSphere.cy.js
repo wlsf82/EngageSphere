@@ -7,9 +7,7 @@ const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`
 
 describe('EngageSphere Frontend', options, () => {
   beforeEach(() => {
-    Cypress.on('window:before:load', window => {
-      window.document.cookie = 'cookieConsent=accepted'
-    })
+    cy.setCookie('cookieConsent', 'accepted')
 
     cy.intercept(
       'GET',
