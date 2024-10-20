@@ -13,6 +13,8 @@ describe('<CustomerDetails />', () => {
   })
 
   it('renders with contact details', () => {
+    const { contactInfo } = completeCustomer
+
     cy.mount(<CustomerDetails customer={completeCustomer} onClick={backButtonClickHandler} />)
 
     cy.contains('h2', 'Customer Details').should('be.visible')
@@ -22,8 +24,8 @@ describe('<CustomerDetails />', () => {
     cy.contains('p', `Size: ${completeCustomer.size}`).should('be.visible')
     cy.contains('p', `Industry: ${completeCustomer.industry}`).should('be.visible')
 
-    cy.contains('p', `Contact name: ${completeCustomer.contactInfo.name}`).should('be.visible')
-    cy.contains('p', `Contact email: ${completeCustomer.contactInfo.email}`).should('be.visible')
+    cy.contains('p', `Contact name: ${contactInfo.name}`).should('be.visible')
+    cy.contains('p', `Contact email: ${contactInfo.email}`).should('be.visible')
 
     cy.contains('button', 'Back').should('be.visible')
   })
@@ -47,16 +49,18 @@ describe('<CustomerDetails />', () => {
   })
 
   it('shows and hides customer address', () => {
+    const { address } = completeCustomer
+
     cy.mount(<CustomerDetails customer={completeCustomer} onClick={backButtonClickHandler} />)
 
     cy.contains('button', 'Show address').click()
 
     cy.contains('h3', 'Address').should('be.visible')
-    cy.contains('p', `Street: ${completeCustomer.address.street}`).should('be.visible')
-    cy.contains('p', `City: ${completeCustomer.address.city}`).should('be.visible')
-    cy.contains('p', `State: ${completeCustomer.address.state}`).should('be.visible')
-    cy.contains('p', `Zip code: ${completeCustomer.address.zipCode}`).should('be.visible')
-    cy.contains('p', `Country: ${completeCustomer.address.country}`).should('be.visible')
+    cy.contains('p', `Street: ${address.street}`).should('be.visible')
+    cy.contains('p', `City: ${address.city}`).should('be.visible')
+    cy.contains('p', `State: ${address.state}`).should('be.visible')
+    cy.contains('p', `Zip code: ${address.zipCode}`).should('be.visible')
+    cy.contains('p', `Country: ${address.country}`).should('be.visible')
 
     cy.contains('button', 'Hide address').click()
 
