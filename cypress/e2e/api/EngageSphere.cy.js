@@ -93,9 +93,9 @@ describe('EngageSphere API', () => {
       const industries = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance']
 
       industries.forEach(industry => {
-        cy.request('GET', `${CUSTOMERS_API_URL}?industry=${industry}`).as('getIndustryedCustomers')
+        cy.request('GET', `${CUSTOMERS_API_URL}?industry=${industry}`).as('getIndustryCustomers')
 
-        cy.get('@getIndustryedCustomers')
+        cy.get('@getIndustryCustomers')
           .its('body.customers')
           .each(customer => {
             expect(customer.industry).to.eq(industry)
