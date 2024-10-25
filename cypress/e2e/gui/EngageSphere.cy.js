@@ -219,9 +219,7 @@ describe('EngageSphere Frontend', options, () => {
       cy.get('[data-testid="industry-filter"]').select('Logistics')
       cy.wait('@getEnterpriseLogisticsCustomers')
 
-      cy.get('button[aria-label^="View company:"]')
-        .first()
-        .click()
+      cy.contains('button', 'View').click()
       cy.contains('button', 'Back').click()
 
       cy.get('[data-testid="size-filter"]').should('have.value', 'Enterprise')
@@ -316,9 +314,7 @@ describe('EngageSphere Frontend', options, () => {
 
   context('Customer details', () => {
     it('goes back to the customers list when clicking the "Back" button', () => {
-      cy.get('button[aria-label^="View company:"]')
-        .first()
-        .click()
+      cy.contains('button', 'View').click()
 
       cy.getByClassThatStartsWith('CustomerDetails_container').should('be.visible')
       cy.get('table').should('not.exist')
@@ -376,9 +372,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
 
     context('Customer details and address', () => {
       beforeEach(() => {
-        cy.get('button[aria-label^="View company:"]')
-          .first()
-          .click()
+        cy.contains('button', 'View').click()
         cy.contains('button', 'Show address').click()
         cy.contains('h3', 'Address').should('be.visible')
       })
