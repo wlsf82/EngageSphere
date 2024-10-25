@@ -209,15 +209,15 @@ describe('EngageSphere Frontend', options, () => {
 
       cy.intercept(
         'GET',
-        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&industry=Retail`,
+        `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&industry=Logistics`,
         { fixture: 'enterpriseCustomers' }
-      ).as('getEnterpriseRetailCustomers')
+      ).as('getEnterpriseLogisticsCustomers')
 
       cy.get('[data-testid="size-filter"]').select('Enterprise')
       cy.wait('@getEnterpriseCustomers')
 
-      cy.get('[data-testid="industry-filter"]').select('Retail')
-      cy.wait('@getEnterpriseRetailCustomers')
+      cy.get('[data-testid="industry-filter"]').select('Logistics')
+      cy.wait('@getEnterpriseLogisticsCustomers')
 
       cy.get('button[aria-label^="View company:"]')
         .first()
@@ -225,7 +225,7 @@ describe('EngageSphere Frontend', options, () => {
       cy.contains('button', 'Back').click()
 
       cy.get('[data-testid="size-filter"]').should('have.value', 'Enterprise')
-      cy.get('[data-testid="industry-filter"]').should('have.value', 'Retail')
+      cy.get('[data-testid="industry-filter"]').should('have.value', 'Logistics')
     })
 
     it('re-enables the input field when coming back from an empty state filter to a non-empty one', () => {
