@@ -328,6 +328,8 @@ describe('EngageSphere Frontend', options, () => {
 
 describe('EngageSphere Frontend - empty state', options, () => {
   beforeEach(() => {
+    cy.setCookie('cookieConsent', 'accepted')
+
     cy.intercept(
       'GET',
       `${CUSTOMERS_API_URL}**`,
@@ -351,6 +353,7 @@ describe('EngageSphere Frontend - empty state', options, () => {
 describe('EngageSphere Frontend - A11y', options, () => {
   context('With customers', () => {
     beforeEach(() => {
+      cy.setCookie('cookieConsent', 'accepted')
       cy.visit('/')
       cy.injectAxe()
       cy.get('[data-theme="light"]').should('exist')
@@ -420,6 +423,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
 
 describe('EngageSphere Frontend - Loading fallback', options, () => {
   it('shows a Loading... fallback element before the initial customers\' fetch', () => {
+    cy.setCookie('cookieConsent', 'accepted')
     cy.intercept(
       'GET',
       `${CUSTOMERS_API_URL}**`,
