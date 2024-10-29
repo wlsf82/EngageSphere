@@ -277,9 +277,9 @@ describe('EngageSphere Frontend', options, () => {
       cy.wait('@getMoreCustomers')
 
       cy.getAllLocalStorage()
-        .then((result) => {
-          const limit = result[Cypress.config('baseUrl')].paginationLimit
-          expect(limit).to.equal('50')
+        .then(localStorage => {
+          const { paginationLimit } = localStorage[Cypress.config('baseUrl')]
+          expect(paginationLimit).to.equal('50')
         })
 
       cy.reload()

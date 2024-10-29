@@ -22,10 +22,10 @@ describe('<Header />', () => {
   })
 })
 
-Cypress.Commands.add('assertLocalStorageThemeIs', (expectedTheme) => {
+Cypress.Commands.add('assertLocalStorageThemeIs', expectedTheme => {
   cy.getAllLocalStorage()
-    .then((result) => {
-      const definedTheme = result[Cypress.config('baseUrl')].theme
-      expect(definedTheme).to.equal(expectedTheme)
+    .then(localStorage => {
+      const { theme } = localStorage[Cypress.config('baseUrl')]
+      expect(theme).to.equal(expectedTheme)
     })
 })
