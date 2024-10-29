@@ -445,9 +445,7 @@ describe('EngageSphere Frontend - Loading fallback', options, () => {
 
 describe('Cookie consent', () => {
   beforeEach(() => {
-    Cypress.on('window:before:load', window => {
-      window.document.cookie = 'cookieConsent=null'
-    })
+    cy.clearCookie('cookieConsent')
 
     cy.intercept(
       'GET',
