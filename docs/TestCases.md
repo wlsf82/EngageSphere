@@ -170,7 +170,7 @@ frontend/src/components/Table/Table.cy.js (6 tests)
 
 ## `find-cypress-specs`
 
-The above lists of test cases where created with the [`find-cypress-specs`](https://www.npmjs.com/package/find-cypress-specs) library, using the below commands:
+The above lists of test cases were created with the [`find-cypress-specs`](https://www.npmjs.com/package/find-cypress-specs) library, using the below commands:
 
 ```sh
 npx find-cypress-specs --names # Get the list of all e2e tests
