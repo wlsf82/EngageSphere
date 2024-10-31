@@ -46,6 +46,32 @@ describe('EngageSphere Frontend', options, () => {
         veryLargeEnterprise: 'Very Large Enterprise',
       }
 
+      /**
+       * The Object.entries() method in JavaScript returns an array
+       * of a given object's own enumerable property [key, value] pairs.
+       * It's useful when you want to iterate over an object's properties
+       * and values.
+       *
+       * Here's a quick example of how it works:
+       *
+       * const sizes = {
+       *   small: 'Small',
+       *   medium: 'Medium',
+       *   enterprise: 'Enterprise',
+       * }
+       *
+       * const entries = Object.entries(sizes)
+       *
+       * console.log(entries)
+       *
+       * Output:
+       *
+       * [
+       *   ['small', 'Small'],
+       *   ['medium', 'Medium'],
+       *   ['enterprise', 'Enterprise']
+       * ]
+       */
       Object.entries(sizes).forEach(([sizeKey, sizeValue]) => {
         it(`filters by ${sizeValue}`, () => {
           /**
