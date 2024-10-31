@@ -1,3 +1,5 @@
+import capitalizeFirstLetter from '../../support/utils'
+
 const options = {
   viewportHeight: 1240,
   viewportWidth: 1024
@@ -38,74 +40,28 @@ describe('EngageSphere Frontend', options, () => {
         cy.get('tbody tr').should('have.length', 5)
       })
 
-      it('filters by Small size', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Small&industry=All`,
-          { fixture: 'smallCustomers' }
-        ).as('getSmallCustomers')
+      const sizes = {
+        small: 'Small',
+        medium: 'Medium',
+        enterprise: 'Enterprise',
+        largeEnterprise: 'Large Enterprise',
+        veryLargeEnterprise: 'Very Large Enterprise',
+      }
 
-        cy.get('[data-testid="size-filter"]').select('Small')
+      Object.entries(sizes).forEach(([sizeKey, sizeValue]) => {
+        it(`filters by ${sizeValue}`, () => {
+          const encodedSize = encodeURIComponent(sizeValue)
 
-        cy.wait('@getSmallCustomers')
+          cy.intercept(
+            'GET',
+            `${CUSTOMERS_API_URL}**&size=${encodedSize}**`,
+            { fixture: `${sizeKey}Customers` }
+          ).as(`get${capitalizeFirstLetter(sizeKey)}Customers`)
 
-        cy.get('tbody tr').should('have.length', 1)
-      })
-
-      it('filters by Medium size', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Medium&industry=All`,
-          { fixture: 'mediumCustomers' }
-        ).as('getMediumCustomers')
-
-        cy.get('[data-testid="size-filter"]').select('Medium')
-
-        cy.wait('@getMediumCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
-      })
-
-      it('filters by Enterprise size', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Enterprise&industry=All`,
-          { fixture: 'enterpriseCustomers' }
-        ).as('getEnterpriseCustomers')
-
-        cy.get('[data-testid="size-filter"]').select('Enterprise')
-
-        cy.wait('@getEnterpriseCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
-      })
-
-      it('filters by Large Enterprise size', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Large%20Enterprise&industry=All`,
-          { fixture: 'largeEnterpriseCustomers'}
-        ).as('getLargeEnterpriseCustomers')
-
-        cy.get('[data-testid="size-filter"]').select('Large Enterprise')
-
-        cy.wait('@getLargeEnterpriseCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
-      })
-
-      it('filters by Very Large Enterprise size', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=Very%20Large%20Enterprise&industry=All`,
-          { fixture: 'veryLargeEnterpriseCustomers'}
-        ).as('getVeryLargeEnterpriseCustomers')
-
-        cy.get('[data-testid="size-filter"]').select('Very Large Enterprise')
-
-        cy.wait('@getVeryLargeEnterpriseCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
+          cy.get('[data-testid="size-filter"]').select(sizeValue)
+          cy.wait(`@get${capitalizeFirstLetter(sizeKey)}Customers`)
+          cy.get('tbody tr').should('have.length', 1)
+        })
       })
     })
 
@@ -129,74 +85,26 @@ describe('EngageSphere Frontend', options, () => {
         cy.get('tbody tr').should('have.length', 5)
       })
 
-      it('filters by Logistics industry', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Logistics`,
-          { fixture: 'logisticsCustomers' }
-        ).as('getLogisticsCustomers')
+      const industries = {
+        logistics: 'Logistics',
+        retail: 'Retail',
+        technology: 'Technology',
+        hr: 'HR',
+        finance: 'Finance',
+      }
 
-        cy.get('[data-testid="industry-filter"]').select('Logistics')
+      Object.entries(industries).forEach(([industryKey, industryValue]) => {
+        it(`filters by ${industryValue}`, () => {
+          cy.intercept(
+            'GET',
+            `${CUSTOMERS_API_URL}**&industry=${industryValue}**`,
+            { fixture: `${industryKey}Customers` }
+          ).as(`get${capitalizeFirstLetter(industryKey)}Customers`)
 
-        cy.wait('@getLogisticsCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
-      })
-
-      it('filters by Retail industry', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Retail`,
-          { fixture: 'retailCustomers' }
-        ).as('getRetailCustomers')
-
-        cy.get('[data-testid="industry-filter"]').select('Retail')
-
-        cy.wait('@getRetailCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
-      })
-
-      it('filters by Technology industry', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Technology`,
-          { fixture: 'technologyCustomers' }
-        ).as('getTechnologyCustomers')
-
-        cy.get('[data-testid="industry-filter"]').select('Technology')
-
-        cy.wait('@getTechnologyCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
-      })
-
-      it('filters by HR industry', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=HR`,
-          { fixture: 'hrCustomers' }
-        ).as('getHRCustomers')
-
-        cy.get('[data-testid="industry-filter"]').select('HR')
-
-        cy.wait('@getHRCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
-      })
-
-      it('filters by Finance industry', () => {
-        cy.intercept(
-          'GET',
-          `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Finance`,
-          { fixture: 'financeCustomers' }
-        ).as('getFinanceCustomers')
-
-        cy.get('[data-testid="industry-filter"]').select('Finance')
-
-        cy.wait('@getFinanceCustomers')
-
-        cy.get('tbody tr').should('have.length', 1)
+          cy.get('[data-testid="industry-filter"]').select(industryValue)
+          cy.wait(`@get${capitalizeFirstLetter(industryKey)}Customers`)
+          cy.get('tbody tr').should('have.length', 1)
+        })
       })
     })
 
