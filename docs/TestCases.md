@@ -50,14 +50,14 @@ cypress/e2e/gui/EngageSphere.cy.js (28 tests)
 │ │ ├─ keeps the filters when coming back from the customer details view
 │ │ ├─ re-enables the input field when coming back from an empty state filter to a non-empty one
 │ │ ├─ By size
-│ │ │ ├─ filters by All sizes
+│ │ │ ├─ filters by All
 │ │ │ ├─ filters by Small size
 │ │ │ ├─ filters by Medium size
 │ │ │ ├─ filters by Enterprise size
 │ │ │ ├─ filters by Large Enterprise size
 │ │ │ └─ filters by Very Large Enterprise size
 │ │ └─ By industry
-│ │   ├─ filters by All industries
+│ │   ├─ filters by All
 │ │   ├─ filters by Logistics industry
 │ │   ├─ filters by Retail industry
 │ │   ├─ filters by Technology industry

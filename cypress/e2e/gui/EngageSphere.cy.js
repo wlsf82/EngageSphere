@@ -23,7 +23,7 @@ describe('EngageSphere Frontend', options, () => {
 
   context('Filtering', () => {
     context('By size', () => {
-      it('filters by All sizes', () => {
+      it('filters by All', () => {
         cy.intercept(
           'GET',
           `${CUSTOMERS_API_URL}?page=1&limit=10&size=Small&industry=All`,
@@ -80,7 +80,7 @@ describe('EngageSphere Frontend', options, () => {
     })
 
     context('By industry', () => {
-      it('filters by All industries', () => {
+      it('filters by All', () => {
         cy.intercept(
           'GET',
           `${CUSTOMERS_API_URL}?page=1&limit=10&size=All&industry=Logistics`,
