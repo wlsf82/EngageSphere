@@ -50,6 +50,20 @@ describe('EngageSphere Frontend', options, () => {
 
       Object.entries(sizes).forEach(([sizeKey, sizeValue]) => {
         it(`filters by ${sizeValue}`, () => {
+          /**
+           * encodeURIComponent is a JavaScript function that encodes special characters
+           * in a string so they can be safely included in a URL.
+           * This includes characters like spaces, punctuation,
+           * and others that might otherwise break a URL or alter its meaning.
+           *
+           * For example:
+           *
+           * If sizeValue is equal to 'Large Enterprise', then:
+           *
+           * const encodedSize = encodeURIComponent('Large Enterprise')
+           *
+           * would become 'Large%20Enterprise'
+           */
           const encodedSize = encodeURIComponent(sizeValue)
 
           cy.intercept(
