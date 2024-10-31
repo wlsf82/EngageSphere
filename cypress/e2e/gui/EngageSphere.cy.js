@@ -1,5 +1,3 @@
-import capitalizeFirstLetter from '../../support/utils'
-
 const options = {
   viewportHeight: 1240,
   viewportWidth: 1024
@@ -70,10 +68,10 @@ describe('EngageSphere Frontend', options, () => {
             'GET',
             `${CUSTOMERS_API_URL}**&size=${encodedSize}**`,
             { fixture: `${sizeKey}Customers` }
-          ).as(`get${capitalizeFirstLetter(sizeKey)}Customers`)
+          ).as('getFilteredBySizeCustomers')
 
           cy.get('[data-testid="size-filter"]').select(sizeValue)
-          cy.wait(`@get${capitalizeFirstLetter(sizeKey)}Customers`)
+          cy.wait('@getFilteredBySizeCustomers')
           cy.get('tbody tr').should('have.length', 1)
         })
       })
@@ -113,10 +111,10 @@ describe('EngageSphere Frontend', options, () => {
             'GET',
             `${CUSTOMERS_API_URL}**&industry=${industryValue}**`,
             { fixture: `${industryKey}Customers` }
-          ).as(`get${capitalizeFirstLetter(industryKey)}Customers`)
+          ).as('getFilteredByIndutryCustomers')
 
           cy.get('[data-testid="industry-filter"]').select(industryValue)
-          cy.wait(`@get${capitalizeFirstLetter(industryKey)}Customers`)
+          cy.wait('@getFilteredByIndutryCustomers')
           cy.get('tbody tr').should('have.length', 1)
         })
       })
