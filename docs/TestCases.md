@@ -51,18 +51,18 @@ cypress/e2e/gui/EngageSphere.cy.js (28 tests)
 │ │ ├─ re-enables the input field when coming back from an empty state filter to a non-empty one
 │ │ ├─ By size
 │ │ │ ├─ filters by All
-│ │ │ ├─ filters by Small size
-│ │ │ ├─ filters by Medium size
-│ │ │ ├─ filters by Enterprise size
-│ │ │ ├─ filters by Large Enterprise size
-│ │ │ └─ filters by Very Large Enterprise size
+│ │ │ ├─ filters by Small
+│ │ │ ├─ filters by Medium
+│ │ │ ├─ filters by Enterprise
+│ │ │ ├─ filters by Large Enterprise
+│ │ │ └─ filters by Very Large Enterprise
 │ │ └─ By industry
 │ │   ├─ filters by All
-│ │   ├─ filters by Logistics industry
-│ │   ├─ filters by Retail industry
-│ │   ├─ filters by Technology industry
-│ │   ├─ filters by HR industry
-│ │   └─ filters by Finance industry
+│ │   ├─ filters by Logistics
+│ │   ├─ filters by Retail
+│ │   ├─ filters by Technology
+│ │   ├─ filters by HR
+│ │   └─ filters by Finance
 │ ├─ Pagination
 │ │ ├─ persists the limit of items per page in the local storage when changing the limit
 │ │ └─ triggers the correct request when clicking the Next and Prev buttons
