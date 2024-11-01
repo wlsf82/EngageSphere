@@ -23,9 +23,9 @@ describe('<Messenger />', options, () => {
       })
 
       cy.getByClassThatStartsWith('Messenger_box').should('not.exist')
-      cy.getByClassThatStartsWith('Messenger_openCloseButton').should('be.visible')
-
-      cy.getByClassThatStartsWith('Messenger_openCloseButton').click()
+      cy.getByClassThatStartsWith('Messenger_openCloseButton')
+        .should('be.visible')
+        .click()
     })
 
     it('opens and closes the messenger and finds no a11y issue', () => {
