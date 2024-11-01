@@ -8,8 +8,6 @@
         "eslint:recommended",
         "plugin:react/recommended"
     ],
-    "overrides": [
-    ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
