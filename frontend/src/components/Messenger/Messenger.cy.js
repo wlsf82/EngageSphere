@@ -53,8 +53,7 @@ describe('<Messenger />', options, () => {
     })
 
     it('shows and hides a success message when successfully submitting the form', () => {
-      const now = new Date()
-      cy.clock(now)
+      cy.clock()
 
       cy.getByClassThatStartsWith('Messenger_form')
         .find('input[type="text"]')
