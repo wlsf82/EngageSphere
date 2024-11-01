@@ -3,7 +3,7 @@ import Greeting from '.'
 
 describe('<Greeting />', () => {
   beforeEach(() => {
-    const now = new Date(2024, 3, 15) // month is 0-indexed
+    const now = new Date(Date.UTC(2024, 3, 15)) // month is 0-indexed
     cy.clock(now)
   })
 
