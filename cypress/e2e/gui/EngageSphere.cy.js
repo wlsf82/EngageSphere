@@ -297,9 +297,12 @@ describe('EngageSphere Frontend - empty state', options, () => {
 })
 
 describe('EngageSphere Frontend - A11y', options, () => {
+  beforeEach(() => {
+    cy.setCookie('cookieConsent', 'accepted')
+  })
+
   context('With customers', () => {
     beforeEach(() => {
-      cy.setCookie('cookieConsent', 'accepted')
       cy.visit('/')
       cy.injectAxe()
       cy.get('[data-theme="light"]').should('exist')
