@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { useCookieConsent } from './components/CookieConsent/useCookeConsent'
+import { useCookieConsent } from './components/CookieConsent/useCookieConsent'
 
 import styles from './App.module.css'
 
