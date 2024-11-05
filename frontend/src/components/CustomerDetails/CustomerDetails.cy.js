@@ -64,7 +64,7 @@ describe('<CustomerDetails />', () => {
 
     cy.contains('button', 'Hide address').click()
 
-    cy.get('.address-info').should('not.exist')
+    cy.contains('h3', 'Address').should('not.exist')
   })
 
   it('renders a fallback paragraph (\'No address available\') when address is not available', () => {
