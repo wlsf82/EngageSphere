@@ -64,6 +64,7 @@ describe('<CustomerDetails />', () => {
 
     cy.contains('button', 'Hide address').click()
 
+    cy.contains('button', 'Show address').should('be.visible')
     cy.contains('h3', 'Address').should('not.exist')
   })
 
