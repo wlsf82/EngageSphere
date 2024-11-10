@@ -12,24 +12,26 @@ export default function Messenger() {
 
   const nameInputRef = useRef(null)
 
+  const resetForm = () => {
+    setName('')
+    setEmail('')
+    setMessage('')
+  }
+
   const handleSubmit = event => {
     event.preventDefault()
     setMessageSent(true)
     setTimeout(() => {
       setMessageSent(false)
     }, 3000)
-    setName('')
-    setEmail('')
-    setMessage('')
+    resetForm()
   }
 
   useEffect(() => {
     if (isOpen && nameInputRef.current) {
       nameInputRef.current.focus()
     } else {
-      setName('')
-      setEmail('')
-      setMessage('')
+      resetForm()
     }
   }, [isOpen])
 
