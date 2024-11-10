@@ -43,11 +43,11 @@ export default function Messenger() {
             <h2>How can we help you?</h2>
           </div>
           <div className={styles.form}>
-            {messageSent ? (
+            {messageSent &&
               <div role="alert" aria-live="polite" className={styles.success}>
                 Your message has been sent.
               </div>
-            ) : null}
+            }
             <form onSubmit={handleSubmit}>
               <label htmlFor="messenger-name" className='sr-only'>Type your name</label>
               <input
