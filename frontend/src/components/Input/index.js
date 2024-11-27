@@ -12,7 +12,7 @@ const Input = ({ disabled, onChange }) => {
         placeholder="E.g., John Doe"
         onChange={onChange}
         disabled={disabled}
-        maxlength="40"
+        maxLength="40"
       />
     </div>
   )
