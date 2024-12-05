@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "cypress": "^13.16.0"
+    "cypress": "^13.16.1"
   },
   "scripts": {
     "start": "react-scripts start",
