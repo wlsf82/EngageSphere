@@ -1,0 +1,35 @@
+name: cron
+
+on:
+  schedule:
+    # runs four times a day (six a.m, noon, six p.m, and midnight - UTC)
+    - cron: '0 12,18,00,06 * * *'
+  workflow_dispatch:
+
+jobs:
+  api-tests-prod:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run API tests in production 🧪
+        uses: cypress-io/github-action@v6
+        env:
+          API_URL_PROD: ${{ secrets.API_URL_PROD }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        with:
+          command: npm run test:api:prod:cloud
+  gui-tests-prod:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run GUI tests in production 🧪
+        uses: cypress-io/github-action@v6
+        env:
+          API_URL_PROD: ${{ secrets.API_URL_PROD }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        with:
+          command: npm run test:frontend:gui:prod:cloud
