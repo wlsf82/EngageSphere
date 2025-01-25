@@ -9,7 +9,7 @@ const Footer = () => {
           <a href="https://open.spotify.com/show/5HFlqWkk6qtgJquUixyuKo" target="_blank" rel="noopener noreferrer">Podcast</a>
         </li>
         <li>
-          <a href="https://udemy.com/user/walmyr" target="_blank" rel="noopener noreferrer">Udemy</a>
+          <a href="https://talking-about-testing.vercel.app/" target="_blank" rel="noopener noreferrer">Courses</a>
         </li>
         <li>
           <a href="https://talkingabouttesting.com" target="_blank" rel="noopener noreferrer">Blog</a>
