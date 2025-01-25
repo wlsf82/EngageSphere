@@ -6,9 +6,9 @@ describe('<Footer />', () => {
 
     cy.contains('p', 'Copyright 2025 - Talking About Testing')
       .should('be.visible')
-    cy.contains('a', 'Hotmart')
+    cy.contains('a', 'Podcast')
       .should('be.visible')
-      .and('have.attr', 'href', 'https://hotmart.com/pt-br/club/cypress-playground-ate-a-nuvem')
+      .and('have.attr', 'href', 'https://open.spotify.com/show/5HFlqWkk6qtgJquUixyuKo')
       .and('have.attr', 'target', '_blank')
       .and('have.attr', 'rel', 'noopener noreferrer')
     cy.contains('a', 'Udemy')
