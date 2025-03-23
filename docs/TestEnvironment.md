@@ -4,7 +4,7 @@ The **EngageSphere** application is a web application written using ReactJS on t
 
 ## PRE-REQUISITES
 
-The only pre-requisite to run this app is to have npm and Node.js installed in your machine. For instructions on how to install, go to https://nodejs.org/en/
+The only pre-requisite to run this app is to have npm and Node.js installed in your machine. For instructions on how to install, go to https://nodejs.org/en/.
 
 ## How to run it
 
