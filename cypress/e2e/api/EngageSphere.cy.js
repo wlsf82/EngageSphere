@@ -2,7 +2,7 @@ describe('EngageSphere API', () => {
   const CUSTOMERS_API_URL = `${Cypress.env('API_URL')}/customers`
 
   context('General', () => {
-    it('returns the correct status and body structure', () => {
+    it('returns the correct status and body structure on a simple get request (with default query params.)', () => {
       cy.request('GET', CUSTOMERS_API_URL).as('getCustomers')
 
       cy.get('@getCustomers')
@@ -15,23 +15,37 @@ describe('EngageSphere API', () => {
       cy.get('@getCustomers')
         .its('body.customers')
         .each(customer => {
-          expect(customer.id).to.exist
-          expect(customer.name).to.exist
-          expect(customer.employees).to.exist
-          expect(customer.industry).to.exist
+          expect(customer.id).to.exist.and.be.a('number')
+          expect(customer.name).to.exist.and.be.a('string')
+          expect(customer.employees).to.exist.and.be.a('number')
+          expect(customer.industry).to.exist.and.be.a('string')
 
           if (customer.contactInfo) {
             expect(customer.contactInfo).to.have.all.keys('name', 'email')
+            expect(customer.contactInfo.name).to.be.a('string')
+            expect(customer.contactInfo.email).to.be.a('string')
           }
 
           if (customer.address) {
             expect(customer.address).to.have.all.keys('street', 'city', 'state', 'zipCode', 'country')
+            expect(customer.address.street).to.be.a('string')
+            expect(customer.address.city).to.be.a('string')
+            expect(customer.address.state).to.be.a('string')
+            expect(customer.address.zipCode).to.be.a('string')
+            expect(customer.address.country).to.be.a('string')
           }
         })
 
       cy.get('@getCustomers')
         .its('body.pageInfo')
         .should('have.all.keys', 'currentPage', 'totalPages', 'totalCustomers')
+      cy.get('@getCustomers')
+        .its('body.pageInfo')
+        .then(({ currentPage, totalPages, totalCustomers }) => {
+          expect(currentPage).to.be.a('number')
+          expect(totalPages).to.be.a('number')
+          expect(totalCustomers).to.be.a('number')
+        })
     })
 
     it('returns an empty array of customers when in an empty page', () => {
@@ -40,12 +54,13 @@ describe('EngageSphere API', () => {
 
       cy.get('@getEmptyCustomers')
         .its('body.customers')
-        .should('be.empty')
+        .should('be.a', 'array')
+        .and('be.empty')
     })
   })
 
   context('Pagination', () => {
-    it('paginates the customer list correctly', () => {
+    it('gets customers from page 2', () => {
       cy.request('GET', `${CUSTOMERS_API_URL}?page=2`).as('getCustomersPageTwo')
 
       cy.get('@getCustomersPageTwo')
@@ -53,8 +68,8 @@ describe('EngageSphere API', () => {
         .should('eq', 2) // Supposing there are at least 2 pages
     })
 
-    it('filters limit of customers correctly', () => {
-      const resultsPerPageLimit = ['5', '10', '20', '50']
+    it('filters by limit of customers', () => {
+      const resultsPerPageLimit = [5, 10, 20, 50]
       const totalPagesPerLimit = [10, 5, 3, 1] // Supposing there are 50 clients in the database.
 
       resultsPerPageLimit.forEach((limit, index) => {
@@ -71,7 +86,7 @@ describe('EngageSphere API', () => {
   })
 
   context('Size filtering', () => {
-    it('filters customers by size correctly', () => {
+    it('filters customers by size', () => {
       const sizes = ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise']
       const limitOfEmployeesPerSize = [99, 999, 9999, 49999, 999999] // Assuming that there aren't companies with more than 999999 employees in the database
 
@@ -89,7 +104,7 @@ describe('EngageSphere API', () => {
   })
 
   context('Industry filtering', () => {
-    it('filters customers by industry correctly', () => {
+    it('filters customers by industry', () => {
       const industries = ['Logistics', 'Retail', 'Technology', 'HR', 'Finance']
 
       industries.forEach(industry => {

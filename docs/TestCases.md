@@ -14,15 +14,15 @@ Below is the list of all the API tests.
 cypress/e2e/api/EngageSphere.cy.js (14 tests)
 └─ EngageSphere API
   ├─ General
-  │ ├─ returns the correct status and body structure
+  │ ├─ returns the correct status and body structure on a simple get request (with default query params.)
   │ └─ returns an empty array of customers when in an empty page
   ├─ Pagination
-  │ ├─ paginates the customer list correctly
-  │ └─ filters limit of customers correctly
+  │ ├─ gets customers from page 2
+  │ └─ filters by limit of customers
   ├─ Size filtering
-  │ └─ filters customers by size correctly
+  │ └─ filters customers by size
   ├─ Industry filtering
-  │ └─ filters customers by industry correctly
+  │ └─ filters customers by industry
   └─ Error scenarios
     ├─ handles invalid requests gracefully (e.g., negative page)
     ├─ handles invalid requests gracefully (e.g., negative limit)
