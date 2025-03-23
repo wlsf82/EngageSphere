@@ -44,7 +44,7 @@ To run it using the ARM64 platform (often used in newer Macs with Apple Silicon,
 
 ##### DockerHub
 
-Acesse o [repositório da imagem da API no DockerHub](https://hub.docker.com/r/wlsf82/engagesphereserver).
+Access the [API image repository on DockerHub](https://hub.docker.com/r/wlsf82/engagesphereserver).
 
 ### 2 Starting the frontend
 
