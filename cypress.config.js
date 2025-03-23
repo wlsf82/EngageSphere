@@ -2,11 +2,11 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   projectId: 'yebzus',
-  env: {
-    API_URL: 'http://localhost:3001',
-  },
   e2e: {
     baseUrl: 'http://localhost:3000',
+    env: {
+      API_URL: 'http://localhost:3001',
+    },
     setupNodeEvents(on, config) {
       // Use the production API URL if it's set, otherwise, use the default one.
       config.env.API_URL = process.env.API_URL_PROD ?
