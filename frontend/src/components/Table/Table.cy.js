@@ -112,7 +112,7 @@ describe('<Table />', options, () => {
 
 const mobileOptions = {
   viewportHeight: 800,
-  viewportWidth: 468
+  viewportWidth: 467
 }
 
 describe('<Table /> mobile', mobileOptions, () => {
