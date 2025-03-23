@@ -3,7 +3,7 @@
 [![CI](https://github.com/wlsf82/EngageSphere/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/wlsf82/EngageSphere/actions/workflows/ci-cd.yml)
 [![EngageSphere](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/yebzus/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/yebzus/runs)
 
-Sample project with a [Node.js](https://nodejs.org/) backend and a [React](https://react.dev/) frontend, running [Cypress](https://www.cypress.io/) tests on [GitHub Actions](https://github.com/features/actions).
+Sample project with an [Express.js](https://expressjs.com/) backend and a [React](https://react.dev/) frontend, running [Cypress](https://www.cypress.io/) tests on [GitHub Actions](https://github.com/features/actions).
 
 ## Business rules
 

@@ -1,7 +1,7 @@
 {
   "name": "engage-sphere",
   "version": "1.0.0",
-  "description": "Sample project with basic 'backend' and frontend running Cypress tests on GitHub Actions.",
+  "description": "Sample project with an Express.js backend and a React frontend, running Cypress tests on GitHub Actions.",
   "scripts": {
     "install:frontend": "cd frontend && npm install",
     "install:backend": "cd backend && npm install",
