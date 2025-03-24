@@ -12,7 +12,7 @@ const options = {
       schemas: {
         Customer: {
           type: 'object',
-          required: ['id', 'name', 'address', 'industry'],
+          required: ['id', 'name', 'employees', 'size', 'industry'],
           properties: {
             id: {
               type: 'integer',
@@ -79,13 +79,13 @@ const options = {
             size: {
               type: 'string',
               enum: ['Small', 'Medium', 'Enterprise', 'Large Enterprise', 'Very Large Enterprise'],
-              description: 'The size of the company based on employee count',
+              description: 'The size of the company based on employees count',
             },
           },
           example: {
             id: 1,
             name: 'Jacobs Co',
-            employees: 100,
+            employees: 99,
             size: 'Small',
             industry: 'Logistics',
             contactInfo: {
