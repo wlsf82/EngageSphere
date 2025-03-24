@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "start:with:eight::static:customers": "NUMBER_OF_DYNAMIC_CUSTOMERS=0 node server.js",
     "start:with:ten:customers": "NUMBER_OF_DYNAMIC_CUSTOMERS=2 node server.js",
     "start:with:twenty:customers": "NUMBER_OF_DYNAMIC_CUSTOMERS=12 node server.js"
   },
