@@ -49,7 +49,7 @@ const App = () => {
     if (initialFetchDone && customers.length === 0) {
       setInputDisabled(true)
     } else {
-      setInputDisabled(false)
+      // setInputDisabled(false)
     }
   }, [initialFetchDone, customers])
 
