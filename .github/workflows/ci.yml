@@ -7,11 +7,11 @@ jobs:
   eslint:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-    - name: Install modules
-      run: npm install
-    - name: Run ESLint
-      run: npm run lint
+      - uses: actions/checkout@v4
+      - name: Install modules
+        run: npm ci
+      - name: Run ESLint
+        run: npm run lint
   component-tests:
     needs: eslint
     runs-on: ubuntu-22.04

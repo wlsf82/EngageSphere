@@ -9,11 +9,11 @@ jobs:
   eslint:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-    - name: Install modules
-      run: npm install
-    - name: Run ESLint
-      run: npm run lint
+      - uses: actions/checkout@v4
+      - name: Install modules
+        run: npm ci
+      - name: Run ESLint
+        run: npm run lint
   component-tests:
     needs: eslint
     runs-on: ubuntu-22.04
@@ -80,7 +80,7 @@ jobs:
       - uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod'
+          vercel-args: "--prod"
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
   post-deployment-api-tests:
