@@ -24,11 +24,7 @@ npm install
 npm start
 ```
 
-The server will be listening on port 3001. If you need to change this, go to `/backend/server.js` and change the port variable value on line 6.
-
-```js
-const port = 3001;
-```
+The server will be listening on port `3001`. If you need to change it, set the `PORT` environment variable to a different value (e.g., `PORT=3002`).
 
 #### Using Docker
 
@@ -50,7 +46,7 @@ Access the [API image repository on DockerHub](https://hub.docker.com/r/wlsf82/e
 
 Open a new terminal, go to the root of this repo and:
 
-**Important:** if you changed the backend port number, you will have to change it also on `/frontend/src/App.js` on line 20, before starting the frontend.
+**Important:** if you changed the backend port number, you will have to set the `REACT_APP_API_PORT` value to the same value used in the backend `PORT` variable.
 
 ```sh
 cd frontend

@@ -31,7 +31,9 @@ After cloning this project, to install the dev dependencies, open a terminal, go
 
 This project has frontend component tests, GUI tests, and backend API tests.
 
-To run them all, simply run `npm test` (or `npm t`, for short.)
+> **Note:** The frontend GUI tests expect the frontend app running on port `3000`, and the backend API tests expect the backend server running on port `3001`. If that's not the case, it's recommend to look into the `scripts` section of the [package.json](./package.json) file to understand how the test scripts work, and update them accordingly. E.g., `cypress open --env API_URL=http://localhost:3002`.
+
+To run all tests at once, simply run `npm test` (or `npm t`, for short.)
 
 ### Frontend component tests
 

@@ -17,7 +17,7 @@ import Pagination from './components/Pagination'
 import SizeFilter from './components/Filters/SizeFilter'
 import Table from './components/Table'
 
-const serverPort = 3001
+const serverPort = process.env.REACT_APP_API_PORT || 3001
 const serverURL = process.env.REACT_APP_HEROKU_API_URL || `http://localhost:${serverPort}`
 
 const App = () => {
