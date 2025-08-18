@@ -7,7 +7,8 @@
     "start": "node server.js",
     "start:with:eight::static:customers": "NUMBER_OF_DYNAMIC_CUSTOMERS=0 node server.js",
     "start:with:ten:customers": "NUMBER_OF_DYNAMIC_CUSTOMERS=2 node server.js",
-    "start:with:twenty:customers": "NUMBER_OF_DYNAMIC_CUSTOMERS=12 node server.js"
+    "start:with:twenty:customers": "NUMBER_OF_DYNAMIC_CUSTOMERS=12 node server.js",
+    "test": "mocha test/**/*.test.js"
   },
   "dependencies": {
     "@faker-js/faker": "^9.6.0",
@@ -15,5 +16,10 @@
     "lodash": "^4.17.21",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "chai": "^5.3.1",
+    "mocha": "^11.7.1",
+    "supertest": "^7.1.4"
   }
 }

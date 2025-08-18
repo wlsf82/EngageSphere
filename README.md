@@ -51,11 +51,23 @@ Or, run `npm run test:frontend:gui:with:servers` to automatically start the serv
 
 ### API tests
 
+For comparison purposes, this project has two suites of API tests: one written with Cypress and another with a combination of Supertest, Chai, and Mocha.
+
+#### Cypress API tests
+
 Run `npm run test:api` to run the backend tests.
 
 > To use the above script, the backend server should be up and running.
 
 Or, run `npm run test:api:with:server` to automatically start the backend server, run the tests, and shut it down.
+
+#### Supertest API tests
+
+Run `npm run test:api:supertest` to run the backend tests.
+
+> To use the above script, the backend server should be up and running.
+
+Or, run `npm run test:api:supertest:with:server` to automatically start the backend server, run the tests, and shut it down.
 
 ### Test cases
 
