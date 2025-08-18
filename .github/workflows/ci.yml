@@ -52,7 +52,7 @@ jobs:
           command: npm run test:frontend:gui:cloud
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-  api-tests:
+  cypress-api-tests:
     needs: eslint
     runs-on: ubuntu-22.04
     steps:
@@ -70,3 +70,30 @@ jobs:
           command: npm run test:api:cloud
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  supertest-api-tests:
+    needs: eslint
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install backend modules
+        run: |
+          cd backend
+          npm ci
+      - name: Start backend server
+        run: |
+          cd backend
+          npm start &
+          echo $! > server.pid
+          sleep 3
+      - name: Run supertest API tests 🧪
+        run: |
+          cd backend
+          npm test
+      - name: Stop backend server
+        if: always()
+        run: |
+          if [ -f backend/server.pid ]; then
+            kill $(cat backend/server.pid) || true
+            rm backend/server.pid
+          fi

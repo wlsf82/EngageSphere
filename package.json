@@ -18,6 +18,8 @@
     "test:frontend:component": "cypress run --component --record false",
     "test:frontend:component:cloud": "cypress run --record --tag 'component' --component",
     "test:api": "cypress run --spec cypress/e2e/api/*.cy.js --record false --config baseUrl='http://localhost:3001/customers'",
+    "test:api:supertest": "cd backend/ && npm test",
+    "test:api:supertest:with:server": "start-server-and-test start:server http://localhost:3001/customers test:api:supertest",
     "test:api:cloud": "cypress run --record --tag 'API' --spec cypress/e2e/api/*.cy.js --config baseUrl='http://localhost:3001/customers'",
     "test:api:with:server": "start-server-and-test start:server http://localhost:3001/customers test:api",
     "cy:open": "cypress open",
