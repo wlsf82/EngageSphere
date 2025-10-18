@@ -66,6 +66,9 @@ describe('EngageSphere API', () => {
       cy.get('@getCustomersPageTwo')
         .its('body.pageInfo.currentPage')
         .should('eq', 2) // Supposing there are at least 2 pages
+      cy.get('@getCustomersPageTwo')
+        .its('body.customers.length')
+        .should('be.eq', 10) // Since ten is the default limit
     })
 
     it('filters by limit of customers', () => {

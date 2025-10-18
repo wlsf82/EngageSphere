@@ -58,6 +58,7 @@ describe('EngageSphere API', () => {
         .expect(200)
 
       expect(res.body.pageInfo.currentPage).to.eq(2)
+      expect(res.body.customers.length).to.eq(10)
     })
 
     it('filters by limit of customers', async () => {
