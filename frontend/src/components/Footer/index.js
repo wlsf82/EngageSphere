@@ -3,7 +3,7 @@ import styles from './Footer.module.css'
 const Footer = () => {
   return (
     <footer className={styles.container} data-testid="footer">
-      <p>Copyright 2025 - Talking About Testing</p>
+      <p>Copyright 2026 - Talking About Testing</p>
       <ul>
         <li>
           <a href="https://open.spotify.com/show/5HFlqWkk6qtgJquUixyuKo" target="_blank" rel="noopener noreferrer">Podcast</a>
