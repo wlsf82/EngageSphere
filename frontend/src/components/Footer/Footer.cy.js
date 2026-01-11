@@ -4,7 +4,7 @@ describe('<Footer />', () => {
   it('renders with the right text and links', () => {
     cy.mount(<Footer />)
 
-    cy.contains('p', 'Copyright 2026 - Talking About Testing')
+    cy.contains('p', `Copyright ${new Date().getFullYear()} - Talking About Testing`)
       .should('be.visible')
     cy.contains('a', 'Podcast')
       .should('be.visible')
