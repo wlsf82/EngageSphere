@@ -15,4 +15,23 @@ describe('<Button />', () => {
     cy.get('button svg.lucide-check').should('be.visible')
     cy.contains('button', 'Done').should('be.visible')
   })
+
+  it('renders disabled and prevents click handler execution', () => {
+    const onClick = cy.stub().as('onClick')
+
+    cy.mount(
+      <Button
+        text="I'm disabled"
+        disabled={true}
+        onClick={onClick}
+      />
+    )
+
+    cy.contains('button', "I'm disabled")
+      .should('be.visible')
+      .and('be.disabled')
+      .click({ force: true })
+
+    cy.get('@onClick').should('not.have.been.called')
+  })
 })

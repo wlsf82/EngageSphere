@@ -44,6 +44,22 @@
   height: 16px;
 }
 
+.buttonContainer button:disabled,
+.buttonContainer .secondaryButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--button-disabled-bg-color, #6c757d);
+  color: var(--button-disabled-text-color, #fff);
+  border: 1px solid var(--button-disabled-border-color, #6c757d);
+}
+
+.buttonContainer button:disabled:hover,
+.buttonContainer .secondaryButton:disabled:hover {
+  background-color: var(--button-disabled-bg-color, #6c757d);
+  color: var(--button-disabled-text-color, #fff);
+  border: 1px solid var(--button-disabled-border-color, #6c757d);
+}
+
 @media (max-width: 468px) {
   .buttonContainer button {
     font-size: 0.9rem;
