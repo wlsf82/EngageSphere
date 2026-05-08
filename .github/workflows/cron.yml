@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run API tests in production 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         env:
           API_URL_PROD: ${{ secrets.API_URL_PROD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run GUI tests in production 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         env:
           API_URL_PROD: ${{ secrets.API_URL_PROD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

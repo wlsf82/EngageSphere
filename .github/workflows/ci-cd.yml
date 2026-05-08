@@ -9,7 +9,7 @@ jobs:
   eslint:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install modules
         run: npm ci
       - name: Run ESLint
@@ -19,14 +19,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install frontend modules
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           install-command: npm run install:frontend
           runTests: false
       - name: Run frontend component tests 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           command: npm run test:frontend:component:cloud
         env:
@@ -36,19 +36,19 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install backend modules
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           install-command: npm run install:backend
           runTests: false
       - name: Install frontend modules
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           install-command: npm run install:frontend
           runTests: false
       - name: Run frontend GUI tests 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           start: npm run start:frontend, npm run start:server
           command: npm run test:frontend:gui:cloud
@@ -59,14 +59,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install backend modules
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           install-command: npm run install:backend
           runTests: false
       - name: Run API tests 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           start: npm run start:server
           command: npm run test:api:cloud
@@ -76,8 +76,8 @@ jobs:
     needs: [component-tests, gui-tests, api-tests]
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: amondnet/vercel-action@v25
+      - uses: actions/checkout@v6
+      - uses: amondnet/vercel-action@v42
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-args: "--prod"
@@ -88,10 +88,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run API tests in production 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         env:
           API_URL_PROD: ${{ secrets.API_URL_PROD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -102,10 +102,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run GUI tests in production 🧪
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         env:
           API_URL_PROD: ${{ secrets.API_URL_PROD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
