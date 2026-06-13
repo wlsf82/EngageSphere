@@ -306,6 +306,7 @@ describe('EngageSphere Frontend - A11y', options, () => {
       cy.visit('/')
       cy.injectAxe()
       cy.get('[data-theme="light"]').should('exist')
+      cy.get('table').should('be.visible')
     })
 
     context('Customers table', () => {
