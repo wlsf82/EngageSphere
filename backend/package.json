@@ -11,7 +11,7 @@
     "test": "mocha test/**/*.test.js"
   },
   "dependencies": {
-    "@faker-js/faker": "^9.6.0",
+    "@faker-js/faker": "^10.5.0",
     "express": "^4.22.2",
     "lodash": "^4.18.1",
     "swagger-jsdoc": "^6.2.8",
